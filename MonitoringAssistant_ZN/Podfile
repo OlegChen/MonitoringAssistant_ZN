@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios,'8.0'
+target 'MonitoringAssistant_ZN' do
+
+pod 'Alamofire', '~> 4.4'
+
+pod 'SnapKit', '~> 3.2.0'
+pod 'HandyJSON', '~> 1.8.0'
+
+
+pod "ESPullToRefresh"
+
+
+
+end

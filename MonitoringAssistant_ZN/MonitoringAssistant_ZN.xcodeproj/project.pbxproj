@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09B18796E1386C242D17D4E9 /* Pods_MonitoringAssistant_ZN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */; };
+		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
+		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
+		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
+		18791C9B2008BBB000A2E282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18791C9A2008BBB000A2E282 /* Assets.xcassets */; };
+		18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C9C2008BBB000A2E282 /* LaunchScreen.storyboard */; };
+		18791CA92008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CA82008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift */; };
+		18791CB42008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */; };
+		18D74FB52008BDA10011866E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB22008BDA10011866E /* API.swift */; };
+		18D74FB62008BDA10011866E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB32008BDA10011866E /* Network.swift */; };
+		18D74FB72008BDA10011866E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB42008BDA10011866E /* NetworkService.swift */; };
+		18D74FBA2008D3D30011866E /* PCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB92008D3D30011866E /* PCH.swift */; };
+		18D74FBC2008D4FB0011866E /* ceshiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FBB2008D4FB0011866E /* ceshiModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18791CA52008BBB100A2E282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18791C882008BBB000A2E282 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18791C8F2008BBB000A2E282;
+			remoteInfo = MonitoringAssistant_ZN;
+		};
+		18791CB02008BBB100A2E282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18791C882008BBB000A2E282 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18791C8F2008BBB000A2E282;
+			remoteInfo = MonitoringAssistant_ZN;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18791C982008BBB000A2E282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18791C9A2008BBB000A2E282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18791C9D2008BBB000A2E282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18791C9F2008BBB000A2E282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18791CA42008BBB100A2E282 /* MonitoringAssistant_ZNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonitoringAssistant_ZNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18791CA82008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringAssistant_ZNTests.swift; sourceTree = "<group>"; };
+		18791CAA2008BBB100A2E282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18791CAF2008BBB100A2E282 /* MonitoringAssistant_ZNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonitoringAssistant_ZNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringAssistant_ZNUITests.swift; sourceTree = "<group>"; };
+		18791CB52008BBB100A2E282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D74FB22008BDA10011866E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		18D74FB32008BDA10011866E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		18D74FB42008BDA10011866E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		18D74FB92008D3D30011866E /* PCH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCH.swift; sourceTree = "<group>"; };
+		18D74FBB2008D4FB0011866E /* ceshiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ceshiModel.swift; sourceTree = "<group>"; };
+		18F4E3A3891A6026651AE09C /* Pods-MonitoringAssistant_ZN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.debug.xcconfig"; sourceTree = "<group>"; };
+		95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.release.xcconfig"; sourceTree = "<group>"; };
+		FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitoringAssistant_ZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18791C8D2008BBB000A2E282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09B18796E1386C242D17D4E9 /* Pods_MonitoringAssistant_ZN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18791CA12008BBB100A2E282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18791CAC2008BBB100A2E282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18791C872008BBB000A2E282 = {
+			isa = PBXGroup;
+			children = (
+				18791C922008BBB000A2E282 /* MonitoringAssistant_ZN */,
+				18791CA72008BBB100A2E282 /* MonitoringAssistant_ZNTests */,
+				18791CB22008BBB100A2E282 /* MonitoringAssistant_ZNUITests */,
+				18791C912008BBB000A2E282 /* Products */,
+				FC3B3F6FBEC639991887BADF /* Pods */,
+				41C759CFC8F4366C3B8CDD59 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		18791C912008BBB000A2E282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */,
+				18791CA42008BBB100A2E282 /* MonitoringAssistant_ZNTests.xctest */,
+				18791CAF2008BBB100A2E282 /* MonitoringAssistant_ZNUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18791C922008BBB000A2E282 /* MonitoringAssistant_ZN */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FAE2008BDA10011866E /* Class */,
+				18791C932008BBB000A2E282 /* AppDelegate.swift */,
+				18791C952008BBB000A2E282 /* ViewController.swift */,
+				18D74FBB2008D4FB0011866E /* ceshiModel.swift */,
+				18D74FB92008D3D30011866E /* PCH.swift */,
+				18791C972008BBB000A2E282 /* Main.storyboard */,
+				18791C9A2008BBB000A2E282 /* Assets.xcassets */,
+				18791C9C2008BBB000A2E282 /* LaunchScreen.storyboard */,
+				18791C9F2008BBB000A2E282 /* Info.plist */,
+			);
+			path = MonitoringAssistant_ZN;
+			sourceTree = "<group>";
+		};
+		18791CA72008BBB100A2E282 /* MonitoringAssistant_ZNTests */ = {
+			isa = PBXGroup;
+			children = (
+				18791CA82008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift */,
+				18791CAA2008BBB100A2E282 /* Info.plist */,
+			);
+			path = MonitoringAssistant_ZNTests;
+			sourceTree = "<group>";
+		};
+		18791CB22008BBB100A2E282 /* MonitoringAssistant_ZNUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */,
+				18791CB52008BBB100A2E282 /* Info.plist */,
+			);
+			path = MonitoringAssistant_ZNUITests;
+			sourceTree = "<group>";
+		};
+		18D74FAE2008BDA10011866E /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FAF2008BDA10011866E /* Login */,
+				18D74FB02008BDA10011866E /* Main */,
+				18D74FB12008BDA10011866E /* NetworkService */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		18D74FAF2008BDA10011866E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		18D74FB02008BDA10011866E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		18D74FB12008BDA10011866E /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FB22008BDA10011866E /* API.swift */,
+				18D74FB32008BDA10011866E /* Network.swift */,
+				18D74FB42008BDA10011866E /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		41C759CFC8F4366C3B8CDD59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC3B3F6FBEC639991887BADF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18F4E3A3891A6026651AE09C /* Pods-MonitoringAssistant_ZN.debug.xcconfig */,
+				95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18791C8F2008BBB000A2E282 /* MonitoringAssistant_ZN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18791CB82008BBB100A2E282 /* Build configuration list for PBXNativeTarget "MonitoringAssistant_ZN" */;
+			buildPhases = (
+				C3CDBDDC6A0BD51E061A0B41 /* [CP] Check Pods Manifest.lock */,
+				18791C8C2008BBB000A2E282 /* Sources */,
+				18791C8D2008BBB000A2E282 /* Frameworks */,
+				18791C8E2008BBB000A2E282 /* Resources */,
+				7D5C2AE24CE317CDAC354B5F /* [CP] Embed Pods Frameworks */,
+				0A9640E317C6D8FD7CA3A40A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonitoringAssistant_ZN;
+			productName = MonitoringAssistant_ZN;
+			productReference = 18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18791CA32008BBB100A2E282 /* MonitoringAssistant_ZNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18791CBB2008BBB100A2E282 /* Build configuration list for PBXNativeTarget "MonitoringAssistant_ZNTests" */;
+			buildPhases = (
+				18791CA02008BBB100A2E282 /* Sources */,
+				18791CA12008BBB100A2E282 /* Frameworks */,
+				18791CA22008BBB100A2E282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18791CA62008BBB100A2E282 /* PBXTargetDependency */,
+			);
+			name = MonitoringAssistant_ZNTests;
+			productName = MonitoringAssistant_ZNTests;
+			productReference = 18791CA42008BBB100A2E282 /* MonitoringAssistant_ZNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18791CAE2008BBB100A2E282 /* MonitoringAssistant_ZNUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18791CBE2008BBB100A2E282 /* Build configuration list for PBXNativeTarget "MonitoringAssistant_ZNUITests" */;
+			buildPhases = (
+				18791CAB2008BBB100A2E282 /* Sources */,
+				18791CAC2008BBB100A2E282 /* Frameworks */,
+				18791CAD2008BBB100A2E282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18791CB12008BBB100A2E282 /* PBXTargetDependency */,
+			);
+			name = MonitoringAssistant_ZNUITests;
+			productName = MonitoringAssistant_ZNUITests;
+			productReference = 18791CAF2008BBB100A2E282 /* MonitoringAssistant_ZNUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18791C882008BBB000A2E282 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = chenxianghong;
+				TargetAttributes = {
+					18791C8F2008BBB000A2E282 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					18791CA32008BBB100A2E282 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 18791C8F2008BBB000A2E282;
+					};
+					18791CAE2008BBB100A2E282 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 18791C8F2008BBB000A2E282;
+					};
+				};
+			};
+			buildConfigurationList = 18791C8B2008BBB000A2E282 /* Build configuration list for PBXProject "MonitoringAssistant_ZN" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18791C872008BBB000A2E282;
+			productRefGroup = 18791C912008BBB000A2E282 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18791C8F2008BBB000A2E282 /* MonitoringAssistant_ZN */,
+				18791CA32008BBB100A2E282 /* MonitoringAssistant_ZNTests */,
+				18791CAE2008BBB100A2E282 /* MonitoringAssistant_ZNUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18791C8E2008BBB000A2E282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */,
+				18791C9B2008BBB000A2E282 /* Assets.xcassets in Resources */,
+				18791C992008BBB000A2E282 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18791CA22008BBB100A2E282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18791CAD2008BBB100A2E282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A9640E317C6D8FD7CA3A40A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D5C2AE24CE317CDAC354B5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3CDBDDC6A0BD51E061A0B41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18791C8C2008BBB000A2E282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
+				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
+				18791C962008BBB000A2E282 /* ViewController.swift in Sources */,
+				18D74FB52008BDA10011866E /* API.swift in Sources */,
+				18D74FB62008BDA10011866E /* Network.swift in Sources */,
+				18D74FBC2008D4FB0011866E /* ceshiModel.swift in Sources */,
+				18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18791CA02008BBB100A2E282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18791CA92008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18791CAB2008BBB100A2E282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18791CB42008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18791CA62008BBB100A2E282 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18791C8F2008BBB000A2E282 /* MonitoringAssistant_ZN */;
+			targetProxy = 18791CA52008BBB100A2E282 /* PBXContainerItemProxy */;
+		};
+		18791CB12008BBB100A2E282 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18791C8F2008BBB000A2E282 /* MonitoringAssistant_ZN */;
+			targetProxy = 18791CB02008BBB100A2E282 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18791C972008BBB000A2E282 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18791C982008BBB000A2E282 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18791C9C2008BBB000A2E282 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18791C9D2008BBB000A2E282 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18791CB62008BBB100A2E282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18791CB72008BBB100A2E282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18791CB92008BBB100A2E282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18F4E3A3891A6026651AE09C /* Pods-MonitoringAssistant_ZN.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonitoringAssistant_ZN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18791CBA2008BBB100A2E282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonitoringAssistant_ZN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		18791CBC2008BBB100A2E282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonitoringAssistant_ZNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZNTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonitoringAssistant_ZN.app/MonitoringAssistant_ZN";
+			};
+			name = Debug;
+		};
+		18791CBD2008BBB100A2E282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonitoringAssistant_ZNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZNTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonitoringAssistant_ZN.app/MonitoringAssistant_ZN";
+			};
+			name = Release;
+		};
+		18791CBF2008BBB100A2E282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonitoringAssistant_ZNUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZNUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MonitoringAssistant_ZN;
+			};
+			name = Debug;
+		};
+		18791CC02008BBB100A2E282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonitoringAssistant_ZNUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZNUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MonitoringAssistant_ZN;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18791C8B2008BBB000A2E282 /* Build configuration list for PBXProject "MonitoringAssistant_ZN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18791CB62008BBB100A2E282 /* Debug */,
+				18791CB72008BBB100A2E282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18791CB82008BBB100A2E282 /* Build configuration list for PBXNativeTarget "MonitoringAssistant_ZN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18791CB92008BBB100A2E282 /* Debug */,
+				18791CBA2008BBB100A2E282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18791CBB2008BBB100A2E282 /* Build configuration list for PBXNativeTarget "MonitoringAssistant_ZNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18791CBC2008BBB100A2E282 /* Debug */,
+				18791CBD2008BBB100A2E282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18791CBE2008BBB100A2E282 /* Build configuration list for PBXNativeTarget "MonitoringAssistant_ZNUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18791CBF2008BBB100A2E282 /* Debug */,
+				18791CC02008BBB100A2E282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18791C882008BBB000A2E282 /* Project object */;
+}
