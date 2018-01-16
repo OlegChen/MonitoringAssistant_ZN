@@ -20,6 +20,10 @@
 		18D74FB72008BDA10011866E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB42008BDA10011866E /* NetworkService.swift */; };
 		18D74FBA2008D3D30011866E /* PCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB92008D3D30011866E /* PCH.swift */; };
 		18D74FBC2008D4FB0011866E /* ceshiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FBB2008D4FB0011866E /* ceshiModel.swift */; };
+		18D74FC3200C462F0011866E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FC1200C462F0011866E /* LoginVC.swift */; };
+		18D74FC6200C9A880011866E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FC5200C9A880011866E /* HomeVC.swift */; };
+		18D74FD4200DDA980011866E /* FanBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FD0200DDA970011866E /* FanBtn.m */; };
+		18D74FD5200DDA980011866E /* MainBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FD3200DDA980011866E /* MainBtn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,13 @@
 		18D74FB42008BDA10011866E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		18D74FB92008D3D30011866E /* PCH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCH.swift; sourceTree = "<group>"; };
 		18D74FBB2008D4FB0011866E /* ceshiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ceshiModel.swift; sourceTree = "<group>"; };
+		18D74FC1200C462F0011866E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		18D74FC5200C9A880011866E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		18D74FCF200DDA960011866E /* MonitoringAssistant_ZN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonitoringAssistant_ZN-Bridging-Header.h"; sourceTree = "<group>"; };
+		18D74FD0200DDA970011866E /* FanBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanBtn.m; sourceTree = "<group>"; };
+		18D74FD1200DDA970011866E /* MainBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBtn.h; sourceTree = "<group>"; };
+		18D74FD2200DDA970011866E /* FanBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanBtn.h; sourceTree = "<group>"; };
+		18D74FD3200DDA980011866E /* MainBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBtn.m; sourceTree = "<group>"; };
 		18F4E3A3891A6026651AE09C /* Pods-MonitoringAssistant_ZN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.debug.xcconfig"; sourceTree = "<group>"; };
 		95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.release.xcconfig"; sourceTree = "<group>"; };
 		FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitoringAssistant_ZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +125,7 @@
 		18791C922008BBB000A2E282 /* MonitoringAssistant_ZN */ = {
 			isa = PBXGroup;
 			children = (
+				18D74FC7200DDA2C0011866E /* Vendors */,
 				18D74FAE2008BDA10011866E /* Class */,
 				18791C932008BBB000A2E282 /* AppDelegate.swift */,
 				18791C952008BBB000A2E282 /* ViewController.swift */,
@@ -148,6 +160,11 @@
 		18D74FAE2008BDA10011866E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				18D74FDA200DE7160011866E /* Energy */,
+				18D74FD9200DE7080011866E /* Repair */,
+				18D74FD8200DE6FE0011866E /* Equipment */,
+				18D74FD7200DE6F00011866E /* Fee */,
+				18D74FD6200DE6E30011866E /* SettingCenter */,
 				18D74FAF2008BDA10011866E /* Login */,
 				18D74FB02008BDA10011866E /* Main */,
 				18D74FB12008BDA10011866E /* NetworkService */,
@@ -158,6 +175,7 @@
 		18D74FAF2008BDA10011866E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				18D74FC1200C462F0011866E /* LoginVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -165,6 +183,7 @@
 		18D74FB02008BDA10011866E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				18D74FC5200C9A880011866E /* HomeVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -177,6 +196,61 @@
 				18D74FB42008BDA10011866E /* NetworkService.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		18D74FC7200DDA2C0011866E /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FC8200DDA410011866E /* Fan_shaped_Btn */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		18D74FC8200DDA410011866E /* Fan_shaped_Btn */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FD2200DDA970011866E /* FanBtn.h */,
+				18D74FD0200DDA970011866E /* FanBtn.m */,
+				18D74FD1200DDA970011866E /* MainBtn.h */,
+				18D74FD3200DDA980011866E /* MainBtn.m */,
+				18D74FCF200DDA960011866E /* MonitoringAssistant_ZN-Bridging-Header.h */,
+			);
+			path = Fan_shaped_Btn;
+			sourceTree = "<group>";
+		};
+		18D74FD6200DE6E30011866E /* SettingCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingCenter;
+			sourceTree = "<group>";
+		};
+		18D74FD7200DE6F00011866E /* Fee */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fee;
+			sourceTree = "<group>";
+		};
+		18D74FD8200DE6FE0011866E /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Equipment;
+			sourceTree = "<group>";
+		};
+		18D74FD9200DE7080011866E /* Repair */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repair;
+			sourceTree = "<group>";
+		};
+		18D74FDA200DE7160011866E /* Energy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Energy;
 			sourceTree = "<group>";
 		};
 		41C759CFC8F4366C3B8CDD59 /* Frameworks */ = {
@@ -267,6 +341,7 @@
 				TargetAttributes = {
 					18791C8F2008BBB000A2E282 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					18791CA32008BBB100A2E282 = {
@@ -383,6 +458,10 @@
 			files = (
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
 				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
+				18D74FD5200DDA980011866E /* MainBtn.m in Sources */,
+				18D74FD4200DDA980011866E /* FanBtn.m in Sources */,
+				18D74FC3200C462F0011866E /* LoginVC.swift in Sources */,
+				18D74FC6200C9A880011866E /* HomeVC.swift in Sources */,
 				18791C962008BBB000A2E282 /* ViewController.swift in Sources */,
 				18D74FB52008BDA10011866E /* API.swift in Sources */,
 				18D74FB62008BDA10011866E /* Network.swift in Sources */,
@@ -554,12 +633,15 @@
 			baseConfigurationReference = 18F4E3A3891A6026651AE09C /* Pods-MonitoringAssistant_ZN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MonitoringAssistant_ZN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -569,12 +651,14 @@
 			baseConfigurationReference = 95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MonitoringAssistant_ZN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

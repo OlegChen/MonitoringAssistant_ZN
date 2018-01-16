@@ -1,21 +1,38 @@
 PODS:
   - Alamofire (4.6.0)
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - ChartsRealm (3.0.4):
+    - Charts (= 3.0.4)
+    - RealmSwift (~> 2.10)
   - ESPullToRefresh (2.7)
-  - HandyJSON (1.8.0)
+  - HandyJSON (4.0.0-beta.1)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.4)
+  - Alamofire (~> 4.5)
+  - Charts
+  - ChartsRealm
   - ESPullToRefresh
-  - HandyJSON (~> 1.8.0)
+  - HandyJSON (= 4.0.0-beta.1)
   - SnapKit (~> 3.2.0)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  ChartsRealm: 3cf7c9ebf9c6312efbf418cf1da91d72d5416b26
   ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
-  HandyJSON: edaaa3278bf4c4c96d6f7382b80d6b91c88d3bf5
+  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: a2d844894a18bd6f15cdb92567a92391dea2ae58
+PODFILE CHECKSUM: e9aa0dc25e2f9c3a1eadbcc6b6aa2c76fe16a5ce
 
 COCOAPODS: 1.2.0
