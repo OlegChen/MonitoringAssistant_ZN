@@ -24,6 +24,26 @@
 		18D74FC6200C9A880011866E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FC5200C9A880011866E /* HomeVC.swift */; };
 		18D74FD4200DDA980011866E /* FanBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FD0200DDA970011866E /* FanBtn.m */; };
 		18D74FD5200DDA980011866E /* MainBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FD3200DDA980011866E /* MainBtn.m */; };
+		18D74FDD201032C30011866E /* EnergyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FDB201032C30011866E /* EnergyVC.swift */; };
+		18D74FE22010339E0011866E /* EnergyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FE02010339E0011866E /* EnergyTableViewCell.swift */; };
+		18D74FE32010339E0011866E /* EnergyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D74FE12010339E0011866E /* EnergyTableViewCell.xib */; };
+		18D74FEB20107C860011866E /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FE520107C850011866E /* WRCustomNavigationBar.swift */; };
+		18D74FEC20107C860011866E /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FE720107C850011866E /* WRCycleCell.swift */; };
+		18D74FED20107C860011866E /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FE820107C860011866E /* WRCycleScrollView.swift */; };
+		18D74FEE20107C860011866E /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FE920107C860011866E /* WRProxy.swift */; };
+		18D74FEF20107C860011866E /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FEA20107C860011866E /* WRNavigationBar.swift */; };
+		18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FF72010CC8D0011866E /* NavigationController.swift */; };
+		18D74FFF20119E3F0011866E /* EnergyPointsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FFE20119E3F0011866E /* EnergyPointsTableViewController.swift */; };
+		18D750012011A1C20011866E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750002011A1C20011866E /* BaseVC.swift */; };
+		18D750032011A2260011866E /* BaseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750022011A2260011866E /* BaseTableVC.swift */; };
+		18D750082011EA990011866E /* EnergyPointsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750062011EA990011866E /* EnergyPointsCell.swift */; };
+		18D750092011EA990011866E /* EnergyPointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D750072011EA990011866E /* EnergyPointsCell.xib */; };
+		18D7500B2011F88C0011866E /* EnergyPointsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7500A2011F88C0011866E /* EnergyPointsHeaderView.swift */; };
+		18D7500D201210150011866E /* EnergyMonitorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7500C201210150011866E /* EnergyMonitorVC.swift */; };
+		18D7500F201213410011866E /* EnergyCompareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7500E201213410011866E /* EnergyCompareVC.swift */; };
+		18D75015201321520011866E /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D75012201321520011866E /* BalloonMarker.swift */; };
+		18D75016201321520011866E /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D75013201321520011866E /* RadarMarkerView.swift */; };
+		18D75017201321520011866E /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D75014201321520011866E /* XYMarkerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +89,26 @@
 		18D74FD1200DDA970011866E /* MainBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBtn.h; sourceTree = "<group>"; };
 		18D74FD2200DDA970011866E /* FanBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanBtn.h; sourceTree = "<group>"; };
 		18D74FD3200DDA980011866E /* MainBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBtn.m; sourceTree = "<group>"; };
+		18D74FDB201032C30011866E /* EnergyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyVC.swift; sourceTree = "<group>"; };
+		18D74FE02010339E0011866E /* EnergyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyTableViewCell.swift; sourceTree = "<group>"; };
+		18D74FE12010339E0011866E /* EnergyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnergyTableViewCell.xib; sourceTree = "<group>"; };
+		18D74FE520107C850011866E /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
+		18D74FE720107C850011866E /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
+		18D74FE820107C860011866E /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
+		18D74FE920107C860011866E /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
+		18D74FEA20107C860011866E /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
+		18D74FF72010CC8D0011866E /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		18D74FFE20119E3F0011866E /* EnergyPointsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyPointsTableViewController.swift; sourceTree = "<group>"; };
+		18D750002011A1C20011866E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		18D750022011A2260011866E /* BaseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableVC.swift; sourceTree = "<group>"; };
+		18D750062011EA990011866E /* EnergyPointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyPointsCell.swift; sourceTree = "<group>"; };
+		18D750072011EA990011866E /* EnergyPointsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnergyPointsCell.xib; sourceTree = "<group>"; };
+		18D7500A2011F88C0011866E /* EnergyPointsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyPointsHeaderView.swift; sourceTree = "<group>"; };
+		18D7500C201210150011866E /* EnergyMonitorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyMonitorVC.swift; sourceTree = "<group>"; };
+		18D7500E201213410011866E /* EnergyCompareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareVC.swift; sourceTree = "<group>"; };
+		18D75012201321520011866E /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		18D75013201321520011866E /* RadarMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
+		18D75014201321520011866E /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
 		18F4E3A3891A6026651AE09C /* Pods-MonitoringAssistant_ZN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.debug.xcconfig"; sourceTree = "<group>"; };
 		95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.release.xcconfig"; sourceTree = "<group>"; };
 		FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitoringAssistant_ZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +165,7 @@
 		18791C922008BBB000A2E282 /* MonitoringAssistant_ZN */ = {
 			isa = PBXGroup;
 			children = (
+				18D74FF020108E6A0011866E /* BaseVC */,
 				18D74FC7200DDA2C0011866E /* Vendors */,
 				18D74FAE2008BDA10011866E /* Class */,
 				18791C932008BBB000A2E282 /* AppDelegate.swift */,
@@ -201,6 +242,8 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				18D75011201321520011866E /* Components */,
+				18D74FE420107C850011866E /* WRNavigationBar */,
 				18D74FC8200DDA410011866E /* Fan_shaped_Btn */,
 			);
 			path = Vendors;
@@ -209,11 +252,11 @@
 		18D74FC8200DDA410011866E /* Fan_shaped_Btn */ = {
 			isa = PBXGroup;
 			children = (
+				18D74FCF200DDA960011866E /* MonitoringAssistant_ZN-Bridging-Header.h */,
 				18D74FD2200DDA970011866E /* FanBtn.h */,
 				18D74FD0200DDA970011866E /* FanBtn.m */,
 				18D74FD1200DDA970011866E /* MainBtn.h */,
 				18D74FD3200DDA980011866E /* MainBtn.m */,
-				18D74FCF200DDA960011866E /* MonitoringAssistant_ZN-Bridging-Header.h */,
 			);
 			path = Fan_shaped_Btn;
 			sourceTree = "<group>";
@@ -249,8 +292,105 @@
 		18D74FDA200DE7160011866E /* Energy */ = {
 			isa = PBXGroup;
 			children = (
+				18D74FDF201033500011866E /* View */,
+				18D74FDB201032C30011866E /* EnergyVC.swift */,
+				18D74FFB20119E070011866E /* EnergyCompare */,
+				18D74FFC20119E070011866E /* EnergyMonitor */,
+				18D74FFD20119E070011866E /* EnergyPoints */,
 			);
 			path = Energy;
+			sourceTree = "<group>";
+		};
+		18D74FDF201033500011866E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FE02010339E0011866E /* EnergyTableViewCell.swift */,
+				18D74FE12010339E0011866E /* EnergyTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18D74FE420107C850011866E /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FE520107C850011866E /* WRCustomNavigationBar.swift */,
+				18D74FE620107C850011866E /* WRCycleScrollView */,
+				18D74FEA20107C860011866E /* WRNavigationBar.swift */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		18D74FE620107C850011866E /* WRCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FE720107C850011866E /* WRCycleCell.swift */,
+				18D74FE820107C860011866E /* WRCycleScrollView.swift */,
+				18D74FE920107C860011866E /* WRProxy.swift */,
+			);
+			path = WRCycleScrollView;
+			sourceTree = "<group>";
+		};
+		18D74FF020108E6A0011866E /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				18D74FF72010CC8D0011866E /* NavigationController.swift */,
+				18D750002011A1C20011866E /* BaseVC.swift */,
+				18D750022011A2260011866E /* BaseTableVC.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		18D74FFB20119E070011866E /* EnergyCompare */ = {
+			isa = PBXGroup;
+			children = (
+				18D7500E201213410011866E /* EnergyCompareVC.swift */,
+			);
+			path = EnergyCompare;
+			sourceTree = "<group>";
+		};
+		18D74FFC20119E070011866E /* EnergyMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				18D7500C201210150011866E /* EnergyMonitorVC.swift */,
+			);
+			path = EnergyMonitor;
+			sourceTree = "<group>";
+		};
+		18D74FFD20119E070011866E /* EnergyPoints */ = {
+			isa = PBXGroup;
+			children = (
+				18D750052011E67B0011866E /* Model */,
+				18D750042011E67B0011866E /* View */,
+				18D74FFE20119E3F0011866E /* EnergyPointsTableViewController.swift */,
+			);
+			path = EnergyPoints;
+			sourceTree = "<group>";
+		};
+		18D750042011E67B0011866E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18D750062011EA990011866E /* EnergyPointsCell.swift */,
+				18D750072011EA990011866E /* EnergyPointsCell.xib */,
+				18D7500A2011F88C0011866E /* EnergyPointsHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18D750052011E67B0011866E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18D75011201321520011866E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				18D75012201321520011866E /* BalloonMarker.swift */,
+				18D75013201321520011866E /* RadarMarkerView.swift */,
+				18D75014201321520011866E /* XYMarkerView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		41C759CFC8F4366C3B8CDD59 /* Frameworks */ = {
@@ -382,6 +522,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */,
+				18D750092011EA990011866E /* EnergyPointsCell.xib in Resources */,
+				18D74FE32010339E0011866E /* EnergyTableViewCell.xib in Resources */,
 				18791C9B2008BBB000A2E282 /* Assets.xcassets in Resources */,
 				18791C992008BBB000A2E282 /* Main.storyboard in Resources */,
 			);
@@ -459,13 +601,31 @@
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
 				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
 				18D74FD5200DDA980011866E /* MainBtn.m in Sources */,
+				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
+				18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */,
+				18D75017201321520011866E /* XYMarkerView.swift in Sources */,
+				18D7500F201213410011866E /* EnergyCompareVC.swift in Sources */,
 				18D74FD4200DDA980011866E /* FanBtn.m in Sources */,
+				18D74FEC20107C860011866E /* WRCycleCell.swift in Sources */,
+				18D750032011A2260011866E /* BaseTableVC.swift in Sources */,
+				18D74FFF20119E3F0011866E /* EnergyPointsTableViewController.swift in Sources */,
+				18D74FED20107C860011866E /* WRCycleScrollView.swift in Sources */,
+				18D74FEF20107C860011866E /* WRNavigationBar.swift in Sources */,
+				18D7500D201210150011866E /* EnergyMonitorVC.swift in Sources */,
+				18D7500B2011F88C0011866E /* EnergyPointsHeaderView.swift in Sources */,
+				18D74FDD201032C30011866E /* EnergyVC.swift in Sources */,
+				18D75016201321520011866E /* RadarMarkerView.swift in Sources */,
 				18D74FC3200C462F0011866E /* LoginVC.swift in Sources */,
+				18D74FE22010339E0011866E /* EnergyTableViewCell.swift in Sources */,
+				18D74FEE20107C860011866E /* WRProxy.swift in Sources */,
 				18D74FC6200C9A880011866E /* HomeVC.swift in Sources */,
 				18791C962008BBB000A2E282 /* ViewController.swift in Sources */,
 				18D74FB52008BDA10011866E /* API.swift in Sources */,
 				18D74FB62008BDA10011866E /* Network.swift in Sources */,
+				18D74FEB20107C860011866E /* WRCustomNavigationBar.swift in Sources */,
+				18D750082011EA990011866E /* EnergyPointsCell.swift in Sources */,
 				18D74FBC2008D4FB0011866E /* ceshiModel.swift in Sources */,
+				18D750012011A1C20011866E /* BaseVC.swift in Sources */,
 				18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

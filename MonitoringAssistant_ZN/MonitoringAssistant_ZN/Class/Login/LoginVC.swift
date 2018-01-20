@@ -8,7 +8,10 @@
 
 import UIKit
 
-class LoginVC: UITableViewController {
+class LoginVC: BaseTableVC {
+    
+    let kNavBarBottom = WRNavigationBar.navBarBottom()
+
 
     @IBOutlet weak var tableviewHeaderView: UIView!
     
@@ -19,17 +22,25 @@ class LoginVC: UITableViewController {
     @IBOutlet weak var loginBtn: UIButton!
     
     
-    class func getLoginVC() ->  LoginVC {
+    class func getLoginVC() ->  NavigationController {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        let vc = sb.instantiateViewController(withIdentifier: "loginNav") as! NavigationController
     
+
         return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "登录"
+        navBarBackgroundAlpha = 0
+        
+        self.tableView.frame = CGRect(x: 0, y: CGFloat(kNavBarBottom), width: ScreenW, height: ScreenH)
+        self.tableView.backgroundColor = UIColor.clear
+        self.view.backgroundColor = UIColor.blue
+        
         // Do any additional setup after loading the view.
     }
     
@@ -37,12 +48,22 @@ class LoginVC: UITableViewController {
     @IBAction func loginClick(_ sender: Any) {
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initViewController: UIViewController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! UINavigationController
+        let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
         
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.window?.rootViewController = initViewController
         
         
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 2
     }
     
     override func didReceiveMemoryWarning() {

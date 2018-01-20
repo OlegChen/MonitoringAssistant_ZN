@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomeVC: UIViewController ,MainBtnDelegate {
+class HomeVC: BaseVC ,MainBtnDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         let fanView = MainBtn(frame: CGRect(x: 0, y: 0, width: ScreenW - 80, height: ScreenW - 80))
         fanView.center = self.view.center
@@ -27,6 +27,23 @@ class HomeVC: UIViewController ,MainBtnDelegate {
     func clickBtn(with index: Int) {
                 
         print("点击了%@",index)
+        switch index {
+        case 0:
+            let vc = EnergyVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            let vc = EnergyVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            let vc = EnergyVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            let vc = EnergyVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        default: break
+            
+        }
+        
         
     }
 

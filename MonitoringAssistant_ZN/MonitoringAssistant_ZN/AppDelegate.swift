@@ -8,10 +8,13 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+
+    var blockRotation: Bool = false
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -27,6 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        if self.blockRotation{
+            return UIInterfaceOrientationMask.landscapeRight
+            
+        } else {
+            
+            return UIInterfaceOrientationMask.portrait
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

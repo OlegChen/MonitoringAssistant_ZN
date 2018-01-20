@@ -106,17 +106,24 @@
         
         self.shaperLayer.fillColor = self.pressBtnColor.CGColor;
 
-        if ([self.delegate respondsToSelector:@selector(clickBtn:)]) {
-            [self.delegate clickBtn:self];
-        }
     }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
     [super touchesEnded:touches withEvent:event];
+    
+    
+    UITouch *touch = [touches anyObject];
+    if (CGPathContainsPoint(self.shaperLayer.path, nil, [touch locationInView:self], nil)) {
+        
+        if ([self.delegate respondsToSelector:@selector(clickBtn:)]) {
+            [self.delegate clickBtn:self];
+        }
+    }
 
     self.shaperLayer.fillColor = self.btnColor.CGColor;
+
 
 }
 
