@@ -216,6 +216,9 @@ static const NSString *AnimationNameKey = @"AnimationNameKey";
 - (void)centerViewClik:(UIGestureRecognizer *)ges{
     
     NSLog(@"中间按钮点击");
+    if ([self.delegate respondsToSelector:@selector(clickCenterBtn)]) {
+        [self.delegate clickCenterBtn];
+    }
     
 }
 

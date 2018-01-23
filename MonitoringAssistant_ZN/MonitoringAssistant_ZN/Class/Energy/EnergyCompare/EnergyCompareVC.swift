@@ -29,6 +29,24 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         self.title = "黄金对标"
         
         
+        let mySegmentedControl = UISegmentedControl(
+            items: ["早餐","午餐","晚餐","宵夜"])
+        
+        mySegmentedControl.tintColor = UIColor.black
+        mySegmentedControl.backgroundColor = UIColor.lightGray
+        
+        mySegmentedControl.selectedSegmentIndex = 0
+        mySegmentedControl.addTarget(self, action: #selector(self.onChange), for: .valueChanged)
+        
+        mySegmentedControl.frame.size = CGSize(
+            width: ScreenW * 0.8, height: 30)
+        mySegmentedControl.center = CGPoint(
+            x: ScreenW * 0.5,
+            y: CGFloat(NavHeight + 20.0))
+        self.view.addSubview(mySegmentedControl)
+        
+        
+        
         //折线图：
         
         chartView = LineChartView.init(frame: CGRect(x:0, y:100, width:300, height:300))
@@ -60,7 +78,6 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         
         chartView.xAxis.drawLabelsEnabled = true
         let xAxisLabels = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
-//        let xAxisLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
         chartView.xAxis.axisMaximum = Double(xAxisLabels.count - 1)
 
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels)
@@ -117,70 +134,38 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
     
     
     
+    // TODO: Refine data creation
     func setDataCount(_ count: Int, range: UInt32) {
-        let values = (0..<count).map { (i) -> ChartDataEntry in
+        let colors = ChartColorTemplates.vordiplom()[0...2]
+        
+        let block: (Int) -> ChartDataEntry = { (i) -> ChartDataEntry in
             let val = Double(arc4random_uniform(range) + 3)
-            return ChartDataEntry(x: Double(i), y: val, icon: UIImage.init(named: ""))
+            return ChartDataEntry(x: Double(i), y: val)
         }
-        let set1 = LineChartDataSet(values: values, label: "")
-        set1.drawIconsEnabled = false
+        let dataSets = (0..<3).map { i -> LineChartDataSet in
+            let yVals = (0..<count).map(block)
+            let set = LineChartDataSet(values: yVals, label: "DataSet \(i)")
+            set.drawCirclesEnabled = true
+            set.mode = .cubicBezier
+            set.lineWidth = 1.5
+            set.circleRadius = 3
+            set.circleHoleRadius = 2
+            let color = colors[i % colors.count]
+            set.setColor(color)
+            set.setCircleColor(color)
+            
+            return set
+        }
         
-        set1.lineDashLengths = [5, 2.5]
-        set1.highlightLineDashLengths = [5, 2.5]
-        set1.setColor(.black)
-        set1.setCircleColor(.black)
-        set1.lineWidth = 1
-        set1.circleRadius = 3
-        set1.drawCircleHoleEnabled = false
-        set1.valueFont = .systemFont(ofSize: 9)
-        set1.formLineDashLengths = [5, 2.5]
-        set1.formLineWidth = 1
-        set1.formLineWidth = 15
-        
-//        let gradientColors = [ChartColorTemplates.colorFromString("#00ff0000").cgColor,
-//                              ChartColorTemplates.colorFromString("#ffff0000").cgColor]
-//        let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
-//
-//        set1.fillAlpha = 1
-//        set1.fill = Fill(linearGradient: gradient, angle: 90) //.linearGradient(gradient, angle: 90)
-//        set1.drawFilledEnabled = true
-        let data = LineChartData(dataSet: set1)
-
-        
-        chartView.data = data
-        
-    }
-    
-//    // TODO: Refine data creation
-//    func setDataCount(_ count: Int, range: UInt32) {
-//        let colors = ChartColorTemplates.vordiplom()[0...2]
-//        
-//        let block: (Int) -> ChartDataEntry = { (i) -> ChartDataEntry in
-//            let val = Double(arc4random_uniform(range) + 3)
-//            return ChartDataEntry(x: Double(i), y: val)
-//        }
-//        let dataSets = (0..<3).map { i -> LineChartDataSet in
-//            let yVals = (0..<count).map(block)
-//            let set = LineChartDataSet(values: yVals, label: "DataSet \(i)")
-//            set.lineWidth = 2.5
-//            set.circleRadius = 4
-//            set.circleHoleRadius = 2
-//            let color = colors[i % colors.count]
-//            set.setColor(color)
-//            set.setCircleColor(color)
-//            
-//            return set
-//        }
-//        
 //        dataSets[0].lineDashLengths = [5, 5]
 //        dataSets[0].colors = ChartColorTemplates.vordiplom()
 //        dataSets[0].circleColors = ChartColorTemplates.vordiplom()
-//        
-//        let data = LineChartData(dataSets: dataSets)
-//        data.setValueFont(.systemFont(ofSize: 7, weight: .light))
-//        chartView.data = data
-//    }
-//    
+        
+        let data = LineChartData(dataSets: dataSets)
+        data.setValueFont(.systemFont(ofSize: 7, weight: .light))
+        chartView.data = data
+    }
+    
     /*
     override func optionTapped(_ option: Option) {
         switch option {
@@ -220,11 +205,15 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
     }
  */
  
-    @IBAction func slidersValueChanged(_ sender: Any?) {
-        sliderTextX.text = "\(Int(sliderX.value))"
-        sliderTextY.text = "\(Int(sliderY.value))"
+
+    @objc func onChange(sender: UISegmentedControl) {
+        // 印出選到哪個選項 從 0 開始算起
+        print(sender.selectedSegmentIndex)
         
-        self.updateChartData()
+        // 印出這個選項的文字
+        print(
+            sender.titleForSegment(
+                at: sender.selectedSegmentIndex))
     }
     
 

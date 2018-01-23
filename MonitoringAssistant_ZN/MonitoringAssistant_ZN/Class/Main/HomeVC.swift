@@ -29,22 +29,29 @@ class HomeVC: BaseVC ,MainBtnDelegate {
         print("点击了%@",index)
         switch index {
         case 0:
-            let vc = EnergyVC()
+            let vc = EnergyFeeVC()
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
-            let vc = EnergyVC()
+            let vc = EnergyRepairVC()
             self.navigationController?.pushViewController(vc, animated: true)
         case 2:
             let vc = EnergyVC()
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
-            let vc = EnergyVC()
+            let vc = EnergyEquipment()
             self.navigationController?.pushViewController(vc, animated: true)
         default: break
             
         }
         
         
+    }
+    
+    func clickCenterBtn() {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SettingCenterVC") as! SettingCenterVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

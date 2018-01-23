@@ -12,6 +12,7 @@
 
 @optional
 - (void)clickBtnWithIndex:(NSInteger)index;
+- (void)clickCenterBtn;
 
 @end
 
