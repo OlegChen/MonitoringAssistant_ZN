@@ -146,7 +146,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
             let yVals = (0..<count).map(block)
             let set = LineChartDataSet(values: yVals, label: "DataSet \(i)")
             set.drawCirclesEnabled = true
-            set.mode = .cubicBezier
+            set.mode = .horizontalBezier
             set.lineWidth = 1.5
             set.circleRadius = 3
             set.circleHoleRadius = 2
