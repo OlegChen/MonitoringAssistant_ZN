@@ -9,24 +9,33 @@
 import UIKit
 
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
 
     var window: UIWindow?
 
     var blockRotation: Bool = false
+    
+    var _mapManager: BMKMapManager?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        
+        _mapManager = BMKMapManager()
+        // 如果要关注网络及授权验证事件，请设定generalDelegate参数
+        let ret = _mapManager?.start("在此处输入您的授权Key", generalDelegate: self)
+        if ret == false {
+            NSLog("manager start failed!")
+        }
+        
         //登录 ？
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
         let vc = LoginVC.getLoginVC()
         
         self.window?.rootViewController = vc
-        
-        
         
         self.window?.makeKeyAndVisible()
         return true

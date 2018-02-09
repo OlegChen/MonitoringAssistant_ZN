@@ -15,6 +15,41 @@
 		18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C9C2008BBB000A2E282 /* LaunchScreen.storyboard */; };
 		18791CA92008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CA82008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift */; };
 		18791CB42008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */; };
+		18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D241202B02DE00E91527 /* DispatchQueueExtension.swift */; };
+		18C8D245202B02E000E91527 /* UIBarButtonItemFixSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D242202B02DF00E91527 /* UIBarButtonItemFixSpace.swift */; };
+		18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D243202B02E000E91527 /* UIBarButtonItemExtension.swift */; };
+		18C8D2A9202C3C7300E91527 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D29F202C3C7300E91527 /* BaiduMapAPI_Base.framework */; };
+		18C8D2AA202C3C7300E91527 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A0202C3C7300E91527 /* BaiduMapAPI_Cloud.framework */; };
+		18C8D2AB202C3C7300E91527 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A1202C3C7300E91527 /* BaiduMapAPI_Location.framework */; };
+		18C8D2AC202C3C7300E91527 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A2202C3C7300E91527 /* BaiduMapAPI_Map.framework */; };
+		18C8D2AD202C3C7300E91527 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A3202C3C7300E91527 /* BaiduMapAPI_Radar.framework */; };
+		18C8D2AE202C3C7300E91527 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A4202C3C7300E91527 /* BaiduMapAPI_Search.framework */; };
+		18C8D2AF202C3C7300E91527 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A5202C3C7300E91527 /* BaiduMapAPI_Utils.framework */; };
+		18C8D2B0202C3C7300E91527 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A7202C3C7300E91527 /* libcrypto.a */; };
+		18C8D2B1202C3C7300E91527 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2A8202C3C7300E91527 /* libssl.a */; };
+		18C8D2B3202C3EA300E91527 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2B2202C3EA300E91527 /* CoreLocation.framework */; };
+		18C8D2B5202C3EAF00E91527 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2B4202C3EAF00E91527 /* QuartzCore.framework */; };
+		18C8D2B7202C3EBA00E91527 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2B6202C3EBA00E91527 /* OpenGLES.framework */; };
+		18C8D2B9202C3ED700E91527 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2B8202C3ED700E91527 /* SystemConfiguration.framework */; };
+		18C8D2BB202C3EE600E91527 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2BA202C3EE600E91527 /* CoreGraphics.framework */; };
+		18C8D2BD202C3EF100E91527 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2BC202C3EF100E91527 /* Security.framework */; };
+		18C8D2BF202C3F0A00E91527 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2BE202C3F0A00E91527 /* libsqlite3.0.tbd */; };
+		18C8D2C1202C3F1600E91527 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2C0202C3F1600E91527 /* CoreTelephony.framework */; };
+		18C8D2C3202C3F2700E91527 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2C2202C3F2700E91527 /* libstdc++.6.0.9.tbd */; };
+		18C8D2C5202C43F100E91527 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18C8D2C4202C43F100E91527 /* mapapi.bundle */; };
+		18C8D2CA202C4BB900E91527 /* TrackPlayBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2C9202C4BB900E91527 /* TrackPlayBackVC.swift */; };
+		18C8D2D5202C4EF900E91527 /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2CF202C4EF800E91527 /* CustomPointAnnotation.m */; };
+		18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2D2202C4EF800E91527 /* CustomMapAnnotationView.m */; };
+		18C8D2F3202C50E400E91527 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2DB202C50E400E91527 /* MASCompositeConstraint.m */; };
+		18C8D2F4202C50E400E91527 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2DE202C50E400E91527 /* MASConstraint.m */; };
+		18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2E0202C50E400E91527 /* MASConstraintMaker.m */; };
+		18C8D2F6202C50E400E91527 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2E2202C50E400E91527 /* MASLayoutConstraint.m */; };
+		18C8D2F7202C50E400E91527 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2E6202C50E400E91527 /* MASViewAttribute.m */; };
+		18C8D2F8202C50E400E91527 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2E8202C50E400E91527 /* MASViewConstraint.m */; };
+		18C8D2F9202C50E400E91527 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2EA202C50E400E91527 /* NSArray+MASAdditions.m */; };
+		18C8D2FA202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2ED202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		18C8D2FB202C50E400E91527 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2EF202C50E400E91527 /* View+MASAdditions.m */; };
+		18C8D2FC202C50E400E91527 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2F2202C50E400E91527 /* ViewController+MASAdditions.m */; };
 		18D74FB52008BDA10011866E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB22008BDA10011866E /* API.swift */; };
 		18D74FB62008BDA10011866E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB32008BDA10011866E /* Network.swift */; };
 		18D74FB72008BDA10011866E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB42008BDA10011866E /* NetworkService.swift */; };
@@ -89,6 +124,58 @@
 		18791CAF2008BBB100A2E282 /* MonitoringAssistant_ZNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonitoringAssistant_ZNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringAssistant_ZNUITests.swift; sourceTree = "<group>"; };
 		18791CB52008BBB100A2E282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C8D241202B02DE00E91527 /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
+		18C8D242202B02DF00E91527 /* UIBarButtonItemFixSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemFixSpace.swift; sourceTree = "<group>"; };
+		18C8D243202B02E000E91527 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
+		18C8D29F202C3C7300E91527 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		18C8D2A0202C3C7300E91527 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
+		18C8D2A1202C3C7300E91527 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		18C8D2A2202C3C7300E91527 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		18C8D2A3202C3C7300E91527 /* BaiduMapAPI_Radar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Radar.framework; sourceTree = "<group>"; };
+		18C8D2A4202C3C7300E91527 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		18C8D2A5202C3C7300E91527 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
+		18C8D2A7202C3C7300E91527 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		18C8D2A8202C3C7300E91527 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		18C8D2B2202C3EA300E91527 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		18C8D2B4202C3EAF00E91527 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		18C8D2B6202C3EBA00E91527 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		18C8D2B8202C3ED700E91527 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		18C8D2BA202C3EE600E91527 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18C8D2BC202C3EF100E91527 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		18C8D2BE202C3F0A00E91527 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		18C8D2C0202C3F1600E91527 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		18C8D2C2202C3F2700E91527 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		18C8D2C4202C43F100E91527 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = MonitoringAssistant_ZN/Vendors/BaiduMapAPI/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
+		18C8D2C9202C4BB900E91527 /* TrackPlayBackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackVC.swift; sourceTree = "<group>"; };
+		18C8D2CC202C4EF800E91527 /* CustomMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMapAnnotationView.h; sourceTree = "<group>"; };
+		18C8D2CE202C4EF800E91527 /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
+		18C8D2CF202C4EF800E91527 /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
+		18C8D2D2202C4EF800E91527 /* CustomMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapAnnotationView.m; sourceTree = "<group>"; };
+		18C8D2DA202C50E400E91527 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		18C8D2DB202C50E400E91527 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		18C8D2DC202C50E400E91527 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		18C8D2DD202C50E400E91527 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		18C8D2DE202C50E400E91527 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		18C8D2DF202C50E400E91527 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		18C8D2E0202C50E400E91527 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		18C8D2E1202C50E400E91527 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		18C8D2E2202C50E400E91527 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		18C8D2E3202C50E400E91527 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		18C8D2E4202C50E400E91527 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		18C8D2E5202C50E400E91527 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		18C8D2E6202C50E400E91527 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		18C8D2E7202C50E400E91527 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		18C8D2E8202C50E400E91527 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		18C8D2E9202C50E400E91527 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		18C8D2EA202C50E400E91527 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		18C8D2EB202C50E400E91527 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		18C8D2EC202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		18C8D2ED202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		18C8D2EE202C50E400E91527 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		18C8D2EF202C50E400E91527 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		18C8D2F0202C50E400E91527 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		18C8D2F1202C50E400E91527 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		18C8D2F2202C50E400E91527 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		18D74FB22008BDA10011866E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		18D74FB32008BDA10011866E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		18D74FB42008BDA10011866E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -143,7 +230,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C8D2C3202C3F2700E91527 /* libstdc++.6.0.9.tbd in Frameworks */,
+				18C8D2C1202C3F1600E91527 /* CoreTelephony.framework in Frameworks */,
+				18C8D2BF202C3F0A00E91527 /* libsqlite3.0.tbd in Frameworks */,
+				18C8D2BD202C3EF100E91527 /* Security.framework in Frameworks */,
+				18C8D2BB202C3EE600E91527 /* CoreGraphics.framework in Frameworks */,
+				18C8D2B9202C3ED700E91527 /* SystemConfiguration.framework in Frameworks */,
+				18C8D2B7202C3EBA00E91527 /* OpenGLES.framework in Frameworks */,
+				18C8D2B5202C3EAF00E91527 /* QuartzCore.framework in Frameworks */,
+				18C8D2B3202C3EA300E91527 /* CoreLocation.framework in Frameworks */,
+				18C8D2B1202C3C7300E91527 /* libssl.a in Frameworks */,
 				09B18796E1386C242D17D4E9 /* Pods_MonitoringAssistant_ZN.framework in Frameworks */,
+				18C8D2AD202C3C7300E91527 /* BaiduMapAPI_Radar.framework in Frameworks */,
+				18C8D2A9202C3C7300E91527 /* BaiduMapAPI_Base.framework in Frameworks */,
+				18C8D2AA202C3C7300E91527 /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				18C8D2AF202C3C7300E91527 /* BaiduMapAPI_Utils.framework in Frameworks */,
+				18C8D2AC202C3C7300E91527 /* BaiduMapAPI_Map.framework in Frameworks */,
+				18C8D2AB202C3C7300E91527 /* BaiduMapAPI_Location.framework in Frameworks */,
+				18C8D2AE202C3C7300E91527 /* BaiduMapAPI_Search.framework in Frameworks */,
+				18C8D2B0202C3C7300E91527 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +272,7 @@
 		18791C872008BBB000A2E282 = {
 			isa = PBXGroup;
 			children = (
+				18C8D2C4202C43F100E91527 /* mapapi.bundle */,
 				18791C922008BBB000A2E282 /* MonitoringAssistant_ZN */,
 				18791CA72008BBB100A2E282 /* MonitoringAssistant_ZNTests */,
 				18791CB22008BBB100A2E282 /* MonitoringAssistant_ZNUITests */,
@@ -222,6 +328,72 @@
 			path = MonitoringAssistant_ZNUITests;
 			sourceTree = "<group>";
 		};
+		18C8D240202B02A700E91527 /* navSet */ = {
+			isa = PBXGroup;
+			children = (
+				18C8D241202B02DE00E91527 /* DispatchQueueExtension.swift */,
+				18C8D243202B02E000E91527 /* UIBarButtonItemExtension.swift */,
+				18C8D242202B02DF00E91527 /* UIBarButtonItemFixSpace.swift */,
+			);
+			path = navSet;
+			sourceTree = "<group>";
+		};
+		18C8D29E202C3C7300E91527 /* BaiduMapAPI */ = {
+			isa = PBXGroup;
+			children = (
+				18C8D29F202C3C7300E91527 /* BaiduMapAPI_Base.framework */,
+				18C8D2A0202C3C7300E91527 /* BaiduMapAPI_Cloud.framework */,
+				18C8D2A1202C3C7300E91527 /* BaiduMapAPI_Location.framework */,
+				18C8D2A2202C3C7300E91527 /* BaiduMapAPI_Map.framework */,
+				18C8D2A3202C3C7300E91527 /* BaiduMapAPI_Radar.framework */,
+				18C8D2A4202C3C7300E91527 /* BaiduMapAPI_Search.framework */,
+				18C8D2A5202C3C7300E91527 /* BaiduMapAPI_Utils.framework */,
+				18C8D2A6202C3C7300E91527 /* thirdlibs */,
+			);
+			path = BaiduMapAPI;
+			sourceTree = "<group>";
+		};
+		18C8D2A6202C3C7300E91527 /* thirdlibs */ = {
+			isa = PBXGroup;
+			children = (
+				18C8D2A7202C3C7300E91527 /* libcrypto.a */,
+				18C8D2A8202C3C7300E91527 /* libssl.a */,
+			);
+			path = thirdlibs;
+			sourceTree = "<group>";
+		};
+		18C8D2D9202C50E400E91527 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				18C8D2DA202C50E400E91527 /* MASCompositeConstraint.h */,
+				18C8D2DB202C50E400E91527 /* MASCompositeConstraint.m */,
+				18C8D2DC202C50E400E91527 /* MASConstraint+Private.h */,
+				18C8D2DD202C50E400E91527 /* MASConstraint.h */,
+				18C8D2DE202C50E400E91527 /* MASConstraint.m */,
+				18C8D2DF202C50E400E91527 /* MASConstraintMaker.h */,
+				18C8D2E0202C50E400E91527 /* MASConstraintMaker.m */,
+				18C8D2E1202C50E400E91527 /* MASLayoutConstraint.h */,
+				18C8D2E2202C50E400E91527 /* MASLayoutConstraint.m */,
+				18C8D2E3202C50E400E91527 /* Masonry.h */,
+				18C8D2E4202C50E400E91527 /* MASUtilities.h */,
+				18C8D2E5202C50E400E91527 /* MASViewAttribute.h */,
+				18C8D2E6202C50E400E91527 /* MASViewAttribute.m */,
+				18C8D2E7202C50E400E91527 /* MASViewConstraint.h */,
+				18C8D2E8202C50E400E91527 /* MASViewConstraint.m */,
+				18C8D2E9202C50E400E91527 /* NSArray+MASAdditions.h */,
+				18C8D2EA202C50E400E91527 /* NSArray+MASAdditions.m */,
+				18C8D2EB202C50E400E91527 /* NSArray+MASShorthandAdditions.h */,
+				18C8D2EC202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				18C8D2ED202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				18C8D2EE202C50E400E91527 /* View+MASAdditions.h */,
+				18C8D2EF202C50E400E91527 /* View+MASAdditions.m */,
+				18C8D2F0202C50E400E91527 /* View+MASShorthandAdditions.h */,
+				18C8D2F1202C50E400E91527 /* ViewController+MASAdditions.h */,
+				18C8D2F2202C50E400E91527 /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
 		18D74FAE2008BDA10011866E /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +438,8 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				18C8D2D9202C50E400E91527 /* Masonry */,
+				18C8D29E202C3C7300E91527 /* BaiduMapAPI */,
 				18D7502C201614940011866E /* MKRingProgressView */,
 				18D75011201321520011866E /* Components */,
 				18D74FE420107C850011866E /* WRNavigationBar */,
@@ -368,6 +542,7 @@
 		18D74FF020108E6A0011866E /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
+				18C8D240202B02A700E91527 /* navSet */,
 				18D74FF72010CC8D0011866E /* NavigationController.swift */,
 				18D750002011A1C20011866E /* BaseVC.swift */,
 				18D750022011A2260011866E /* BaseTableVC.swift */,
@@ -433,6 +608,7 @@
 			children = (
 				18D75022201601CD0011866E /* Model */,
 				18D75023201601CD0011866E /* View */,
+				18C8D2C9202C4BB900E91527 /* TrackPlayBackVC.swift */,
 			);
 			path = TrackPlayback;
 			sourceTree = "<group>";
@@ -447,6 +623,10 @@
 		18D75023201601CD0011866E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18C8D2CC202C4EF800E91527 /* CustomMapAnnotationView.h */,
+				18C8D2D2202C4EF800E91527 /* CustomMapAnnotationView.m */,
+				18C8D2CE202C4EF800E91527 /* CustomPointAnnotation.h */,
+				18C8D2CF202C4EF800E91527 /* CustomPointAnnotation.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -544,6 +724,15 @@
 		41C759CFC8F4366C3B8CDD59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18C8D2C2202C3F2700E91527 /* libstdc++.6.0.9.tbd */,
+				18C8D2C0202C3F1600E91527 /* CoreTelephony.framework */,
+				18C8D2BE202C3F0A00E91527 /* libsqlite3.0.tbd */,
+				18C8D2BC202C3EF100E91527 /* Security.framework */,
+				18C8D2BA202C3EE600E91527 /* CoreGraphics.framework */,
+				18C8D2B8202C3ED700E91527 /* SystemConfiguration.framework */,
+				18C8D2B6202C3EBA00E91527 /* OpenGLES.framework */,
+				18C8D2B4202C3EAF00E91527 /* QuartzCore.framework */,
+				18C8D2B2202C3EA300E91527 /* CoreLocation.framework */,
 				FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */,
 			);
 			name = Frameworks;
@@ -674,6 +863,7 @@
 				18D75039201615E20011866E /* WorningInfoVC.xib in Resources */,
 				18D750092011EA990011866E /* EnergyPointsCell.xib in Resources */,
 				18D74FE32010339E0011866E /* EnergyTableViewCell.xib in Resources */,
+				18C8D2C5202C43F100E91527 /* mapapi.bundle in Resources */,
 				18791C9B2008BBB000A2E282 /* Assets.xcassets in Resources */,
 				18791C992008BBB000A2E282 /* Main.storyboard in Resources */,
 			);
@@ -749,27 +939,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
+				18C8D2CA202C4BB900E91527 /* TrackPlayBackVC.swift in Sources */,
 				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
 				18D74FD5200DDA980011866E /* MainBtn.m in Sources */,
 				18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */,
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
+				18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.m in Sources */,
 				18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */,
 				18D75017201321520011866E /* XYMarkerView.swift in Sources */,
 				18D7500F201213410011866E /* EnergyCompareVC.swift in Sources */,
 				18D74FD4200DDA980011866E /* FanBtn.m in Sources */,
+				18C8D2F4202C50E400E91527 /* MASConstraint.m in Sources */,
+				18C8D2F8202C50E400E91527 /* MASViewConstraint.m in Sources */,
+				18C8D2D5202C4EF900E91527 /* CustomPointAnnotation.m in Sources */,
 				18D74FEC20107C860011866E /* WRCycleCell.swift in Sources */,
 				18D750032011A2260011866E /* BaseTableVC.swift in Sources */,
 				18D74FFF20119E3F0011866E /* EnergyPointsTableViewController.swift in Sources */,
 				18D74FED20107C860011866E /* WRCycleScrollView.swift in Sources */,
+				18C8D2FB202C50E400E91527 /* View+MASAdditions.m in Sources */,
 				18D74FEF20107C860011866E /* WRNavigationBar.swift in Sources */,
 				18D750202015FFFC0011866E /* EnergyFeeVC.swift in Sources */,
+				18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */,
 				18D750482016184B0011866E /* MKRingProgressView.swift in Sources */,
+				18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */,
 				18D7500D201210150011866E /* EnergyMonitorVC.swift in Sources */,
+				18C8D2F7202C50E400E91527 /* MASViewAttribute.m in Sources */,
 				18D7500B2011F88C0011866E /* EnergyPointsHeaderView.swift in Sources */,
+				18C8D2FC202C50E400E91527 /* ViewController+MASAdditions.m in Sources */,
 				18D74FDD201032C30011866E /* EnergyVC.swift in Sources */,
 				18D75016201321520011866E /* RadarMarkerView.swift in Sources */,
+				18C8D2F6202C50E400E91527 /* MASLayoutConstraint.m in Sources */,
 				18D74FC3200C462F0011866E /* LoginVC.swift in Sources */,
+				18C8D245202B02E000E91527 /* UIBarButtonItemFixSpace.swift in Sources */,
+				18C8D2FA202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				18C8D2F3202C50E400E91527 /* MASCompositeConstraint.m in Sources */,
 				18D7501E2015FFE70011866E /* EnergyEquipment.swift in Sources */,
 				18D74FE22010339E0011866E /* EnergyTableViewCell.swift in Sources */,
 				18D74FEE20107C860011866E /* WRProxy.swift in Sources */,
@@ -778,12 +982,14 @@
 				18791C962008BBB000A2E282 /* ViewController.swift in Sources */,
 				18D74FB52008BDA10011866E /* API.swift in Sources */,
 				18D750432016169B0011866E /* MKRingProgressGroupView.swift in Sources */,
+				18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */,
 				18D74FB62008BDA10011866E /* Network.swift in Sources */,
 				18D74FEB20107C860011866E /* WRCustomNavigationBar.swift in Sources */,
 				18D750082011EA990011866E /* EnergyPointsCell.swift in Sources */,
 				18D750442016169B0011866E /* MKRingProgressGroupButton.swift in Sources */,
 				18D7501A2015E2B60011866E /* SettingCenterVC.swift in Sources */,
 				18D74FBC2008D4FB0011866E /* ceshiModel.swift in Sources */,
+				18C8D2F9202C50E400E91527 /* NSArray+MASAdditions.m in Sources */,
 				18D750472016184B0011866E /* MKGradientGenerator.swift in Sources */,
 				18D750012011A1C20011866E /* BaseVC.swift in Sources */,
 				18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */,
@@ -955,8 +1161,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI",
+				);
 				INFOPLIST_FILE = MonitoringAssistant_ZN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
@@ -973,8 +1187,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI",
+				);
 				INFOPLIST_FILE = MonitoringAssistant_ZN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
