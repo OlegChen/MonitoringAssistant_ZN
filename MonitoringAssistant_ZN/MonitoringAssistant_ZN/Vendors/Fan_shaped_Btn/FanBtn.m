@@ -48,8 +48,8 @@
 - (void)setCircleCenter:(CGPoint)circleCenter{
     
     CGFloat angle = [self positiveAngelWith:(self.startAngle + self.angle / 2)];
-    CGFloat offsetX = cos(angle)  * 8;
-    CGFloat offsetY = sin(angle)  * 8;
+    CGFloat offsetX = cos(angle)  * 6;
+    CGFloat offsetY = sin(angle)  * 6;
     CGPoint point = CGPointMake(circleCenter.x + offsetX, circleCenter.y + offsetY);
 
     _circleCenter = point;

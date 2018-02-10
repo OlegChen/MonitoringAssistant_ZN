@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv7-1B-3aX">
-                    <rect key="frame" x="50" y="70" width="275" height="275"/>
+                    <rect key="frame" x="50" y="50" width="275" height="275"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mei-Uf-qcL" customClass="MKRingProgressGroupView" customModule="MonitoringAssistant_ZN" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="275" height="275"/>
@@ -75,11 +74,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cv7-1B-3aX" secondAttribute="trailing" constant="50" id="Fnf-Uz-DGN"/>
-                <constraint firstItem="cv7-1B-3aX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="HRr-ss-sYg"/>
-                <constraint firstItem="cv7-1B-3aX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="dBd-CD-xPU"/>
+                <constraint firstAttribute="trailing" secondItem="cv7-1B-3aX" secondAttribute="trailing" constant="50" id="Fnf-Uz-DGN"/>
+                <constraint firstItem="cv7-1B-3aX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="HRr-ss-sYg"/>
+                <constraint firstItem="cv7-1B-3aX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="dBd-CD-xPU"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
 </document>

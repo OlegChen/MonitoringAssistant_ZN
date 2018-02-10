@@ -112,8 +112,8 @@ static const NSString *AnimationNameKey = @"AnimationNameKey";
     _isShow = NO;
     _startAngle = M_PI;
     _angle = 2 * M_PI ;
-    _subBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
-    _pressSubBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+    _subBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.15];
+    _pressSubBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
     _lineColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     _mainBtnColor = [UIColor redColor];
     

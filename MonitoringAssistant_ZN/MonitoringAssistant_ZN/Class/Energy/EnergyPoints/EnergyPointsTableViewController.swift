@@ -7,18 +7,43 @@
 //
 
 import UIKit
+import SnapKit
 
-class EnergyPointsTableViewController: BaseTableVC {
+class EnergyPointsTableViewController: BaseVC,UITableViewDelegate,UITableViewDataSource {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
+    var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "用能概况"
+//        self.title = "用能概况"
+        navBarBackgroundAlpha = 0
+
+
+        let custnav = UIView.init(frame: CGRect(x:0 ,y: 0 , width: ScreenH , height:64))
+        custnav.backgroundColor = UIColor.red
+        self.view.addSubview(custnav)
+        
+        let title = UILabel.init()
+        title.text = "用能概况"
+        title.font=UIFont.boldSystemFont(ofSize:17)//调整文字为加粗类型
+        custnav.addSubview(title)
+        title.snp.makeConstraints { (make) in
+            
+            make.centerX.equalTo(custnav)
+            make.centerY.equalTo(custnav).offset(10)
+
+        }
         
         appDelegate.blockRotation = true
+        
+        self.tableView = UITableView()
+        self.view.addSubview(self.tableView)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.frame = CGRect(x:0 ,y:64 , width: ScreenH , height :ScreenW - 64)
         self.tableView.register(UINib.init(nibName: "EnergyPointsCell", bundle: nil), forCellReuseIdentifier: EnergyPointsCell_id)
         self.tableView.register(EnergyPointsHeaderView.self, forHeaderFooterViewReuseIdentifier: EnergyPointsHeaderView_id)
         
@@ -30,8 +55,12 @@ class EnergyPointsTableViewController: BaseTableVC {
         
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,9 +72,9 @@ class EnergyPointsTableViewController: BaseTableVC {
     }
     
     
-    
     override var prefersStatusBarHidden: Bool {
         return false
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,35 +84,35 @@ class EnergyPointsTableViewController: BaseTableVC {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EnergyPointsCell_id, for: indexPath)
         
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: EnergyPointsHeaderView_id)
         
         return header
     }
  
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 60
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 50
     }

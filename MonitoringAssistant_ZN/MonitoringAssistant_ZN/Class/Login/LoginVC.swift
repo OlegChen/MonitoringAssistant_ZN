@@ -27,19 +27,36 @@ class LoginVC: BaseTableVC {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "loginNav") as! NavigationController
     
-
         return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "登录"
+//        self.title = "登录"
         navBarBackgroundAlpha = 0
         
+        self.rememberPWBtn.imageView?.contentMode = UIViewContentMode.center
+        self.rememberPWBtn.adjustsImageWhenHighlighted = false //使触摸模式下按钮也不会变暗
+        self.rememberPWBtn.isSelected = true
+        
+        var image = UIImage(named: "login_button_touch")
+        var imageHigh = UIImage(named: "login_button_touchch")
+        let leftCapWidth: Int = Int(image!.size.width / 2) // 取图片Width的中心点
+        let topCapHeight: Int = Int(image!.size.height / 2) // 取图片Height的中心点
+        image = image?.stretchableImage(withLeftCapWidth: leftCapWidth, topCapHeight: topCapHeight)
+        imageHigh = imageHigh?.stretchableImage(withLeftCapWidth: leftCapWidth, topCapHeight: topCapHeight)
+
+        self.loginBtn.setBackgroundImage(image, for: UIControlState.normal)
+        self.loginBtn.setBackgroundImage(imageHigh, for: UIControlState.highlighted)
+
+
+        
         self.tableView.frame = CGRect(x: 0, y: CGFloat(kNavBarBottom), width: ScreenW, height: ScreenH)
-        self.tableView.backgroundColor = UIColor.clear
-        self.view.backgroundColor = UIColor.blue
+        let img = UIImageView(frame:self.tableView.bounds)
+        img.image = UIImage.init(named: "登录")
+        img.contentMode = UIViewContentMode.scaleAspectFill
+        self.tableView.backgroundView = img
         
         // Do any additional setup after loading the view.
     }
