@@ -50,6 +50,9 @@
 		18C8D2FA202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2ED202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		18C8D2FB202C50E400E91527 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2EF202C50E400E91527 /* View+MASAdditions.m */; };
 		18C8D2FC202C50E400E91527 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2F2202C50E400E91527 /* ViewController+MASAdditions.m */; };
+		18C8D30120301C9B00E91527 /* DispatchOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2FF20301C9B00E91527 /* DispatchOrderVC.swift */; };
+		18C8D30220301C9B00E91527 /* DispatchOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8D30020301C9B00E91527 /* DispatchOrderVC.xib */; };
+		18C8D3042030256800E91527 /* ForgotPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D3032030256800E91527 /* ForgotPwVC.swift */; };
 		18D74FB52008BDA10011866E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB22008BDA10011866E /* API.swift */; };
 		18D74FB62008BDA10011866E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB32008BDA10011866E /* Network.swift */; };
 		18D74FB72008BDA10011866E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB42008BDA10011866E /* NetworkService.swift */; };
@@ -91,6 +94,11 @@
 		18D750442016169B0011866E /* MKRingProgressGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750422016169A0011866E /* MKRingProgressGroupButton.swift */; };
 		18D750472016184B0011866E /* MKGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750452016184A0011866E /* MKGradientGenerator.swift */; };
 		18D750482016184B0011866E /* MKRingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750462016184A0011866E /* MKRingProgressView.swift */; };
+		18F373A420304F2B00D2662A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F373A320304F2B00D2662A /* LoginModel.swift */; };
+		18F373A720304F7400D2662A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F373A620304F7400D2662A /* BaseModel.swift */; };
+		18F373A92030507D00D2662A /* BaseReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F373A82030507D00D2662A /* BaseReturnObjModel.swift */; };
+		18F373AB203050EB00D2662A /* OtherBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F373AA203050EB00D2662A /* OtherBaseModel.swift */; };
+		18F373AD2030525E00D2662A /* LoginReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F373AC2030525E00D2662A /* LoginReturnObjModel.swift */; };
 		74903E02202F413000003EF2 /* checkbox_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903DFE202F412F00003EF2 /* checkbox_off@2x.png */; };
 		74903E03202F413000003EF2 /* checkbox_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903DFF202F413000003EF2 /* checkbox_off@3x.png */; };
 		74903E04202F413000003EF2 /* checkbox_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E00202F413000003EF2 /* checkbox_on@2x.png */; };
@@ -125,7 +133,7 @@
 		74A8D3FF202DEA9600535BC2 /* alarm_managem_bottom_broken_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B1202DEA9600535BC2 /* alarm_managem_bottom_broken_bottom.png */; };
 		74A8D400202DEA9600535BC2 /* 故障数量.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B2202DEA9600535BC2 /* 故障数量.png */; };
 		74A8D401202DEA9600535BC2 /* 故障消缺率.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B3202DEA9600535BC2 /* 故障消缺率.png */; };
-		74A8D402202DEA9600535BC2 /* 未标题-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B4202DEA9600535BC2 /* 未标题-2.png */; };
+		74A8D402202DEA9600535BC2 /* wqe2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B4202DEA9600535BC2 /* wqe2.png */; };
 		74A8D403202DEA9600535BC2 /* 张三.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B6202DEA9600535BC2 /* 张三.png */; };
 		74A8D404202DEA9600535BC2 /* 未标题-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B7202DEA9600535BC2 /* 未标题-2.png */; };
 		74A8D405202DEA9600535BC2 /* dount_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B9202DEA9600535BC2 /* dount_1.png */; };
@@ -246,6 +254,9 @@
 		18C8D2F0202C50E400E91527 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		18C8D2F1202C50E400E91527 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		18C8D2F2202C50E400E91527 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		18C8D2FF20301C9B00E91527 /* DispatchOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchOrderVC.swift; sourceTree = "<group>"; };
+		18C8D30020301C9B00E91527 /* DispatchOrderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchOrderVC.xib; sourceTree = "<group>"; };
+		18C8D3032030256800E91527 /* ForgotPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwVC.swift; sourceTree = "<group>"; };
 		18D74FB22008BDA10011866E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		18D74FB32008BDA10011866E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		18D74FB42008BDA10011866E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -290,6 +301,11 @@
 		18D750422016169A0011866E /* MKRingProgressGroupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupButton.swift; sourceTree = "<group>"; };
 		18D750452016184A0011866E /* MKGradientGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGradientGenerator.swift; sourceTree = "<group>"; };
 		18D750462016184A0011866E /* MKRingProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRingProgressView.swift; sourceTree = "<group>"; };
+		18F373A320304F2B00D2662A /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		18F373A620304F7400D2662A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		18F373A82030507D00D2662A /* BaseReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReturnObjModel.swift; sourceTree = "<group>"; };
+		18F373AA203050EB00D2662A /* OtherBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBaseModel.swift; sourceTree = "<group>"; };
+		18F373AC2030525E00D2662A /* LoginReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReturnObjModel.swift; sourceTree = "<group>"; };
 		18F4E3A3891A6026651AE09C /* Pods-MonitoringAssistant_ZN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.debug.xcconfig"; sourceTree = "<group>"; };
 		74903DFE202F412F00003EF2 /* checkbox_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_off@2x.png"; sourceTree = "<group>"; };
 		74903DFF202F413000003EF2 /* checkbox_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_off@3x.png"; sourceTree = "<group>"; };
@@ -325,7 +341,7 @@
 		74A8D3B1202DEA9600535BC2 /* alarm_managem_bottom_broken_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_managem_bottom_broken_bottom.png; sourceTree = "<group>"; };
 		74A8D3B2202DEA9600535BC2 /* 故障数量.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "故障数量.png"; sourceTree = "<group>"; };
 		74A8D3B3202DEA9600535BC2 /* 故障消缺率.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "故障消缺率.png"; sourceTree = "<group>"; };
-		74A8D3B4202DEA9600535BC2 /* 未标题-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未标题-2.png"; sourceTree = "<group>"; };
+		74A8D3B4202DEA9600535BC2 /* wqe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wqe2.png; sourceTree = "<group>"; };
 		74A8D3B6202DEA9600535BC2 /* 张三.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "张三.png"; sourceTree = "<group>"; };
 		74A8D3B7202DEA9600535BC2 /* 未标题-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未标题-2.png"; sourceTree = "<group>"; };
 		74A8D3B9202DEA9600535BC2 /* dount_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dount_1.png; sourceTree = "<group>"; };
@@ -435,6 +451,7 @@
 		18791C922008BBB000A2E282 /* MonitoringAssistant_ZN */ = {
 			isa = PBXGroup;
 			children = (
+				18F373A520304F6400D2662A /* BaseModel */,
 				74A8D392202DEA9600535BC2 /* img */,
 				18D74FF020108E6A0011866E /* BaseVC */,
 				18D74FAE2008BDA10011866E /* Class */,
@@ -553,7 +570,9 @@
 		18D74FAF2008BDA10011866E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				18F373A220304EDB00D2662A /* Model */,
 				18D74FC1200C462F0011866E /* LoginVC.swift */,
+				18C8D3032030256800E91527 /* ForgotPwVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -800,6 +819,8 @@
 			children = (
 				18D75028201601CE0011866E /* Model */,
 				18D75029201601CE0011866E /* View */,
+				18C8D2FF20301C9B00E91527 /* DispatchOrderVC.swift */,
+				18C8D30020301C9B00E91527 /* DispatchOrderVC.xib */,
 			);
 			path = DispatchOrders;
 			sourceTree = "<group>";
@@ -860,6 +881,25 @@
 				18D750412016169A0011866E /* MKRingProgressGroupView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		18F373A220304EDB00D2662A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18F373A320304F2B00D2662A /* LoginModel.swift */,
+				18F373AC2030525E00D2662A /* LoginReturnObjModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18F373A520304F6400D2662A /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				18F373A620304F7400D2662A /* BaseModel.swift */,
+				18F373A82030507D00D2662A /* BaseReturnObjModel.swift */,
+				18F373AA203050EB00D2662A /* OtherBaseModel.swift */,
+			);
+			path = BaseModel;
 			sourceTree = "<group>";
 		};
 		41C759CFC8F4366C3B8CDD59 /* Frameworks */ = {
@@ -946,7 +986,7 @@
 				74A8D3B1202DEA9600535BC2 /* alarm_managem_bottom_broken_bottom.png */,
 				74A8D3B2202DEA9600535BC2 /* 故障数量.png */,
 				74A8D3B3202DEA9600535BC2 /* 故障消缺率.png */,
-				74A8D3B4202DEA9600535BC2 /* 未标题-2.png */,
+				74A8D3B4202DEA9600535BC2 /* wqe2.png */,
 			);
 			path = "告警信息";
 			sourceTree = "<group>";
@@ -1200,7 +1240,7 @@
 				74A8D3EC202DEA9600535BC2 /* logo.png in Resources */,
 				74A8D406202DEA9600535BC2 /* dount_2.png in Resources */,
 				74A8D3ED202DEA9600535BC2 /* abcd_alarm_managem_touch.png in Resources */,
-				74A8D402202DEA9600535BC2 /* 未标题-2.png in Resources */,
+				74A8D402202DEA9600535BC2 /* wqe2.png in Resources */,
 				74A8D423202DEA9600535BC2 /* gold_1.png in Resources */,
 				74A8D403202DEA9600535BC2 /* 张三.png in Resources */,
 				74A8D411202DEA9600535BC2 /* un_touch.png in Resources */,
@@ -1226,6 +1266,7 @@
 				74A8D41D202DEA9600535BC2 /* circle_3.png in Resources */,
 				74A8D401202DEA9600535BC2 /* 故障消缺率.png in Resources */,
 				74A8D3E8202DEA9600535BC2 /* home_onfigurcation_center_touch.png in Resources */,
+				18C8D30220301C9B00E91527 /* DispatchOrderVC.xib in Resources */,
 				74A8D41F202DEA9600535BC2 /* arror_right.png in Resources */,
 				74A8D410202DEA9600535BC2 /* touch.png in Resources */,
 				74A8D3EF202DEA9600535BC2 /* abcd_charge_survey_touch.png in Resources */,
@@ -1330,6 +1371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F373A720304F7400D2662A /* BaseModel.swift in Sources */,
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
 				18C8D2CA202C4BB900E91527 /* TrackPlayBackVC.swift in Sources */,
 				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
@@ -1338,6 +1380,7 @@
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
 				18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.mm in Sources */,
+				18F373AD2030525E00D2662A /* LoginReturnObjModel.swift in Sources */,
 				18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */,
 				18D75017201321520011866E /* XYMarkerView.swift in Sources */,
 				18D7500F201213410011866E /* EnergyCompareVC.swift in Sources */,
@@ -1353,6 +1396,7 @@
 				18D74FEF20107C860011866E /* WRNavigationBar.swift in Sources */,
 				18D750202015FFFC0011866E /* EnergyFeeVC.swift in Sources */,
 				18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */,
+				18F373A420304F2B00D2662A /* LoginModel.swift in Sources */,
 				18D750482016184B0011866E /* MKRingProgressView.swift in Sources */,
 				18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */,
 				18D7500D201210150011866E /* EnergyMonitorVC.swift in Sources */,
@@ -1374,15 +1418,19 @@
 				18791C962008BBB000A2E282 /* ViewController.swift in Sources */,
 				18D74FB52008BDA10011866E /* API.swift in Sources */,
 				18D750432016169B0011866E /* MKRingProgressGroupView.swift in Sources */,
+				18F373A92030507D00D2662A /* BaseReturnObjModel.swift in Sources */,
 				18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */,
 				18D74FB62008BDA10011866E /* Network.swift in Sources */,
+				18F373AB203050EB00D2662A /* OtherBaseModel.swift in Sources */,
 				18D74FEB20107C860011866E /* WRCustomNavigationBar.swift in Sources */,
 				18D750082011EA990011866E /* EnergyPointsCell.swift in Sources */,
 				18D750442016169B0011866E /* MKRingProgressGroupButton.swift in Sources */,
 				18D7501A2015E2B60011866E /* SettingCenterVC.swift in Sources */,
+				18C8D3042030256800E91527 /* ForgotPwVC.swift in Sources */,
 				18D74FBC2008D4FB0011866E /* ceshiModel.swift in Sources */,
 				18C8D2F9202C50E400E91527 /* NSArray+MASAdditions.m in Sources */,
 				18D750472016184B0011866E /* MKGradientGenerator.swift in Sources */,
+				18C8D30120301C9B00E91527 /* DispatchOrderVC.swift in Sources */,
 				18D750012011A1C20011866E /* BaseVC.swift in Sources */,
 				18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */,
 			);

@@ -98,10 +98,12 @@ extension NetworkRequest {
     func PostRequest(urlString : String, params : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : Error)->()) {
         
         let headers: HTTPHeaders =  [    "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
-                                         "Accept": "application/json"]
+                                         "Accept": "application/json",
+//                                         "content-type": "application/x-www-form-urlencoded"
+        ]
         
         
-        Alamofire.request(urlString, method : HTTPMethod.post , parameters : params, encoding: JSONEncoding.default ,  headers: headers).responseJSON { response in
+        Alamofire.request(urlString, method : HTTPMethod.post , parameters : params, encoding: URLEncoding.default ,  headers: headers).responseJSON { response in
 
             switch response.result{
             case .success:

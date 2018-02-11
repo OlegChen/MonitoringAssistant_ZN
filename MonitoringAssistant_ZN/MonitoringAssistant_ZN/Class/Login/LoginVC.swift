@@ -64,11 +64,34 @@ class LoginVC: BaseTableVC {
     
     @IBAction func loginClick(_ sender: Any) {
         
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
+        let para = ["userName"   : "18610805524" ,
+                    "userPwd"    : "123456" ,
+                    "companyCode" : "0000"]
         
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.window?.rootViewController = initViewController
+        NetworkService.networkPostrequest(parameters: para, requestApi: LoginUrl, modelClass: String(describing: LoginModel.self), response: { (obj) in
+            
+            let model : LoginModel = obj as! LoginModel
+            
+            print( model.statusCode )
+            
+            if(model.statusCode == 800){
+                
+                print( model )
+            }
+            
+        }) { (error) in
+            
+            
+            
+        }
+        
+        
+//
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
+//
+//        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+//        appdelegate.window?.rootViewController = initViewController
         
         
     }
@@ -81,6 +104,16 @@ class LoginVC: BaseTableVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 2
+    }
+    
+    @IBOutlet weak var forgotPw: UIButton!
+    
+    @IBAction func forgotPwBtnClick(_ sender: UIButton) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ForgotPwVC") as! ForgotPwVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {

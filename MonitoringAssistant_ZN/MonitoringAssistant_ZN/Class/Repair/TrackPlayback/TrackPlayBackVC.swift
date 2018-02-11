@@ -43,8 +43,8 @@ class TrackPlayBackVC: UIViewController , BMKMapViewDelegate{
     }
     
 //    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
-//
-//
+//        
+//        
 //    }
     
     

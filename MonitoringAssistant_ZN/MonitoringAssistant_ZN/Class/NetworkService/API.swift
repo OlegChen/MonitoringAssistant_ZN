@@ -12,11 +12,14 @@ import Foundation
 
 //public struct API {
 
-    private let baseURL = "https://www.designernews.co"
+private let baseURL = "http://plat.znxk.net:6803/"
 
 
-    
-    public let LoginUrlString = baseURL + ""
+//MARK:- ---  接口
+//登录
+public let LoginUrl = baseURL + "user/login"
+//修改密码
+public let ChangePwUrl = baseURL + "user/modifyPwd"
 
 
 

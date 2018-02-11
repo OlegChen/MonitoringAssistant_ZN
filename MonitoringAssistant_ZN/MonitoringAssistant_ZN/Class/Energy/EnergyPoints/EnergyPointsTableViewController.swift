@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class EnergyPointsTableViewController: BaseVC,UITableViewDelegate,UITableViewDataSource {
+class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -19,12 +19,24 @@ class EnergyPointsTableViewController: BaseVC,UITableViewDelegate,UITableViewDat
         super.viewDidLoad()
 
 //        self.title = "用能概况"
-        navBarBackgroundAlpha = 0
 
 
         let custnav = UIView.init(frame: CGRect(x:0 ,y: 0 , width: ScreenH , height:64))
         custnav.backgroundColor = UIColor.red
         self.view.addSubview(custnav)
+        
+        let backBtn = UIButton.init()
+        backBtn.setImage(UIImage.init(named: "backItem"), for: UIControlState.normal)
+        custnav.addSubview(backBtn)
+        backBtn.addTarget(self, action:#selector(backBtnClick) , for: UIControlEvents.touchUpInside)
+        backBtn.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(custnav).offset(20)
+            make.top.equalTo(custnav).offset(20)
+            make.height.equalTo(44)
+            make.width.equalTo(55)
+        }
+        
         
         let title = UILabel.init()
         title.text = "用能概况"
@@ -56,6 +68,8 @@ class EnergyPointsTableViewController: BaseVC,UITableViewDelegate,UITableViewDat
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,11 +83,20 @@ class EnergyPointsTableViewController: BaseVC,UITableViewDelegate,UITableViewDat
         
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
     }
     
     
     override var prefersStatusBarHidden: Bool {
         return false
+        
+    }
+    
+    @objc func backBtnClick() {
+        
+        self.navigationController?.popViewController(animated: true)
         
     }
     

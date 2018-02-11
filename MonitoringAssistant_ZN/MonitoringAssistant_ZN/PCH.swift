@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 
 func PrintLog<N>(message:N,fileName:String = #file,methodName:String = #function,lineNumber:Int = #line){
     #if DebugType

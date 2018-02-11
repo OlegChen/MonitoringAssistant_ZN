@@ -28,8 +28,13 @@ class HomeVC: BaseVC ,MainBtnDelegate {
 
         
         let fanView = MainBtn(frame: CGRect(x: 0, y: 0, width: ScreenW - 80, height: ScreenW - 80))
-        fanView.center = self.view.center
         self.view.addSubview(fanView)
+        fanView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.view).offset(50)
+            make.centerX.equalTo(self.view)
+            make.width.equalTo(ScreenW - 80)
+            make.height.equalTo(ScreenW - 80)
+        }
 //        fanView.pressSubBtnColor = UIColor.red
         fanView.startAngle = .pi / 4.0
         fanView.angle = 2 * .pi
