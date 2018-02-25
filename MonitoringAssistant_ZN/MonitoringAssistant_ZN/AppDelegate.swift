@@ -21,11 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         
         _mapManager = BMKMapManager()
         // 如果要关注网络及授权验证事件，请设定generalDelegate参数
-        let ret = _mapManager?.start("在此处输入您的授权Key", generalDelegate: self)
+        let ret = _mapManager?.start("aA8lmVacxIfkixYrgsFw5PXmyNLr95jK", generalDelegate: self)
         if ret == false {
             NSLog("manager start failed!")
         }
@@ -33,9 +32,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
         //登录 ？
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        let vc = LoginVC.getLoginVC()
         
-        self.window?.rootViewController = vc
+        UserCenter.shared.userInfo{ (islogin, userReturnModel) in
+            
+            if (islogin){
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
+                self.window?.rootViewController = initViewController
+                
+            }else{
+                //未登录
+                let vc = LoginVC.getLoginVC()
+                self.window?.rootViewController = vc
+            }
+        }
+        
+
         
         self.window?.makeKeyAndVisible()
         return true

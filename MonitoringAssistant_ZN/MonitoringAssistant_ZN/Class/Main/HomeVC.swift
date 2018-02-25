@@ -15,7 +15,6 @@ class HomeVC: BaseVC ,MainBtnDelegate {
         super.viewDidLoad()
         
         navBarBackgroundAlpha = 0.0
-        navBarShadowImageHidden = true;
         
         // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
         WRNavigationBar.defaultShadowImageHidden = true
@@ -38,20 +37,20 @@ class HomeVC: BaseVC ,MainBtnDelegate {
 //        fanView.pressSubBtnColor = UIColor.red
         fanView.startAngle = .pi / 4.0
         fanView.angle = 2 * .pi
-        fanView.subBtns = ["1", "2", "3", "4"]
+        fanView.subBtns = ["收费", "报修", "用能", "设备"]
         fanView.delegate = self
         
         
         
         let logoView = UIImageView()
         logoView.image = UIImage.init(named: "home_text")
-        logoView.contentMode = UIViewContentMode.center
+        logoView.contentMode = UIViewContentMode.scaleAspectFit
         self.view.addSubview(logoView)
         logoView.snp.makeConstraints { (make) in
             
-            make.bottom.equalTo(fanView.snp.top).offset(-20)
+            make.bottom.equalTo(fanView.snp.top).offset(-35)
             make.width.equalTo(300);
-            make.height.equalTo(45);
+            make.height.equalTo(65);
             make.centerX.equalTo(self.view)
         }
         

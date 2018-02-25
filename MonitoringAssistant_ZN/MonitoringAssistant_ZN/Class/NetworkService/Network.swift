@@ -75,6 +75,9 @@ extension NetworkRequest {
         
         Alamofire.request(urlString, method: .get, parameters: params)
             .responseJSON { (response) in/*这里使用了闭包*/
+                
+                PrintLog(message: "data:\(response)")
+
                 //当请求后response是我们自定义的，这个变量用于接受服务器响应的信息
                 //使用switch判断请求是否成功，也就是response的result
                 switch response.result {
@@ -99,7 +102,6 @@ extension NetworkRequest {
         
         let headers: HTTPHeaders =  [    "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
                                          "Accept": "application/json",
-//                                         "content-type": "application/x-www-form-urlencoded"
         ]
         
         

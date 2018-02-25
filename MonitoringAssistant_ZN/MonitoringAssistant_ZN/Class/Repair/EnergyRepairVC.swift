@@ -11,6 +11,8 @@ import UIKit
 class EnergyRepairVC: BaseTableVC {
 
     let titleArr = ["工单信息", "转派工单" , "轨迹回放"]
+    let imgArr = ["abcd_work_order_details_touch", "abcd_equipment_monitor_touch" , "abcd_trajectory_play_touch"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,7 @@ class EnergyRepairVC: BaseTableVC {
         
         
         
-        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "")
+        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: self.imgArr[indexPath.row])
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
@@ -54,20 +56,24 @@ class EnergyRepairVC: BaseTableVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 200;
+        return ScreenW / 680.0 * 284.0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
             
-            self.navigationController?.pushViewController(EnergyPointsTableViewController(), animated: true)
+            self.navigationController?.pushViewController(OrderInfoVC(), animated: true)
+            
         }else if indexPath.row == 1 {
             
-            self.navigationController?.pushViewController(EnergyMonitorVC(), animated: true)
+            self.navigationController?.pushViewController(DispatchOrderVC(), animated: true)
+
         }else if indexPath.row == 2 {
             
-            self.navigationController?.pushViewController(EnergyCompareVC(), animated: true)
+            self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
+
+            
         }
     }
     

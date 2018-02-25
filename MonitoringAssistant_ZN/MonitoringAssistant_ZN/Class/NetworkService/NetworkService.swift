@@ -35,6 +35,35 @@ public struct NetworkService {
                 
         }
     }
+    
+    
+    
+    public static func networkGetrequest(parameters: [String : String], requestApi: String, modelClass :String, response: @escaping (_ responseObject : AnyObject) -> (), failture : @escaping (_ error : NSError)->())  {
+        
+        NetworkRequest.sharedInstance.NetworkGetRequest(URL: requestApi, params: parameters as [String : AnyObject], success: { (responseObject) in
+            
+            //转模
+            //                var Model = swiftClassFromString(className:modelClass)
+            
+            let model = (swiftClassFromString(className: modelClass) as? HandyJSON.Type )?.deserialize(from: responseObject)
+            
+            if ( model != nil) {
+                
+                response(model! as AnyObject)
+                
+            }
+            
+            
+        }) { (Error) in
+            
+            failture(Error)
+            
+            print(Error);
+        }
+        
+
+    }
+
 }
 
     // create a static method to get a swift class for a string name
@@ -48,4 +77,6 @@ public struct NetworkService {
         }
         return nil;
     }
+
+
 

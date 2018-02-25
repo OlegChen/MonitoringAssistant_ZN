@@ -11,6 +11,7 @@ import UIKit
 class EnergyVC: BaseTableVC {
     
     let titleArr = ["用能概况", "用能监测" , "黄金对标"]
+    let imgArray = ["abcd_energy_use_profile_touch" , "abcd_energy_use_monitor_touch", "abcd_gold_bench_marke_touch"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +45,7 @@ class EnergyVC: BaseTableVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : EnergyTableViewCell  = tableView.dequeueReusableCell(withIdentifier: EnergyTableViewCell_id, for: indexPath) as! EnergyTableViewCell
 
-        
-        
-        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "")
+        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: imgArray[indexPath.row])
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
@@ -54,7 +53,7 @@ class EnergyVC: BaseTableVC {
  
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 200;
+        return ScreenW / 680.0 * 284.0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

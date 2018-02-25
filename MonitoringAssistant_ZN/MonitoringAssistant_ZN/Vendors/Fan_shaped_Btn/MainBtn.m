@@ -112,10 +112,10 @@ static const NSString *AnimationNameKey = @"AnimationNameKey";
     _isShow = NO;
     _startAngle = M_PI;
     _angle = 2 * M_PI ;
-    _subBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.15];
-    _pressSubBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
-    _lineColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    _mainBtnColor = [UIColor redColor];
+    _subBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.13];
+    _pressSubBtnColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+    _lineColor = [UIColor colorWithRed:58/255.0 green:58/255.0 blue:58/255.0 alpha:0.9];
+    _mainBtnColor = [UIColor whiteColor];
     
     _centerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KselfWid / 4, KselfHlt / 4)];
     _centerView.userInteractionEnabled = YES;
@@ -125,6 +125,8 @@ static const NSString *AnimationNameKey = @"AnimationNameKey";
     _centerView.layer.shadowOpacity = .7;
     _centerView.layer.shadowRadius = 5;
     _centerView.center = CGPointMake(KselfWid / 2, KselfHlt / 2);
+    _centerView.image = [UIImage imageNamed:@"配置中心"];
+    _centerView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_centerView];
     
     [_centerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewClik:)]];

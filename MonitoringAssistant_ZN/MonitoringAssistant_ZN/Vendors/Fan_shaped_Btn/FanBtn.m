@@ -64,7 +64,7 @@
     CGFloat centerY = centerPoint.y;
     _path = CGPathCreateMutable();
     [self.btnColor setFill];
-    [self.lineColor setStroke];
+    [[UIColor clearColor] setStroke];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGPathMoveToPoint(_path, NULL, centerX, centerY);
     CGPathAddArc(_path, NULL, centerX, centerY, self.radius - 1, self.startAngle, self.startAngle + self.angle, 0);
@@ -83,10 +83,10 @@
                                                            startAngle:self.startAngle                                                                 endAngle:self.startAngle + self.angle
                                                             clockwise:YES];
     [bezierPath addLineToPoint:centerPoint];
+    [bezierPath closePath];
     layer.path = bezierPath.CGPath;
-    layer.lineWidth = 4;
-//    UIColor *color = [UIColor grayColor];
-//    layer.strokeColor = color.CGColor;
+    layer.lineWidth = 0.5;
+    layer.strokeColor = self.lineColor.CGColor;
     // 最好 为clearColor 设置颜色是方便观察
     layer.fillColor = self.btnColor.CGColor;
     
@@ -151,8 +151,9 @@
 {
     if (!self.icon) {
         self.icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-        self.icon.backgroundColor = [UIColor yellowColor];
+        self.icon.backgroundColor = [UIColor clearColor];
         self.icon.image = [UIImage imageNamed:self.iconImgName];
+        self.icon.contentMode = UIViewContentModeCenter;
         [self addSubview:self.icon];
         [self layoutTextLabel];
     }

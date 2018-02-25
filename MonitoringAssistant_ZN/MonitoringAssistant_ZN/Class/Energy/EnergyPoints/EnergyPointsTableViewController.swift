@@ -15,6 +15,12 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
     
     var tableView : UITableView!
     
+    lazy var dataArr : NSMutableArray = {
+        
+        let array = NSMutableArray()
+        return array
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +28,7 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
 
 
         let custnav = UIView.init(frame: CGRect(x:0 ,y: 0 , width: ScreenH , height:64))
-        custnav.backgroundColor = UIColor.red
+        custnav.backgroundColor = UIColor.init(red: 71/255.0, green: 143/255.0, blue: 183/255.0, alpha: 1.0)
         self.view.addSubview(custnav)
         
         let backBtn = UIButton.init()
@@ -60,6 +66,8 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         self.tableView.register(EnergyPointsHeaderView.self, forHeaderFooterViewReuseIdentifier: EnergyPointsHeaderView_id)
         
         self.tableView.tableFooterView = UIView()
+        
+        self.getdata()
         
     }
     
@@ -112,13 +120,24 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.dataArr.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EnergyPointsCell_id, for: indexPath)
+        let cell : EnergyPointsCell = tableView.dequeueReusableCell(withIdentifier: EnergyPointsCell_id, for: indexPath) as! EnergyPointsCell
         
+        let model : EnergyPointsReturnObjModel = self.dataArr[indexPath.row] as! EnergyPointsReturnObjModel
+        
+        cell.titleL.text = model.energyTypeName
+        cell.label1.text = model.todayEnergy
+        
+        cell.label2.text = model.fiveEnergy
+        cell.label3.text = model.fivePlanValue
+        cell.label4.text = model.fiveFee
+        cell.lable5.text = model.unilEnergy
+        cell.label6.text = model.planUnilEnergy
+
         
         return cell
     }
@@ -138,6 +157,32 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 50
+    }
+    
+    
+    func getdata() {
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            let para = ["companyCode":userInfo.companyCode ,"orgCode":userInfo.orgCode ,"empNo":userInfo.empNo ,"empName":userInfo.empName ]
+            
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: profilesDataUrl, modelClass: "EnergyPointsModel", response: { (obj) in
+                
+                let model = obj as! EnergyPointsModel
+                
+                self.dataArr.addObjects(from: model.returnObj!)
+                self.tableView.reloadData()
+                
+            }) { (error) in
+                
+            }
+            
+        }
+        
+
+        
+        
+        
     }
     
 

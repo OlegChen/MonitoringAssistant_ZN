@@ -15,7 +15,7 @@ class BaseVC: UIViewController {
 
 
         // 设置导航栏颜色
-        navBarBarTintColor = UIColor.init(red: 100/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1.0)
+        navBarBarTintColor = UIColor.init(red: 71/255.0, green: 143/255.0, blue: 183/255.0, alpha: 1.0)
         
         // 设置初始导航栏透明度
         navBarBackgroundAlpha = 1.0

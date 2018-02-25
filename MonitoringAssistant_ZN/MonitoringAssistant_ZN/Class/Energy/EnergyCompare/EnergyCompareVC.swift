@@ -120,6 +120,9 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         updateChartData()
 
         
+        self.getdataWithType(type: "1")   //1：总能耗2：水能耗3：电能耗4：气能耗
+        
+        
     }
     
     
@@ -214,6 +217,24 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         print(
             sender.titleForSegment(
                 at: sender.selectedSegmentIndex))
+    }
+    
+    func getdataWithType(type:String) {
+        
+        UserCenter.shared.userInfo { (isLogin, userInfo) in
+            
+            let para = ["companyCode":userInfo.companyCode ,"orgCode":userInfo.orgCode ,"empNo":userInfo.empNo ,"empName":userInfo.empName ,"type":type]
+
+            NetworkService.networkPostrequest(parameters:para as! [String : String], requestApi: goldStandardDataUrl, modelClass: "", response: { (obj) in
+                
+                
+                
+            }, failture: { (error) in
+                
+            })
+        }
+
+        
     }
     
 

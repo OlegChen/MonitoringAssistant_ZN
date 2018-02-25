@@ -53,7 +53,8 @@ class EnergyEquipment: BaseTableVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 200;
+        return ScreenW / 680.0 * 284.0
+
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

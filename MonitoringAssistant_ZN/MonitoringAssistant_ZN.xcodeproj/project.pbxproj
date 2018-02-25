@@ -51,7 +51,6 @@
 		18C8D2FB202C50E400E91527 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2EF202C50E400E91527 /* View+MASAdditions.m */; };
 		18C8D2FC202C50E400E91527 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2F2202C50E400E91527 /* ViewController+MASAdditions.m */; };
 		18C8D30120301C9B00E91527 /* DispatchOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2FF20301C9B00E91527 /* DispatchOrderVC.swift */; };
-		18C8D30220301C9B00E91527 /* DispatchOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8D30020301C9B00E91527 /* DispatchOrderVC.xib */; };
 		18C8D3042030256800E91527 /* ForgotPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D3032030256800E91527 /* ForgotPwVC.swift */; };
 		18D74FB52008BDA10011866E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB22008BDA10011866E /* API.swift */; };
 		18D74FB62008BDA10011866E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D74FB32008BDA10011866E /* Network.swift */; };
@@ -103,14 +102,54 @@
 		74903E03202F413000003EF2 /* checkbox_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903DFF202F413000003EF2 /* checkbox_off@3x.png */; };
 		74903E04202F413000003EF2 /* checkbox_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E00202F413000003EF2 /* checkbox_on@2x.png */; };
 		74903E05202F413000003EF2 /* checkbox_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E01202F413000003EF2 /* checkbox_on@3x.png */; };
+		74903E0B2030806A00003EF2 /* UserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E0A2030806A00003EF2 /* UserCenter.swift */; };
+		74903E162031EB5600003EF2 /* 报修@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E0C2031EB5100003EF2 /* 报修@2x.png */; };
+		74903E172031EB5600003EF2 /* 报修@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E0D2031EB5200003EF2 /* 报修@3x.png */; };
+		74903E182031EB5600003EF2 /* 收费@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E0E2031EB5200003EF2 /* 收费@2x.png */; };
+		74903E192031EB5600003EF2 /* 设备@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E0F2031EB5300003EF2 /* 设备@3x.png */; };
+		74903E1A2031EB5600003EF2 /* 用能@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E102031EB5300003EF2 /* 用能@2x.png */; };
+		74903E1B2031EB5600003EF2 /* 收费@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E112031EB5400003EF2 /* 收费@3x.png */; };
+		74903E1D2031EB5600003EF2 /* 设备@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E132031EB5400003EF2 /* 设备@2x.png */; };
+		74903E1E2031EB5600003EF2 /* 用能@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E142031EB5500003EF2 /* 用能@3x.png */; };
+		74903E222031EBE000003EF2 /* home_text@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E202031EBDF00003EF2 /* home_text@3x.png */; };
+		74903E232031EBE000003EF2 /* home_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E212031EBDF00003EF2 /* home_text@2x.png */; };
+		74903E262031F03A00003EF2 /* 配置中心@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E242031F03A00003EF2 /* 配置中心@2x.png */; };
+		74903E272031F03A00003EF2 /* 配置中心@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74903E252031F03A00003EF2 /* 配置中心@3x.png */; };
+		74903E2A2032D82800003EF2 /* FeeInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E292032D82800003EF2 /* FeeInfoVC.swift */; };
+		74903E2E2032D8D400003EF2 /* FeeInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E2D2032D8D400003EF2 /* FeeInfoHeaderView.swift */; };
+		74903E302032D8F200003EF2 /* FeeInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E2F2032D8F200003EF2 /* FeeInfoHeaderView.xib */; };
+		74903E332032DA1F00003EF2 /* FeeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E312032DA1F00003EF2 /* FeeInfoTableViewCell.swift */; };
+		74903E342032DA1F00003EF2 /* FeeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E322032DA1F00003EF2 /* FeeInfoTableViewCell.xib */; };
+		74903E38203404EA00003EF2 /* FeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E37203404EA00003EF2 /* FeeModel.swift */; };
+		74903E3A2034051300003EF2 /* FeeReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E392034051300003EF2 /* FeeReturnObjModel.swift */; };
+		74903E3C2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E3B2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift */; };
+		74903E3F20346A0C00003EF2 /* EnergyPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E3E20346A0C00003EF2 /* EnergyPointsModel.swift */; };
+		74903E4120346A6100003EF2 /* EnergyPointsReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E4020346A6100003EF2 /* EnergyPointsReturnObjModel.swift */; };
+		74903E442036A11000003EF2 /* EnergyMonitorPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E432036A11000003EF2 /* EnergyMonitorPopView.swift */; };
+		74903E462036A14100003EF2 /* EnergyMonitorPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E452036A14100003EF2 /* EnergyMonitorPopView.xib */; };
+		74903E492036B57500003EF2 /* moniterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E482036B57500003EF2 /* moniterDataModel.swift */; };
+		74903E4B2036B5CB00003EF2 /* moniterDataReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E4A2036B5CB00003EF2 /* moniterDataReturnObjModel.swift */; };
+		74903E4D2036B5F100003EF2 /* moniterDataPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E4C2036B5F100003EF2 /* moniterDataPointsModel.swift */; };
+		74903E4F2036D6FE00003EF2 /* monitorCustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E4E2036D6FE00003EF2 /* monitorCustomAnnotation.swift */; };
+		74903E542039A59200003EF2 /* OrderInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E532039A59200003EF2 /* OrderInfoVC.swift */; };
+		74903E562039AB8F00003EF2 /* OrderInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E552039AB8F00003EF2 /* OrderInfoHeaderView.swift */; };
+		74903E582039ABAC00003EF2 /* OrderInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E572039ABAC00003EF2 /* OrderInfoFooterView.swift */; };
+		74903E5A2039ABD300003EF2 /* OrderInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E592039ABD300003EF2 /* OrderInfoHeaderView.xib */; };
+		74903E5C2039ABE200003EF2 /* OrderInfoFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E5B2039ABE200003EF2 /* OrderInfoFooterView.xib */; };
+		74903E5E203B177300003EF2 /* orderInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E5D203B177300003EF2 /* orderInfoModel.swift */; };
+		74903E60203B179A00003EF2 /* OrderInfoReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E5F203B179A00003EF2 /* OrderInfoReturnObjModel.swift */; };
+		74903E62203B17BD00003EF2 /* OrderInfoStatusWorkStutVosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E61203B17BD00003EF2 /* OrderInfoStatusWorkStutVosModel.swift */; };
+		74903E67203F10E600003EF2 /* DispatchOrderVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E65203F10E600003EF2 /* DispatchOrderVCCell.swift */; };
+		74903E68203F10E600003EF2 /* DispatchOrderVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E66203F10E600003EF2 /* DispatchOrderVCCell.xib */; };
+		74903E6A203FBBCC00003EF2 /* DispatchOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E69203FBBCC00003EF2 /* DispatchOrderModel.swift */; };
+		74903E6C203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E6B203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift */; };
+		74903E71203FC4D700003EF2 /* SelectWorkerVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E70203FC4D700003EF2 /* SelectWorkerVCViewController.swift */; };
+		74903E7420402C1B00003EF2 /* SelectWorkerVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7220402C1B00003EF2 /* SelectWorkerVCCell.swift */; };
+		74903E7520402C1B00003EF2 /* SelectWorkerVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E7320402C1B00003EF2 /* SelectWorkerVCCell.xib */; };
+		74903E7720403D7800003EF2 /* SelectWorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7620403D7800003EF2 /* SelectWorkerModel.swift */; };
+		74903E7920403E3800003EF2 /* SelectWorkerReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7820403E3800003EF2 /* SelectWorkerReturnObjModel.swift */; };
+		74903E7E204314FE00003EF2 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7D204314FE00003EF2 /* OrderDetailVC.swift */; };
 		74A8D3E4202DEA9600535BC2 /* home_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D394202DEA9600535BC2 /* home_back.png */; };
-		74A8D3E5202DEA9600535BC2 /* home_charge_survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D395202DEA9600535BC2 /* home_charge_survey.png */; };
-		74A8D3E6202DEA9600535BC2 /* home_energy_use.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D396202DEA9600535BC2 /* home_energy_use.png */; };
-		74A8D3E7202DEA9600535BC2 /* home_equipment.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D397202DEA9600535BC2 /* home_equipment.png */; };
-		74A8D3E8202DEA9600535BC2 /* home_onfigurcation_center_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D398202DEA9600535BC2 /* home_onfigurcation_center_touch.png */; };
-		74A8D3E9202DEA9600535BC2 /* home_onfigurcation_center_untouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D399202DEA9600535BC2 /* home_onfigurcation_center_untouch.png */; };
-		74A8D3EA202DEA9600535BC2 /* home_repair.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D39A202DEA9600535BC2 /* home_repair.png */; };
-		74A8D3EB202DEA9600535BC2 /* home_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D39B202DEA9600535BC2 /* home_text.png */; };
 		74A8D3EC202DEA9600535BC2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D39C202DEA9600535BC2 /* logo.png */; };
 		74A8D3ED202DEA9600535BC2 /* abcd_alarm_managem_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D39E202DEA9600535BC2 /* abcd_alarm_managem_touch.png */; };
 		74A8D3EE202DEA9600535BC2 /* abcd_alarm_managem_untouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D39F202DEA9600535BC2 /* abcd_alarm_managem_untouch.png */; };
@@ -255,7 +294,6 @@
 		18C8D2F1202C50E400E91527 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		18C8D2F2202C50E400E91527 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		18C8D2FF20301C9B00E91527 /* DispatchOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchOrderVC.swift; sourceTree = "<group>"; };
-		18C8D30020301C9B00E91527 /* DispatchOrderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchOrderVC.xib; sourceTree = "<group>"; };
 		18C8D3032030256800E91527 /* ForgotPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwVC.swift; sourceTree = "<group>"; };
 		18D74FB22008BDA10011866E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		18D74FB32008BDA10011866E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -311,14 +349,54 @@
 		74903DFF202F413000003EF2 /* checkbox_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_off@3x.png"; sourceTree = "<group>"; };
 		74903E00202F413000003EF2 /* checkbox_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_on@2x.png"; sourceTree = "<group>"; };
 		74903E01202F413000003EF2 /* checkbox_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_on@3x.png"; sourceTree = "<group>"; };
+		74903E0A2030806A00003EF2 /* UserCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenter.swift; sourceTree = "<group>"; };
+		74903E0C2031EB5100003EF2 /* 报修@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报修@2x.png"; sourceTree = "<group>"; };
+		74903E0D2031EB5200003EF2 /* 报修@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "报修@3x.png"; sourceTree = "<group>"; };
+		74903E0E2031EB5200003EF2 /* 收费@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收费@2x.png"; sourceTree = "<group>"; };
+		74903E0F2031EB5300003EF2 /* 设备@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设备@3x.png"; sourceTree = "<group>"; };
+		74903E102031EB5300003EF2 /* 用能@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用能@2x.png"; sourceTree = "<group>"; };
+		74903E112031EB5400003EF2 /* 收费@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收费@3x.png"; sourceTree = "<group>"; };
+		74903E132031EB5400003EF2 /* 设备@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设备@2x.png"; sourceTree = "<group>"; };
+		74903E142031EB5500003EF2 /* 用能@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用能@3x.png"; sourceTree = "<group>"; };
+		74903E202031EBDF00003EF2 /* home_text@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_text@3x.png"; sourceTree = "<group>"; };
+		74903E212031EBDF00003EF2 /* home_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_text@2x.png"; sourceTree = "<group>"; };
+		74903E242031F03A00003EF2 /* 配置中心@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "配置中心@2x.png"; sourceTree = "<group>"; };
+		74903E252031F03A00003EF2 /* 配置中心@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "配置中心@3x.png"; sourceTree = "<group>"; };
+		74903E292032D82800003EF2 /* FeeInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeInfoVC.swift; sourceTree = "<group>"; };
+		74903E2D2032D8D400003EF2 /* FeeInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeInfoHeaderView.swift; sourceTree = "<group>"; };
+		74903E2F2032D8F200003EF2 /* FeeInfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeeInfoHeaderView.xib; sourceTree = "<group>"; };
+		74903E312032DA1F00003EF2 /* FeeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeInfoTableViewCell.swift; sourceTree = "<group>"; };
+		74903E322032DA1F00003EF2 /* FeeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeeInfoTableViewCell.xib; sourceTree = "<group>"; };
+		74903E37203404EA00003EF2 /* FeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeModel.swift; sourceTree = "<group>"; };
+		74903E392034051300003EF2 /* FeeReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeReturnObjModel.swift; sourceTree = "<group>"; };
+		74903E3B2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnObjChargeRateVosModel.swift; sourceTree = "<group>"; };
+		74903E3E20346A0C00003EF2 /* EnergyPointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyPointsModel.swift; sourceTree = "<group>"; };
+		74903E4020346A6100003EF2 /* EnergyPointsReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyPointsReturnObjModel.swift; sourceTree = "<group>"; };
+		74903E432036A11000003EF2 /* EnergyMonitorPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyMonitorPopView.swift; sourceTree = "<group>"; };
+		74903E452036A14100003EF2 /* EnergyMonitorPopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnergyMonitorPopView.xib; sourceTree = "<group>"; };
+		74903E482036B57500003EF2 /* moniterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moniterDataModel.swift; sourceTree = "<group>"; };
+		74903E4A2036B5CB00003EF2 /* moniterDataReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moniterDataReturnObjModel.swift; sourceTree = "<group>"; };
+		74903E4C2036B5F100003EF2 /* moniterDataPointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moniterDataPointsModel.swift; sourceTree = "<group>"; };
+		74903E4E2036D6FE00003EF2 /* monitorCustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monitorCustomAnnotation.swift; sourceTree = "<group>"; };
+		74903E532039A59200003EF2 /* OrderInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoVC.swift; sourceTree = "<group>"; };
+		74903E552039AB8F00003EF2 /* OrderInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoHeaderView.swift; sourceTree = "<group>"; };
+		74903E572039ABAC00003EF2 /* OrderInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoFooterView.swift; sourceTree = "<group>"; };
+		74903E592039ABD300003EF2 /* OrderInfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderInfoHeaderView.xib; sourceTree = "<group>"; };
+		74903E5B2039ABE200003EF2 /* OrderInfoFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderInfoFooterView.xib; sourceTree = "<group>"; };
+		74903E5D203B177300003EF2 /* orderInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderInfoModel.swift; sourceTree = "<group>"; };
+		74903E5F203B179A00003EF2 /* OrderInfoReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoReturnObjModel.swift; sourceTree = "<group>"; };
+		74903E61203B17BD00003EF2 /* OrderInfoStatusWorkStutVosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoStatusWorkStutVosModel.swift; sourceTree = "<group>"; };
+		74903E65203F10E600003EF2 /* DispatchOrderVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchOrderVCCell.swift; sourceTree = "<group>"; };
+		74903E66203F10E600003EF2 /* DispatchOrderVCCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchOrderVCCell.xib; sourceTree = "<group>"; };
+		74903E69203FBBCC00003EF2 /* DispatchOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchOrderModel.swift; sourceTree = "<group>"; };
+		74903E6B203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchOrderReturnObjModel.swift; sourceTree = "<group>"; };
+		74903E70203FC4D700003EF2 /* SelectWorkerVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkerVCViewController.swift; sourceTree = "<group>"; };
+		74903E7220402C1B00003EF2 /* SelectWorkerVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkerVCCell.swift; sourceTree = "<group>"; };
+		74903E7320402C1B00003EF2 /* SelectWorkerVCCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWorkerVCCell.xib; sourceTree = "<group>"; };
+		74903E7620403D7800003EF2 /* SelectWorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkerModel.swift; sourceTree = "<group>"; };
+		74903E7820403E3800003EF2 /* SelectWorkerReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkerReturnObjModel.swift; sourceTree = "<group>"; };
+		74903E7D204314FE00003EF2 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		74A8D394202DEA9600535BC2 /* home_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_back.png; sourceTree = "<group>"; };
-		74A8D395202DEA9600535BC2 /* home_charge_survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_charge_survey.png; sourceTree = "<group>"; };
-		74A8D396202DEA9600535BC2 /* home_energy_use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_energy_use.png; sourceTree = "<group>"; };
-		74A8D397202DEA9600535BC2 /* home_equipment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_equipment.png; sourceTree = "<group>"; };
-		74A8D398202DEA9600535BC2 /* home_onfigurcation_center_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_onfigurcation_center_touch.png; sourceTree = "<group>"; };
-		74A8D399202DEA9600535BC2 /* home_onfigurcation_center_untouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_onfigurcation_center_untouch.png; sourceTree = "<group>"; };
-		74A8D39A202DEA9600535BC2 /* home_repair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_repair.png; sourceTree = "<group>"; };
-		74A8D39B202DEA9600535BC2 /* home_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_text.png; sourceTree = "<group>"; };
 		74A8D39C202DEA9600535BC2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		74A8D39E202DEA9600535BC2 /* abcd_alarm_managem_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abcd_alarm_managem_touch.png; sourceTree = "<group>"; };
 		74A8D39F202DEA9600535BC2 /* abcd_alarm_managem_untouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abcd_alarm_managem_untouch.png; sourceTree = "<group>"; };
@@ -570,6 +648,7 @@
 		18D74FAF2008BDA10011866E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				74903E062030802F00003EF2 /* userCenter */,
 				18F373A220304EDB00D2662A /* Model */,
 				18D74FC1200C462F0011866E /* LoginVC.swift */,
 				18C8D3032030256800E91527 /* ForgotPwVC.swift */,
@@ -631,8 +710,8 @@
 		18D74FD7200DE6F00011866E /* Fee */ = {
 			isa = PBXGroup;
 			children = (
+				74903E282032D48A00003EF2 /* FeeInfo */,
 				18D7501F2015FFFC0011866E /* EnergyFeeVC.swift */,
-				18D7502A201603730011866E /* FeeVC */,
 			);
 			path = Fee;
 			sourceTree = "<group>";
@@ -650,9 +729,9 @@
 		18D74FD9200DE7080011866E /* Repair */ = {
 			isa = PBXGroup;
 			children = (
+				74903E502039A44200003EF2 /* WorkOrdersInformation */,
 				18D75027201601CE0011866E /* DispatchOrders */,
 				18D75021201601CD0011866E /* TrackPlayback */,
-				18D75024201601CD0011866E /* WorkOrdersInformation */,
 				18D7501B2015FFCE0011866E /* EnergyRepairVC.swift */,
 			);
 			path = Repair;
@@ -721,6 +800,8 @@
 		18D74FFC20119E070011866E /* EnergyMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				74903E472036B54100003EF2 /* Model */,
+				74903E4220369F5900003EF2 /* View */,
 				18D7500C201210150011866E /* EnergyMonitorVC.swift */,
 			);
 			path = EnergyMonitor;
@@ -729,7 +810,7 @@
 		18D74FFD20119E070011866E /* EnergyPoints */ = {
 			isa = PBXGroup;
 			children = (
-				18D750052011E67B0011866E /* Model */,
+				74903E3D2034671000003EF2 /* Model */,
 				18D750042011E67B0011866E /* View */,
 				18D74FFE20119E3F0011866E /* EnergyPointsTableViewController.swift */,
 			);
@@ -744,13 +825,6 @@
 				18D7500A2011F88C0011866E /* EnergyPointsHeaderView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		18D750052011E67B0011866E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		18D75011201321520011866E /* Components */ = {
@@ -791,59 +865,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		18D75024201601CD0011866E /* WorkOrdersInformation */ = {
-			isa = PBXGroup;
-			children = (
-				18D75025201601CD0011866E /* Model */,
-				18D75026201601CD0011866E /* View */,
-			);
-			path = WorkOrdersInformation;
-			sourceTree = "<group>";
-		};
-		18D75025201601CD0011866E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		18D75026201601CD0011866E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		18D75027201601CE0011866E /* DispatchOrders */ = {
 			isa = PBXGroup;
 			children = (
-				18D75028201601CE0011866E /* Model */,
-				18D75029201601CE0011866E /* View */,
+				74903E7A2043148C00003EF2 /* OrderDetailVC */,
+				74903E6D203FC4B900003EF2 /* selectWorkerVC */,
+				74903E64203F0AB500003EF2 /* Model */,
+				74903E63203F0AB500003EF2 /* View */,
 				18C8D2FF20301C9B00E91527 /* DispatchOrderVC.swift */,
-				18C8D30020301C9B00E91527 /* DispatchOrderVC.xib */,
 			);
 			path = DispatchOrders;
-			sourceTree = "<group>";
-		};
-		18D75028201601CE0011866E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		18D75029201601CE0011866E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		18D7502A201603730011866E /* FeeVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FeeVC;
 			sourceTree = "<group>";
 		};
 		18D7502C201614940011866E /* MKRingProgressView */ = {
@@ -919,6 +950,175 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		74903E062030802F00003EF2 /* userCenter */ = {
+			isa = PBXGroup;
+			children = (
+				74903E0A2030806A00003EF2 /* UserCenter.swift */,
+			);
+			path = userCenter;
+			sourceTree = "<group>";
+		};
+		74903E282032D48A00003EF2 /* FeeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				74903E2B2032D8BA00003EF2 /* Model */,
+				74903E2C2032D8BA00003EF2 /* View */,
+				74903E292032D82800003EF2 /* FeeInfoVC.swift */,
+			);
+			path = FeeInfo;
+			sourceTree = "<group>";
+		};
+		74903E2B2032D8BA00003EF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74903E37203404EA00003EF2 /* FeeModel.swift */,
+				74903E392034051300003EF2 /* FeeReturnObjModel.swift */,
+				74903E3B2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74903E2C2032D8BA00003EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74903E2D2032D8D400003EF2 /* FeeInfoHeaderView.swift */,
+				74903E2F2032D8F200003EF2 /* FeeInfoHeaderView.xib */,
+				74903E312032DA1F00003EF2 /* FeeInfoTableViewCell.swift */,
+				74903E322032DA1F00003EF2 /* FeeInfoTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74903E3D2034671000003EF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74903E3E20346A0C00003EF2 /* EnergyPointsModel.swift */,
+				74903E4020346A6100003EF2 /* EnergyPointsReturnObjModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74903E4220369F5900003EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74903E432036A11000003EF2 /* EnergyMonitorPopView.swift */,
+				74903E452036A14100003EF2 /* EnergyMonitorPopView.xib */,
+				74903E4E2036D6FE00003EF2 /* monitorCustomAnnotation.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74903E472036B54100003EF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74903E482036B57500003EF2 /* moniterDataModel.swift */,
+				74903E4A2036B5CB00003EF2 /* moniterDataReturnObjModel.swift */,
+				74903E4C2036B5F100003EF2 /* moniterDataPointsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74903E502039A44200003EF2 /* WorkOrdersInformation */ = {
+			isa = PBXGroup;
+			children = (
+				74903E522039A47600003EF2 /* Model */,
+				74903E512039A47500003EF2 /* View */,
+				74903E532039A59200003EF2 /* OrderInfoVC.swift */,
+			);
+			path = WorkOrdersInformation;
+			sourceTree = "<group>";
+		};
+		74903E512039A47500003EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74903E552039AB8F00003EF2 /* OrderInfoHeaderView.swift */,
+				74903E592039ABD300003EF2 /* OrderInfoHeaderView.xib */,
+				74903E572039ABAC00003EF2 /* OrderInfoFooterView.swift */,
+				74903E5B2039ABE200003EF2 /* OrderInfoFooterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74903E522039A47600003EF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74903E5D203B177300003EF2 /* orderInfoModel.swift */,
+				74903E5F203B179A00003EF2 /* OrderInfoReturnObjModel.swift */,
+				74903E61203B17BD00003EF2 /* OrderInfoStatusWorkStutVosModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74903E63203F0AB500003EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74903E65203F10E600003EF2 /* DispatchOrderVCCell.swift */,
+				74903E66203F10E600003EF2 /* DispatchOrderVCCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74903E64203F0AB500003EF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74903E69203FBBCC00003EF2 /* DispatchOrderModel.swift */,
+				74903E6B203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74903E6D203FC4B900003EF2 /* selectWorkerVC */ = {
+			isa = PBXGroup;
+			children = (
+				74903E6E203FC4B900003EF2 /* Model */,
+				74903E6F203FC4B900003EF2 /* View */,
+				74903E70203FC4D700003EF2 /* SelectWorkerVCViewController.swift */,
+			);
+			path = selectWorkerVC;
+			sourceTree = "<group>";
+		};
+		74903E6E203FC4B900003EF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74903E7620403D7800003EF2 /* SelectWorkerModel.swift */,
+				74903E7820403E3800003EF2 /* SelectWorkerReturnObjModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74903E6F203FC4B900003EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74903E7220402C1B00003EF2 /* SelectWorkerVCCell.swift */,
+				74903E7320402C1B00003EF2 /* SelectWorkerVCCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74903E7A2043148C00003EF2 /* OrderDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				74903E7B2043148C00003EF2 /* Model */,
+				74903E7C2043148C00003EF2 /* View */,
+				74903E7D204314FE00003EF2 /* OrderDetailVC.swift */,
+			);
+			path = OrderDetailVC;
+			sourceTree = "<group>";
+		};
+		74903E7B2043148C00003EF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74903E7C2043148C00003EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		74A8D392202DEA9600535BC2 /* img */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,14 +1142,19 @@
 		74A8D393202DEA9600535BC2 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				74903E242031F03A00003EF2 /* 配置中心@2x.png */,
+				74903E252031F03A00003EF2 /* 配置中心@3x.png */,
+				74903E212031EBDF00003EF2 /* home_text@2x.png */,
+				74903E202031EBDF00003EF2 /* home_text@3x.png */,
+				74903E0C2031EB5100003EF2 /* 报修@2x.png */,
+				74903E0D2031EB5200003EF2 /* 报修@3x.png */,
+				74903E132031EB5400003EF2 /* 设备@2x.png */,
+				74903E0F2031EB5300003EF2 /* 设备@3x.png */,
+				74903E0E2031EB5200003EF2 /* 收费@2x.png */,
+				74903E112031EB5400003EF2 /* 收费@3x.png */,
+				74903E102031EB5300003EF2 /* 用能@2x.png */,
+				74903E142031EB5500003EF2 /* 用能@3x.png */,
 				74A8D394202DEA9600535BC2 /* home_back.png */,
-				74A8D395202DEA9600535BC2 /* home_charge_survey.png */,
-				74A8D396202DEA9600535BC2 /* home_energy_use.png */,
-				74A8D397202DEA9600535BC2 /* home_equipment.png */,
-				74A8D398202DEA9600535BC2 /* home_onfigurcation_center_touch.png */,
-				74A8D399202DEA9600535BC2 /* home_onfigurcation_center_untouch.png */,
-				74A8D39A202DEA9600535BC2 /* home_repair.png */,
-				74A8D39B202DEA9600535BC2 /* home_text.png */,
 				74A8D39C202DEA9600535BC2 /* logo.png */,
 			);
 			path = home;
@@ -1222,6 +1427,7 @@
 			files = (
 				18D7503F2016160C0011866E /* EquipmentMonitorVC.xib in Resources */,
 				74A8D41B202DEA9600535BC2 /* circle_1.png in Resources */,
+				74903E302032D8F200003EF2 /* FeeInfoHeaderView.xib in Resources */,
 				74A8D40B202DEA9600535BC2 /* dispatch_record_first.png in Resources */,
 				74903E02202F413000003EF2 /* checkbox_off@2x.png in Resources */,
 				18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */,
@@ -1229,11 +1435,17 @@
 				18D75039201615E20011866E /* WorningInfoVC.xib in Resources */,
 				74A8D3F8202DEA9600535BC2 /* abcd_equipment_monitor_untouch.png in Resources */,
 				74A8D419202DEA9600535BC2 /* logo_login.png in Resources */,
+				74903E342032DA1F00003EF2 /* FeeInfoTableViewCell.xib in Resources */,
+				74903E162031EB5600003EF2 /* 报修@2x.png in Resources */,
+				74903E5A2039ABD300003EF2 /* OrderInfoHeaderView.xib in Resources */,
 				18D750092011EA990011866E /* EnergyPointsCell.xib in Resources */,
-				74A8D3EA202DEA9600535BC2 /* home_repair.png in Resources */,
+				74903E1E2031EB5600003EF2 /* 用能@3x.png in Resources */,
 				74A8D422202DEA9600535BC2 /* head_portrait.png in Resources */,
 				74A8D408202DEA9600535BC2 /* dount_4.png in Resources */,
+				74903E68203F10E600003EF2 /* DispatchOrderVCCell.xib in Resources */,
 				74A8D40F202DEA9600535BC2 /* checked_on.png in Resources */,
+				74903E1B2031EB5600003EF2 /* 收费@3x.png in Resources */,
+				74903E172031EB5600003EF2 /* 报修@3x.png in Resources */,
 				74A8D425202DEA9600535BC2 /* gold_3.png in Resources */,
 				74A8D40A202DEA9600535BC2 /* dispatch_record.png in Resources */,
 				74A8D3F5202DEA9600535BC2 /* abcd_energy_use_profile_touch.png in Resources */,
@@ -1247,58 +1459,62 @@
 				18D74FE32010339E0011866E /* EnergyTableViewCell.xib in Resources */,
 				74A8D405202DEA9600535BC2 /* dount_1.png in Resources */,
 				74A8D3F1202DEA9600535BC2 /* abcd_dispatch_order_touch.png in Resources */,
-				74A8D3E9202DEA9600535BC2 /* home_onfigurcation_center_untouch.png in Resources */,
 				74A8D3FA202DEA9600535BC2 /* abcd_gold_bench_marke_untouch.png in Resources */,
-				74A8D3E7202DEA9600535BC2 /* home_equipment.png in Resources */,
+				74903E1D2031EB5600003EF2 /* 设备@2x.png in Resources */,
 				74A8D407202DEA9600535BC2 /* dount_3.png in Resources */,
 				18C8D2C5202C43F100E91527 /* mapapi.bundle in Resources */,
 				74A8D3FE202DEA9600535BC2 /* abcd_work_order_details_untouch.png in Resources */,
 				74A8D421202DEA9600535BC2 /* back_circle_config_center.png in Resources */,
 				74A8D409202DEA9600535BC2 /* dount_5.png in Resources */,
 				74A8D41E202DEA9600535BC2 /* circle_4.png in Resources */,
+				74903E232031EBE000003EF2 /* home_text@2x.png in Resources */,
 				74A8D418202DEA9600535BC2 /* login_button_untouch.png in Resources */,
 				74A8D41A202DEA9600535BC2 /* 登录.png in Resources */,
 				74A8D3F3202DEA9600535BC2 /* abcd_energy_use_monitor_touch.png in Resources */,
 				74903E05202F413000003EF2 /* checkbox_on@3x.png in Resources */,
 				18791C9B2008BBB000A2E282 /* Assets.xcassets in Resources */,
+				74903E222031EBE000003EF2 /* home_text@3x.png in Resources */,
 				74A8D3F0202DEA9600535BC2 /* abcd_charge_survey_untouch.png in Resources */,
 				74A8D400202DEA9600535BC2 /* 故障数量.png in Resources */,
 				74A8D41D202DEA9600535BC2 /* circle_3.png in Resources */,
+				74903E192031EB5600003EF2 /* 设备@3x.png in Resources */,
 				74A8D401202DEA9600535BC2 /* 故障消缺率.png in Resources */,
-				74A8D3E8202DEA9600535BC2 /* home_onfigurcation_center_touch.png in Resources */,
-				18C8D30220301C9B00E91527 /* DispatchOrderVC.xib in Resources */,
 				74A8D41F202DEA9600535BC2 /* arror_right.png in Resources */,
 				74A8D410202DEA9600535BC2 /* touch.png in Resources */,
 				74A8D3EF202DEA9600535BC2 /* abcd_charge_survey_touch.png in Resources */,
 				74A8D3FC202DEA9600535BC2 /* abcd_trajectory_play_untouch.png in Resources */,
+				74903E462036A14100003EF2 /* EnergyMonitorPopView.xib in Resources */,
 				74A8D417202DEA9600535BC2 /* login_button_touch.png in Resources */,
+				74903E272031F03A00003EF2 /* 配置中心@3x.png in Resources */,
 				74A8D3F7202DEA9600535BC2 /* abcd_equipment_monitor_touch.png in Resources */,
 				74A8D3F6202DEA9600535BC2 /* abcd_energy_use_profile_untouch.png in Resources */,
 				74A8D414202DEA9600535BC2 /* 未标题-2.png in Resources */,
 				18791C992008BBB000A2E282 /* Main.storyboard in Resources */,
 				74A8D3FD202DEA9600535BC2 /* abcd_work_order_details_touch.png in Resources */,
 				74A8D40E202DEA9600535BC2 /* checked_off.png in Resources */,
-				74A8D3E5202DEA9600535BC2 /* home_charge_survey.png in Resources */,
 				74A8D3FB202DEA9600535BC2 /* abcd_trajectory_play_touch.png in Resources */,
 				74903E03202F413000003EF2 /* checkbox_off@3x.png in Resources */,
+				74903E182031EB5600003EF2 /* 收费@2x.png in Resources */,
+				74903E262031F03A00003EF2 /* 配置中心@2x.png in Resources */,
 				74A8D412202DEA9600535BC2 /* back_infowindow_view (2).png in Resources */,
 				74A8D3F4202DEA9600535BC2 /* abcd_energy_use_monitor_untouch.png in Resources */,
 				74A8D3F2202DEA9600535BC2 /* abcd_dispatch_order_untouch.png in Resources */,
 				74903E04202F413000003EF2 /* checkbox_on@2x.png in Resources */,
 				74A8D3EE202DEA9600535BC2 /* abcd_alarm_managem_untouch.png in Resources */,
+				74903E5C2039ABE200003EF2 /* OrderInfoFooterView.xib in Resources */,
 				74A8D3FF202DEA9600535BC2 /* alarm_managem_bottom_broken_bottom.png in Resources */,
-				74A8D3EB202DEA9600535BC2 /* home_text.png in Resources */,
 				74A8D3F9202DEA9600535BC2 /* abcd_gold_bench_marke_touch.png in Resources */,
 				74A8D420202DEA9600535BC2 /* back.png in Resources */,
 				74A8D427202DEA9600535BC2 /* gold_bottom_bg.png in Resources */,
 				74A8D3E4202DEA9600535BC2 /* home_back.png in Resources */,
+				74903E7520402C1B00003EF2 /* SelectWorkerVCCell.xib in Resources */,
 				74A8D41C202DEA9600535BC2 /* circle_2.png in Resources */,
 				74A8D424202DEA9600535BC2 /* gold_2.png in Resources */,
 				74A8D40D202DEA9600535BC2 /* mux.png in Resources */,
 				74A8D40C202DEA9600535BC2 /* dispatch_record_last.png in Resources */,
-				74A8D3E6202DEA9600535BC2 /* home_energy_use.png in Resources */,
 				74A8D426202DEA9600535BC2 /* gold_4.png in Resources */,
 				74A8D404202DEA9600535BC2 /* 未标题-2.png in Resources */,
+				74903E1A2031EB5600003EF2 /* 用能@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1371,13 +1587,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74903E7920403E3800003EF2 /* SelectWorkerReturnObjModel.swift in Sources */,
 				18F373A720304F7400D2662A /* BaseModel.swift in Sources */,
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
+				74903E4B2036B5CB00003EF2 /* moniterDataReturnObjModel.swift in Sources */,
+				74903E7E204314FE00003EF2 /* OrderDetailVC.swift in Sources */,
+				74903E3A2034051300003EF2 /* FeeReturnObjModel.swift in Sources */,
 				18C8D2CA202C4BB900E91527 /* TrackPlayBackVC.swift in Sources */,
 				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
 				18D74FD5200DDA980011866E /* MainBtn.m in Sources */,
 				18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */,
+				74903E3C2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift in Sources */,
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
+				74903E60203B179A00003EF2 /* OrderInfoReturnObjModel.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
 				18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.mm in Sources */,
 				18F373AD2030525E00D2662A /* LoginReturnObjModel.swift in Sources */,
@@ -1387,30 +1609,46 @@
 				18D74FD4200DDA980011866E /* FanBtn.m in Sources */,
 				18C8D2F4202C50E400E91527 /* MASConstraint.m in Sources */,
 				18C8D2F8202C50E400E91527 /* MASViewConstraint.m in Sources */,
+				74903E6A203FBBCC00003EF2 /* DispatchOrderModel.swift in Sources */,
+				74903E332032DA1F00003EF2 /* FeeInfoTableViewCell.swift in Sources */,
 				18C8D2D5202C4EF900E91527 /* CustomPointAnnotation.m in Sources */,
+				74903E492036B57500003EF2 /* moniterDataModel.swift in Sources */,
 				18D74FEC20107C860011866E /* WRCycleCell.swift in Sources */,
 				18D750032011A2260011866E /* BaseTableVC.swift in Sources */,
 				18D74FFF20119E3F0011866E /* EnergyPointsTableViewController.swift in Sources */,
 				18D74FED20107C860011866E /* WRCycleScrollView.swift in Sources */,
 				18C8D2FB202C50E400E91527 /* View+MASAdditions.m in Sources */,
 				18D74FEF20107C860011866E /* WRNavigationBar.swift in Sources */,
+				74903E0B2030806A00003EF2 /* UserCenter.swift in Sources */,
 				18D750202015FFFC0011866E /* EnergyFeeVC.swift in Sources */,
 				18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */,
+				74903E4120346A6100003EF2 /* EnergyPointsReturnObjModel.swift in Sources */,
 				18F373A420304F2B00D2662A /* LoginModel.swift in Sources */,
+				74903E62203B17BD00003EF2 /* OrderInfoStatusWorkStutVosModel.swift in Sources */,
 				18D750482016184B0011866E /* MKRingProgressView.swift in Sources */,
 				18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */,
+				74903E6C203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift in Sources */,
+				74903E4F2036D6FE00003EF2 /* monitorCustomAnnotation.swift in Sources */,
 				18D7500D201210150011866E /* EnergyMonitorVC.swift in Sources */,
 				18C8D2F7202C50E400E91527 /* MASViewAttribute.m in Sources */,
+				74903E2A2032D82800003EF2 /* FeeInfoVC.swift in Sources */,
 				18D7500B2011F88C0011866E /* EnergyPointsHeaderView.swift in Sources */,
+				74903E582039ABAC00003EF2 /* OrderInfoFooterView.swift in Sources */,
+				74903E4D2036B5F100003EF2 /* moniterDataPointsModel.swift in Sources */,
+				74903E542039A59200003EF2 /* OrderInfoVC.swift in Sources */,
+				74903E562039AB8F00003EF2 /* OrderInfoHeaderView.swift in Sources */,
 				18C8D2FC202C50E400E91527 /* ViewController+MASAdditions.m in Sources */,
 				18D74FDD201032C30011866E /* EnergyVC.swift in Sources */,
 				18D75016201321520011866E /* RadarMarkerView.swift in Sources */,
 				18C8D2F6202C50E400E91527 /* MASLayoutConstraint.m in Sources */,
 				18D74FC3200C462F0011866E /* LoginVC.swift in Sources */,
+				74903E71203FC4D700003EF2 /* SelectWorkerVCViewController.swift in Sources */,
 				18C8D245202B02E000E91527 /* UIBarButtonItemFixSpace.swift in Sources */,
 				18C8D2FA202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				18C8D2F3202C50E400E91527 /* MASCompositeConstraint.m in Sources */,
+				74903E3F20346A0C00003EF2 /* EnergyPointsModel.swift in Sources */,
 				18D7501E2015FFE70011866E /* EnergyEquipment.swift in Sources */,
+				74903E38203404EA00003EF2 /* FeeModel.swift in Sources */,
 				18D74FE22010339E0011866E /* EnergyTableViewCell.swift in Sources */,
 				18D74FEE20107C860011866E /* WRProxy.swift in Sources */,
 				18D7501C2015FFCE0011866E /* EnergyRepairVC.swift in Sources */,
@@ -1418,7 +1656,10 @@
 				18791C962008BBB000A2E282 /* ViewController.swift in Sources */,
 				18D74FB52008BDA10011866E /* API.swift in Sources */,
 				18D750432016169B0011866E /* MKRingProgressGroupView.swift in Sources */,
+				74903E2E2032D8D400003EF2 /* FeeInfoHeaderView.swift in Sources */,
 				18F373A92030507D00D2662A /* BaseReturnObjModel.swift in Sources */,
+				74903E442036A11000003EF2 /* EnergyMonitorPopView.swift in Sources */,
+				74903E7420402C1B00003EF2 /* SelectWorkerVCCell.swift in Sources */,
 				18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */,
 				18D74FB62008BDA10011866E /* Network.swift in Sources */,
 				18F373AB203050EB00D2662A /* OtherBaseModel.swift in Sources */,
@@ -1426,11 +1667,14 @@
 				18D750082011EA990011866E /* EnergyPointsCell.swift in Sources */,
 				18D750442016169B0011866E /* MKRingProgressGroupButton.swift in Sources */,
 				18D7501A2015E2B60011866E /* SettingCenterVC.swift in Sources */,
+				74903E5E203B177300003EF2 /* orderInfoModel.swift in Sources */,
 				18C8D3042030256800E91527 /* ForgotPwVC.swift in Sources */,
 				18D74FBC2008D4FB0011866E /* ceshiModel.swift in Sources */,
+				74903E67203F10E600003EF2 /* DispatchOrderVCCell.swift in Sources */,
 				18C8D2F9202C50E400E91527 /* NSArray+MASAdditions.m in Sources */,
 				18D750472016184B0011866E /* MKGradientGenerator.swift in Sources */,
 				18C8D30120301C9B00E91527 /* DispatchOrderVC.swift in Sources */,
+				74903E7720403D7800003EF2 /* SelectWorkerModel.swift in Sources */,
 				18D750012011A1C20011866E /* BaseVC.swift in Sources */,
 				18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */,
 			);
@@ -1612,7 +1856,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FengyunDiyin.Student;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1639,7 +1883,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chen.MonitoringAssistant-ZN";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FengyunDiyin.Student;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

@@ -17,9 +17,11 @@ class LoginVC: BaseTableVC {
     
     @IBOutlet weak var rememberPWBtn: UIButton!
     
-    @IBOutlet weak var showPwBtn: UIButton!
-    
     @IBOutlet weak var loginBtn: UIButton!
+    
+    @IBOutlet weak var mobileTextfield: UITextField!
+    
+    @IBOutlet weak var pwTextField: UITextField!
     
     
     class func getLoginVC() ->  NavigationController {
@@ -49,14 +51,26 @@ class LoginVC: BaseTableVC {
 
         self.loginBtn.setBackgroundImage(image, for: UIControlState.normal)
         self.loginBtn.setBackgroundImage(imageHigh, for: UIControlState.highlighted)
-
-
         
         self.tableView.frame = CGRect(x: 0, y: CGFloat(kNavBarBottom), width: ScreenW, height: ScreenH)
         let img = UIImageView(frame:self.tableView.bounds)
         img.image = UIImage.init(named: "登录")
         img.contentMode = UIViewContentMode.scaleAspectFill
         self.tableView.backgroundView = img
+        
+        
+        self.mobileTextfield.keyboardType = UIKeyboardType.numberPad
+        
+        UserCenter.shared.loginMobile { (mobile) in
+            if(mobile.count > 0){
+                self.mobileTextfield.text = mobile
+            }
+        }
+        UserCenter.shared.loginPw { (pw) in
+            if(pw.count > 0){
+                self.pwTextField.text = pw
+            }
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -72,11 +86,24 @@ class LoginVC: BaseTableVC {
             
             let model : LoginModel = obj as! LoginModel
             
-            print( model.statusCode )
+            print( model.statusCode as Any )
             
             if(model.statusCode == 800){
                 
-                print( model )
+                print( model.returnObj?.empName as Any  )
+                
+                UserCenter.shared.logIn(userModel: model)
+                UserCenter.shared.rememberLoginMobile(mobile: self.mobileTextfield.text!)
+                if(self.rememberPWBtn.isSelected){
+                    
+                    UserCenter.shared.rememberPw(Pw: self.pwTextField.text!)
+                }
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
+                let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                appdelegate.window?.rootViewController = initViewController
+                
             }
             
         }) { (error) in
@@ -84,14 +111,6 @@ class LoginVC: BaseTableVC {
             
             
         }
-        
-        
-//
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
-//
-//        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-//        appdelegate.window?.rootViewController = initViewController
         
         
     }

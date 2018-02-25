@@ -19,12 +19,14 @@ class EnergyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-    
+        self.imgView.clipsToBounds = true
+        
     }
     
     func setuptitleAndImg(title:String , Img:String) {
         
         self.titleL.text = title
+        self.imgView.image = UIImage.init(named: Img)
         
     }
     

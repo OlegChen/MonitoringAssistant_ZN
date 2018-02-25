@@ -46,7 +46,7 @@ class EnergyFeeVC: BaseTableVC {
         
         
         
-        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "")
+        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "abcd_charge_survey_touch")
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
@@ -54,12 +54,15 @@ class EnergyFeeVC: BaseTableVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 200;
+        return ScreenW / 680.0 * 284.0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
+            
+            let vc = FeeInfoVC()
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
     }
