@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		09B18796E1386C242D17D4E9 /* Pods_MonitoringAssistant_ZN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */; };
+		180477442044289700B410CB /* OrderDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180477432044289700B410CB /* OrderDetailHeaderView.swift */; };
+		18047746204428AD00B410CB /* OrderDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18047745204428AD00B410CB /* OrderDetailHeaderView.xib */; };
+		1804774920442BB600B410CB /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804774720442BB600B410CB /* OrderDetailCell.swift */; };
+		1804774A20442BB600B410CB /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1804774820442BB600B410CB /* OrderDetailCell.xib */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -228,6 +232,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180477432044289700B410CB /* OrderDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailHeaderView.swift; sourceTree = "<group>"; };
+		18047745204428AD00B410CB /* OrderDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailHeaderView.xib; sourceTree = "<group>"; };
+		1804774720442BB600B410CB /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
+		1804774820442BB600B410CB /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -503,6 +511,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180477412044276200B410CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		180477422044276300B410CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				180477432044289700B410CB /* OrderDetailHeaderView.swift */,
+				18047745204428AD00B410CB /* OrderDetailHeaderView.xib */,
+				1804774720442BB600B410CB /* OrderDetailCell.swift */,
+				1804774820442BB600B410CB /* OrderDetailCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		18791C872008BBB000A2E282 = {
 			isa = PBXGroup;
 			children = (
@@ -1098,25 +1124,11 @@
 		74903E7A2043148C00003EF2 /* OrderDetailVC */ = {
 			isa = PBXGroup;
 			children = (
-				74903E7B2043148C00003EF2 /* Model */,
-				74903E7C2043148C00003EF2 /* View */,
+				180477412044276200B410CB /* Model */,
+				180477422044276300B410CB /* View */,
 				74903E7D204314FE00003EF2 /* OrderDetailVC.swift */,
 			);
 			path = OrderDetailVC;
-			sourceTree = "<group>";
-		};
-		74903E7B2043148C00003EF2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		74903E7C2043148C00003EF2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		74A8D392202DEA9600535BC2 /* img */ = {
@@ -1436,6 +1448,7 @@
 				74A8D3F8202DEA9600535BC2 /* abcd_equipment_monitor_untouch.png in Resources */,
 				74A8D419202DEA9600535BC2 /* logo_login.png in Resources */,
 				74903E342032DA1F00003EF2 /* FeeInfoTableViewCell.xib in Resources */,
+				1804774A20442BB600B410CB /* OrderDetailCell.xib in Resources */,
 				74903E162031EB5600003EF2 /* 报修@2x.png in Resources */,
 				74903E5A2039ABD300003EF2 /* OrderInfoHeaderView.xib in Resources */,
 				18D750092011EA990011866E /* EnergyPointsCell.xib in Resources */,
@@ -1495,6 +1508,7 @@
 				74A8D3FB202DEA9600535BC2 /* abcd_trajectory_play_touch.png in Resources */,
 				74903E03202F413000003EF2 /* checkbox_off@3x.png in Resources */,
 				74903E182031EB5600003EF2 /* 收费@2x.png in Resources */,
+				18047746204428AD00B410CB /* OrderDetailHeaderView.xib in Resources */,
 				74903E262031F03A00003EF2 /* 配置中心@2x.png in Resources */,
 				74A8D412202DEA9600535BC2 /* back_infowindow_view (2).png in Resources */,
 				74A8D3F4202DEA9600535BC2 /* abcd_energy_use_monitor_untouch.png in Resources */,
@@ -1604,6 +1618,7 @@
 				18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.mm in Sources */,
 				18F373AD2030525E00D2662A /* LoginReturnObjModel.swift in Sources */,
 				18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */,
+				180477442044289700B410CB /* OrderDetailHeaderView.swift in Sources */,
 				18D75017201321520011866E /* XYMarkerView.swift in Sources */,
 				18D7500F201213410011866E /* EnergyCompareVC.swift in Sources */,
 				18D74FD4200DDA980011866E /* FanBtn.m in Sources */,
@@ -1645,6 +1660,7 @@
 				74903E71203FC4D700003EF2 /* SelectWorkerVCViewController.swift in Sources */,
 				18C8D245202B02E000E91527 /* UIBarButtonItemFixSpace.swift in Sources */,
 				18C8D2FA202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				1804774920442BB600B410CB /* OrderDetailCell.swift in Sources */,
 				18C8D2F3202C50E400E91527 /* MASCompositeConstraint.m in Sources */,
 				74903E3F20346A0C00003EF2 /* EnergyPointsModel.swift in Sources */,
 				18D7501E2015FFE70011866E /* EnergyEquipment.swift in Sources */,
