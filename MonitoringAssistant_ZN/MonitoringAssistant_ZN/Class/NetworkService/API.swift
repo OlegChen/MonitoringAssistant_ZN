@@ -36,8 +36,17 @@ public let workSendPageUrl = baseURL + "/repair/workSendPage"
 public let sendEmpListUrl = baseURL + "/repair/sendEmpList"
 //派单/改派
 public let workSendUrl = baseURL + "/repair/workSend"
-
-
-//}
+//工单详情
+public let workOrderDetailUrl = baseURL + "/repair/workOrderDetail"
+//派单记录
+public let workSendListUrl = baseURL + "/repair/workSendList"
+//轨迹回放（获取所有员工位置信息）
+public let getAllEmpPointUrl = baseURL + "/repair/getAllEmpPoint"
+//定位回放（获取员工坐标）
+public let getEmpPointsUrl = baseURL + "/repair/getEmpPoints"
+//设备监控
+public let monitorAllDataUrl = baseURL + "/device/monitorAllData"
+//告警管理
+public let alarmAllDataUrl = baseURL + "/alarm/alarmAllData"
 
 //private static let baseURL = "https://www.designernews.co"

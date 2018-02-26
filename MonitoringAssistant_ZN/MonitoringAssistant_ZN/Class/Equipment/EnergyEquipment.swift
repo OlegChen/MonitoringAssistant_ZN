@@ -10,6 +10,8 @@ import UIKit
 
 class EnergyEquipment: BaseTableVC {
     let titleArr = ["设备监控", "告警信息" ]
+    let imgArr = ["abcd3x_equipment_monitor_untouch","abcd3x_alarm_managem_untouch"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,7 @@ class EnergyEquipment: BaseTableVC {
         
         
         
-        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "")
+        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: imgArr[indexPath.row])
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell

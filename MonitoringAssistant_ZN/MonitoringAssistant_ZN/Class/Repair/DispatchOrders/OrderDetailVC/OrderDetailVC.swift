@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderDetailVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
+class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
 
     
     var tableView : UITableView!
@@ -23,9 +23,9 @@ class OrderDetailVC: UIViewController ,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         
         self.title = "工单详情"
-        self.view.backgroundColor = RGBCOLOR(r: 240/255, 240/255, 240/255)
+        self.view.backgroundColor = RGBCOLOR(r: 240, 240, 240)
         
-//        self.navigationItem.rightBarButtonItem =
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "派单记录", target: self, action: #selector(toDispatchOrderListVC))
 
         self.tableView = UITableView()
         self.tableView.delegate = self
@@ -49,6 +49,7 @@ class OrderDetailVC: UIViewController ,UITableViewDelegate,UITableViewDataSource
         self.tableView.tableHeaderView = headerView
     
         self.setupBottomBtn()
+        self.getdata()
     
     }
     
@@ -72,7 +73,7 @@ class OrderDetailVC: UIViewController ,UITableViewDelegate,UITableViewDataSource
         self.view.addSubview(btn)
         btn.snp.makeConstraints { (make) in
             
-            make.bottom.equalTo(self.view).offset(30)
+            make.top.equalTo(self.tableView.snp.bottom).offset(20)
             make.left.equalTo(self.view).offset(45)
             make.right.equalTo(self.view).offset(-45)
             make.height.equalTo(50)
@@ -88,46 +89,47 @@ class OrderDetailVC: UIViewController ,UITableViewDelegate,UITableViewDataSource
     
     @objc func sureBtnClick(btn: UIButton) {
         
-//        weak var weakSelf = self // ADD THIS LINE AS WELL
-//
-//        UserCenter.shared.userInfo { (islogin, userInfo) in
-//
-//
-//            let para = ["companyCode":userInfo.companyCode ,
-//                        "orgCode":userInfo.orgCode ,
-//                        "empNo":userInfo.empNo ,
-//                        "empName":userInfo.empName,
-//                        "workNo" : self.workNo,
-//                        "workSendId": "0",
-//                        "sendEmpNo":self.selectedWorkerModle?.empNo,
-//                        "sendEmpName":self.selectedWorkerModle?.empName
-//            ]
-//
-//            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workSendUrl, modelClass: "BaseModel", response: { (obj) in
-//
-//                let model = obj as! BaseModel
-//
-//                if model.statusCode == 800{
-//
-//                    let alertView = UIAlertView(title: "提示", message: "派单成功", delegate: nil, cancelButtonTitle: "确定")
-//                    alertView.show()
-//
-//                }else{
-//
-//                    let alertView = UIAlertView(title: "提示", message: "派单失败", delegate: nil, cancelButtonTitle: "确定")
-//                    alertView.show()
-//                }
-//
-//
-//            }) { (error) in
-//
-//
-//
-//            }
-//        }
-//
+//        let vc = SelectWorkerVCViewController()
+//        vc.lat = model.latitude
+//        vc.lon = model.longitude
+//        vc.workNo = model.workNo
+//        self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    @objc func toDispatchOrderListVC() {
+        
+        
+        
+        
+    }
+    
+    
+    func getdata() {
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            let para = ["companyCode":userInfo.companyCode ,
+                        "orgCode":userInfo.orgCode ,
+                        "empNo":userInfo.empNo ,
+                        "empName":userInfo.empName
+            ]
+            
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workOrderDetailUrl, modelClass: "", response: { (obj) in
+                
+//                let model = obj as! EnergyPointsModel
+//
+//                self.dataArr.addObjects(from: model.returnObj!)
+//                self.tableView.reloadData()
+                
+            }) { (error) in
+                
+            }
+            
+        }
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -10,12 +10,32 @@ import UIKit
 
 class OrderDetailHeaderView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var titleL: UILabel!
+    
+    @IBOutlet weak var longTimeL: UILabel!
+    
+    @IBOutlet weak var dateL: UILabel!
+    
+    @IBOutlet weak var orderNoL: UILabel!
+    
+    @IBOutlet weak var connectPersonL: UILabel!
+    
+    @IBOutlet weak var nameL: UILabel!
+    
+    @IBOutlet weak var telL: UILabel!
+    
+    @IBOutlet weak var addressL: UILabel!
+    
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+        
+        
+        
     }
-    */
+    
 
 }
