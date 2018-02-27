@@ -95,6 +95,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         let model = self.dataArr[indexPath.row] as! DispatchOrderReturnObjModel
 
         let vc = OrderDetailVC()
+        vc.workNo = model.workNo
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -81,7 +81,7 @@ class MKRingProgressGroupView: UIView {
         }
     }
     
-    @IBInspectable var ringWidth: CGFloat = 20 {
+    @IBInspectable var ringWidth: CGFloat = 8 {
         didSet {
             ring1.ringWidth = ringWidth
             ring2.ringWidth = ringWidth
@@ -108,7 +108,10 @@ class MKRingProgressGroupView: UIView {
     }
     
     private func setup() {
-        ring1.backgroundRingColor = UIColor.lightGray
+        ring1.backgroundRingColor = RGBCOLOR(r: 240, 240, 240)
+        ring2.backgroundRingColor = RGBCOLOR(r: 240, 240, 240)
+        ring3.backgroundRingColor = RGBCOLOR(r: 240, 240, 240)
+        ring4.backgroundRingColor = RGBCOLOR(r: 240, 240, 240)
         addSubview(ring1)
         addSubview(ring2)
         addSubview(ring3)

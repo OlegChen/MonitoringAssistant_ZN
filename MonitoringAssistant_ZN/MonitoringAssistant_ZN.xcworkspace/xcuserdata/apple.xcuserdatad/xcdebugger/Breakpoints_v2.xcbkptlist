@@ -113,7 +113,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/NetworkService/Network.swift"
-                  timestampString = "541341633.055604"
+                  timestampString = "541430345.1342781"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "116"
@@ -128,7 +128,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/NetworkService/Network.swift"
-                  timestampString = "541341633.058947"
+                  timestampString = "541430345.1375591"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "116"
@@ -177,7 +177,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
-                  timestampString = "541341646.538592"
+                  timestampString = "541430345.149803"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
@@ -192,7 +192,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
-                  timestampString = "541341646.541325"
+                  timestampString = "541430345.152615"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
@@ -200,6 +200,22 @@
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/OrderDetailVC/OrderDetailVC.swift"
+            timestampString = "541430344.875531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "getdata()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

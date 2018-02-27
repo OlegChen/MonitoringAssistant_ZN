@@ -26,6 +26,14 @@ class OrderDetailHeaderView: UIView {
     
     @IBOutlet weak var addressL: UILabel!
     
+    @IBOutlet weak var telBtn: UIButton!
+    
+    @IBAction func telBtnClick(_ sender: Any) {
+        
+        
+        
+    }
+    
     
     
     override func awakeFromNib() {

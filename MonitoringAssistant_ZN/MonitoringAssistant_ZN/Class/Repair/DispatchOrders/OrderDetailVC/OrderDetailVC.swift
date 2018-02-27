@@ -8,16 +8,18 @@
 
 import UIKit
 
+
 class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
 
+    var workNo : String?
+    
+    var headView : OrderDetailHeaderView?
+    
+    var dataModel : WorkOrderDetailModel?
+    
     
     var tableView : UITableView!
     
-    lazy var dataArr : NSMutableArray = {
-        
-        let array = NSMutableArray()
-        return array
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +43,10 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
         let headerView = UIView()
         headerView.backgroundColor = UIColor.white
-        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 190)
+        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 220)
        
         let view = (Bundle.main.loadNibNamed("OrderDetailHeaderView", owner: nil, options: nil)![0] as! OrderDetailHeaderView)
+        self.headView = view
         headerView.addSubview(view)
         
         self.tableView.tableHeaderView = headerView
@@ -61,11 +64,17 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: OrderDetailCell_id)
+        let cell = tableView.dequeueReusableCell(withIdentifier: OrderDetailCell_id) as? OrderDetailCell
+        cell?.levelL.text = self.dataModel?.returnObj?.urgencyName
+        cell?.contentL.text = self.dataModel?.returnObj?.repairsDesc
         
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return dataModel == nil ? 86 :  CGFloat((self.dataModel?.returnObj?.cellHeight)!)
+    }
     
     func setupBottomBtn() {
         
@@ -89,11 +98,11 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     @objc func sureBtnClick(btn: UIButton) {
         
-//        let vc = SelectWorkerVCViewController()
-//        vc.lat = model.latitude
-//        vc.lon = model.longitude
-//        vc.workNo = model.workNo
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = SelectWorkerVCViewController()
+        vc.lat = self.dataModel?.returnObj?.latitude
+        vc.lon = self.dataModel?.returnObj?.longitude
+        vc.workNo = self.dataModel?.returnObj?.workNo
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -112,21 +121,69 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             let para = ["companyCode":userInfo.companyCode ,
                         "orgCode":userInfo.orgCode ,
                         "empNo":userInfo.empNo ,
-                        "empName":userInfo.empName
+                        "empName":userInfo.empName,
+                        "workNo":self.workNo
             ]
             
-            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workOrderDetailUrl, modelClass: "", response: { (obj) in
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workOrderDetailUrl, modelClass: "WorkOrderDetailModel", response: { (obj) in
                 
-//                let model = obj as! EnergyPointsModel
-//
+                let model = obj as! WorkOrderDetailModel
+                
+                self.headView?.titleL.text = (model.returnObj?.workName)! + " | " + (model.returnObj?.workType)!
+                self.headView?.longTimeL.text = (model.returnObj?.repairsTime)! + "分钟"
+                self.headView?.dateL.text = model.returnObj?.createDateStr
+                self.headView?.nameL.text = model.returnObj?.sendEmpName
+                self.headView?.connectPersonL.text = model.returnObj?.contactMan
+                self.headView?.telL.text = model.returnObj?.tel
+                self.headView?.addressL.text = model.returnObj?.address
+                
+                self.dataModel = model
+                
+                
+                
+                
+                //
 //                self.dataArr.addObjects(from: model.returnObj!)
-//                self.tableView.reloadData()
+                self.tableView.reloadData()
                 
             }) { (error) in
                 
             }
             
         }
+        
+    }
+    
+    func setupImagefooter() {
+        
+        let view = UIView()
+        
+        let imgW = (ScreenW - 15 * 4) / 3
+        
+        for i in 0..<(self.dataModel?.returnObj?.workDealImgs?.count)! {
+            
+            let img = UIImageView.init()
+            img.contentMode = UIViewContentMode.scaleAspectFill
+            
+            let urlStr = self.dataModel?.returnObj?.workDealImgs![i] as! String
+            img.kf.setImage(with: URL(string: urlStr))
+            view.addSubview(img)
+            let l = i % 3
+            let row = i / 3
+            img.snp.makeConstraints({ (make) in
+                
+                make.left.equalTo(view).offset(15 + CGFloat(l) * (imgW + 15))
+                make.top.equalTo(view).offset(15 + CGFloat(row) * (imgW + 15))
+                make.size.equalTo(CGSize(width: imgW, height: imgW))
+            })
+            
+        }
+        
+        let height = 15 +  CGFloat((self.dataModel?.returnObj?.workDealImgs?.count)!) / 3 * (imgW + 15)
+        
+        view.frame = CGRect(x: 0 , y : 0 , width: ScreenW , height: height )
+        
+        self.tableView.tableFooterView = view
         
     }
     

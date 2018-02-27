@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrackPlayBackVC: UIViewController , BMKMapViewDelegate{
+class TrackPlayBackVC: BaseVC , BMKMapViewDelegate{
 
     var _mapView: BMKMapView?
     

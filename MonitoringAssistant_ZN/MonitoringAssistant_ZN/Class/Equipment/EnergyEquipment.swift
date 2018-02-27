@@ -10,7 +10,7 @@ import UIKit
 
 class EnergyEquipment: BaseTableVC {
     let titleArr = ["设备监控", "告警信息" ]
-    let imgArr = ["abcd3x_equipment_monitor_untouch","abcd3x_alarm_managem_untouch"]
+    let imgArr = ["abcd_equipment_monitor_untouch","abcd_alarm_managem_untouch"]
     
     
     override func viewDidLoad() {

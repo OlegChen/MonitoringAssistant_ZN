@@ -21,6 +21,8 @@ class BaseTableVC: UITableViewController {
         
         // 设置导航栏按钮和标题颜色
         navBarTintColor = .white
+        navBarTitleColor = .white
+
         
     }
 
