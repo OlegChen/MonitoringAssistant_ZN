@@ -152,7 +152,6 @@
 		18D75038201615E20011866E /* WorningInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D75036201615E20011866E /* WorningInfoVC.swift */; };
 		18D75039201615E20011866E /* WorningInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D75037201615E20011866E /* WorningInfoVC.xib */; };
 		18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7503C2016160C0011866E /* EquipmentMonitorVC.swift */; };
-		18D7503F2016160C0011866E /* EquipmentMonitorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D7503D2016160C0011866E /* EquipmentMonitorVC.xib */; };
 		18D750432016169B0011866E /* MKRingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750412016169A0011866E /* MKRingProgressGroupView.swift */; };
 		18D750442016169B0011866E /* MKRingProgressGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750422016169A0011866E /* MKRingProgressGroupButton.swift */; };
 		18D750472016184B0011866E /* MKGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750452016184A0011866E /* MKGradientGenerator.swift */; };
@@ -213,6 +212,12 @@
 		74903E7720403D7800003EF2 /* SelectWorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7620403D7800003EF2 /* SelectWorkerModel.swift */; };
 		74903E7920403E3800003EF2 /* SelectWorkerReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7820403E3800003EF2 /* SelectWorkerReturnObjModel.swift */; };
 		74903E7E204314FE00003EF2 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7D204314FE00003EF2 /* OrderDetailVC.swift */; };
+		74903E802045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E7F2045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift */; };
+		74903E822045AA3700003EF2 /* EquipmentMonitorHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E812045AA3700003EF2 /* EquipmentMonitorHeaderView.xib */; };
+		74903E852045B4FE00003EF2 /* EquipmentMonitorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E832045B4FE00003EF2 /* EquipmentMonitorCell.swift */; };
+		74903E862045B4FE00003EF2 /* EquipmentMonitorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E842045B4FE00003EF2 /* EquipmentMonitorCell.xib */; };
+		74903E882045B78F00003EF2 /* EquipmentMonitorSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74903E872045B78F00003EF2 /* EquipmentMonitorSectionHeaderView.swift */; };
+		74903E8A2045B79F00003EF2 /* EquipmentMonitorSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74903E892045B79F00003EF2 /* EquipmentMonitorSectionHeaderView.xib */; };
 		74A8D3E4202DEA9600535BC2 /* home_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D394202DEA9600535BC2 /* home_back.png */; };
 		74A8D3EC202DEA9600535BC2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D39C202DEA9600535BC2 /* logo.png */; };
 		74A8D3ED202DEA9600535BC2 /* abcd_alarm_managem_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D39E202DEA9600535BC2 /* abcd_alarm_managem_touch.png */; };
@@ -518,7 +523,6 @@
 		18D75036201615E20011866E /* WorningInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoVC.swift; sourceTree = "<group>"; };
 		18D75037201615E20011866E /* WorningInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorningInfoVC.xib; sourceTree = "<group>"; };
 		18D7503C2016160C0011866E /* EquipmentMonitorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMonitorVC.swift; sourceTree = "<group>"; };
-		18D7503D2016160C0011866E /* EquipmentMonitorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentMonitorVC.xib; sourceTree = "<group>"; };
 		18D750412016169A0011866E /* MKRingProgressGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupView.swift; sourceTree = "<group>"; };
 		18D750422016169A0011866E /* MKRingProgressGroupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupButton.swift; sourceTree = "<group>"; };
 		18D750452016184A0011866E /* MKGradientGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGradientGenerator.swift; sourceTree = "<group>"; };
@@ -580,6 +584,12 @@
 		74903E7620403D7800003EF2 /* SelectWorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkerModel.swift; sourceTree = "<group>"; };
 		74903E7820403E3800003EF2 /* SelectWorkerReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkerReturnObjModel.swift; sourceTree = "<group>"; };
 		74903E7D204314FE00003EF2 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
+		74903E7F2045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMonitorHeaderView.swift; sourceTree = "<group>"; };
+		74903E812045AA3700003EF2 /* EquipmentMonitorHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentMonitorHeaderView.xib; sourceTree = "<group>"; };
+		74903E832045B4FE00003EF2 /* EquipmentMonitorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMonitorCell.swift; sourceTree = "<group>"; };
+		74903E842045B4FE00003EF2 /* EquipmentMonitorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentMonitorCell.xib; sourceTree = "<group>"; };
+		74903E872045B78F00003EF2 /* EquipmentMonitorSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMonitorSectionHeaderView.swift; sourceTree = "<group>"; };
+		74903E892045B79F00003EF2 /* EquipmentMonitorSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentMonitorSectionHeaderView.xib; sourceTree = "<group>"; };
 		74A8D394202DEA9600535BC2 /* home_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_back.png; sourceTree = "<group>"; };
 		74A8D39C202DEA9600535BC2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		74A8D39E202DEA9600535BC2 /* abcd_alarm_managem_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abcd_alarm_managem_touch.png; sourceTree = "<group>"; };
@@ -1490,7 +1500,6 @@
 			children = (
 				18D75040201616920011866E /* View */,
 				18D7503C2016160C0011866E /* EquipmentMonitorVC.swift */,
-				18D7503D2016160C0011866E /* EquipmentMonitorVC.xib */,
 			);
 			path = EquipmentMonitor;
 			sourceTree = "<group>";
@@ -1500,6 +1509,12 @@
 			children = (
 				18D750422016169A0011866E /* MKRingProgressGroupButton.swift */,
 				18D750412016169A0011866E /* MKRingProgressGroupView.swift */,
+				74903E7F2045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift */,
+				74903E812045AA3700003EF2 /* EquipmentMonitorHeaderView.xib */,
+				74903E832045B4FE00003EF2 /* EquipmentMonitorCell.swift */,
+				74903E842045B4FE00003EF2 /* EquipmentMonitorCell.xib */,
+				74903E872045B78F00003EF2 /* EquipmentMonitorSectionHeaderView.swift */,
+				74903E892045B79F00003EF2 /* EquipmentMonitorSectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2001,7 +2016,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D7503F2016160C0011866E /* EquipmentMonitorVC.xib in Resources */,
 				74A8D41B202DEA9600535BC2 /* circle_1.png in Resources */,
 				74903E302032D8F200003EF2 /* FeeInfoHeaderView.xib in Resources */,
 				74A8D40B202DEA9600535BC2 /* dispatch_record_first.png in Resources */,
@@ -2013,6 +2027,7 @@
 				74A8D419202DEA9600535BC2 /* logo_login.png in Resources */,
 				18A57A3B20455A4D00DA7D59 /* SVProgressHUD.bundle in Resources */,
 				74903E342032DA1F00003EF2 /* FeeInfoTableViewCell.xib in Resources */,
+				74903E8A2045B79F00003EF2 /* EquipmentMonitorSectionHeaderView.xib in Resources */,
 				1804774A20442BB600B410CB /* OrderDetailCell.xib in Resources */,
 				74903E162031EB5600003EF2 /* 报修@2x.png in Resources */,
 				74903E5A2039ABD300003EF2 /* OrderInfoHeaderView.xib in Resources */,
@@ -2023,6 +2038,7 @@
 				74903E68203F10E600003EF2 /* DispatchOrderVCCell.xib in Resources */,
 				18A57A4920455A4D00DA7D59 /* PhotoItemView.xib in Resources */,
 				74A8D40F202DEA9600535BC2 /* checked_on.png in Resources */,
+				74903E822045AA3700003EF2 /* EquipmentMonitorHeaderView.xib in Resources */,
 				74903E1B2031EB5600003EF2 /* 收费@3x.png in Resources */,
 				74903E172031EB5600003EF2 /* 报修@3x.png in Resources */,
 				74A8D425202DEA9600535BC2 /* gold_3.png in Resources */,
@@ -2050,6 +2066,7 @@
 				74903E232031EBE000003EF2 /* home_text@2x.png in Resources */,
 				74A8D418202DEA9600535BC2 /* login_button_untouch.png in Resources */,
 				74A8D41A202DEA9600535BC2 /* 登录.png in Resources */,
+				74903E862045B4FE00003EF2 /* EquipmentMonitorCell.xib in Resources */,
 				74A8D3F3202DEA9600535BC2 /* abcd_energy_use_monitor_touch.png in Resources */,
 				74903E05202F413000003EF2 /* checkbox_on@3x.png in Resources */,
 				18791C9B2008BBB000A2E282 /* Assets.xcassets in Resources */,
@@ -2190,6 +2207,7 @@
 				18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */,
 				18A57A2E20455A4D00DA7D59 /* UIImage+Extend.m in Sources */,
 				18A57A7920457E7B00DA7D59 /* UIImageView+HighlightedWebCache.m in Sources */,
+				74903E802045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift in Sources */,
 				18A57A2620455A4D00DA7D59 /* NSObject+Extend.m in Sources */,
 				18A57A7B20457E7B00DA7D59 /* UIView+WebCacheOperation.m in Sources */,
 				74903E3C2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift in Sources */,
@@ -2234,6 +2252,7 @@
 				18A57A2F20455A4D00DA7D59 /* UIImage+FixOrientation.m in Sources */,
 				18D750482016184B0011866E /* MKRingProgressView.swift in Sources */,
 				18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */,
+				74903E882045B78F00003EF2 /* EquipmentMonitorSectionHeaderView.swift in Sources */,
 				74903E6C203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift in Sources */,
 				74903E4F2036D6FE00003EF2 /* monitorCustomAnnotation.swift in Sources */,
 				18A57A4420455A4D00DA7D59 /* PBPGView.m in Sources */,
@@ -2291,6 +2310,7 @@
 				18A57A7720457E7B00DA7D59 /* UIImage+GIF.m in Sources */,
 				18A57A7420457E7B00DA7D59 /* SDWebImageManager.m in Sources */,
 				74903E7420402C1B00003EF2 /* SelectWorkerVCCell.swift in Sources */,
+				74903E852045B4FE00003EF2 /* EquipmentMonitorCell.swift in Sources */,
 				18A57A7020457E7B00DA7D59 /* SDWebImageCompat.m in Sources */,
 				18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */,
 				18D74FB62008BDA10011866E /* Network.swift in Sources */,
