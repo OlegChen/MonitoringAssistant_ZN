@@ -11,31 +11,103 @@ import UIKit
 class EquipmentMonitorHeaderView: UIView {
     
     
+
+    func setData(array:NSArray) {
+        
+        
+        var ring1Progress : Double = 0
+        var ring2Progress : Double = 0
+        var ring3Progress : Double = 0
+        var ring4Progress : Double = 0
+    
+    
+        for i in 0..<array.count {
+            
+            let model = array[i] as! equipmentMonitorMonitorStatusModel
+
+            let rank1 = model.code
+            switch rank1{
+            case "1"?:
+                print("在线")
+                ring1Progress = Double(model.proportion!)!
+                self.onlineNumL.text = model.sumCnt! + "个"
+                self.onlineRateL.text = model.proportion! + "%"
+            case "2"?:
+                print("离线")
+                ring2Progress = Double(model.proportion!)!
+                self.offLineNumL.text = model.sumCnt! + "个"
+                self.offLineRateL.text = model.proportion! + "%"
+            case "3"?:
+                print("故障")
+                ring3Progress = Double(model.proportion!)!
+                self.troubleNumL.text = model.sumCnt! + "个"
+                self.troubleRateL.text = model.proportion! + "%"
+            case "9"?:
+                print("停用")
+                ring4Progress = Double(model.proportion!)!
+                self.stopNumL.text = model.sumCnt! + "个"
+                self.stopRateL.text = model.proportion! + "%"
+            default:
+                print("没有评级")
+            }
+            
+        }
+        
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(1.0)
+        self.progressGroup.ring1.progress = ring1Progress / 100 //selectedGroup.contentView.ring1.progress
+        self.progressGroup.ring2.progress = ring2Progress / 100 //selectedGroup.contentView.ring2.progress
+        self.progressGroup.ring3.progress = ring3Progress / 100 //selectedGroup.contentView.ring3.progress
+        self.progressGroup.ring4.progress = ring4Progress / 100 //selectedGroup.contentView.ring3.progress
+        CATransaction.commit()
+    
+        
+        
+    }
+    
     @IBOutlet weak var groupContainerView: UIView!
     @IBOutlet weak var progressGroup: MKRingProgressGroupView!
-
+    
+    @IBOutlet weak var exampleView1: UIView!
+    @IBOutlet weak var exampleView2: UIView!
+    
+    @IBOutlet weak var exampleView3: UIView!
+    @IBOutlet weak var exampleView4: UIView!
+    
+    
+    @IBOutlet weak var onlineNumL: UILabel!
+    
+    @IBOutlet weak var onlineRateL: UILabel!
+    
+    @IBOutlet weak var offLineNumL: UILabel!
+    
+    @IBOutlet weak var offLineRateL: UILabel!
+    
+    @IBOutlet weak var troubleNumL: UILabel!
+    
+    @IBOutlet weak var troubleRateL: UILabel!
+    
+    @IBOutlet weak var stopNumL: UILabel!
+    
+    @IBOutlet weak var stopRateL: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.progressGroup.ringWidth = 15
         
-        delay(0.5) {
-            self.updateMainGroupProgress()
-        }
+
+        
+        exampleView1.layer.cornerRadius = 8
+        exampleView2.layer.cornerRadius = 8
+        exampleView3.layer.cornerRadius = 8
+        exampleView4.layer.cornerRadius = 8
+
         
     }
     
-    private func updateMainGroupProgress() {
-        //        let selectedGroup = buttons[selectedIndex]
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(1.0)
-        self.progressGroup.ring1.progress = 0.5 //selectedGroup.contentView.ring1.progress
-        self.progressGroup.ring2.progress = 0.7 //selectedGroup.contentView.ring2.progress
-        self.progressGroup.ring3.progress = 0.3 //selectedGroup.contentView.ring3.progress
-        self.progressGroup.ring4.progress = 0.6 //selectedGroup.contentView.ring3.progress
-        CATransaction.commit()
-    }
-    
+
     func delay(_ delay: Double, closure: @escaping ()->()) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }

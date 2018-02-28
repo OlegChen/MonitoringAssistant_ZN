@@ -12,6 +12,8 @@
 		18047746204428AD00B410CB /* OrderDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18047745204428AD00B410CB /* OrderDetailHeaderView.xib */; };
 		1804774920442BB600B410CB /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804774720442BB600B410CB /* OrderDetailCell.swift */; };
 		1804774A20442BB600B410CB /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1804774820442BB600B410CB /* OrderDetailCell.xib */; };
+		181F5B7D2046E1C7003600DE /* functionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5B7B2046E1C7003600DE /* functionVC.swift */; };
+		181F5B7E2046E1C7003600DE /* functionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181F5B7C2046E1C7003600DE /* functionVC.xib */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -79,6 +81,12 @@
 		18A57A7920457E7B00DA7D59 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A6920457E7B00DA7D59 /* UIImageView+HighlightedWebCache.m */; };
 		18A57A7A20457E7B00DA7D59 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A6B20457E7B00DA7D59 /* UIImageView+WebCache.m */; };
 		18A57A7B20457E7B00DA7D59 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A6D20457E7B00DA7D59 /* UIView+WebCacheOperation.m */; };
+		18A57A7E20464D0C00DA7D59 /* equipmentMonitorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A7D20464D0C00DA7D59 /* equipmentMonitorModel.swift */; };
+		18A57A8020464D3800DA7D59 /* equipmentMonitorReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A7F20464D3700DA7D59 /* equipmentMonitorReturnObjModel.swift */; };
+		18A57A8220464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A8120464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift */; };
+		18A57A8420464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A8320464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift */; };
+		18A57A912046D87700DA7D59 /* ChangePwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A902046D87700DA7D59 /* ChangePwVC.swift */; };
+		18A57A942046D89400DA7D59 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57A922046D89400DA7D59 /* AboutUsVC.swift */; };
 		18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D241202B02DE00E91527 /* DispatchQueueExtension.swift */; };
 		18C8D245202B02E000E91527 /* UIBarButtonItemFixSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D242202B02DF00E91527 /* UIBarButtonItemFixSpace.swift */; };
 		18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D243202B02E000E91527 /* UIBarButtonItemExtension.swift */; };
@@ -301,6 +309,8 @@
 		18047745204428AD00B410CB /* OrderDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailHeaderView.xib; sourceTree = "<group>"; };
 		1804774720442BB600B410CB /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
 		1804774820442BB600B410CB /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
+		181F5B7B2046E1C7003600DE /* functionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionVC.swift; sourceTree = "<group>"; };
+		181F5B7C2046E1C7003600DE /* functionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = functionVC.xib; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -430,6 +440,12 @@
 		18A57A6B20457E7B00DA7D59 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		18A57A6C20457E7B00DA7D59 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		18A57A6D20457E7B00DA7D59 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		18A57A7D20464D0C00DA7D59 /* equipmentMonitorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = equipmentMonitorModel.swift; sourceTree = "<group>"; };
+		18A57A7F20464D3700DA7D59 /* equipmentMonitorReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = equipmentMonitorReturnObjModel.swift; sourceTree = "<group>"; };
+		18A57A8120464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = equipmentMonitorMonitorClassModel.swift; sourceTree = "<group>"; };
+		18A57A8320464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = equipmentMonitorMonitorStatusModel.swift; sourceTree = "<group>"; };
+		18A57A902046D87700DA7D59 /* ChangePwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwVC.swift; sourceTree = "<group>"; };
+		18A57A922046D89400DA7D59 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		18C8D241202B02DE00E91527 /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
 		18C8D242202B02DF00E91527 /* UIBarButtonItemFixSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemFixSpace.swift; sourceTree = "<group>"; };
 		18C8D243202B02E000E91527 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
@@ -1162,6 +1178,42 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		18A57A7C20464C4B00DA7D59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18A57A7D20464D0C00DA7D59 /* equipmentMonitorModel.swift */,
+				18A57A7F20464D3700DA7D59 /* equipmentMonitorReturnObjModel.swift */,
+				18A57A8120464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift */,
+				18A57A8320464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18A57A8A2046C9FE00DA7D59 /* ChangePw */ = {
+			isa = PBXGroup;
+			children = (
+				18A57A902046D87700DA7D59 /* ChangePwVC.swift */,
+			);
+			path = ChangePw;
+			sourceTree = "<group>";
+		};
+		18A57A8B2046C9FE00DA7D59 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				18A57A922046D89400DA7D59 /* AboutUsVC.swift */,
+				181F5B7B2046E1C7003600DE /* functionVC.swift */,
+				181F5B7C2046E1C7003600DE /* functionVC.xib */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		18A57A8C2046C9FF00DA7D59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		18C8D240202B02A700E91527 /* navSet */ = {
 			isa = PBXGroup;
 			children = (
@@ -1302,6 +1354,9 @@
 		18D74FD6200DE6E30011866E /* SettingCenter */ = {
 			isa = PBXGroup;
 			children = (
+				18A57A8B2046C9FE00DA7D59 /* AboutUs */,
+				18A57A8A2046C9FE00DA7D59 /* ChangePw */,
+				18A57A8C2046C9FF00DA7D59 /* Model */,
 				18D750192015E2B60011866E /* SettingCenterVC.swift */,
 			);
 			path = SettingCenter;
@@ -1498,6 +1553,7 @@
 		18D75035201615740011866E /* EquipmentMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				18A57A7C20464C4B00DA7D59 /* Model */,
 				18D75040201616920011866E /* View */,
 				18D7503C2016160C0011866E /* EquipmentMonitorVC.swift */,
 			);
@@ -2019,6 +2075,7 @@
 				74A8D41B202DEA9600535BC2 /* circle_1.png in Resources */,
 				74903E302032D8F200003EF2 /* FeeInfoHeaderView.xib in Resources */,
 				74A8D40B202DEA9600535BC2 /* dispatch_record_first.png in Resources */,
+				181F5B7E2046E1C7003600DE /* functionVC.xib in Resources */,
 				74903E02202F413000003EF2 /* checkbox_off@2x.png in Resources */,
 				18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */,
 				74A8D413202DEA9600535BC2 /* 未标题-1.png in Resources */,
@@ -2211,8 +2268,10 @@
 				18A57A2620455A4D00DA7D59 /* NSObject+Extend.m in Sources */,
 				18A57A7B20457E7B00DA7D59 /* UIView+WebCacheOperation.m in Sources */,
 				74903E3C2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift in Sources */,
+				18A57A8420464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift in Sources */,
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
 				74903E60203B179A00003EF2 /* OrderInfoReturnObjModel.swift in Sources */,
+				18A57A8220464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
 				18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.mm in Sources */,
 				18A57A3220455A4D00DA7D59 /* UIView+Extend.m in Sources */,
@@ -2225,6 +2284,7 @@
 				18A57A4320455A4D00DA7D59 /* PBBlurImageView.m in Sources */,
 				18C8D2F4202C50E400E91527 /* MASConstraint.m in Sources */,
 				18A57A6E20457E7B00DA7D59 /* NSData+ImageContentType.m in Sources */,
+				18A57A8020464D3800DA7D59 /* equipmentMonitorReturnObjModel.swift in Sources */,
 				18C8D2F8202C50E400E91527 /* MASViewConstraint.m in Sources */,
 				74903E6A203FBBCC00003EF2 /* DispatchOrderModel.swift in Sources */,
 				74903E332032DA1F00003EF2 /* FeeInfoTableViewCell.swift in Sources */,
@@ -2264,12 +2324,14 @@
 				74903E582039ABAC00003EF2 /* OrderInfoFooterView.swift in Sources */,
 				74903E4D2036B5F100003EF2 /* moniterDataPointsModel.swift in Sources */,
 				18A57A4020455A4D00DA7D59 /* PhotoBroswerLayout.m in Sources */,
+				18A57A942046D89400DA7D59 /* AboutUsVC.swift in Sources */,
 				18A57A4A20455A4D00DA7D59 /* PhotoBroswerVC.m in Sources */,
 				74903E542039A59200003EF2 /* OrderInfoVC.swift in Sources */,
 				74903E562039AB8F00003EF2 /* OrderInfoHeaderView.swift in Sources */,
 				18C8D2FC202C50E400E91527 /* ViewController+MASAdditions.m in Sources */,
 				18A57A4820455A4D00DA7D59 /* PhotoItemView.m in Sources */,
 				18A57A7220457E7B00DA7D59 /* SDWebImageDownloader.m in Sources */,
+				181F5B7D2046E1C7003600DE /* functionVC.swift in Sources */,
 				18D74FDD201032C30011866E /* EnergyVC.swift in Sources */,
 				18D75016201321520011866E /* RadarMarkerView.swift in Sources */,
 				18C8D2F6202C50E400E91527 /* MASLayoutConstraint.m in Sources */,
@@ -2306,6 +2368,7 @@
 				18A57A3A20455A4D00DA7D59 /* SVIndefiniteAnimatedView.m in Sources */,
 				74903E2E2032D8D400003EF2 /* FeeInfoHeaderView.swift in Sources */,
 				18F373A92030507D00D2662A /* BaseReturnObjModel.swift in Sources */,
+				18A57A912046D87700DA7D59 /* ChangePwVC.swift in Sources */,
 				74903E442036A11000003EF2 /* EnergyMonitorPopView.swift in Sources */,
 				18A57A7720457E7B00DA7D59 /* UIImage+GIF.m in Sources */,
 				18A57A7420457E7B00DA7D59 /* SDWebImageManager.m in Sources */,
@@ -2317,6 +2380,7 @@
 				18A57A3D20455A4D00DA7D59 /* LFRoundProgressView.m in Sources */,
 				18F373AB203050EB00D2662A /* OtherBaseModel.swift in Sources */,
 				18A57A3420455A4D00DA7D59 /* UIImage+ReMake.m in Sources */,
+				18A57A7E20464D0C00DA7D59 /* equipmentMonitorModel.swift in Sources */,
 				18D74FEB20107C860011866E /* WRCustomNavigationBar.swift in Sources */,
 				18D750082011EA990011866E /* EnergyPointsCell.swift in Sources */,
 				18A57A6F20457E7B00DA7D59 /* SDImageCache.m in Sources */,

@@ -13,9 +13,28 @@ let EquipmentMonitorCell_id = "EquipmentMonitorCell"
 
 class EquipmentMonitorCell: UITableViewCell {
 
+    @IBOutlet weak var titleL: UILabel!
+    
+    @IBOutlet weak var allNumL: UILabel!
+    
+    @IBOutlet weak var onLineNumL: UILabel!
+    
+    @IBOutlet weak var rateL: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let line = UIView()
+        line.backgroundColor = RGBCOLOR(r: 230, 230, 230)
+        self.contentView.addSubview(line)
+        line.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(self.contentView).offset(15)
+            make.right.equalTo(self.contentView).offset(-15)
+            make.bottom.equalTo(self.contentView.snp.top).offset(0)
+            make.height.equalTo(0.5)
+        }
         
         
     }

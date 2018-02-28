@@ -48,5 +48,12 @@ public let getEmpPointsUrl = baseURL + "/repair/getEmpPoints"
 public let monitorAllDataUrl = baseURL + "/device/monitorAllData"
 //告警管理
 public let alarmAllDataUrl = baseURL + "/alarm/alarmAllData"
+//获取用户信息
+public let getUserUrl = baseURL + "/user/getUser"
+//修改密码
+public let modifyPwdUrl = baseURL + "/user/modifyPwd"
+// 修改头像
+public let modifyHeadUrlUrl = baseURL + "/user/modifyHeadUrl"
+
 
 //private static let baseURL = "https://www.designernews.co"

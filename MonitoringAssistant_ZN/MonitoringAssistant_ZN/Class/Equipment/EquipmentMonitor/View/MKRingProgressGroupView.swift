@@ -83,9 +83,7 @@ class MKRingProgressGroupView: UIView {
     
     @IBInspectable var ringWidth: CGFloat = 8 {
         didSet {
-            
-//            ringWidth = 15
-            
+                        
             ring1.ringWidth = ringWidth
             ring2.ringWidth = ringWidth
             ring3.ringWidth = ringWidth

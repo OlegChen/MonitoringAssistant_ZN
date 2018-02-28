@@ -16,6 +16,8 @@ class LoginReturnObjModel: BaseReturnObjModel {
     var empName: String?
     var loginName: String?
     var mobile: String?
+    
+    var headUrl: String?
 
     
 //    "": "1006",

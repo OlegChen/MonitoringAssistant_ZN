@@ -9,19 +9,26 @@
 import UIKit
 
 class SettingCenterVC: BaseTableVC {
-
+    
+    @IBOutlet weak var headImg: UIImageView!
+    
+    @IBOutlet weak var nameL: UILabel!
+    
+    @IBOutlet weak var TelL: UILabel!
+    
+    @IBOutlet weak var loginOutBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "配置中心"
         
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = RGBCOLOR(r: 245, 245, 245)
+        
+        loginOutBtn.layer.cornerRadius = 4
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.getData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,62 +60,71 @@ class SettingCenterVC: BaseTableVC {
         return 15
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 1 {
+            
+            if(indexPath.row == 0){
+                
+                self.navigationController?.pushViewController(ChangePwVC(), animated: true)
+            }else{
+                
+                self.navigationController?.pushViewController(AboutUsVC(), animated: true)
 
-
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+            }
+            
+            
+        }
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
-    */
+    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func getData() {
+        
+        
+        weak var weakSelf = self // ADD THIS LINE AS WELL
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            let para = ["companyCode":userInfo.companyCode ,
+                        "orgCode":userInfo.orgCode ,
+                        "empNo":userInfo.empNo ,
+                        "empName":userInfo.empName
+            ]
+            
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: getUserUrl, modelClass: "LoginModel" , response: { (obj) in
+                
+                let model = obj as! LoginModel
+                
+                if (model.statusCode == 800){
+                    
+                    self.headImg.kf.setImage(with: URL.init(string: (model.returnObj?.headUrl)!))
+                    self.nameL.text = model.returnObj?.empName
+                    self.TelL.text = model.returnObj?.mobile
+                }
+                
+                
+                
+            }) { (error) in
+                
+            }
+            
+        }
+        
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+
+    
+    @IBAction func loginOutClick(_ sender: UIButton) {
+        
+        UserCenter.shared.logOut()
+        
+        let vc = LoginVC.getLoginVC()
+        UIApplication.shared.keyWindow?.rootViewController = vc
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
