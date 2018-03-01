@@ -9,8 +9,8 @@
 #import "CustomMapAnnotationView.h"
 #import "Masonry.h"
 
-#define kWidth  50.f
-#define kHeight 60.f
+#define kWidth  40.f
+#define kHeight 42.f
 
 #define kHoriMargin 5.f
 #define kVertMargin 5.f
@@ -21,8 +21,8 @@
 
 @interface CustomMapAnnotationView ()
 
-@property (nonatomic, strong) UIImageView *portraitImageView;
-//@property (nonatomic, strong) UILabel *nameLabel;
+//@property (nonatomic, strong) UIImageView *portraitImageView;
+@property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UIImageView *BGView;
 
 @end
@@ -40,49 +40,61 @@
 
         
         
-        //下面箭头
-        UIImageView *arrowImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 13)];
-        arrowImage.center = CGPointMake(kWidth/2.0, kHeight - 6);
-        //arrowImage.backgroundColor = [UIColor orangeColor];
-        arrowImage.contentMode = UIViewContentModeScaleAspectFit;
-        arrowImage.image = [UIImage imageNamed:@"GreenArrow"];
-        
-        [self addSubview:arrowImage];
+
         
         
         
         UIImageView *view = [[UIImageView alloc]init];
+        view.contentMode = UIViewContentModeScaleAspectFit;
+        view.image = [UIImage imageNamed:@"张三"];
         //WithFrame:CGRectMake(kHoriMargin - 1, kVertMargin - 1, kPortraitWidth + 2, kPortraitHeight + 2)
-        view.backgroundColor = [UIColor colorWithRed:68/225.0 green:124/225.0 blue:54/225.0 alpha:1.0];
-        view.layer.masksToBounds = YES;
-        view.layer.cornerRadius = 21.0;
-        view.layer.rasterizationScale = [UIScreen mainScreen].scale;
-        view.layer.shouldRasterize = YES;
-        view.clipsToBounds = YES;
+//        view.backgroundColor = [UIColor colorWithRed:68/225.0 green:124/225.0 blue:54/225.0 alpha:1.0];
+//        view.layer.masksToBounds = YES;
+//        view.layer.cornerRadius = 21.0;
+//        view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+//        view.layer.shouldRasterize = YES;
+//        view.clipsToBounds = YES;
         self.BGView = view;
         [self addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(kPortraitWidth + 2, kPortraitHeight + 2));
-            make.bottom.equalTo(arrowImage.mas_top).offset(0);
-            make.centerX.equalTo(arrowImage);
+            
+            make.edges.equalTo(self).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        }];
+        
+        //文字
+        UILabel *name = [[UILabel alloc]init];
+        self.nameLabel = name;
+        name.text = @"张三";
+        name.font = [UIFont systemFontOfSize:9];
+        name.textColor = [UIColor whiteColor];
+        name.textAlignment = NSTextAlignmentCenter;
+//        name.backgroundColor = [UIColor orangeColor];
+        name.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [self addSubview:name];
+        [name mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+            make.centerX.equalTo(self).offset(-5);
+            make.centerY.equalTo(self).offset(-4);
+            make.size.mas_equalTo(CGSizeMake(30, 20));
         }];
         
         
-        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
-        self.portraitImageView.layer.masksToBounds = YES;
-        self.portraitImageView.layer.cornerRadius = 20.0;
-        self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
-        self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-        self.portraitImageView.layer.borderWidth = 3.0f;
-        self.portraitImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-        self.portraitImageView.layer.shouldRasterize = YES;
-        self.portraitImageView.clipsToBounds = YES;
-        [self addSubview:self.portraitImageView];
-
-        [self.portraitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(kPortraitWidth, kPortraitHeight));
-            make.center.equalTo(view);
-        }];
+//        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
+//        self.portraitImageView.layer.masksToBounds = YES;
+//        self.portraitImageView.layer.cornerRadius = 20.0;
+//        self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+//        self.portraitImageView.layer.borderWidth = 3.0f;
+//        self.portraitImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+//        self.portraitImageView.layer.shouldRasterize = YES;
+//        self.portraitImageView.clipsToBounds = YES;
+//        [self addSubview:self.portraitImageView];
+//
+//        [self.portraitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.size.mas_equalTo(CGSizeMake(kPortraitWidth, kPortraitHeight));
+//            make.center.equalTo(view);
+//        }];
         
         
         
@@ -111,13 +123,13 @@
 //}
 
 
-- (void)clickImage{
-    
-    NSLog(@"+++++++");
-    
-    [self setSelected:NO];
-    
-}
+//- (void)clickImage{
+//
+//    NSLog(@"+++++++");
+//
+//    [self setSelected:NO];
+//
+//}
 
 //- (void)setTeacherModel:(TeacherListDataModel *)teacherModel{
 //

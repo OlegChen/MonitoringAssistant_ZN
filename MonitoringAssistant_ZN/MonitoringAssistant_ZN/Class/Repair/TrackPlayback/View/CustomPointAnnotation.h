@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
-//#import "TeacherListDataModel.h"
+//#import "MonitoringAssistant_"
 
 @interface CustomPointAnnotation : BMKPointAnnotation
 
-//@property (nonatomic ,strong) TeacherListDataModel *teacherModel;
+@property (nonatomic ,strong) TrackPlayBackReturnObjModel *Model;
 
 @end

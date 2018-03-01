@@ -14,6 +14,10 @@
 		1804774A20442BB600B410CB /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1804774820442BB600B410CB /* OrderDetailCell.xib */; };
 		181F5B7D2046E1C7003600DE /* functionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5B7B2046E1C7003600DE /* functionVC.swift */; };
 		181F5B7E2046E1C7003600DE /* functionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181F5B7C2046E1C7003600DE /* functionVC.xib */; };
+		181F5BA9204819B2003600DE /* TrackPlayBackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BA8204819B2003600DE /* TrackPlayBackModel.swift */; };
+		181F5BAB20481B12003600DE /* TrackPlayBackReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAA20481B11003600DE /* TrackPlayBackReturnObjModel.swift */; };
+		181F5BAD20481F4B003600DE /* CustPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAC20481F4B003600DE /* CustPointAnnotation.swift */; };
+		181F5BAF20482D75003600DE /* TrackPlayBackPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAE20482D75003600DE /* TrackPlayBackPopView.swift */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -110,7 +114,6 @@
 		18C8D2C3202C3F2700E91527 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D2C2202C3F2700E91527 /* libstdc++.6.0.9.tbd */; };
 		18C8D2C5202C43F100E91527 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18C8D2C4202C43F100E91527 /* mapapi.bundle */; };
 		18C8D2CA202C4BB900E91527 /* TrackPlayBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2C9202C4BB900E91527 /* TrackPlayBackVC.swift */; };
-		18C8D2D5202C4EF900E91527 /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2CF202C4EF800E91527 /* CustomPointAnnotation.m */; };
 		18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2D2202C4EF800E91527 /* CustomMapAnnotationView.mm */; };
 		18C8D2F3202C50E400E91527 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2DB202C50E400E91527 /* MASCompositeConstraint.m */; };
 		18C8D2F4202C50E400E91527 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D2DE202C50E400E91527 /* MASConstraint.m */; };
@@ -250,7 +253,7 @@
 		74A8D400202DEA9600535BC2 /* 故障数量.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B2202DEA9600535BC2 /* 故障数量.png */; };
 		74A8D401202DEA9600535BC2 /* 故障消缺率.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B3202DEA9600535BC2 /* 故障消缺率.png */; };
 		74A8D402202DEA9600535BC2 /* wqe2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B4202DEA9600535BC2 /* wqe2.png */; };
-		74A8D403202DEA9600535BC2 /* 张三.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B6202DEA9600535BC2 /* 张三.png */; };
+		74A8D403202DEA9600535BC2 /* 张三@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B6202DEA9600535BC2 /* 张三@2x.png */; };
 		74A8D404202DEA9600535BC2 /* 未标题-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B7202DEA9600535BC2 /* 未标题-2.png */; };
 		74A8D405202DEA9600535BC2 /* dount_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3B9202DEA9600535BC2 /* dount_1.png */; };
 		74A8D406202DEA9600535BC2 /* dount_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3BA202DEA9600535BC2 /* dount_2.png */; };
@@ -311,6 +314,10 @@
 		1804774820442BB600B410CB /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
 		181F5B7B2046E1C7003600DE /* functionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionVC.swift; sourceTree = "<group>"; };
 		181F5B7C2046E1C7003600DE /* functionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = functionVC.xib; sourceTree = "<group>"; };
+		181F5BA8204819B2003600DE /* TrackPlayBackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackModel.swift; sourceTree = "<group>"; };
+		181F5BAA20481B11003600DE /* TrackPlayBackReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackReturnObjModel.swift; sourceTree = "<group>"; };
+		181F5BAC20481F4B003600DE /* CustPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustPointAnnotation.swift; sourceTree = "<group>"; };
+		181F5BAE20482D75003600DE /* TrackPlayBackPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackPopView.swift; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -470,8 +477,6 @@
 		18C8D2C4202C43F100E91527 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = MonitoringAssistant_ZN/Vendors/BaiduMapAPI/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		18C8D2C9202C4BB900E91527 /* TrackPlayBackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackVC.swift; sourceTree = "<group>"; };
 		18C8D2CC202C4EF800E91527 /* CustomMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMapAnnotationView.h; sourceTree = "<group>"; };
-		18C8D2CE202C4EF800E91527 /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
-		18C8D2CF202C4EF800E91527 /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
 		18C8D2D2202C4EF800E91527 /* CustomMapAnnotationView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomMapAnnotationView.mm; sourceTree = "<group>"; };
 		18C8D2DA202C50E400E91527 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		18C8D2DB202C50E400E91527 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -630,7 +635,7 @@
 		74A8D3B2202DEA9600535BC2 /* 故障数量.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "故障数量.png"; sourceTree = "<group>"; };
 		74A8D3B3202DEA9600535BC2 /* 故障消缺率.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "故障消缺率.png"; sourceTree = "<group>"; };
 		74A8D3B4202DEA9600535BC2 /* wqe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wqe2.png; sourceTree = "<group>"; };
-		74A8D3B6202DEA9600535BC2 /* 张三.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "张三.png"; sourceTree = "<group>"; };
+		74A8D3B6202DEA9600535BC2 /* 张三@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "张三@2x.png"; sourceTree = "<group>"; };
 		74A8D3B7202DEA9600535BC2 /* 未标题-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未标题-2.png"; sourceTree = "<group>"; };
 		74A8D3B9202DEA9600535BC2 /* dount_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dount_1.png; sourceTree = "<group>"; };
 		74A8D3BA202DEA9600535BC2 /* dount_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dount_2.png; sourceTree = "<group>"; };
@@ -731,6 +736,15 @@
 				1804774820442BB600B410CB /* OrderDetailCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		181F5BA72048198D003600DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BA8204819B2003600DE /* TrackPlayBackModel.swift */,
+				181F5BAA20481B11003600DE /* TrackPlayBackReturnObjModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18791C872008BBB000A2E282 = {
@@ -1495,18 +1509,11 @@
 		18D75021201601CD0011866E /* TrackPlayback */ = {
 			isa = PBXGroup;
 			children = (
-				18D75022201601CD0011866E /* Model */,
+				181F5BA72048198D003600DE /* Model */,
 				18D75023201601CD0011866E /* View */,
 				18C8D2C9202C4BB900E91527 /* TrackPlayBackVC.swift */,
 			);
 			path = TrackPlayback;
-			sourceTree = "<group>";
-		};
-		18D75022201601CD0011866E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		18D75023201601CD0011866E /* View */ = {
@@ -1514,8 +1521,8 @@
 			children = (
 				18C8D2CC202C4EF800E91527 /* CustomMapAnnotationView.h */,
 				18C8D2D2202C4EF800E91527 /* CustomMapAnnotationView.mm */,
-				18C8D2CE202C4EF800E91527 /* CustomPointAnnotation.h */,
-				18C8D2CF202C4EF800E91527 /* CustomPointAnnotation.m */,
+				181F5BAC20481F4B003600DE /* CustPointAnnotation.swift */,
+				181F5BAE20482D75003600DE /* TrackPlayBackPopView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1846,7 +1853,7 @@
 		74A8D3B5202DEA9600535BC2 /* 工人分布 */ = {
 			isa = PBXGroup;
 			children = (
-				74A8D3B6202DEA9600535BC2 /* 张三.png */,
+				74A8D3B6202DEA9600535BC2 /* 张三@2x.png */,
 				74A8D3B7202DEA9600535BC2 /* 未标题-2.png */,
 			);
 			path = "工人分布";
@@ -2107,7 +2114,7 @@
 				74A8D3ED202DEA9600535BC2 /* abcd_alarm_managem_touch.png in Resources */,
 				74A8D402202DEA9600535BC2 /* wqe2.png in Resources */,
 				74A8D423202DEA9600535BC2 /* gold_1.png in Resources */,
-				74A8D403202DEA9600535BC2 /* 张三.png in Resources */,
+				74A8D403202DEA9600535BC2 /* 张三@2x.png in Resources */,
 				74A8D411202DEA9600535BC2 /* un_touch.png in Resources */,
 				18D74FE32010339E0011866E /* EnergyTableViewCell.xib in Resources */,
 				74A8D405202DEA9600535BC2 /* dount_1.png in Resources */,
@@ -2247,6 +2254,7 @@
 			files = (
 				74903E7920403E3800003EF2 /* SelectWorkerReturnObjModel.swift in Sources */,
 				18A57A7520457E7B00DA7D59 /* SDWebImagePrefetcher.m in Sources */,
+				181F5BAD20481F4B003600DE /* CustPointAnnotation.swift in Sources */,
 				18F373A720304F7400D2662A /* BaseModel.swift in Sources */,
 				18A57A2520455A4D00DA7D59 /* NSDate+Extend.m in Sources */,
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
@@ -2267,6 +2275,7 @@
 				74903E802045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift in Sources */,
 				18A57A2620455A4D00DA7D59 /* NSObject+Extend.m in Sources */,
 				18A57A7B20457E7B00DA7D59 /* UIView+WebCacheOperation.m in Sources */,
+				181F5BAF20482D75003600DE /* TrackPlayBackPopView.swift in Sources */,
 				74903E3C2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift in Sources */,
 				18A57A8420464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift in Sources */,
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
@@ -2283,12 +2292,12 @@
 				18D74FD4200DDA980011866E /* FanBtn.m in Sources */,
 				18A57A4320455A4D00DA7D59 /* PBBlurImageView.m in Sources */,
 				18C8D2F4202C50E400E91527 /* MASConstraint.m in Sources */,
+				181F5BAB20481B12003600DE /* TrackPlayBackReturnObjModel.swift in Sources */,
 				18A57A6E20457E7B00DA7D59 /* NSData+ImageContentType.m in Sources */,
 				18A57A8020464D3800DA7D59 /* equipmentMonitorReturnObjModel.swift in Sources */,
 				18C8D2F8202C50E400E91527 /* MASViewConstraint.m in Sources */,
 				74903E6A203FBBCC00003EF2 /* DispatchOrderModel.swift in Sources */,
 				74903E332032DA1F00003EF2 /* FeeInfoTableViewCell.swift in Sources */,
-				18C8D2D5202C4EF900E91527 /* CustomPointAnnotation.m in Sources */,
 				74903E492036B57500003EF2 /* moniterDataModel.swift in Sources */,
 				18D74FEC20107C860011866E /* WRCycleCell.swift in Sources */,
 				18A57A2920455A4D00DA7D59 /* UIColor+Extend.m in Sources */,
@@ -2368,6 +2377,7 @@
 				18A57A3A20455A4D00DA7D59 /* SVIndefiniteAnimatedView.m in Sources */,
 				74903E2E2032D8D400003EF2 /* FeeInfoHeaderView.swift in Sources */,
 				18F373A92030507D00D2662A /* BaseReturnObjModel.swift in Sources */,
+				181F5BA9204819B2003600DE /* TrackPlayBackModel.swift in Sources */,
 				18A57A912046D87700DA7D59 /* ChangePwVC.swift in Sources */,
 				74903E442036A11000003EF2 /* EnergyMonitorPopView.swift in Sources */,
 				18A57A7720457E7B00DA7D59 /* UIImage+GIF.m in Sources */,
@@ -2569,6 +2579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI",
@@ -2581,6 +2592,7 @@
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FengyunDiyin.Student;
+				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2596,6 +2608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI",
@@ -2608,6 +2621,7 @@
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FengyunDiyin.Student;
+				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

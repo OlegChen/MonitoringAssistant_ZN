@@ -15,9 +15,13 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "工人分布"
+        
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(_mapView!)
     
+        
+        self.getData()
     
     }
     
@@ -50,12 +54,89 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate{
         
     }
     
-//    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
+    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
+
+        
+        let newAnnotationView = CustomMapAnnotationView.init(annotation: annotation, reuseIdentifier: "12345")
 //
-//
-//
-//    }
-//
+//        let popView = Bundle.main.loadNibNamed("EnergyMonitorPopView", owner: nil, options: nil)?[0] as! EnergyMonitorPopView
+//        let custPopView =  BMKActionPaopaoView.init(customView: popView)
+        
+        
+        let custAnnotation = annotation as! CustPointAnnotation
+        
+        
+        newAnnotationView?.centerOffset = CGPoint(x:10, y:-20) ;
+        
+        
+        let popView = BMKActionPaopaoView.init(customView: TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width: 120 , height: 120 )))
+ 
+        newAnnotationView?.paopaoView = nil
+        newAnnotationView?.paopaoView = popView
+        
+        return newAnnotationView;
+
+    }
+
+    
+    func getData() {
+        
+            
+            
+            weak var weakSelf = self // ADD THIS LINE AS WELL
+            
+            UserCenter.shared.userInfo { (islogin, userInfo) in
+                
+                let para = ["companyCode":userInfo.companyCode ,"orgCode":userInfo.orgCode ,"empNo":userInfo.empNo ,"empName":userInfo.empName ]
+                
+                
+                NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: getAllEmpPointUrl, modelClass: "TrackPlayBackModel" , response: { (obj) in
+                    
+                    let model = obj as! TrackPlayBackModel
+                    
+                    if model.statusCode == 800 {
+                        
+                        self.AddAnnotations(array: model.returnObj! as NSArray)
+                        
+                        
+                    }
+                    
+                    
+                }, failture: { (error) in
+                    
+                    
+                })
+                
+                
+            }
+        
+        
+        
+    }
+    
+    func AddAnnotations(array:NSArray) {
+        
+        let itemArray : NSMutableArray = []
+        
+        
+        for var model in array {
+            
+            let m = model as! TrackPlayBackReturnObjModel
+            
+            let item = CustPointAnnotation()
+            
+            item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m.latitude!)! , longitude: Double(m.longitude!)!)
+            
+            item.Model = m
+            
+            itemArray.add(item)
+            
+        }
+        
+        self._mapView?.addAnnotations(itemArray as! [Any])
+        
+        
+    }
     
     
     override func didReceiveMemoryWarning() {
