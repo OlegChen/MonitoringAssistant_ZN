@@ -8,8 +8,19 @@
 
 import UIKit
 
+protocol TrackPlayBackPopViewDelegate:NSObjectProtocol
+{
+    //回调方法 传一个String类型的值
+    func TrackBtnClick(model:TrackPlayBackReturnObjModel)
+}
+
 class TrackPlayBackPopView: UIView {
 
+    weak var delegate:TrackPlayBackPopViewDelegate?
+
+    var model : TrackPlayBackReturnObjModel?
+    
+    
     var companyL : UILabel!
     var nameL : UILabel!
     var TelL : UILabel!
@@ -37,8 +48,8 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(companyL)
         companyL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(10);
-            make.right.equalTo(self).offset(-10);
+            make.left.equalTo(self).offset(8);
+            make.right.equalTo(self).offset(-8);
             make.top.equalTo(self).offset(10);
             
         }
@@ -50,8 +61,8 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(nameL)
         nameL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(10);
-            make.right.equalTo(self).offset(-10);
+            make.left.equalTo(self).offset(8);
+            make.right.equalTo(self).offset(-8);
             make.top.equalTo(companyL.snp.bottom).offset(8);
             
         }
@@ -64,8 +75,8 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(TelL)
         TelL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(10);
-            make.right.equalTo(self).offset(-10);
+            make.left.equalTo(self).offset(8);
+            make.right.equalTo(self).offset(-4);
             make.top.equalTo(nameL.snp.bottom).offset(8);
             
         }
@@ -92,8 +103,10 @@ class TrackPlayBackPopView: UIView {
     @objc func btnClick() {
         
         
-        
-        
+        if delegate != nil {
+            
+            delegate?.TrackBtnClick(model: self.model!)
+        }
         
     }
     

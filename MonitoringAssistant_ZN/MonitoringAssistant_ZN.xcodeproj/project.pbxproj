@@ -18,6 +18,7 @@
 		181F5BAB20481B12003600DE /* TrackPlayBackReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAA20481B11003600DE /* TrackPlayBackReturnObjModel.swift */; };
 		181F5BAD20481F4B003600DE /* CustPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAC20481F4B003600DE /* CustPointAnnotation.swift */; };
 		181F5BAF20482D75003600DE /* TrackPlayBackPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAE20482D75003600DE /* TrackPlayBackPopView.swift */; };
+		181F5BB42048EBDE003600DE /* TrackDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BB32048EBDE003600DE /* TrackDetailVC.swift */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -318,6 +319,7 @@
 		181F5BAA20481B11003600DE /* TrackPlayBackReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackReturnObjModel.swift; sourceTree = "<group>"; };
 		181F5BAC20481F4B003600DE /* CustPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustPointAnnotation.swift; sourceTree = "<group>"; };
 		181F5BAE20482D75003600DE /* TrackPlayBackPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackPopView.swift; sourceTree = "<group>"; };
+		181F5BB32048EBDE003600DE /* TrackDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailVC.swift; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -745,6 +747,30 @@
 				181F5BAA20481B11003600DE /* TrackPlayBackReturnObjModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		181F5BB02048EBBD003600DE /* TrackDetail */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BB12048EBBD003600DE /* Model */,
+				181F5BB22048EBBD003600DE /* View */,
+				181F5BB32048EBDE003600DE /* TrackDetailVC.swift */,
+			);
+			path = TrackDetail;
+			sourceTree = "<group>";
+		};
+		181F5BB12048EBBD003600DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181F5BB22048EBBD003600DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		18791C872008BBB000A2E282 = {
@@ -1509,6 +1535,7 @@
 		18D75021201601CD0011866E /* TrackPlayback */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BB02048EBBD003600DE /* TrackDetail */,
 				181F5BA72048198D003600DE /* Model */,
 				18D75023201601CD0011866E /* View */,
 				18C8D2C9202C4BB900E91527 /* TrackPlayBackVC.swift */,
@@ -2299,6 +2326,7 @@
 				74903E6A203FBBCC00003EF2 /* DispatchOrderModel.swift in Sources */,
 				74903E332032DA1F00003EF2 /* FeeInfoTableViewCell.swift in Sources */,
 				74903E492036B57500003EF2 /* moniterDataModel.swift in Sources */,
+				181F5BB42048EBDE003600DE /* TrackDetailVC.swift in Sources */,
 				18D74FEC20107C860011866E /* WRCycleCell.swift in Sources */,
 				18A57A2920455A4D00DA7D59 /* UIColor+Extend.m in Sources */,
 				18D750032011A2260011866E /* BaseTableVC.swift in Sources */,

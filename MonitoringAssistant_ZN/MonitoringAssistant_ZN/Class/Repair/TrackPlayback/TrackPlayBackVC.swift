@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrackPlayBackVC: BaseVC , BMKMapViewDelegate{
+class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
 
     var _mapView: BMKMapView?
     
@@ -68,9 +68,16 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate{
         
         newAnnotationView?.centerOffset = CGPoint(x:10, y:-20) ;
         
+        let custView = TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width: 120 , height: 120 ))
+            custView.delegate = self
+            custView.model = custAnnotation.Model
+            custView.companyL.text = "机构：" + (custAnnotation.Model?.companyAlias)!
+            custView.nameL.text = "联系人：" + (custAnnotation.Model?.empName)!
+            custView.TelL.text = "电话：" + (custAnnotation.Model?.mobile)!
         
-        let popView = BMKActionPaopaoView.init(customView: TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width: 120 , height: 120 )))
- 
+        
+        let popView = BMKActionPaopaoView.init(customView: custView )
+        
         newAnnotationView?.paopaoView = nil
         newAnnotationView?.paopaoView = popView
         
@@ -135,6 +142,14 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate{
         
         self._mapView?.addAnnotations(itemArray as! [Any])
         
+        
+    }
+    
+    func TrackBtnClick(model: TrackPlayBackReturnObjModel) {
+        
+        let VC = TrackDetailVC()
+        VC.WorkerModel = model
+        self.navigationController?.pushViewController(VC, animated: true)
         
     }
     
