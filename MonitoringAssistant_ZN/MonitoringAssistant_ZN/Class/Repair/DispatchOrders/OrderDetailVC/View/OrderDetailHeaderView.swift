@@ -30,6 +30,15 @@ class OrderDetailHeaderView: UIView {
     
     @IBAction func telBtnClick(_ sender: Any) {
         
+        let globalQueue = DispatchQueue.global()
+       
+            globalQueue.async {
+
+                UIApplication.shared.openURL(URL(string: "telprompt://" + self.telL.text! )!)
+
+        }
+        
+        
         
         
     }

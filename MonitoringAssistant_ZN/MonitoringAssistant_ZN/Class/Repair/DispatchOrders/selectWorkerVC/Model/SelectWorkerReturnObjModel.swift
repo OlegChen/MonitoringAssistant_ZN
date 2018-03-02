@@ -10,7 +10,7 @@ import UIKit
 
 class SelectWorkerReturnObjModel: BaseReturnObjModel {
 
-    var isSelected : Bool?
+    var isSelected : Bool = false
     
     
     var orgCode : String?

@@ -109,6 +109,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
             
             let para = ["companyCode":userInfo.companyCode ,"orgCode":userInfo.orgCode ,"empNo":userInfo.empNo ,"empName":userInfo.empName ]
             
+            self.view.beginLoading()
           
             NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workSendPageUrl, modelClass: "DispatchOrderModel" , response: { (obj) in
                 
@@ -116,13 +117,26 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
                 
                 if model.statusCode == 800 {
                     
-                    self.dataArr.addObjects(from: model.returnObj!)
-                    self.tableView.reloadData()
+  
+                    
+                    if((model.returnObj?.count)! > 0){
+                        
+                        self.dataArr.addObjects(from: model.returnObj!)
+                        self.tableView.reloadData()
+                        
+                    }else{
+                        
+                        self.tableView.configBlankPage(EaseBlankPageType(rawValue: 0)!, hasData: false, hasError: false, reloadButtonBlock: nil)
+                    }
+                    
+                    
                 }
                 
+                self.view.endLoading()
                 
             }, failture: { (error) in
                 
+                self.view.endLoading()
                 
             })
             

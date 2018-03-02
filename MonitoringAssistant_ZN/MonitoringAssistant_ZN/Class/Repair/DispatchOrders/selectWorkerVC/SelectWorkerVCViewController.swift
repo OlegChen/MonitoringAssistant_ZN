@@ -30,7 +30,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
 
         self.title = "选派工人"
 
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .white
         
         self.tableView = UITableView()
         self.tableView.delegate = self
@@ -43,44 +43,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
         self.tableView.register(UINib.init(nibName: "SelectWorkerVCCell" , bundle: nil), forCellReuseIdentifier: SelectWorkerVCCell_id)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.white
-        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 50)
-        let view = UIView()
-        headerView.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            
-            make.bottom.equalTo(headerView).offset(0)
-            make.right.equalTo(headerView).offset(-15)
-            make.left.equalTo(headerView).offset(15)
-            make.height.equalTo(35)
-        }
-        view.layer.borderColor = UIColor.init(red: 208/255, green: 220/255, blue: 230/255, alpha: 1.0).cgColor
-        view.layer.borderWidth = 0.5
-        view.backgroundColor = RGBCOLOR(r: 234, 240, 245)
-        
-        let titleArr = ["选派","维修工","已完成","待维修","距离"]
-        for i in 0..<5  {
-            
-            let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 14)
-            label.textColor = RGBCOLOR(r: 58, 58, 58)
-            label.text = titleArr[i]
-            label.textAlignment = .center
-            view.addSubview(label)
-            label.snp.makeConstraints({ (make) in
-                
-                let width = (ScreenW - 30 - 35) / 4
-                make.left.equalTo(view).offset( (i < 2 ? (Double( i ) *  Double( 35)): (35 + Double( i - 1) *  Double( width )))  )
-                make.top.equalTo(view).offset(0)
-                make.bottom.equalTo(view).offset(0)
-                make.width.equalTo(i == 0 ? 35 : width)
-                
-            })
-        }
-        
-        
-        self.tableView.tableHeaderView = headerView
+      
         
         
         self.getData()
@@ -111,6 +74,8 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
         cell.label2.text = model.compCnt
         cell.label3.text = model.waitCnt
         cell.label4.text = model.distance! + "km"
+        
+        cell.selectBtn.isSelected = model.isSelected
 
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
@@ -130,7 +95,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             
             let model = self.dataArr[i] as! SelectWorkerReturnObjModel
 
-            model.isSelected = i == indexPath.row ? true : false
+            model.isSelected = (i == indexPath.row ? true : false)
             
             if(i == indexPath.row){self.selectedWorkerModle = model }
             
@@ -155,20 +120,40 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                         "latitude":self.lat
             ]
             
+            self.view.beginLoading()
+            
             NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: sendEmpListUrl, modelClass: "SelectWorkerModel", response: { (obj) in
                 
+                self.view.endLoading()
                 
                 let model = obj as! SelectWorkerModel
                 
                 if model.statusCode == 800 {
                     
-                    self.dataArr.addObjects(from: model.returnObj!)
-                    self.tableView.reloadData()
+                    if ((model.returnObj?.count)! > 0){
+                        
+                        self.setupTableViewHeaderView()
+                        
+                        self.dataArr.addObjects(from: model.returnObj!)
+                        self.tableView.reloadData()
+                        
+                    }else{
+                        
+                        self.tableView.configBlankPage(EaseBlankPageType(rawValue: 0)!, hasData: false, hasError: false, reloadButtonBlock: nil)
+                    }
+                    
+                
+                }else{
+                    
+                     self.tableView.configBlankPage(EaseBlankPageType(rawValue: 0)!, hasData: false, hasError: true, reloadButtonBlock: nil)
+                    
                 }
                 
                 
             }, failture: { (error) in
                 
+                self.view.endLoading()
+               
                 
             })
             
@@ -240,6 +225,49 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             }
         }
       
+        
+    }
+    
+    func setupTableViewHeaderView() {
+        
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.white
+        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 50)
+        let view = UIView()
+        headerView.addSubview(view)
+        view.snp.makeConstraints { (make) in
+            
+            make.bottom.equalTo(headerView).offset(0)
+            make.right.equalTo(headerView).offset(-15)
+            make.left.equalTo(headerView).offset(15)
+            make.height.equalTo(35)
+        }
+        view.layer.borderColor = UIColor.init(red: 208/255, green: 220/255, blue: 230/255, alpha: 1.0).cgColor
+        view.layer.borderWidth = 0.5
+        view.backgroundColor = RGBCOLOR(r: 234, 240, 245)
+        
+        let titleArr = ["选派","维修工","已完成","待维修","距离"]
+        for i in 0..<5  {
+            
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 14)
+            label.textColor = RGBCOLOR(r: 58, 58, 58)
+            label.text = titleArr[i]
+            label.textAlignment = .center
+            view.addSubview(label)
+            label.snp.makeConstraints({ (make) in
+                
+                let width = (ScreenW - 30 - 35) / 4
+                make.left.equalTo(view).offset( (i < 2 ? (Double( i ) *  Double( 35)): (35 + Double( i - 1) *  Double( width )))  )
+                make.top.equalTo(view).offset(0)
+                make.bottom.equalTo(view).offset(0)
+                make.width.equalTo(i == 0 ? 35 : width)
+                
+            })
+        }
+        
+        
+        self.tableView.tableHeaderView = headerView
         
     }
 

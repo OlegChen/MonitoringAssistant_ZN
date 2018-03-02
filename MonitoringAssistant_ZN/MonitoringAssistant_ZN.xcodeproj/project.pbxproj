@@ -19,6 +19,9 @@
 		181F5BAD20481F4B003600DE /* CustPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAC20481F4B003600DE /* CustPointAnnotation.swift */; };
 		181F5BAF20482D75003600DE /* TrackPlayBackPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BAE20482D75003600DE /* TrackPlayBackPopView.swift */; };
 		181F5BB42048EBDE003600DE /* TrackDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BB32048EBDE003600DE /* TrackDetailVC.swift */; };
+		181F5BB920497E3C003600DE /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BB820497E3C003600DE /* UIView+Common.m */; };
+		181F5BBC20497E85003600DE /* UIView+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BBA20497E84003600DE /* UIView+FP.m */; };
+		181F5BBF20497EE6003600DE /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BBE20497EE6003600DE /* UIColor+expanded.m */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -320,6 +323,12 @@
 		181F5BAC20481F4B003600DE /* CustPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustPointAnnotation.swift; sourceTree = "<group>"; };
 		181F5BAE20482D75003600DE /* TrackPlayBackPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPlayBackPopView.swift; sourceTree = "<group>"; };
 		181F5BB32048EBDE003600DE /* TrackDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailVC.swift; sourceTree = "<group>"; };
+		181F5BB720497E3C003600DE /* UIView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Common.h"; sourceTree = "<group>"; };
+		181F5BB820497E3C003600DE /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
+		181F5BBA20497E84003600DE /* UIView+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FP.m"; sourceTree = "<group>"; };
+		181F5BBB20497E85003600DE /* UIView+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FP.h"; sourceTree = "<group>"; };
+		181F5BBD20497EE6003600DE /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
+		181F5BBE20497EE6003600DE /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -773,6 +782,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		181F5BB520497E3C003600DE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BB620497E3C003600DE /* Category */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		181F5BB620497E3C003600DE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BB720497E3C003600DE /* UIView+Common.h */,
+				181F5BB820497E3C003600DE /* UIView+Common.m */,
+				181F5BBB20497E85003600DE /* UIView+FP.h */,
+				181F5BBA20497E84003600DE /* UIView+FP.m */,
+				181F5BBD20497EE6003600DE /* UIColor+expanded.h */,
+				181F5BBE20497EE6003600DE /* UIColor+expanded.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		18791C872008BBB000A2E282 = {
 			isa = PBXGroup;
 			children = (
@@ -799,6 +829,7 @@
 		18791C922008BBB000A2E282 /* MonitoringAssistant_ZN */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BB520497E3C003600DE /* Utils */,
 				18F373A520304F6400D2662A /* BaseModel */,
 				74A8D392202DEA9600535BC2 /* img */,
 				18D74FF020108E6A0011866E /* BaseVC */,
@@ -2298,8 +2329,10 @@
 				18D74FD5200DDA980011866E /* MainBtn.m in Sources */,
 				18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */,
 				18A57A2E20455A4D00DA7D59 /* UIImage+Extend.m in Sources */,
+				181F5BBF20497EE6003600DE /* UIColor+expanded.m in Sources */,
 				18A57A7920457E7B00DA7D59 /* UIImageView+HighlightedWebCache.m in Sources */,
 				74903E802045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift in Sources */,
+				181F5BB920497E3C003600DE /* UIView+Common.m in Sources */,
 				18A57A2620455A4D00DA7D59 /* NSObject+Extend.m in Sources */,
 				18A57A7B20457E7B00DA7D59 /* UIView+WebCacheOperation.m in Sources */,
 				181F5BAF20482D75003600DE /* TrackPlayBackPopView.swift in Sources */,
@@ -2336,6 +2369,7 @@
 				18D74FEF20107C860011866E /* WRNavigationBar.swift in Sources */,
 				74903E0B2030806A00003EF2 /* UserCenter.swift in Sources */,
 				18D750202015FFFC0011866E /* EnergyFeeVC.swift in Sources */,
+				181F5BBC20497E85003600DE /* UIView+FP.m in Sources */,
 				18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */,
 				18A57A3120455A4D00DA7D59 /* UITableViewCell+Extend.m in Sources */,
 				18A57A4F20455E8300DA7D59 /* WorkOrderDetailReturnObjModel.swift in Sources */,
