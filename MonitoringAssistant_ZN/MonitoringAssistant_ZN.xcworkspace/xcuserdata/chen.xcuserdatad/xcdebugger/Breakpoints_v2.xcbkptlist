@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Energy/EnergyCompare/EnergyCompareVC.swift"
-            timestampString = "541440782.5320081"
+            timestampString = "541862207.285767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
@@ -26,7 +26,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Energy/EnergyCompare/EnergyCompareVC.swift"
-                  timestampString = "541440782.831548"
+                  timestampString = "541836121.595893"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "232"
@@ -41,7 +41,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Energy/EnergyCompare/EnergyCompareVC.swift"
-                  timestampString = "541440782.834671"
+                  timestampString = "541836121.599134"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "234"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Energy/EnergyPoints/EnergyPointsTableViewController.swift"
-            timestampString = "541440782.5323631"
+            timestampString = "541862207.286203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
@@ -129,31 +129,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MonitoringAssistant_ZN/Class/NetworkService/Network.swift"
-            timestampString = "541440782.532652"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "getRequest(urlString:params:success:failture:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/DispatchOrderVC.swift"
-            timestampString = "541349154.135231"
+            timestampString = "541862207.286533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

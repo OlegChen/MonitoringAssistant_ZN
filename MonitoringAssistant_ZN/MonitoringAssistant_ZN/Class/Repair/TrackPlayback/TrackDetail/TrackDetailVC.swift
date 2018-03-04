@@ -8,9 +8,15 @@
 
 import UIKit
 
-class TrackDetailVC: BaseVC , BMKMapViewDelegate{
+class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalendarDelegate{
     
     var WorkerModel : TrackPlayBackReturnObjModel?
+    
+    
+    private weak var calendar: FSCalendar!
+    private weak var calendarContentView: UIView!
+
+
     
      var _mapView: BMKMapView?
 
@@ -24,7 +30,11 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate{
         
         self.setDateSelectView()
         
+        self.setCalendarView()
+        
         self.getData()
+        
+        
     }
 
     
@@ -82,6 +92,80 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate{
         
     }
     
+    
+    func setCalendarView() {
+        
+        let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 400 : 300
+
+        
+        let view = UIView(frame: CGRect(x: 0, y: CGFloat(NavHeight), width: self.view.bounds.width, height: height))
+        self.view.addSubview(view)
+        self.calendarContentView = view
+        
+        
+        
+        let calendar = FSCalendar(frame: view.bounds)
+        calendar.appearance.titleDefaultColor = RGBCOLOR(r: 58, 58, 58)
+        calendar.appearance.headerTitleColor = RGBCOLOR(r: 58, 58, 58)
+        calendar.appearance.weekdayTextColor = RGBCOLOR(r: 58, 58, 58)
+        calendar.appearance.headerMinimumDissolvedAlpha = 0
+        calendar.calendarHeaderView.height = 55
+        
+        calendar.appearance.todayColor = .clear
+        calendar.appearance.titleTodayColor = RGBCOLOR(r: 58, 58, 58)
+        calendar.appearance.subtitleTodayColor = RGBCOLOR(r: 150, 150, 150)
+        calendar.dataSource = self
+        calendar.delegate = self
+        calendar.backgroundColor = UIColor.white
+        view.addSubview(calendar)
+        self.calendar = calendar
+        
+        //创建点击跳转显示上一月和下一月button
+        let preBtn = UIButton()
+        view.addSubview(preBtn)
+        preBtn.backgroundColor = .red
+        preBtn.addTarget(self, action: #selector(preBtnClick), for: UIControlEvents.touchUpInside)
+        preBtn.snp.makeConstraints { (make) in
+            
+            make.size.equalTo(CGSize(width:100 ,height:50))
+            make.top.equalTo(view).offset(0)
+            make.left.equalTo(view).offset(0)
+            
+        }
+        
+        let nextBtn = UIButton()
+        view.addSubview(nextBtn)
+        nextBtn.backgroundColor = .red
+        nextBtn.addTarget(self, action: #selector(nextBtnClick), for: UIControlEvents.touchUpInside)
+        nextBtn.snp.makeConstraints { (make) in
+            
+            make.size.equalTo(CGSize(width:100 ,height:50))
+            make.right.equalTo(view.snp.right).offset(0)
+            make.top.equalTo(view).offset(0)
+            
+        }
+        
+    }
+    
+    @objc func preBtnClick() {
+        
+        
+    }
+    
+    @objc func nextBtnClick() {
+        
+    }
+    
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        
+        if(self.calendar.isDate(inToday: date)){
+        
+            return "今天";
+        }
+        return nil;
+        
+    }
+    
     func setDateSelectView() {
         
         let dateView = UIView()
@@ -108,6 +192,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate{
         
         let dateL = UILabel()
         dateL.text = "选择查询日期"
+        dateL.font = UIFont.systemFont(ofSize: 14)
         dateView.addSubview(dateL)
         dateL.snp.makeConstraints { (make) in
             make.centerY.equalTo(dateView.snp.top).offset(30)
@@ -132,6 +217,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate{
         
         let startTimeL = UILabel()
         startTimeL.text = "选择开始时间"
+        startTimeL.font = UIFont.systemFont(ofSize: 14)
         dateView.addSubview(startTimeL)
         startTimeL.snp.makeConstraints { (make) in
             make.centerY.equalTo(dateView.snp.top).offset(90)
@@ -139,7 +225,6 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate{
         }
         
         let selectStartTimeBtn = UIButton()
-        selectStartTimeBtn.backgroundColor = .red
         selectStartTimeBtn.addTarget(self, action: #selector(selectStartTime), for: UIControlEvents.touchUpInside)
         dateView.addSubview(selectStartTimeBtn)
         selectStartTimeBtn.snp.makeConstraints { (make) in
@@ -154,6 +239,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate{
         
         let endTimeL = UILabel()
         endTimeL.text = "选择结束时间"
+        endTimeL.font = UIFont.systemFont(ofSize: 14)
         dateView.addSubview(endTimeL)
         endTimeL.snp.makeConstraints { (make) in
             make.centerY.equalTo(dateView.snp.top).offset(90)
@@ -162,7 +248,6 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate{
         
         
         let selectEndTimeBtn = UIButton()
-        selectEndTimeBtn.backgroundColor = .orange
         selectEndTimeBtn.addTarget(self, action: #selector(selectEndTime), for: UIControlEvents.touchUpInside)
         dateView.addSubview(selectEndTimeBtn)
         selectEndTimeBtn.snp.makeConstraints { (make) in

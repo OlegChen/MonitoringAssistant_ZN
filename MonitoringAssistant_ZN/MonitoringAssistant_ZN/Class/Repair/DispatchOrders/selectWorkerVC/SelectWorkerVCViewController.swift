@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSource {
+class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSource ,UIAlertViewDelegate{
 
     var lat : String?
     var lon : String?
@@ -201,14 +201,15 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                         "sendEmpNo":self.selectedWorkerModle?.empNo,
                         "sendEmpName":self.selectedWorkerModle?.empName
             ]
-            
-            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workSendUrl, modelClass: "BaseModel", response: { (obj) in
+            NetworkService.networkPostrequest(parameters: para as! [String : String], requestApi: workSendUrl, modelClass: "BaseModel", response: { (obj) in
                 
                 let model = obj as! BaseModel
                 
                 if model.statusCode == 800{
                     
                     let alertView = UIAlertView(title: "提示", message: "派单成功", delegate: nil, cancelButtonTitle: "确定")
+                    alertView.tag = 1000
+                    alertView.delegate = self
                     alertView.show()
                     
                 }else{
@@ -225,6 +226,16 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             }
         }
       
+        
+    }
+    
+    func alertViewCancel(_ alertView: UIAlertView) {
+        
+        if(alertView.tag == 1000){
+            
+            self.navigationController?.popViewController(animated: true)
+            
+        }
         
     }
     
