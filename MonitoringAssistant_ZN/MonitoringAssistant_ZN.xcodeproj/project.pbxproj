@@ -22,6 +22,12 @@
 		181F5BB920497E3C003600DE /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BB820497E3C003600DE /* UIView+Common.m */; };
 		181F5BBC20497E85003600DE /* UIView+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BBA20497E84003600DE /* UIView+FP.m */; };
 		181F5BBF20497EE6003600DE /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BBE20497EE6003600DE /* UIColor+expanded.m */; };
+		181F5BC2204F8204003600DE /* CustomTrackDetailAnnotationView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BC1204F8204003600DE /* CustomTrackDetailAnnotationView.mm */; };
+		181F5BC7204F9113003600DE /* DispatchRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BC6204F9113003600DE /* DispatchRecordVC.swift */; };
+		181F5BCA204F9153003600DE /* DispatchRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BC8204F9153003600DE /* DispatchRecordCell.swift */; };
+		181F5BCB204F9153003600DE /* DispatchRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BC9204F9153003600DE /* DispatchRecordCell.xib */; };
+		181F5BCD204FBDD8003600DE /* DispatchRecordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BCC204FBDD8003600DE /* DispatchRecordListModel.swift */; };
+		181F5BCF204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BCE204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -345,6 +351,13 @@
 		181F5BBB20497E85003600DE /* UIView+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FP.h"; sourceTree = "<group>"; };
 		181F5BBD20497EE6003600DE /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
 		181F5BBE20497EE6003600DE /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		181F5BC0204F8204003600DE /* CustomTrackDetailAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTrackDetailAnnotationView.h; sourceTree = "<group>"; };
+		181F5BC1204F8204003600DE /* CustomTrackDetailAnnotationView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomTrackDetailAnnotationView.mm; sourceTree = "<group>"; };
+		181F5BC6204F9113003600DE /* DispatchRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRecordVC.swift; sourceTree = "<group>"; };
+		181F5BC8204F9153003600DE /* DispatchRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRecordCell.swift; sourceTree = "<group>"; };
+		181F5BC9204F9153003600DE /* DispatchRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchRecordCell.xib; sourceTree = "<group>"; };
+		181F5BCC204FBDD8003600DE /* DispatchRecordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRecordListModel.swift; sourceTree = "<group>"; };
+		181F5BCE204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRecordListReturnObjModel.swift; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -826,6 +839,8 @@
 		181F5BB22048EBBD003600DE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BC0204F8204003600DE /* CustomTrackDetailAnnotationView.h */,
+				181F5BC1204F8204003600DE /* CustomTrackDetailAnnotationView.mm */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -849,6 +864,34 @@
 				181F5BBE20497EE6003600DE /* UIColor+expanded.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		181F5BC3204F90BD003600DE /* DispatchRecordVC */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BC4204F90BD003600DE /* Model */,
+				181F5BC5204F90BD003600DE /* View */,
+				181F5BC6204F9113003600DE /* DispatchRecordVC.swift */,
+			);
+			path = DispatchRecordVC;
+			sourceTree = "<group>";
+		};
+		181F5BC4204F90BD003600DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BCC204FBDD8003600DE /* DispatchRecordListModel.swift */,
+				181F5BCE204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181F5BC5204F90BD003600DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BC8204F9153003600DE /* DispatchRecordCell.swift */,
+				181F5BC9204F9153003600DE /* DispatchRecordCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		18791C872008BBB000A2E282 = {
@@ -1637,6 +1680,7 @@
 		18D75027201601CE0011866E /* DispatchOrders */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BC3204F90BD003600DE /* DispatchRecordVC */,
 				74903E7A2043148C00003EF2 /* OrderDetailVC */,
 				74903E6D203FC4B900003EF2 /* selectWorkerVC */,
 				74903E64203F0AB500003EF2 /* Model */,
@@ -2317,6 +2361,7 @@
 				74A8D3F9202DEA9600535BC2 /* abcd_gold_bench_marke_touch.png in Resources */,
 				74A8D420202DEA9600535BC2 /* back.png in Resources */,
 				74A8D427202DEA9600535BC2 /* gold_bottom_bg.png in Resources */,
+				181F5BCB204F9153003600DE /* DispatchRecordCell.xib in Resources */,
 				74A8D3E4202DEA9600535BC2 /* home_back.png in Resources */,
 				74903E7520402C1B00003EF2 /* SelectWorkerVCCell.xib in Resources */,
 				74A8D41C202DEA9600535BC2 /* circle_2.png in Resources */,
@@ -2430,6 +2475,7 @@
 				74903E3C2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift in Sources */,
 				18A57A8420464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift in Sources */,
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
+				181F5BCF204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift in Sources */,
 				74903E60203B179A00003EF2 /* OrderInfoReturnObjModel.swift in Sources */,
 				18A57A8220464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
@@ -2478,6 +2524,7 @@
 				74903E62203B17BD00003EF2 /* OrderInfoStatusWorkStutVosModel.swift in Sources */,
 				18A57A2F20455A4D00DA7D59 /* UIImage+FixOrientation.m in Sources */,
 				18D750482016184B0011866E /* MKRingProgressView.swift in Sources */,
+				181F5BCA204F9153003600DE /* DispatchRecordCell.swift in Sources */,
 				18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */,
 				74903E882045B78F00003EF2 /* EquipmentMonitorSectionHeaderView.swift in Sources */,
 				74903EB0204BCC6000003EF2 /* FSCalendarCalculator.m in Sources */,
@@ -2505,12 +2552,14 @@
 				18D75016201321520011866E /* RadarMarkerView.swift in Sources */,
 				18C8D2F6202C50E400E91527 /* MASLayoutConstraint.m in Sources */,
 				18D74FC3200C462F0011866E /* LoginVC.swift in Sources */,
+				181F5BC2204F8204003600DE /* CustomTrackDetailAnnotationView.mm in Sources */,
 				18A57A2A20455A4D00DA7D59 /* UIDevice+Extend.m in Sources */,
 				18A57A3920455A4D00DA7D59 /* CoreSVP.m in Sources */,
 				18A57A2720455A4D00DA7D59 /* NSString+Extend.m in Sources */,
 				74903E71203FC4D700003EF2 /* SelectWorkerVCViewController.swift in Sources */,
 				18C8D245202B02E000E91527 /* UIBarButtonItemFixSpace.swift in Sources */,
 				18A57A3F20455A4D00DA7D59 /* PBConst.m in Sources */,
+				181F5BCD204FBDD8003600DE /* DispatchRecordListModel.swift in Sources */,
 				18A57A2020455A4D00DA7D59 /* NSString+File.m in Sources */,
 				18A57A3320455A4D00DA7D59 /* UIWindow+Launch.m in Sources */,
 				18C8D2FA202C50E400E91527 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -2524,6 +2573,7 @@
 				18A57A2C20455A4D00DA7D59 /* UIImage+Color.m in Sources */,
 				18D74FE22010339E0011866E /* EnergyTableViewCell.swift in Sources */,
 				18D74FEE20107C860011866E /* WRProxy.swift in Sources */,
+				181F5BC7204F9113003600DE /* DispatchRecordVC.swift in Sources */,
 				18D7501C2015FFCE0011866E /* EnergyRepairVC.swift in Sources */,
 				18A57A4520455A4D00DA7D59 /* PBSaveBtn.m in Sources */,
 				18A57A4120455A4D00DA7D59 /* PhotoModel.m in Sources */,

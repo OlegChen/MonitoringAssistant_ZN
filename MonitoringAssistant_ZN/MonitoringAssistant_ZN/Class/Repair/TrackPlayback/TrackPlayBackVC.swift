@@ -76,6 +76,7 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
             custView.nameL.text = "联系人：" + (custAnnotation.Model?.empName)!
             custView.TelL.text = "电话：" + (custAnnotation.Model?.mobile)!
         
+        newAnnotationView?.nameLabel.text = custAnnotation.Model?.empName
         
         let popView = BMKActionPaopaoView.init(customView: custView )
         

@@ -45,7 +45,6 @@ class EnergyFeeVC: BaseTableVC {
         let cell : EnergyTableViewCell  = tableView.dequeueReusableCell(withIdentifier: EnergyTableViewCell_id, for: indexPath) as! EnergyTableViewCell
         
         
-        
         cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "abcd_charge_survey_touch")
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none

@@ -108,8 +108,11 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     @objc func toDispatchOrderListVC() {
         
+        if(self.dataModel == nil){return}
         
-        
+        let vc = DispatchRecordVC()
+        vc.workNo = self.dataModel?.returnObj?.workNo as! NSString
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

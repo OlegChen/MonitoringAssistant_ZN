@@ -17,3 +17,4 @@
 #import "CustomMapAnnotationView.h"
 #import "UIView+Common.h"
 #import "FSCalendar.h"
+#import "CustomTrackDetailAnnotationView.h"

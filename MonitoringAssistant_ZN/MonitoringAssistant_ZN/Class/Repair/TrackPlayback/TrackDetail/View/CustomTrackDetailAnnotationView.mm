@@ -6,8 +6,9 @@
 //  Copyright © 2018年 Fengyun Diyin Technologies (Beijing) Co., Ltd. All rights reserved.
 //
 
-#import "CustomMapAnnotationView.h"
+#import "CustomTrackDetailAnnotationView.h"
 #import "Masonry.h"
+#import "UIImageView+WebCache.h"
 
 #define kWidth  40.f
 #define kHeight 42.f
@@ -15,18 +16,19 @@
 #define kHoriMargin 5.f
 #define kVertMargin 5.f
 
-#define kPortraitWidth  40.f
-#define kPortraitHeight 40.f
+#define kPortraitWidth  30.f
+#define kPortraitHeight 30.f
 
 
-@interface CustomMapAnnotationView ()
+@interface CustomTrackDetailAnnotationView ()
 
-//@property (nonatomic, strong) UIImageView *portraitImageView;
+@property (nonatomic, strong) UIImageView *portraitImageView;
+@property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UIImageView *BGView;
 
 @end
 
-@implementation CustomMapAnnotationView
+@implementation CustomTrackDetailAnnotationView
 
 
 
@@ -79,21 +81,21 @@
         }];
         
         
-//        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
-//        self.portraitImageView.layer.masksToBounds = YES;
-//        self.portraitImageView.layer.cornerRadius = 20.0;
-//        self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
-//        self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-//        self.portraitImageView.layer.borderWidth = 3.0f;
-//        self.portraitImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-//        self.portraitImageView.layer.shouldRasterize = YES;
-//        self.portraitImageView.clipsToBounds = YES;
-//        [self addSubview:self.portraitImageView];
-//
-//        [self.portraitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(kPortraitWidth, kPortraitHeight));
-//            make.center.equalTo(view);
-//        }];
+        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
+        self.portraitImageView.layer.masksToBounds = YES;
+        self.portraitImageView.layer.cornerRadius = 20.0;
+        self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+        self.portraitImageView.layer.borderWidth = 3.0f;
+        self.portraitImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        self.portraitImageView.layer.shouldRasterize = YES;
+        self.portraitImageView.clipsToBounds = YES;
+        [self addSubview:self.portraitImageView];
+
+        [self.portraitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(kPortraitWidth, kPortraitHeight));
+            make.center.equalTo(name);
+        }];
         
         
         
@@ -148,6 +150,24 @@
 //    }];
 //
 //}
+
+- (void)setImg:(NSString *)img{
+    
+    _img = img;
+    
+    #pragma mark - 图片缩小变模糊
+    
+        __weak typeof(self) weakself = self;
+        NSURL *url = [NSURL URLWithString:img];
+    
+    
+    
+        [self.portraitImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"head_portrait"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    
+            weakself.portraitImageView.image =  [weakself imageCompressForSize:image targetSize:CGSizeMake(kPortraitWidth, kPortraitHeight)];
+    
+        }];
+}
 
 
 -(UIImage *)imageCompressForSize:(UIImage *)sourceImage targetSize:(CGSize)size{

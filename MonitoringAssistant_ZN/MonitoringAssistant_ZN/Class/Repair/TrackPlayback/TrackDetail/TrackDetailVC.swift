@@ -112,14 +112,10 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         
-        
-        let newAnnotationView = CustomMapAnnotationView.init(annotation: annotation, reuseIdentifier: "12345")
-        //
-        //        let popView = Bundle.main.loadNibNamed("EnergyMonitorPopView", owner: nil, options: nil)?[0] as! EnergyMonitorPopView
-        //        let custPopView =  BMKActionPaopaoView.init(customView: popView)
-        
-        
         let custAnnotation = annotation as! CustPointAnnotation
+        
+        let newAnnotationView = CustomTrackDetailAnnotationView.init(annotation: annotation, reuseIdentifier: "12345")
+        newAnnotationView?.img = custAnnotation.Model?.headUrl
         
         
         newAnnotationView?.centerOffset = CGPoint(x:10, y:-20) ;
@@ -228,6 +224,23 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             return "今天";
         }
         return nil;
+        
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        //更新提醒时间文本框
+        let formatter = DateFormatter()
+        //日期样式
+        formatter.dateFormat = "yyyy-MM-dd"
+        print(formatter.string(from: date))
+        
+        
+        self.DateStr = formatter.string(from: date)
+        self.Date_L?.text = "查询日期 " + formatter.string(from: date)
+        self.selectDate()
+        
+        self.getData()
         
     }
     
@@ -437,6 +450,10 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })
+        
+        
+        self.getData()
+        
     }
     
     //日期选择器响应方法
@@ -466,8 +483,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                             "orgCode":userInfo.orgCode ,
                             "empNo":self.WorkerModel?.empNo ,
                             "empName":self.WorkerModel?.empName,
-                            "startTime":self.DateStr! + "" + self.StartTimeStr!,
-                            "endTime":self.DateStr! + "" + self.EndTimeStr!,
+                            "startTime":self.DateStr! + " " + self.StartTimeStr!,
+                            "endTime":self.DateStr! + " " + self.EndTimeStr!,
                             ]
                 
                 NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: getEmpPointsUrl, modelClass: "TrackPlayBackModel" , response: { (obj) in

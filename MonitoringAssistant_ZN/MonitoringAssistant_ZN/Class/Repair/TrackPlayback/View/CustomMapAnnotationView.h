@@ -23,6 +23,7 @@
 
 @interface CustomMapAnnotationView : BMKAnnotationView
 
+@property (nonatomic, strong) UILabel *nameLabel;
 
 
 //@property (nonatomic ,strong) TeacherListDataModel *teacherModel;
