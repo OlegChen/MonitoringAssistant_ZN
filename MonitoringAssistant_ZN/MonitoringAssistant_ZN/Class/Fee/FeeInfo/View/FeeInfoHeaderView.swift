@@ -117,7 +117,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
 
 
         
-        self.updateChartData()
+//        self.updateChartData()
         
         
         
@@ -125,19 +125,33 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     }
     
     
-     func updateChartData() {
+    func updateChartData(data:NSArray) {
 //        if self.shouldHideData {
 //            chartView.data = nil
 //            return
 //        }
         
-        self.setChartData()
+        
+        self.setChartData(dataArray: data)
     }
     
-    func setChartData() {
+    func setChartData(dataArray:NSArray) {
+        
+//        let lineDataArray = NSMutableArray()
+//        let barDataArray = NSMutableArray()
+//
+//
+//        for i in 0..<dataArray.count {
+//
+//            let model = dataArray[i] as! ReturnObjChargeRateVosModel
+//
+//            lineDataArray.add(Double(model.proportion!)!/100)
+//            barDataArray.add(Double(model.sumRealFee!)!)
+//        }
+        
         let data = CombinedChartData()
-        data.lineData = generateLineData()
-        data.barData = generateBarData()
+        data.lineData = generateLineData(dataArray: dataArray)
+        data.barData = generateBarData(dataArray: dataArray)
       
         chartView.xAxis.axisMaximum = data.xMax + 0.25
         
@@ -145,9 +159,12 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     }
     
     
-    func generateLineData() -> LineChartData {
-        let entries = (0..<12).map { (i) -> ChartDataEntry in
-            return ChartDataEntry(x: Double(i) + 1, y: Double(arc4random_uniform(100)) )
+    func generateLineData(dataArray:NSArray) -> LineChartData {
+        let entries = (0..<dataArray.count).map { (i) -> ChartDataEntry in
+            
+            let model = dataArray[i] as! ReturnObjChargeRateVosModel
+            
+            return ChartDataEntry(x: Double(model.monthStr!)! , y: (Double(model.proportion!)!/100) )
         }
         
         let set = LineChartDataSet(values: entries, label: "Line DataSet")
@@ -168,19 +185,21 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     }
     
     
-    
-    func generateBarData() -> BarChartData {
+    func generateBarData(dataArray:NSArray) -> BarChartData {
         
         let start = 1
         let range : UInt32 = 2500
         
-        let yVals = (start..<13).map { (i) -> BarChartDataEntry in
-            let mult = range + 1
-            let val = Double(arc4random_uniform(mult))
+        let yVals = (start..<dataArray.count).map { (i) -> BarChartDataEntry in
+//            let mult = range + 1
+//            let val = Double(arc4random_uniform(mult))
 //            if arc4random_uniform(100) < 25 {
 //                return BarChartDataEntry(x: Double(i), y: val, icon: UIImage(named: "icon"))
 //            } else {
-                return BarChartDataEntry(x: Double(i), y: val)
+            
+             let model = dataArray[i] as! ReturnObjChargeRateVosModel
+            
+            return BarChartDataEntry(x: Double(model.monthStr!)!, y: Double(model.sumRealFee!)!)
 //            }
         }
         

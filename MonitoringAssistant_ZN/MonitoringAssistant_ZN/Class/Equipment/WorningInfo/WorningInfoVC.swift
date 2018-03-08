@@ -8,17 +8,82 @@
 
 import UIKit
 
-class WorningInfoVC: BaseVC {
+class WorningInfoVC: BaseTableVC {
 
+    var headView : WorningInfoHeaderView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "告警信息"
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        
+        let view = UIView()
+        view.frame = CGRect(x:0 , y:0 , width:ScreenW  , height:300)
+        
+        let headView = (Bundle.main.loadNibNamed("WorningInfoHeaderView", owner: nil, options: nil)![0] as! WorningInfoHeaderView)
+        headView.frame = view.bounds
+        self.headView = headView
+        view.addSubview(headView)
+        
+        self.tableView.tableHeaderView = view
+        
+        self.getData()
+
+    }
+    
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+    
+    func getData() {
+        
+        weak var weakSelf = self // ADD THIS LINE AS WELL
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            let para = ["companyCode":userInfo.companyCode ,"orgCode":userInfo.orgCode ,"empNo":userInfo.empNo ,"empName":userInfo.empName ]
+            
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: alarmAllDataUrl, modelClass: "WorningInfoModel", response: { (obj) in
+                
+                let model = obj as! WorningInfoModel
+                
+                if(model.statusCode == 800){
+                    
+                    self.headView?.updateArray(array: model.returnObj?.alarmMonths! as! NSArray)
+                    
+                    self.headView?.yearNumL.text = model.returnObj?.yearCnt
+                    self.headView?.yearRateL.text = (model.returnObj?.yearProportion)! + "%"
+                    
+                    self.headView?.setTypesData(array: model.returnObj?.alarmTypes! as! NSArray)
+                    
+                }
+                
+                
+            }, failture: { (error) in
+                
+                
+                
+            })
+            
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+        
     }
     
 

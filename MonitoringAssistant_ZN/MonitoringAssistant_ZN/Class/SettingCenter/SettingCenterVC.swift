@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingCenterVC: BaseTableVC {
+class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     @IBOutlet weak var headImg: UIImageView!
     
@@ -17,6 +17,10 @@ class SettingCenterVC: BaseTableVC {
     @IBOutlet weak var TelL: UILabel!
     
     @IBOutlet weak var loginOutBtn: UIButton!
+    
+    ///相机，相册
+    var cameraPicker: UIImagePickerController!
+    var photoPicker: UIImagePickerController!
     
     
     override func viewDidLoad() {
@@ -27,8 +31,11 @@ class SettingCenterVC: BaseTableVC {
         self.view.backgroundColor = RGBCOLOR(r: 245, 245, 245)
         
         loginOutBtn.layer.cornerRadius = 4
+        headImg.cornerRadius = 23
+        headImg.clipsToBounds = true
 
         self.getData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,11 +69,28 @@ class SettingCenterVC: BaseTableVC {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.section == 1 {
+        if indexPath.section == 0{
             
-            if(indexPath.row == 0){
+            if indexPath.row == 0{
                 
-                self.navigationController?.pushViewController(ChangePwVC(), animated: true)
+                let actionSheet=UIActionSheet()
+                
+                actionSheet.addButton(withTitle:"取消" )//addButtonWithTitle("取消")
+                actionSheet.addButton(withTitle:"拍照" )//addButtonWithTitle("动作1")
+                actionSheet.addButton(withTitle:"从相册选择" )//addButtonWithTitle("动作2")
+                actionSheet.cancelButtonIndex=0
+                actionSheet.delegate=self
+                actionSheet.show(in: self.view)
+            }
+            
+        }else if indexPath.section == 1 {
+
+            if(indexPath.row == 0){
+                                
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "ChangePwVC") as! ChangePwVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             }else{
                 
                 self.navigationController?.pushViewController(AboutUsVC(), animated: true)
@@ -80,6 +104,34 @@ class SettingCenterVC: BaseTableVC {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        
+        print("点击了："+actionSheet.buttonTitle(at: buttonIndex)!)
+        var sourceType: UIImagePickerControllerSourceType = .photoLibrary
+        
+        if (buttonIndex == 1) {
+
+            //拍照
+            sourceType = .camera
+            
+        }else if (buttonIndex == 2) {
+
+            //相册
+            sourceType = .photoLibrary
+            
+        }
+        
+        let pickerVC = UIImagePickerController()
+        pickerVC.view.backgroundColor = UIColor.white
+        pickerVC.delegate = self
+        pickerVC.allowsEditing = true
+        pickerVC.sourceType = sourceType
+        present(pickerVC, animated: true, completion: nil)
+    
+        
+    }
+
     
 
     func getData() {
@@ -126,5 +178,65 @@ class SettingCenterVC: BaseTableVC {
         UIApplication.shared.keyWindow?.rootViewController = vc
     }
     
+  
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.dismiss(animated: true, completion: nil)
+        //获得照片
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        self.headImg.image = image
+        
+        var data = UIImageJPEGRepresentation(image,0.4);
+        let imageBase64String = data?.base64EncodedString()
+
+        
+        
+
+    }
+    
+
+    private func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    func sendImg(imgStr:String) {
+        
+        weak var weakSelf = self // ADD THIS LINE AS WELL
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            let para = ["companyCode":userInfo.companyCode ,
+                        "orgCode":userInfo.orgCode ,
+                        "empNo":userInfo.empNo ,
+                        "empName":userInfo.empName,
+                        "headUrlStr":imgStr
+            ]
+            
+            NetworkService.networkPostrequest(parameters: para as! [String : String], requestApi: modifyHeadUrlUrl, modelClass: "SendImgModel", response: { (obj) in
+                
+                let model = obj as! SendImgModel
+                
+                if model.statusCode == 800{
+                    
+                    
+                    
+                }
+                
+                
+            }, failture: { (error) in
+                
+                
+            })
+            
+        }
+        
+    }
+    
 
 }
+
+
+

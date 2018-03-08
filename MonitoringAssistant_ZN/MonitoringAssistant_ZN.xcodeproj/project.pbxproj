@@ -28,6 +28,14 @@
 		181F5BCB204F9153003600DE /* DispatchRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BC9204F9153003600DE /* DispatchRecordCell.xib */; };
 		181F5BCD204FBDD8003600DE /* DispatchRecordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BCC204FBDD8003600DE /* DispatchRecordListModel.swift */; };
 		181F5BCF204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BCE204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift */; };
+		181F5BD32050E67A003600DE /* WorningInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BD22050E67A003600DE /* WorningInfoHeaderView.swift */; };
+		181F5BD52050E696003600DE /* WorningInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BD42050E696003600DE /* WorningInfoHeaderView.xib */; };
+		181F5BD72051164D003600DE /* MKRingSingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BD62051164D003600DE /* MKRingSingleView.swift */; };
+		181F5BD920512B4B003600DE /* WorningInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BD820512B4B003600DE /* WorningInfoModel.swift */; };
+		181F5BDB20512BBA003600DE /* WorningInfoReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BDA20512BBA003600DE /* WorningInfoReturnObjModel.swift */; };
+		181F5BDD20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BDC20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift */; };
+		181F5BDF20512D1B003600DE /* WorningInfoAlarmTypesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BDE20512D1A003600DE /* WorningInfoAlarmTypesModel.swift */; };
+		181F5BEB20517151003600DE /* SendImgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BEA20517151003600DE /* SendImgModel.swift */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -171,7 +179,6 @@
 		18D7501E2015FFE70011866E /* EnergyEquipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7501D2015FFE70011866E /* EnergyEquipment.swift */; };
 		18D750202015FFFC0011866E /* EnergyFeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7501F2015FFFC0011866E /* EnergyFeeVC.swift */; };
 		18D75038201615E20011866E /* WorningInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D75036201615E20011866E /* WorningInfoVC.swift */; };
-		18D75039201615E20011866E /* WorningInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D75037201615E20011866E /* WorningInfoVC.xib */; };
 		18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7503C2016160C0011866E /* EquipmentMonitorVC.swift */; };
 		18D750432016169B0011866E /* MKRingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750412016169A0011866E /* MKRingProgressGroupView.swift */; };
 		18D750442016169B0011866E /* MKRingProgressGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D750422016169A0011866E /* MKRingProgressGroupButton.swift */; };
@@ -358,6 +365,14 @@
 		181F5BC9204F9153003600DE /* DispatchRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchRecordCell.xib; sourceTree = "<group>"; };
 		181F5BCC204FBDD8003600DE /* DispatchRecordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRecordListModel.swift; sourceTree = "<group>"; };
 		181F5BCE204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRecordListReturnObjModel.swift; sourceTree = "<group>"; };
+		181F5BD22050E67A003600DE /* WorningInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoHeaderView.swift; sourceTree = "<group>"; };
+		181F5BD42050E696003600DE /* WorningInfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorningInfoHeaderView.xib; sourceTree = "<group>"; };
+		181F5BD62051164D003600DE /* MKRingSingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKRingSingleView.swift; sourceTree = "<group>"; };
+		181F5BD820512B4B003600DE /* WorningInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoModel.swift; sourceTree = "<group>"; };
+		181F5BDA20512BBA003600DE /* WorningInfoReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoReturnObjModel.swift; sourceTree = "<group>"; };
+		181F5BDC20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoAlarmMonthsModel.swift; sourceTree = "<group>"; };
+		181F5BDE20512D1A003600DE /* WorningInfoAlarmTypesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoAlarmTypesModel.swift; sourceTree = "<group>"; };
+		181F5BEA20517151003600DE /* SendImgModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImgModel.swift; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -582,7 +597,6 @@
 		18D7501D2015FFE70011866E /* EnergyEquipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyEquipment.swift; sourceTree = "<group>"; };
 		18D7501F2015FFFC0011866E /* EnergyFeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyFeeVC.swift; sourceTree = "<group>"; };
 		18D75036201615E20011866E /* WorningInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoVC.swift; sourceTree = "<group>"; };
-		18D75037201615E20011866E /* WorningInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorningInfoVC.xib; sourceTree = "<group>"; };
 		18D7503C2016160C0011866E /* EquipmentMonitorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMonitorVC.swift; sourceTree = "<group>"; };
 		18D750412016169A0011866E /* MKRingProgressGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupView.swift; sourceTree = "<group>"; };
 		18D750422016169A0011866E /* MKRingProgressGroupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupButton.swift; sourceTree = "<group>"; };
@@ -892,6 +906,27 @@
 				181F5BC9204F9153003600DE /* DispatchRecordCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		181F5BD02050E5E3003600DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BD22050E67A003600DE /* WorningInfoHeaderView.swift */,
+				181F5BD42050E696003600DE /* WorningInfoHeaderView.xib */,
+				181F5BD62051164D003600DE /* MKRingSingleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		181F5BD12050E5E3003600DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BD820512B4B003600DE /* WorningInfoModel.swift */,
+				181F5BDA20512BBA003600DE /* WorningInfoReturnObjModel.swift */,
+				181F5BDC20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift */,
+				181F5BDE20512D1A003600DE /* WorningInfoAlarmTypesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18791C872008BBB000A2E282 = {
@@ -1372,6 +1407,7 @@
 		18A57A8C2046C9FF00DA7D59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BEA20517151003600DE /* SendImgModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1702,8 +1738,9 @@
 		18D75034201615740011866E /* WorningInfo */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BD12050E5E3003600DE /* Model */,
+				181F5BD02050E5E3003600DE /* View */,
 				18D75036201615E20011866E /* WorningInfoVC.swift */,
-				18D75037201615E20011866E /* WorningInfoVC.xib */,
 			);
 			path = WorningInfo;
 			sourceTree = "<group>";
@@ -2276,7 +2313,6 @@
 				74903E02202F413000003EF2 /* checkbox_off@2x.png in Resources */,
 				18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */,
 				74A8D413202DEA9600535BC2 /* 未标题-1.png in Resources */,
-				18D75039201615E20011866E /* WorningInfoVC.xib in Resources */,
 				74A8D3F8202DEA9600535BC2 /* abcd_equipment_monitor_untouch.png in Resources */,
 				74A8D419202DEA9600535BC2 /* logo_login.png in Resources */,
 				18A57A3B20455A4D00DA7D59 /* SVProgressHUD.bundle in Resources */,
@@ -2300,6 +2336,7 @@
 				74A8D3F5202DEA9600535BC2 /* abcd_energy_use_profile_touch.png in Resources */,
 				74A8D3EC202DEA9600535BC2 /* logo.png in Resources */,
 				18A57A3820455A4D00DA7D59 /* CoreSVP.bundle in Resources */,
+				181F5BD52050E696003600DE /* WorningInfoHeaderView.xib in Resources */,
 				74A8D406202DEA9600535BC2 /* dount_2.png in Resources */,
 				74A8D3ED202DEA9600535BC2 /* abcd_alarm_managem_touch.png in Resources */,
 				74A8D402202DEA9600535BC2 /* wqe2.png in Resources */,
@@ -2449,6 +2486,7 @@
 				74903EB5204BCC6000003EF2 /* FSCalendarDelegationFactory.m in Sources */,
 				18F373A720304F7400D2662A /* BaseModel.swift in Sources */,
 				18A57A2520455A4D00DA7D59 /* NSDate+Extend.m in Sources */,
+				181F5BDF20512D1B003600DE /* WorningInfoAlarmTypesModel.swift in Sources */,
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
 				18A57A2220455A4D00DA7D59 /* CALayer+Anim.m in Sources */,
 				18A57A3C20455A4D00DA7D59 /* SVProgressHUD.m in Sources */,
@@ -2459,6 +2497,7 @@
 				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
 				18A57A3620455A4D00DA7D59 /* UIButton+SD.m in Sources */,
 				18A57A4620455A4D00DA7D59 /* PBScrollView.m in Sources */,
+				181F5BDD20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift in Sources */,
 				18A57A3720455A4D00DA7D59 /* UIImageView+SD.m in Sources */,
 				18D74FD5200DDA980011866E /* MainBtn.m in Sources */,
 				18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */,
@@ -2467,11 +2506,13 @@
 				74903EB8204BCC6000003EF2 /* FSCalendarHeaderView.m in Sources */,
 				18A57A7920457E7B00DA7D59 /* UIImageView+HighlightedWebCache.m in Sources */,
 				74903E802045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift in Sources */,
+				181F5BD72051164D003600DE /* MKRingSingleView.swift in Sources */,
 				181F5BB920497E3C003600DE /* UIView+Common.m in Sources */,
 				18A57A2620455A4D00DA7D59 /* NSObject+Extend.m in Sources */,
 				18A57A7B20457E7B00DA7D59 /* UIView+WebCacheOperation.m in Sources */,
 				74903EB9204BCC6000003EF2 /* FSCalendarScopeHandle.m in Sources */,
 				181F5BAF20482D75003600DE /* TrackPlayBackPopView.swift in Sources */,
+				181F5BDB20512BBA003600DE /* WorningInfoReturnObjModel.swift in Sources */,
 				74903E3C2034053C00003EF2 /* ReturnObjChargeRateVosModel.swift in Sources */,
 				18A57A8420464DB200DA7D59 /* equipmentMonitorMonitorStatusModel.swift in Sources */,
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
@@ -2480,6 +2521,7 @@
 				18A57A8220464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
 				18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.mm in Sources */,
+				181F5BD920512B4B003600DE /* WorningInfoModel.swift in Sources */,
 				18A57A3220455A4D00DA7D59 /* UIView+Extend.m in Sources */,
 				18F373AD2030525E00D2662A /* LoginReturnObjModel.swift in Sources */,
 				18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */,
@@ -2577,7 +2619,9 @@
 				18D7501C2015FFCE0011866E /* EnergyRepairVC.swift in Sources */,
 				18A57A4520455A4D00DA7D59 /* PBSaveBtn.m in Sources */,
 				18A57A4120455A4D00DA7D59 /* PhotoModel.m in Sources */,
+				181F5BD32050E67A003600DE /* WorningInfoHeaderView.swift in Sources */,
 				18D74FC6200C9A880011866E /* HomeVC.swift in Sources */,
+				181F5BEB20517151003600DE /* SendImgModel.swift in Sources */,
 				18A57A2320455A4D00DA7D59 /* CALayer+Transition.m in Sources */,
 				74903EB7204BCC6000003EF2 /* FSCalendarExtensions.m in Sources */,
 				18791C962008BBB000A2E282 /* ViewController.swift in Sources */,

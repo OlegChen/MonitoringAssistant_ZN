@@ -65,6 +65,7 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
                 self.headerView?.maxFeeL.text = model.returnObj?.maxSumRealFee
                 self.headerView?.averageFeeL.text = model.returnObj?.avgSumRealFee
                 self.headerView?.minFeeL.text = model.returnObj?.minSumRealFee
+                self.headerView?.setChartData(dataArray: model.returnObj?.chargeRateVos! as! NSArray)
                 
                 self.dataArr.removeAllObjects()
                 self.dataArr.addObjects(from: (model.returnObj?.chargeRateVos)!)

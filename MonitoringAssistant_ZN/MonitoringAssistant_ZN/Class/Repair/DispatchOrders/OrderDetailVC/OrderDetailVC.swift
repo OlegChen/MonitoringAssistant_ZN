@@ -132,7 +132,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                 
                 let model = obj as! WorkOrderDetailModel
                 
-                self.headView?.titleL.text = (model.returnObj?.workName)! + " | " + (model.returnObj?.workType)!
+                self.headView?.titleL.text = (model.returnObj?.workName)! + " | " + (model.returnObj?.typeName)!
                 self.headView?.longTimeL.text = (model.returnObj?.repairsTime)! + "分钟"
                 self.headView?.dateL.text = model.returnObj?.createDateStr
                 self.headView?.nameL.text = model.returnObj?.sendEmpName
