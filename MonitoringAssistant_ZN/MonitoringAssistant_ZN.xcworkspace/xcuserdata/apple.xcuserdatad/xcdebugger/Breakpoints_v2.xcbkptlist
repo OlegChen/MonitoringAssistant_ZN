@@ -96,70 +96,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MonitoringAssistant_ZN/Class/NetworkService/Network.swift"
-            timestampString = "541341628.369302"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "PostRequest(urlString:params:success:failture:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in MonitoringAssistant_ZN.PostRequest(urlString: Swift.String, params: Swift.Dictionary&lt;Swift.String, Any&gt;, success: (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; (), failture: (Swift.Error) -&gt; ()) -&gt; ()"
-                  moduleName = "MonitoringAssistant_ZN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/NetworkService/Network.swift"
-                  timestampString = "542207292.724323"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "816">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in MonitoringAssistant_ZN.PostRequest(urlString: Swift.String, params: Swift.Dictionary&lt;Swift.String, Any&gt;, success: (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; (), failture: (Swift.Error) -&gt; ()) -&gt; ()"
-                  moduleName = "MonitoringAssistant_ZN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/NetworkService/Network.swift"
-                  timestampString = "542207292.728767"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "854">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MonitoringAssistant_ZN/Class/NetworkService/Network.swift"
-            timestampString = "541341631.010137"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "PostRequest(urlString:params:success:failture:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
             timestampString = "542207292.360508"
             startingColumnNumber = "9223372036854775807"
@@ -177,7 +113,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
-                  timestampString = "542207292.743315"
+                  timestampString = "542349851.45928"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
@@ -192,7 +128,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
-                  timestampString = "542207292.747399"
+                  timestampString = "542349851.463748"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
@@ -289,7 +225,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-                  timestampString = "542207292.777198"
+                  timestampString = "542349851.50925"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "158"
@@ -304,7 +240,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-                  timestampString = "542207292.780658"
+                  timestampString = "542349851.51372"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "158"
@@ -321,13 +257,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/TrackPlayback/TrackDetail/TrackDetailVC.swift"
-            timestampString = "542207292.361156"
+            timestampString = "542363391.58788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
             endingLineNumber = "202"
-            landmarkName = "preBtnClick()"
-            landmarkType = "7">
+            landmarkName = "TrackDetailVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -337,29 +273,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/TrackPlayback/TrackDetail/TrackDetailVC.swift"
-            timestampString = "542207292.3612649"
+            timestampString = "542363391.588514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "416"
-            endingLineNumber = "416"
-            landmarkName = "timeCancleBtnClick()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MonitoringAssistant_ZN/Class/Repair/TrackPlayback/TrackDetail/TrackDetailVC.swift"
-            timestampString = "542207292.36136"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
-            landmarkName = "getData()"
-            landmarkType = "7">
+            startingLineNumber = "447"
+            endingLineNumber = "447"
+            landmarkName = "TrackDetailVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -369,12 +289,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/DispatchRecordVC/DispatchRecordVC.swift"
-            timestampString = "542207292.361432"
+            timestampString = "542363391.588957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "getdata()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Login/ForgotPwVC.swift"
+            timestampString = "542363391.589041"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

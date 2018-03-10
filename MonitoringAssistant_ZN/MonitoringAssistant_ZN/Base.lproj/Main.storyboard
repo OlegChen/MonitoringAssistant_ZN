@@ -248,11 +248,23 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1Q-xC-Mqk">
                                     <rect key="frame" x="20" y="15" width="335" height="45"/>
+                                    <color key="backgroundColor" red="0.26262226700782776" green="0.55719852447509766" blue="0.72421723604202271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="2mR-gH-qiJ"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <state key="normal" title="提   交"/>
+                                    <state key="normal" title="提   交">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="sendBtnClick:" destination="CxF-kJ-Tme" eventType="touchUpInside" id="KCi-AL-1XF"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -279,7 +291,7 @@
                                                         <constraint firstAttribute="height" constant="20" id="LV4-1q-IKv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入11位手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctQ-Kr-LHS">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入11位手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctQ-Kr-LHS">
                                                     <rect key="frame" x="40" y="5" width="320" height="44.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -312,14 +324,23 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zO-rC-cZa">
                                                     <rect key="frame" x="260" y="10" width="100" height="35"/>
+                                                    <color key="backgroundColor" red="0.96849650144577026" green="0.39790558815002441" blue="0.0027797434013336897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="IAJ-kY-XUz"/>
                                                         <constraint firstAttribute="width" constant="100" id="OcE-fE-OXt"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="获取验证码"/>
+                                                    <state key="normal" title="获取验证码">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGf-Ff-38a">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGf-Ff-38a">
                                                     <rect key="frame" x="40" y="5" width="215" height="44.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -349,7 +370,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHU-Da-UQn">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHU-Da-UQn">
                                                     <rect key="frame" x="70" y="5" width="290" height="44.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -384,6 +405,12 @@
                             <outlet property="delegate" destination="CxF-kJ-Tme" id="a1X-hW-mLx"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="messageTextField" destination="qGf-Ff-38a" id="e3W-B1-00v"/>
+                        <outlet property="newPwTextField" destination="dHU-Da-UQn" id="BZc-hj-SvE"/>
+                        <outlet property="phoneNumTextField" destination="ctQ-Kr-LHS" id="pnj-yO-jFL"/>
+                        <outlet property="sendBtn" destination="R1Q-xC-Mqk" id="Gfj-vD-CUw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXV-A7-JYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

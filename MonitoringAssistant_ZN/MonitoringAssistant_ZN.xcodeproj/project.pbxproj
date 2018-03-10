@@ -36,6 +36,16 @@
 		181F5BDD20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BDC20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift */; };
 		181F5BDF20512D1B003600DE /* WorningInfoAlarmTypesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BDE20512D1A003600DE /* WorningInfoAlarmTypesModel.swift */; };
 		181F5BEB20517151003600DE /* SendImgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BEA20517151003600DE /* SendImgModel.swift */; };
+		181F5BEF20526ECD003600DE /* EnergyCompareHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BEE20526ECD003600DE /* EnergyCompareHeadView.swift */; };
+		181F5BF120526EEF003600DE /* EnergyCompareHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BF020526EEF003600DE /* EnergyCompareHeadView.xib */; };
+		181F5BF320529CB9003600DE /* EnergyCompareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BF220529CB9003600DE /* EnergyCompareModel.swift */; };
+		181F5BF520529D2B003600DE /* EnergyCompareReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BF420529D2B003600DE /* EnergyCompareReturnObjModel.swift */; };
+		181F5BF720529E0A003600DE /* EnergyCompareStandardVoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BF620529E0A003600DE /* EnergyCompareStandardVoModel.swift */; };
+		181F5BF920529EE9003600DE /* EnergyCompareMonthUseEnergiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F5BF820529EE9003600DE /* EnergyCompareMonthUseEnergiesModel.swift */; };
+		181F5BFC2053C7A1003600DE /* tel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BFA2053C798003600DE /* tel@2x.png */; };
+		181F5BFD2053C7A1003600DE /* tel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BFB2053C799003600DE /* tel@3x.png */; };
+		181F5C002053C7D0003600DE /* watch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BFE2053C7CB003600DE /* watch@2x.png */; };
+		181F5C012053C7D0003600DE /* watch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 181F5BFF2053C7CC003600DE /* watch@3x.png */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -373,6 +383,16 @@
 		181F5BDC20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoAlarmMonthsModel.swift; sourceTree = "<group>"; };
 		181F5BDE20512D1A003600DE /* WorningInfoAlarmTypesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningInfoAlarmTypesModel.swift; sourceTree = "<group>"; };
 		181F5BEA20517151003600DE /* SendImgModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImgModel.swift; sourceTree = "<group>"; };
+		181F5BEE20526ECD003600DE /* EnergyCompareHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareHeadView.swift; sourceTree = "<group>"; };
+		181F5BF020526EEF003600DE /* EnergyCompareHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnergyCompareHeadView.xib; sourceTree = "<group>"; };
+		181F5BF220529CB9003600DE /* EnergyCompareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareModel.swift; sourceTree = "<group>"; };
+		181F5BF420529D2B003600DE /* EnergyCompareReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareReturnObjModel.swift; sourceTree = "<group>"; };
+		181F5BF620529E0A003600DE /* EnergyCompareStandardVoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareStandardVoModel.swift; sourceTree = "<group>"; };
+		181F5BF820529EE9003600DE /* EnergyCompareMonthUseEnergiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareMonthUseEnergiesModel.swift; sourceTree = "<group>"; };
+		181F5BFA2053C798003600DE /* tel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tel@2x.png"; sourceTree = "<group>"; };
+		181F5BFB2053C799003600DE /* tel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tel@3x.png"; sourceTree = "<group>"; };
+		181F5BFE2053C7CB003600DE /* watch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch@2x.png"; sourceTree = "<group>"; };
+		181F5BFF2053C7CC003600DE /* watch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch@3x.png"; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -925,6 +945,26 @@
 				181F5BDA20512BBA003600DE /* WorningInfoReturnObjModel.swift */,
 				181F5BDC20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift */,
 				181F5BDE20512D1A003600DE /* WorningInfoAlarmTypesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181F5BEC20526DC8003600DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BEE20526ECD003600DE /* EnergyCompareHeadView.swift */,
+				181F5BF020526EEF003600DE /* EnergyCompareHeadView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		181F5BED20526DC9003600DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181F5BF220529CB9003600DE /* EnergyCompareModel.swift */,
+				181F5BF420529D2B003600DE /* EnergyCompareReturnObjModel.swift */,
+				181F5BF620529E0A003600DE /* EnergyCompareStandardVoModel.swift */,
+				181F5BF820529EE9003600DE /* EnergyCompareMonthUseEnergiesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1646,6 +1686,8 @@
 		18D74FFB20119E070011866E /* EnergyCompare */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BED20526DC9003600DE /* Model */,
+				181F5BEC20526DC8003600DE /* View */,
 				18D7500E201213410011866E /* EnergyCompareVC.swift */,
 			);
 			path = EnergyCompare;
@@ -2080,6 +2122,8 @@
 		74A8D3B5202DEA9600535BC2 /* 工人分布 */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BFE2053C7CB003600DE /* watch@2x.png */,
+				181F5BFF2053C7CC003600DE /* watch@3x.png */,
 				74A8D3B6202DEA9600535BC2 /* 张三@2x.png */,
 				74A8D3B7202DEA9600535BC2 /* 未标题-2.png */,
 			);
@@ -2089,6 +2133,8 @@
 		74A8D3B8202DEA9600535BC2 /* 工单信息 */ = {
 			isa = PBXGroup;
 			children = (
+				181F5BFA2053C798003600DE /* tel@2x.png */,
+				181F5BFB2053C799003600DE /* tel@3x.png */,
 				74A8D3B9202DEA9600535BC2 /* dount_1.png */,
 				74A8D3BA202DEA9600535BC2 /* dount_2.png */,
 				74A8D3BB202DEA9600535BC2 /* dount_3.png */,
@@ -2318,6 +2364,7 @@
 				18A57A3B20455A4D00DA7D59 /* SVProgressHUD.bundle in Resources */,
 				74903E342032DA1F00003EF2 /* FeeInfoTableViewCell.xib in Resources */,
 				74903E8A2045B79F00003EF2 /* EquipmentMonitorSectionHeaderView.xib in Resources */,
+				181F5BFC2053C7A1003600DE /* tel@2x.png in Resources */,
 				1804774A20442BB600B410CB /* OrderDetailCell.xib in Resources */,
 				74903E162031EB5600003EF2 /* 报修@2x.png in Resources */,
 				74903E5A2039ABD300003EF2 /* OrderInfoHeaderView.xib in Resources */,
@@ -2348,6 +2395,7 @@
 				74A8D3F1202DEA9600535BC2 /* abcd_dispatch_order_touch.png in Resources */,
 				74A8D3FA202DEA9600535BC2 /* abcd_gold_bench_marke_untouch.png in Resources */,
 				74903E1D2031EB5600003EF2 /* 设备@2x.png in Resources */,
+				181F5BF120526EEF003600DE /* EnergyCompareHeadView.xib in Resources */,
 				74A8D407202DEA9600535BC2 /* dount_3.png in Resources */,
 				18C8D2C5202C43F100E91527 /* mapapi.bundle in Resources */,
 				74A8D3FE202DEA9600535BC2 /* abcd_work_order_details_untouch.png in Resources */,
@@ -2380,6 +2428,7 @@
 				74A8D3F6202DEA9600535BC2 /* abcd_energy_use_profile_untouch.png in Resources */,
 				18A57A4220455A4D00DA7D59 /* PB.bundle in Resources */,
 				74A8D414202DEA9600535BC2 /* 未标题-2.png in Resources */,
+				181F5C012053C7D0003600DE /* watch@3x.png in Resources */,
 				18791C992008BBB000A2E282 /* Main.storyboard in Resources */,
 				74A8D3FD202DEA9600535BC2 /* abcd_work_order_details_touch.png in Resources */,
 				74A8D40E202DEA9600535BC2 /* checked_off.png in Resources */,
@@ -2388,6 +2437,7 @@
 				74903E182031EB5600003EF2 /* 收费@2x.png in Resources */,
 				18047746204428AD00B410CB /* OrderDetailHeaderView.xib in Resources */,
 				74903E262031F03A00003EF2 /* 配置中心@2x.png in Resources */,
+				181F5BFD2053C7A1003600DE /* tel@3x.png in Resources */,
 				74A8D412202DEA9600535BC2 /* back_infowindow_view (2).png in Resources */,
 				74A8D3F4202DEA9600535BC2 /* abcd_energy_use_monitor_untouch.png in Resources */,
 				74A8D3F2202DEA9600535BC2 /* abcd_dispatch_order_untouch.png in Resources */,
@@ -2407,6 +2457,7 @@
 				74A8D40C202DEA9600535BC2 /* dispatch_record_last.png in Resources */,
 				74A8D426202DEA9600535BC2 /* gold_4.png in Resources */,
 				74A8D404202DEA9600535BC2 /* 未标题-2.png in Resources */,
+				181F5C002053C7D0003600DE /* watch@2x.png in Resources */,
 				74903E1A2031EB5600003EF2 /* 用能@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2489,6 +2540,7 @@
 				181F5BDF20512D1B003600DE /* WorningInfoAlarmTypesModel.swift in Sources */,
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
 				18A57A2220455A4D00DA7D59 /* CALayer+Anim.m in Sources */,
+				181F5BF720529E0A003600DE /* EnergyCompareStandardVoModel.swift in Sources */,
 				18A57A3C20455A4D00DA7D59 /* SVProgressHUD.m in Sources */,
 				74903E4B2036B5CB00003EF2 /* moniterDataReturnObjModel.swift in Sources */,
 				74903E7E204314FE00003EF2 /* OrderDetailVC.swift in Sources */,
@@ -2500,6 +2552,7 @@
 				181F5BDD20512C4C003600DE /* WorningInfoAlarmMonthsModel.swift in Sources */,
 				18A57A3720455A4D00DA7D59 /* UIImageView+SD.m in Sources */,
 				18D74FD5200DDA980011866E /* MainBtn.m in Sources */,
+				181F5BF320529CB9003600DE /* EnergyCompareModel.swift in Sources */,
 				18D7503E2016160C0011866E /* EquipmentMonitorVC.swift in Sources */,
 				18A57A2E20455A4D00DA7D59 /* UIImage+Extend.m in Sources */,
 				181F5BBF20497EE6003600DE /* UIColor+expanded.m in Sources */,
@@ -2550,6 +2603,7 @@
 				74903E0B2030806A00003EF2 /* UserCenter.swift in Sources */,
 				74903EBC204BCC6000003EF2 /* FSCalendarWeekdayView.m in Sources */,
 				18D750202015FFFC0011866E /* EnergyFeeVC.swift in Sources */,
+				181F5BF520529D2B003600DE /* EnergyCompareReturnObjModel.swift in Sources */,
 				181F5BBC20497E85003600DE /* UIView+FP.m in Sources */,
 				18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */,
 				18A57A3120455A4D00DA7D59 /* UITableViewCell+Extend.m in Sources */,
@@ -2583,6 +2637,7 @@
 				74903E4D2036B5F100003EF2 /* moniterDataPointsModel.swift in Sources */,
 				18A57A4020455A4D00DA7D59 /* PhotoBroswerLayout.m in Sources */,
 				18A57A942046D89400DA7D59 /* AboutUsVC.swift in Sources */,
+				181F5BF920529EE9003600DE /* EnergyCompareMonthUseEnergiesModel.swift in Sources */,
 				18A57A4A20455A4D00DA7D59 /* PhotoBroswerVC.m in Sources */,
 				74903E542039A59200003EF2 /* OrderInfoVC.swift in Sources */,
 				74903E562039AB8F00003EF2 /* OrderInfoHeaderView.swift in Sources */,
@@ -2596,6 +2651,7 @@
 				18D74FC3200C462F0011866E /* LoginVC.swift in Sources */,
 				181F5BC2204F8204003600DE /* CustomTrackDetailAnnotationView.mm in Sources */,
 				18A57A2A20455A4D00DA7D59 /* UIDevice+Extend.m in Sources */,
+				181F5BEF20526ECD003600DE /* EnergyCompareHeadView.swift in Sources */,
 				18A57A3920455A4D00DA7D59 /* CoreSVP.m in Sources */,
 				18A57A2720455A4D00DA7D59 /* NSString+Extend.m in Sources */,
 				74903E71203FC4D700003EF2 /* SelectWorkerVCViewController.swift in Sources */,

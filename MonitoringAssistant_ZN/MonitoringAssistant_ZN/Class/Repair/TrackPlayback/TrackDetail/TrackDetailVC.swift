@@ -21,6 +21,9 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     
     var pickerView : UIPickerView?
     
+    /** 轨迹线 */
+    var polyLine : BMKPolyline?
+    
     
     private weak var calendar: FSCalendar!
     private weak var calendarContentView: UIView!
@@ -351,17 +354,16 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         self.view.addSubview(timeView)
         timeView.snp.makeConstraints { (make) in
             
-            make.top.equalTo(self.view).offset(-190)
+            make.top.equalTo(self.view).offset(-210)
             make.left.right.equalTo(self.view).offset(0)
-            make.height.equalTo(190)
+            make.height.equalTo(210)
             
         }
         
         let img = UIImageView()
         timeView.addSubview(img)
         img.contentMode = UIViewContentMode.scaleAspectFill
-        img.image = UIImage.init(named: "")
-        img.backgroundColor = .red
+        img.image = UIImage.init(named: "watch")
         img.cornerRadius = 75
         img.clipsToBounds = true
         img.snp.makeConstraints { (make) in
@@ -381,6 +383,38 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
             make.center.equalTo(img)
             make.size.equalTo(CGSize(width:120, height:120))
+        }
+        
+        
+        let hour = UILabel()
+        hour.text = "时"
+        hour.font = UIFont.systemFont(ofSize: 12)
+        hour.textColor = RGBCOLOR(r: 58, 58, 58)
+        timeView.addSubview(hour)
+        hour.snp.makeConstraints { (make) in
+            make.centerY.equalTo(timePicker.snp.centerY).offset(-7)
+            make.centerX.equalTo(timePicker.snp.centerX).offset(0)
+        }
+        
+        let min = UILabel()
+        min.text = "分"
+        min.font = UIFont.systemFont(ofSize: 12)
+        min.textColor = RGBCOLOR(r: 58, 58, 58)
+        timeView.addSubview(min)
+        min.snp.makeConstraints { (make) in
+            make.centerY.equalTo(timePicker.snp.centerY).offset(-7)
+            make.centerX.equalTo(timePicker.snp.centerX).offset(50)
+        }
+        
+        let line = UIView()
+        timeView.addSubview(line)
+        line.backgroundColor = UIColor.lightGray
+        line.snp.makeConstraints { (make) in
+            
+            make.left.right.equalTo(timeView).offset(0)
+            make.height.equalTo(0.5)
+            make.bottom.equalTo(timeView.snp.bottom).offset(-40)
+            
         }
         
         
@@ -415,7 +449,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         self.isShowTimeView = false
         self.timeSelectView.snp.updateConstraints({ (make) in
-            make.top.equalTo(self.view).offset(-190)
+            make.top.equalTo(self.view).offset(-210)
         })
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
@@ -445,7 +479,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         self.isShowTimeView = false
         self.timeSelectView.snp.updateConstraints({ (make) in
-            make.top.equalTo(self.view).offset(-190)
+            make.top.equalTo(self.view).offset(-210)
         })
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
@@ -511,6 +545,50 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         }
         
     }
+    
+    func addTrackLine(array:NSArray) {
+        
+        // 轨迹点数组个数
+        let count = array.count
+        
+        // 动态分配存储空间
+        // BMKMapPoint是个结构体：地理坐标点，用直角地理坐标表示 X：横坐标 Y：纵坐标
+        let tempPoints  =  NSMutableArray() // new BMKMapPoint[count];
+        
+        // 遍历数组
+        array.enumerateObjects(at: <#T##IndexSet#>, options: <#T##NSEnumerationOptions#>) { (<#Any#>, <#Int#>, <#UnsafeMutablePointer<ObjCBool>#>) in
+            <#code#>
+        }
+        
+        [self.locationArrayM enumerateObjectsUsingBlock:^(CLLocation *location, NSUInteger idx, BOOL *stop) {
+            BMKMapPoint locationPoint = BMKMapPointForCoordinate(location.coordinate);
+            tempPoints[idx] = locationPoint;
+        }
+    }];
+    
+    //移除原有的绘图，避免在原来轨迹上重画
+    if (self.polyLine) {
+    [self.mapView removeOverlay:self.polyLine];
+    }
+    
+    // 通过points构建BMKPolyline
+    self.polyLine = [BMKPolyline polylineWithPoints:tempPoints count:count];
+    
+    //添加路线,绘图
+    if (self.polyLine) {
+    [self.mapView addOverlay:self.polyLine];
+    }
+    
+    // 清空 tempPoints 临时数组
+    delete []tempPoints;
+    
+    // 根据polyline设置地图范围
+    [self mapViewFitPolyLine:self.polyLine];
+    
+        
+        
+    }
+    
     
     func AddAnnotations(array:NSArray) {
         
@@ -605,7 +683,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             self.pickerView?.tag = selectTimeType.startTimeType.rawValue
             self.timeSelectView.snp.updateConstraints({ (make) in
                 
-                make.top.equalTo(self.view).offset(-190)
+                make.top.equalTo(self.view).offset(-210)
                 
             })
             
@@ -643,7 +721,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             self.pickerView?.tag = selectTimeType.endTimeType.rawValue
             self.timeSelectView.snp.updateConstraints({ (make) in
                 
-                make.top.equalTo(self.view).offset(-190)
+                make.top.equalTo(self.view).offset(-210)
                 
             })
             

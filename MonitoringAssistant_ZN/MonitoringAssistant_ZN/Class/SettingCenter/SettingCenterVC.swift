@@ -187,14 +187,13 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
         
         self.headImg.image = image
         
-        var data = UIImageJPEGRepresentation(image,0.4);
+        let data = UIImageJPEGRepresentation(image,0.4);
         let imageBase64String = data?.base64EncodedString()
 
-        
+        self.sendImg(imgStr: imageBase64String!)
         
 
     }
-    
 
     private func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -221,7 +220,8 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
                 
                 if model.statusCode == 800{
                     
-                    
+                    let urlStr = model.returnObj
+                    self.headImg.kf.setImage(with: URL.init(string:urlStr!))
                     
                 }
                 

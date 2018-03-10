@@ -12,15 +12,16 @@ import Charts
 
 class EnergyCompareVC: BaseVC ,ChartViewDelegate {
 
-    @IBOutlet var chartView: LineChartView!
-    @IBOutlet var sliderX: UISlider!
-    @IBOutlet var sliderY: UISlider!
-    @IBOutlet var sliderTextX: UITextField!
-    @IBOutlet var sliderTextY: UITextField!
-    
-    
-    var shouldHideData: Bool = false
 
+    var segment : UISegmentedControl!
+    
+    
+    
+    var tableView : UITableView!
+    var headView : EnergyCompareHeadView!
+    
+
+    var ReturnObjModel : EnergyCompareReturnObjModel?
     
     
     override func viewDidLoad() {
@@ -29,12 +30,25 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         self.title = "黄金对标"
         
         
+        self.view.backgroundColor = RGBCOLOR(r: 245, 245, 245)
+        
+        let topView = UIView()
+        topView.backgroundColor = .white
+        self.view.addSubview(topView)
+        topView.snp.makeConstraints { (make) in
+            
+            make.left.right.equalTo(self.view).offset(0)
+            make.top.equalTo(self.view).offset(NavHeight)
+            make.height.equalTo(50)
+        }
+        
+        
         let mySegmentedControl = UISegmentedControl(
-            items: ["早餐","午餐","晚餐","宵夜"])
-        
-        mySegmentedControl.tintColor = UIColor.black
-        mySegmentedControl.backgroundColor = UIColor.lightGray
-        
+            items: ["总耗能","水耗能","电耗能","气耗能"])
+        self.segment = mySegmentedControl
+        mySegmentedControl.tintColor = RGBCOLOR(r: 11, 46, 77)
+//        mySegmentedControl.backgroundColor = RGBCOLOR(r: 11, 46, 77)
+//        mySegmentedControl.borderColor = RGBCOLOR(r: 11, 46, 77)
         mySegmentedControl.selectedSegmentIndex = 0
         mySegmentedControl.addTarget(self, action: #selector(self.onChange), for: .valueChanged)
         
@@ -42,132 +56,35 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
             width: ScreenW * 0.8, height: 30)
         mySegmentedControl.center = CGPoint(
             x: ScreenW * 0.5,
-            y: CGFloat(NavHeight + 20.0))
-        self.view.addSubview(mySegmentedControl)
+            y: CGFloat(25.0))
+        topView.addSubview(mySegmentedControl)
         
         
         
-        //折线图：
+        self.tableView = UITableView(frame:CGRect(x:0 , y : CGFloat(NavHeight + 20.0 + 30 + 10) , width:ScreenW , height: 412))
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { (make) in
+            
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight + 20.0 + 30 + 10), 0 , 0, 0))
+        }
         
-        chartView = LineChartView.init(frame: CGRect(x:0, y:100, width:300, height:300))
-        self.view.addSubview(chartView)
-        
-        chartView.delegate = self
-        
-        chartView.scaleXEnabled = false
-        chartView.scaleYEnabled = false
-        
-        chartView.chartDescription?.enabled = false
-        chartView.legend.enabled = false
-
-//        chartView.dragEnabled = true
-//        chartView.setScaleEnabled(true)
-//        chartView.pinchZoomEnabled = true
-        
-        // x-axis limit line
-//        let llXAxis = ChartLimitLine(limit: 10, label: "Index 10")
-//        llXAxis.lineWidth = 4
-//        llXAxis.lineDashLengths = [10, 10, 0]
-//        llXAxis.labelPosition = .rightBottom
-//        llXAxis.valueFont = .systemFont(ofSize: 10)
-        //网格线
-        chartView.xAxis.gridLineDashLengths = [10, 10]
-        chartView.xAxis.gridLineDashPhase = 0
-        
-        chartView.xAxis.labelPosition = .bottom      //只显示底部的X轴
-        
-        chartView.xAxis.drawLabelsEnabled = true
-        let xAxisLabels = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
-        chartView.xAxis.axisMaximum = Double(xAxisLabels.count - 1)
-
-        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels)
-        chartView.xAxis.setLabelCount(xAxisLabels.count , force: true)
-
-
-        
-        
-
-        
-        let leftAxis = chartView.leftAxis
-        leftAxis.removeAllLimitLines()
-
-        leftAxis.axisMaximum = 200
-        leftAxis.axisMinimum = 0
-        leftAxis.gridLineDashLengths = [5, 5]
-        leftAxis.drawLimitLinesBehindDataEnabled = true
-        
-        chartView.rightAxis.enabled = false
-        
-        //[_chartView.viewPortHandler setMaximumScaleY: 2.f];
-        //[_chartView.viewPortHandler setMaximumScaleX: 2.f];
-        
-        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
-                                   font: .systemFont(ofSize: 12),
-                                   textColor: .white,
-                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-        marker.chartView = chartView
-        marker.minimumSize = CGSize(width: 80, height: 40)
-        chartView.marker = marker
-        
-        chartView.legend.form = .line
-        
-//        sliderX.value = 45
-//        sliderY.value = 100
-//        slidersValueChanged(nil)
-        
-        chartView.animate(xAxisDuration: 2.5)
-        
-        updateChartData()
-
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         self.getdataWithType(type: "1")   //1：总能耗2：水能耗3：电能耗4：气能耗
         
         
     }
     
-    
-     func updateChartData() {
-        if self.shouldHideData {
-            chartView.data = nil
-            return
-        }
+    func numberOfSections(in tableView: UITableView) -> Int {
         
-        self.setDataCount(Int(20), range: UInt32(100))
+        return 0
     }
     
-    
-    
-    // TODO: Refine data creation
-    func setDataCount(_ count: Int, range: UInt32) {
-        let colors = ChartColorTemplates.vordiplom()[0...2]
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let block: (Int) -> ChartDataEntry = { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 3)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        let dataSets = (0..<3).map { i -> LineChartDataSet in
-            let yVals = (0..<count).map(block)
-            let set = LineChartDataSet(values: yVals, label: "DataSet \(i)")
-            set.drawCirclesEnabled = true
-            set.mode = .horizontalBezier
-            set.lineWidth = 1.5
-            set.circleRadius = 3
-            set.circleHoleRadius = 2
-            let color = colors[i % colors.count]
-            set.setColor(color)
-            set.setCircleColor(color)
-            
-            return set
-        }
-        
-//        dataSets[0].lineDashLengths = [5, 5]
-//        dataSets[0].colors = ChartColorTemplates.vordiplom()
-//        dataSets[0].circleColors = ChartColorTemplates.vordiplom()
-        
-        let data = LineChartData(dataSets: dataSets)
-        data.setValueFont(.systemFont(ofSize: 7, weight: .light))
-        chartView.data = data
+        return 0
     }
+    
     
     /*
     override func optionTapped(_ option: Option) {
@@ -213,27 +130,84 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         // 印出選到哪個選項 從 0 開始算起
         print(sender.selectedSegmentIndex)
         
-        // 印出這個選項的文字
-        print(
-            sender.titleForSegment(
-                at: sender.selectedSegmentIndex))
+        if ((self.ReturnObjModel) != nil) {
+            
+            // 印出這個選項的文字
+            print(sender.titleForSegment(at: sender.selectedSegmentIndex) as Any)
+            
+            switch sender.selectedSegmentIndex{
+            case 0: //相当于if
+                self.headView.updateData(model: (self.ReturnObjModel?.totalGoldStandardVo)!)
+            case 1: // 相当于else if
+                self.headView.updateData(model: (self.ReturnObjModel?.waterGoldStandardVo)!)
+            case 2: // 相当于else if
+                self.headView.updateData(model: (self.ReturnObjModel?.eleGoldStandardVo)!)
+            case 3: // 相当于else if
+                self.headView.updateData(model: (self.ReturnObjModel?.gasGoldStandardVo)!)
+            default: // 相当于else
+                print("没有评级")
+            }
+            
+        }
+
     }
     
     func getdataWithType(type:String) {
         
         UserCenter.shared.userInfo { (isLogin, userInfo) in
             
+            self.view.beginLoading()
+            
             let para = ["companyCode":userInfo.companyCode ,"orgCode":userInfo.orgCode ,"empNo":userInfo.empNo ,"empName":userInfo.empName ,"type":type]
 
-            NetworkService.networkPostrequest(parameters:para as! [String : String], requestApi: goldStandardDataUrl, modelClass: "", response: { (obj) in
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: goldStandardDataUrl, modelClass: "EnergyCompareModel", response: { (obj) in
                 
+                let model = obj as! EnergyCompareModel
                 
+                if(model.statusCode == 800){
+                    
+                    self.setHeadView()
+                    
+                    self.ReturnObjModel = model.returnObj
+                    var m : EnergyCompareStandardVoModel!
+                    if(self.segment.selectedSegmentIndex == 0){
+                        
+                        m = (model.returnObj?.totalGoldStandardVo)!
+                    }else if(self.segment.selectedSegmentIndex == 1){
+                        
+                        m = (model.returnObj?.waterGoldStandardVo)!
+                    }else if(self.segment.selectedSegmentIndex == 2){
+                        
+                        m = (model.returnObj?.eleGoldStandardVo)!
+                    }else if(self.segment.selectedSegmentIndex == 3){
+                        
+                        m = (model.returnObj?.gasGoldStandardVo)!
+                    }
+                    
+                    self.headView.updateData(model:m)
+                }
+                
+                self.view.endLoading()
                 
             }, failture: { (error) in
                 
+                self.view.endLoading()
             })
         }
 
+        
+    }
+    
+    func setHeadView() {
+        
+        let headerView = UIView()
+        headerView.frame = CGRect(x:0 , y : 0, width:ScreenW , height: 482)
+        
+        let view = (Bundle.main.loadNibNamed("EnergyCompareHeadView", owner: nil, options: nil)![0] as! EnergyCompareHeadView)
+        self.headView = view
+        headerView.addSubview(view)
+        view.frame = headerView.bounds
+        self.tableView.tableHeaderView = headerView
         
     }
     

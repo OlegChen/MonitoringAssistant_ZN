@@ -8,12 +8,37 @@
 
 import UIKit
 
-class ForgotPwVC: BaseTableVC {
+class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
+    
+    @IBOutlet weak var phoneNumTextField: UITextField!
+    
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    @IBOutlet weak var newPwTextField: UITextField!
+    
+    @IBOutlet weak var sendBtn: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        self.title = "忘记密码"
+        
+        self.phoneNumTextField.keyboardType = UIKeyboardType.numberPad
+        self.phoneNumTextField.tag = 1000
+        self.newPwTextField.tag = 2000
+        
+        self.phoneNumTextField.delegate = self
+        self.newPwTextField.delegate = self
+        
+    }
+    
+    
+    @IBAction func sendBtnClick(_ sender: UIButton) {
+        
+        
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,6 +60,33 @@ class ForgotPwVC: BaseTableVC {
         
         return 0
     }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else{
+            return true
+        }
+        
+        let textLength = text.characters.count + string.characters.count - range.length
+        
+        return textLength <= 16
+        
+        if textField.tag == 1000 {
+            
+            //新号码
+        }else if textField.tag == 2000 {
+            
+            //密码
+            
+        }else{
+            
+            
+        }
+        
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
