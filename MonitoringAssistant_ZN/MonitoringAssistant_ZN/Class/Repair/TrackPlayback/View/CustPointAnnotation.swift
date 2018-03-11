@@ -8,10 +8,17 @@
 
 import UIKit
 
+enum starOrEnd:Int {
+
+    case star = 100
+    case end = 200
+}
+
 class CustPointAnnotation: BMKPointAnnotation {
     
     var Model : TrackPlayBackReturnObjModel?
     
+    var isStartAnno = 0
     
 
 }

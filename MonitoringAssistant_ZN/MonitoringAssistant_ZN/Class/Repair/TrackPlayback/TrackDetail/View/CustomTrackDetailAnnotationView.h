@@ -21,7 +21,7 @@
 
 
 
-@interface CustomTrackDetailAnnotationView : BMKAnnotationView
+@interface CustomTrackDetailAnnotationView : BMKPinAnnotationView //BMKAnnotationView
 
 @property (nonatomic ,copy) NSString *img;
 

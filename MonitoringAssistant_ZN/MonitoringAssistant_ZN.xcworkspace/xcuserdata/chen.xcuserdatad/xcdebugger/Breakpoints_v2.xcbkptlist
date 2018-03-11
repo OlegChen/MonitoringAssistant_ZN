@@ -17,38 +17,6 @@
             endingLineNumber = "229"
             landmarkName = "getdataWithType(type:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.AnyObject) -&gt; () in closure #1 (Swift.Bool, MonitoringAssistant_ZN.LoginReturnObjModel) -&gt; () in MonitoringAssistant_ZN.EnergyCompareVC.getdataWithType(type: Swift.String) -&gt; ()"
-                  moduleName = "MonitoringAssistant_ZN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Energy/EnergyCompare/EnergyCompareVC.swift"
-                  timestampString = "541836121.595893"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "232"
-                  endingLineNumber = "232"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__ObjC.NSError) -&gt; () in closure #1 (Swift.Bool, MonitoringAssistant_ZN.LoginReturnObjModel) -&gt; () in MonitoringAssistant_ZN.EnergyCompareVC.getdataWithType(type: Swift.String) -&gt; ()"
-                  moduleName = "MonitoringAssistant_ZN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Energy/EnergyCompare/EnergyCompareVC.swift"
-                  timestampString = "541836121.599134"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -139,6 +107,22 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Repair/TrackPlayback/TrackDetail/TrackDetailVC.swift"
+            timestampString = "542481087.0121779"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "643"
+            endingLineNumber = "643"
+            landmarkName = "addTrackLine(array:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

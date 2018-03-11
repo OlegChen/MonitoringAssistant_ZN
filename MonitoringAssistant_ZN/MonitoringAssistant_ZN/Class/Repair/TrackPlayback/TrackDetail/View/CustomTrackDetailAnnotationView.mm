@@ -83,10 +83,10 @@
         
         self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
         self.portraitImageView.layer.masksToBounds = YES;
-        self.portraitImageView.layer.cornerRadius = 20.0;
+        self.portraitImageView.layer.cornerRadius = 15.0;
         self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
         self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-        self.portraitImageView.layer.borderWidth = 3.0f;
+        self.portraitImageView.layer.borderWidth = 0.0f;
         self.portraitImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
         self.portraitImageView.layer.shouldRasterize = YES;
         self.portraitImageView.clipsToBounds = YES;

@@ -331,6 +331,24 @@
 		74A8D425202DEA9600535BC2 /* gold_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3E1202DEA9600535BC2 /* gold_3.png */; };
 		74A8D426202DEA9600535BC2 /* gold_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3E2202DEA9600535BC2 /* gold_4.png */; };
 		74A8D427202DEA9600535BC2 /* gold_bottom_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3E3202DEA9600535BC2 /* gold_bottom_bg.png */; };
+		74DD1BE32055146B002EC264 /* bottomPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD1BE22055146B002EC264 /* bottomPlayView.swift */; };
+		74DD1BE520551477002EC264 /* bottomPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BE420551477002EC264 /* bottomPlayView.xib */; };
+		74DD1BEE205518CF002EC264 /* 播放@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BE6205518CD002EC264 /* 播放@3x.png */; };
+		74DD1BEF205518CF002EC264 /* 暂停@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BE7205518CD002EC264 /* 暂停@2x.png */; };
+		74DD1BF0205518CF002EC264 /* 起点@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BE8205518CD002EC264 /* 起点@3x.png */; };
+		74DD1BF1205518CF002EC264 /* 起点@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BE9205518CE002EC264 /* 起点@2x.png */; };
+		74DD1BF2205518CF002EC264 /* 播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BEA205518CE002EC264 /* 播放@2x.png */; };
+		74DD1BF3205518CF002EC264 /* 终点@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BEB205518CE002EC264 /* 终点@3x.png */; };
+		74DD1BF4205518CF002EC264 /* 终点@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BEC205518CE002EC264 /* 终点@2x.png */; };
+		74DD1BF5205518CF002EC264 /* 暂停@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BED205518CF002EC264 /* 暂停@3x.png */; };
+		74DD1BFB20559651002EC264 /* 手机@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BF720559650002EC264 /* 手机@3x.png */; };
+		74DD1BFC20559651002EC264 /* 密码@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BF820559651002EC264 /* 密码@2x.png */; };
+		74DD1BFD20559651002EC264 /* 密码@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BF920559651002EC264 /* 密码@3x.png */; };
+		74DD1BFE20559651002EC264 /* 手机@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BFA20559651002EC264 /* 手机@2x.png */; };
+		74DD1C01205596B5002EC264 /* login密码@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1BFF205596B4002EC264 /* login密码@3x.png */; };
+		74DD1C02205596B5002EC264 /* login密码@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C00205596B4002EC264 /* login密码@2x.png */; };
+		74DD1C05205596C6002EC264 /* 用户@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C03205596C6002EC264 /* 用户@3x.png */; };
+		74DD1C06205596C6002EC264 /* 用户@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C04205596C6002EC264 /* 用户@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -776,6 +794,24 @@
 		74A8D3E1202DEA9600535BC2 /* gold_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold_3.png; sourceTree = "<group>"; };
 		74A8D3E2202DEA9600535BC2 /* gold_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold_4.png; sourceTree = "<group>"; };
 		74A8D3E3202DEA9600535BC2 /* gold_bottom_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold_bottom_bg.png; sourceTree = "<group>"; };
+		74DD1BE22055146B002EC264 /* bottomPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomPlayView.swift; sourceTree = "<group>"; };
+		74DD1BE420551477002EC264 /* bottomPlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = bottomPlayView.xib; sourceTree = "<group>"; };
+		74DD1BE6205518CD002EC264 /* 播放@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放@3x.png"; sourceTree = "<group>"; };
+		74DD1BE7205518CD002EC264 /* 暂停@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停@2x.png"; sourceTree = "<group>"; };
+		74DD1BE8205518CD002EC264 /* 起点@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "起点@3x.png"; sourceTree = "<group>"; };
+		74DD1BE9205518CE002EC264 /* 起点@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "起点@2x.png"; sourceTree = "<group>"; };
+		74DD1BEA205518CE002EC264 /* 播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放@2x.png"; sourceTree = "<group>"; };
+		74DD1BEB205518CE002EC264 /* 终点@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "终点@3x.png"; sourceTree = "<group>"; };
+		74DD1BEC205518CE002EC264 /* 终点@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "终点@2x.png"; sourceTree = "<group>"; };
+		74DD1BED205518CF002EC264 /* 暂停@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停@3x.png"; sourceTree = "<group>"; };
+		74DD1BF720559650002EC264 /* 手机@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手机@3x.png"; sourceTree = "<group>"; };
+		74DD1BF820559651002EC264 /* 密码@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "密码@2x.png"; sourceTree = "<group>"; };
+		74DD1BF920559651002EC264 /* 密码@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "密码@3x.png"; sourceTree = "<group>"; };
+		74DD1BFA20559651002EC264 /* 手机@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手机@2x.png"; sourceTree = "<group>"; };
+		74DD1BFF205596B4002EC264 /* login密码@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login密码@3x.png"; sourceTree = "<group>"; };
+		74DD1C00205596B4002EC264 /* login密码@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login密码@2x.png"; sourceTree = "<group>"; };
+		74DD1C03205596C6002EC264 /* 用户@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户@3x.png"; sourceTree = "<group>"; };
+		74DD1C04205596C6002EC264 /* 用户@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户@2x.png"; sourceTree = "<group>"; };
 		95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.release.xcconfig"; sourceTree = "<group>"; };
 		FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitoringAssistant_ZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -875,6 +911,8 @@
 			children = (
 				181F5BC0204F8204003600DE /* CustomTrackDetailAnnotationView.h */,
 				181F5BC1204F8204003600DE /* CustomTrackDetailAnnotationView.mm */,
+				74DD1BE22055146B002EC264 /* bottomPlayView.swift */,
+				74DD1BE420551477002EC264 /* bottomPlayView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2122,6 +2160,14 @@
 		74A8D3B5202DEA9600535BC2 /* 工人分布 */ = {
 			isa = PBXGroup;
 			children = (
+				74DD1BEA205518CE002EC264 /* 播放@2x.png */,
+				74DD1BE6205518CD002EC264 /* 播放@3x.png */,
+				74DD1BE9205518CE002EC264 /* 起点@2x.png */,
+				74DD1BE8205518CD002EC264 /* 起点@3x.png */,
+				74DD1BE7205518CD002EC264 /* 暂停@2x.png */,
+				74DD1BED205518CF002EC264 /* 暂停@3x.png */,
+				74DD1BEC205518CE002EC264 /* 终点@2x.png */,
+				74DD1BEB205518CE002EC264 /* 终点@3x.png */,
 				181F5BFE2053C7CB003600DE /* watch@2x.png */,
 				181F5BFF2053C7CC003600DE /* watch@3x.png */,
 				74A8D3B6202DEA9600535BC2 /* 张三@2x.png */,
@@ -2186,6 +2232,14 @@
 		74A8D3CD202DEA9600535BC2 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
+				74DD1C04205596C6002EC264 /* 用户@2x.png */,
+				74DD1C03205596C6002EC264 /* 用户@3x.png */,
+				74DD1C00205596B4002EC264 /* login密码@2x.png */,
+				74DD1BFF205596B4002EC264 /* login密码@3x.png */,
+				74DD1BF820559651002EC264 /* 密码@2x.png */,
+				74DD1BF920559651002EC264 /* 密码@3x.png */,
+				74DD1BFA20559651002EC264 /* 手机@2x.png */,
+				74DD1BF720559650002EC264 /* 手机@3x.png */,
 				74903DFE202F412F00003EF2 /* checkbox_off@2x.png */,
 				74903DFF202F413000003EF2 /* checkbox_off@3x.png */,
 				74903E00202F413000003EF2 /* checkbox_on@2x.png */,
@@ -2353,13 +2407,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A8D41B202DEA9600535BC2 /* circle_1.png in Resources */,
+				74DD1BE520551477002EC264 /* bottomPlayView.xib in Resources */,
 				74903E302032D8F200003EF2 /* FeeInfoHeaderView.xib in Resources */,
 				74A8D40B202DEA9600535BC2 /* dispatch_record_first.png in Resources */,
 				181F5B7E2046E1C7003600DE /* functionVC.xib in Resources */,
 				74903E02202F413000003EF2 /* checkbox_off@2x.png in Resources */,
+				74DD1BF1205518CF002EC264 /* 起点@2x.png in Resources */,
 				18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */,
 				74A8D413202DEA9600535BC2 /* 未标题-1.png in Resources */,
 				74A8D3F8202DEA9600535BC2 /* abcd_equipment_monitor_untouch.png in Resources */,
+				74DD1BF4205518CF002EC264 /* 终点@2x.png in Resources */,
 				74A8D419202DEA9600535BC2 /* logo_login.png in Resources */,
 				18A57A3B20455A4D00DA7D59 /* SVProgressHUD.bundle in Resources */,
 				74903E342032DA1F00003EF2 /* FeeInfoTableViewCell.xib in Resources */,
@@ -2370,6 +2427,7 @@
 				74903E5A2039ABD300003EF2 /* OrderInfoHeaderView.xib in Resources */,
 				18D750092011EA990011866E /* EnergyPointsCell.xib in Resources */,
 				74903E1E2031EB5600003EF2 /* 用能@3x.png in Resources */,
+				74DD1BF3205518CF002EC264 /* 终点@3x.png in Resources */,
 				74A8D422202DEA9600535BC2 /* head_portrait.png in Resources */,
 				74A8D408202DEA9600535BC2 /* dount_4.png in Resources */,
 				74903E68203F10E600003EF2 /* DispatchOrderVCCell.xib in Resources */,
@@ -2377,6 +2435,7 @@
 				74A8D40F202DEA9600535BC2 /* checked_on.png in Resources */,
 				74903E822045AA3700003EF2 /* EquipmentMonitorHeaderView.xib in Resources */,
 				74903E1B2031EB5600003EF2 /* 收费@3x.png in Resources */,
+				74DD1BFD20559651002EC264 /* 密码@3x.png in Resources */,
 				74903E172031EB5600003EF2 /* 报修@3x.png in Resources */,
 				74A8D425202DEA9600535BC2 /* gold_3.png in Resources */,
 				74A8D40A202DEA9600535BC2 /* dispatch_record.png in Resources */,
@@ -2389,6 +2448,7 @@
 				74A8D402202DEA9600535BC2 /* wqe2.png in Resources */,
 				74A8D423202DEA9600535BC2 /* gold_1.png in Resources */,
 				74A8D403202DEA9600535BC2 /* 张三@2x.png in Resources */,
+				74DD1BEE205518CF002EC264 /* 播放@3x.png in Resources */,
 				74A8D411202DEA9600535BC2 /* un_touch.png in Resources */,
 				18D74FE32010339E0011866E /* EnergyTableViewCell.xib in Resources */,
 				74A8D405202DEA9600535BC2 /* dount_1.png in Resources */,
@@ -2401,6 +2461,7 @@
 				74A8D3FE202DEA9600535BC2 /* abcd_work_order_details_untouch.png in Resources */,
 				74A8D421202DEA9600535BC2 /* back_circle_config_center.png in Resources */,
 				74A8D409202DEA9600535BC2 /* dount_5.png in Resources */,
+				74DD1C01205596B5002EC264 /* login密码@3x.png in Resources */,
 				74A8D41E202DEA9600535BC2 /* circle_4.png in Resources */,
 				74903E232031EBE000003EF2 /* home_text@2x.png in Resources */,
 				74A8D418202DEA9600535BC2 /* login_button_untouch.png in Resources */,
@@ -2412,7 +2473,9 @@
 				74903E222031EBE000003EF2 /* home_text@3x.png in Resources */,
 				74A8D3F0202DEA9600535BC2 /* abcd_charge_survey_untouch.png in Resources */,
 				74A8D400202DEA9600535BC2 /* 故障数量.png in Resources */,
+				74DD1BF2205518CF002EC264 /* 播放@2x.png in Resources */,
 				74A8D41D202DEA9600535BC2 /* circle_3.png in Resources */,
+				74DD1C02205596B5002EC264 /* login密码@2x.png in Resources */,
 				18A57A4B20455A4D00DA7D59 /* PhotoBroswerVC.xib in Resources */,
 				74903E192031EB5600003EF2 /* 设备@3x.png in Resources */,
 				74A8D401202DEA9600535BC2 /* 故障消缺率.png in Resources */,
@@ -2431,21 +2494,28 @@
 				181F5C012053C7D0003600DE /* watch@3x.png in Resources */,
 				18791C992008BBB000A2E282 /* Main.storyboard in Resources */,
 				74A8D3FD202DEA9600535BC2 /* abcd_work_order_details_touch.png in Resources */,
+				74DD1C05205596C6002EC264 /* 用户@3x.png in Resources */,
 				74A8D40E202DEA9600535BC2 /* checked_off.png in Resources */,
 				74A8D3FB202DEA9600535BC2 /* abcd_trajectory_play_touch.png in Resources */,
 				74903E03202F413000003EF2 /* checkbox_off@3x.png in Resources */,
 				74903E182031EB5600003EF2 /* 收费@2x.png in Resources */,
 				18047746204428AD00B410CB /* OrderDetailHeaderView.xib in Resources */,
+				74DD1BFE20559651002EC264 /* 手机@2x.png in Resources */,
 				74903E262031F03A00003EF2 /* 配置中心@2x.png in Resources */,
 				181F5BFD2053C7A1003600DE /* tel@3x.png in Resources */,
 				74A8D412202DEA9600535BC2 /* back_infowindow_view (2).png in Resources */,
+				74DD1BFC20559651002EC264 /* 密码@2x.png in Resources */,
+				74DD1BF5205518CF002EC264 /* 暂停@3x.png in Resources */,
 				74A8D3F4202DEA9600535BC2 /* abcd_energy_use_monitor_untouch.png in Resources */,
+				74DD1BEF205518CF002EC264 /* 暂停@2x.png in Resources */,
 				74A8D3F2202DEA9600535BC2 /* abcd_dispatch_order_untouch.png in Resources */,
 				74903E04202F413000003EF2 /* checkbox_on@2x.png in Resources */,
 				74A8D3EE202DEA9600535BC2 /* abcd_alarm_managem_untouch.png in Resources */,
 				74903E5C2039ABE200003EF2 /* OrderInfoFooterView.xib in Resources */,
+				74DD1BFB20559651002EC264 /* 手机@3x.png in Resources */,
 				74A8D3FF202DEA9600535BC2 /* alarm_managem_bottom_broken_bottom.png in Resources */,
 				74A8D3F9202DEA9600535BC2 /* abcd_gold_bench_marke_touch.png in Resources */,
+				74DD1C06205596C6002EC264 /* 用户@2x.png in Resources */,
 				74A8D420202DEA9600535BC2 /* back.png in Resources */,
 				74A8D427202DEA9600535BC2 /* gold_bottom_bg.png in Resources */,
 				181F5BCB204F9153003600DE /* DispatchRecordCell.xib in Resources */,
@@ -2456,6 +2526,7 @@
 				74A8D40D202DEA9600535BC2 /* mux.png in Resources */,
 				74A8D40C202DEA9600535BC2 /* dispatch_record_last.png in Resources */,
 				74A8D426202DEA9600535BC2 /* gold_4.png in Resources */,
+				74DD1BF0205518CF002EC264 /* 起点@3x.png in Resources */,
 				74A8D404202DEA9600535BC2 /* 未标题-2.png in Resources */,
 				181F5C002053C7D0003600DE /* watch@2x.png in Resources */,
 				74903E1A2031EB5600003EF2 /* 用能@2x.png in Resources */,
@@ -2577,6 +2648,7 @@
 				181F5BD920512B4B003600DE /* WorningInfoModel.swift in Sources */,
 				18A57A3220455A4D00DA7D59 /* UIView+Extend.m in Sources */,
 				18F373AD2030525E00D2662A /* LoginReturnObjModel.swift in Sources */,
+				74DD1BE32055146B002EC264 /* bottomPlayView.swift in Sources */,
 				18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */,
 				180477442044289700B410CB /* OrderDetailHeaderView.swift in Sources */,
 				18D75017201321520011866E /* XYMarkerView.swift in Sources */,

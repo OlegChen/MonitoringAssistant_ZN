@@ -9,27 +9,35 @@
 import UIKit
 
 
-enum selectTimeType : Int {
+enum selectTimeType : Int {  //选择时、分view
     
     case startTimeType = 1000
     case endTimeType = 2000
 }
 
-class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalendarDelegate ,UIPickerViewDelegate,UIPickerViewDataSource{
+class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalendarDelegate ,UIPickerViewDelegate,UIPickerViewDataSource,bottomPlayViewDelegate{
     
     var WorkerModel : TrackPlayBackReturnObjModel?
+    
+    var Data : TrackPlayBackModel?
+    
     
     var pickerView : UIPickerView?
     
     /** 轨迹线 */
     var polyLine : BMKPolyline?
     
-    
     private weak var calendar: FSCalendar!
     private weak var calendarContentView: UIView!
     
     var timeSelectView : UIView!
+    var selectRow = 0
 
+    var bottomplayview : bottomPlayView!
+
+    var timer : Timer!
+    var timerCount  = 0
+    
     
     var isShowTimeView = false
     var isShowDateView = false
@@ -61,7 +69,9 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     
 
     
-     var _mapView: BMKMapView?
+     var _mapView: BMKMapView!
+    
+    var midAnnotation : CustPointAnnotation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +88,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         self.setDateSelectView()  //顶部view
 
+        self.setbottonPlayView()
+        
         self.getData()
         
         
@@ -117,11 +129,39 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         let custAnnotation = annotation as! CustPointAnnotation
         
+        if (custAnnotation.isStartAnno == starOrEnd.star.rawValue) {
+            
+            let AnnotationViewID = "begain"
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
+            if annotationView == nil {
+                annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
+                
+                annotationView?.image  = UIImage.init(named: "起点")
+                
+            }
+            return annotationView
+            
+        }else if (custAnnotation.isStartAnno == starOrEnd.end.rawValue) {
+            
+            let AnnotationViewID = "end"
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
+            if annotationView == nil {
+                annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
+                
+                annotationView?.image  = UIImage.init(named: "终点")
+                
+            }
+            return annotationView
+            
+        }
+        
         let newAnnotationView = CustomTrackDetailAnnotationView.init(annotation: annotation, reuseIdentifier: "12345")
         newAnnotationView?.img = custAnnotation.Model?.headUrl
         
         
         newAnnotationView?.centerOffset = CGPoint(x:10, y:-20) ;
+        newAnnotationView?.animatesDrop = false
+        
 //
 //        let custView = TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width: 120 , height: 120 ))
 //        custView.delegate = self
@@ -132,6 +172,21 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         return newAnnotationView;
         
+    }
+    
+    func mapView(_ mapView: BMKMapView!, viewFor overlay: BMKOverlay!) -> BMKOverlayView! {
+        
+        if let overlayTemp = overlay as? BMKPolyline {
+            let polylineView = BMKPolylineView(overlay: overlay)
+            if overlayTemp == polyLine {
+                polylineView?.strokeColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
+                polylineView?.lineWidth = 1
+                polylineView?.loadStrokeTextureImage(UIImage(named: "texture_arrow.png"))
+            }
+            return polylineView
+        }
+        
+        return nil
     }
     
     
@@ -389,7 +444,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         let hour = UILabel()
         hour.text = "时"
         hour.font = UIFont.systemFont(ofSize: 12)
-        hour.textColor = RGBCOLOR(r: 58, 58, 58)
+        hour.textColor = RGBCOLOR(r: 83, 147, 185)
         timeView.addSubview(hour)
         hour.snp.makeConstraints { (make) in
             make.centerY.equalTo(timePicker.snp.centerY).offset(-7)
@@ -399,7 +454,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         let min = UILabel()
         min.text = "分"
         min.font = UIFont.systemFont(ofSize: 12)
-        min.textColor = RGBCOLOR(r: 58, 58, 58)
+        min.textColor = RGBCOLOR(r: 83, 147, 185)
         timeView.addSubview(min)
         min.snp.makeConstraints { (make) in
             make.centerY.equalTo(timePicker.snp.centerY).offset(-7)
@@ -420,7 +475,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         let cancleBtn = UIButton()
         timeView.addSubview(cancleBtn)
-        cancleBtn.setTitleColor(RGBCOLOR(r: 58, 58, 58), for: UIControlState.normal)
+        cancleBtn.setTitleColor(RGBCOLOR(r: 83 , 147, 185), for: UIControlState.normal)
         cancleBtn.setTitle("取消", for: UIControlState.normal )
         cancleBtn.addTarget(self, action: #selector(timeCancleBtnClick), for: UIControlEvents.touchUpInside)
         cancleBtn.snp.makeConstraints { (make)in
@@ -432,7 +487,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         let sureBtn = UIButton()
         timeView.addSubview(sureBtn)
-        sureBtn.setTitleColor(RGBCOLOR(r: 58, 58, 58), for: UIControlState.normal)
+        sureBtn.setTitleColor(RGBCOLOR(r: 83, 147, 185), for: UIControlState.normal)
         sureBtn.setTitle("确定", for: UIControlState.normal )
         sureBtn.addTarget(self, action: #selector(timeSureBtnClick), for: UIControlEvents.touchUpInside)
         sureBtn.snp.makeConstraints { (make)in
@@ -448,12 +503,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     @objc func timeCancleBtnClick() {
         
         self.isShowTimeView = false
-        self.timeSelectView.snp.updateConstraints({ (make) in
-            make.top.equalTo(self.view).offset(-210)
-        })
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.layoutIfNeeded()
-        })
+        self.closeSelectTimeView()
     
         self.pickerView?.selectRow(0, inComponent: 0, animated: false)
         self.pickerView?.selectRow(0, inComponent: 1, animated: false)
@@ -478,12 +528,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         
         self.isShowTimeView = false
-        self.timeSelectView.snp.updateConstraints({ (make) in
-            make.top.equalTo(self.view).offset(-210)
-        })
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.layoutIfNeeded()
-        })
+        self.closeSelectTimeView()
         
         
         self.getData()
@@ -527,9 +572,27 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                     
                     if model.statusCode == 800 {
                         
-                        self.AddAnnotations(array: model.returnObj! as NSArray)
+                        self.Data = model
+                        
+                        let count = Int(model.returnObj!.count)
+                        if( count > 0){
+                            
+                            let array = NSMutableArray()
+                            array.add(model.returnObj?.first as Any)
+                            array.add(model.returnObj?.last as Any)
+                            
+                            self.AddAnnotations(array: array as NSArray)
+                            self.bottomplayview.isHidden = false
+
+                        }else{
+                            
+                            self.bottomplayview.isHidden = true
+                            
+                        }
                         
                         
+                        self.addTrackLine(array: model.returnObj! as NSArray)
+
                     }
                     
                     
@@ -548,61 +611,114 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     
     func addTrackLine(array:NSArray) {
         
-        // 轨迹点数组个数
-        let count = array.count
         
-        // 动态分配存储空间
-        // BMKMapPoint是个结构体：地理坐标点，用直角地理坐标表示 X：横坐标 Y：纵坐标
-        let tempPoints  =  NSMutableArray() // new BMKMapPoint[count];
+//        _mapView.removeAnnotations(_mapView.annotations)
+        _mapView.removeOverlays(_mapView.overlays)
         
-        // 遍历数组
-        array.enumerateObjects(at: <#T##IndexSet#>, options: <#T##NSEnumerationOptions#>) { (<#Any#>, <#Int#>, <#UnsafeMutablePointer<ObjCBool>#>) in
-            <#code#>
+        
+        var tempPoints = [CLLocationCoordinate2D]()
+        
+        
+//        let globalQueue = DispatchQueue.global()
+//        globalQueue.async {
+
+            for (index ,value) in array.enumerated() {
+                print(index, value)
+                
+                let model = value as! TrackPlayBackReturnObjModel
+                
+                let coor : CLLocationCoordinate2D = CLLocationCoordinate2D.init(latitude:Double(model.latitude!)!, longitude: Double(model.longitude!)!)
+                
+                tempPoints.append(coor)
+                
+            }
+            
+//            let mainQueue = DispatchQueue.main
+//            mainQueue.async {
+            
+                self.polyLine = BMKPolyline.init(coordinates: &tempPoints, count: UInt(tempPoints.count))
+                
+                
+                //添加路线,绘图
+                if ((self.polyLine) != nil) {
+                    self._mapView.add(self.polyLine)
+                }
+                
+                // 清空 tempPoints 临时数组
+                tempPoints = []
+                
+                // 根据polyline设置地图范围
+                self.mapViewFitPolyLine(polyline: self.polyLine)
+//
+//            }
+//
+//        }
+    }
+    
+    
+    func mapViewFitPolyLine(polyline: BMKPolyline!) {
+        
+        if polyline.pointCount < 1 {
+            
+            return
+            
         }
         
-        [self.locationArrayM enumerateObjectsUsingBlock:^(CLLocation *location, NSUInteger idx, BOOL *stop) {
-            BMKMapPoint locationPoint = BMKMapPointForCoordinate(location.coordinate);
-            tempPoints[idx] = locationPoint;
+        
+        let pt = polyline.points[0]
+        
+        var ltX = pt.x
+        
+        var rbX = pt.x
+        
+        var ltY = pt.y
+        
+        var rbY = pt.y
+        
+        
+        
+        for i in 1..<polyline.pointCount {
+            
+            let pt = polyline.points[Int(i)]
+            
+            if pt.x < ltX {
+                ltX = pt.x
+            }
+            if pt.x > rbX {
+                rbX = pt.x
+            }
+            
+            if pt.y > ltY {
+                ltY = pt.y
+            }
+            if pt.y < rbY {
+                rbY = pt.y
+            }
+            
         }
-    }];
-    
-    //移除原有的绘图，避免在原来轨迹上重画
-    if (self.polyLine) {
-    [self.mapView removeOverlay:self.polyLine];
-    }
-    
-    // 通过points构建BMKPolyline
-    self.polyLine = [BMKPolyline polylineWithPoints:tempPoints count:count];
-    
-    //添加路线,绘图
-    if (self.polyLine) {
-    [self.mapView addOverlay:self.polyLine];
-    }
-    
-    // 清空 tempPoints 临时数组
-    delete []tempPoints;
-    
-    // 根据polyline设置地图范围
-    [self mapViewFitPolyLine:self.polyLine];
-    
         
         
+        
+        let rect = BMKMapRectMake(ltX, ltY, rbX - ltX, rbY - ltY)
+        
+        _mapView!.visibleMapRect = rect
+        
+        _mapView!.zoomLevel = _mapView!.zoomLevel - 0.3
+        
     }
-    
     
     func AddAnnotations(array:NSArray) {
         
         let itemArray : NSMutableArray = []
         
-        
-        for var model in array {
+        for i in 0..<array.count{
             
-            let m = model as! TrackPlayBackReturnObjModel
+            let m = array[i] as! TrackPlayBackReturnObjModel
             
             let item = CustPointAnnotation()
             
             item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m.latitude!)! , longitude: Double(m.longitude!)!)
-            
+            item.isStartAnno = (i == 0 ? starOrEnd.star.rawValue : starOrEnd.end.rawValue)
             item.Model = m
             
             itemArray.add(item)
@@ -614,7 +730,12 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
     }
     
+    
     @objc func selectDate () {
+        
+        if self.isShowTimeView {
+            self.closeSelectTimeView()
+        }
         
         if !self.isShowDateView {
             
@@ -633,23 +754,35 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
         }else{
             
-            self.isShowDateView = false
-            
-            self.calendarContentView.snp.updateConstraints({ (make) in
-                
-                make.top.equalTo(self.view).offset(-300)
-                
-            })
-
-            UIView.animate(withDuration: 0.2, animations: {
-                
-                self.view.layoutIfNeeded()
-            })
+          self.closeSelectDateView()
         }
         
     }
     
+    func closeSelectDateView() {
+        
+        self.isShowDateView = false
+        
+        self.calendarContentView.snp.updateConstraints({ (make) in
+            
+            make.top.equalTo(self.view).offset(-300)
+            
+        })
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            
+            self.view.layoutIfNeeded()
+        })
+        
+    }
+    
     @objc func selectStartTime () {
+        
+        if self.isShowDateView{
+            
+            self.closeSelectDateView()
+        }
+        
         
         if !self.isShowTimeView {
             
@@ -681,21 +814,17 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             self.isShowTimeView = false
             
             self.pickerView?.tag = selectTimeType.startTimeType.rawValue
-            self.timeSelectView.snp.updateConstraints({ (make) in
-                
-                make.top.equalTo(self.view).offset(-210)
-                
-            })
-            
-            UIView.animate(withDuration: 0.2, animations: {
-                
-                self.view.layoutIfNeeded()
-            })
+            self.closeSelectTimeView()
         }
         
     }
     
     @objc func selectEndTime () {
+        
+        if self.isShowDateView{
+            
+            self.closeSelectDateView()
+        }
         
         if !self.isShowTimeView {
             
@@ -716,20 +845,26 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
         }else{
             
-            self.isShowTimeView = false
-            
             self.pickerView?.tag = selectTimeType.endTimeType.rawValue
-            self.timeSelectView.snp.updateConstraints({ (make) in
-                
-                make.top.equalTo(self.view).offset(-210)
-                
-            })
-            
-            UIView.animate(withDuration: 0.2, animations: {
-                
-                self.view.layoutIfNeeded()
-            })
+           self.closeSelectTimeView()
         }
+        
+    }
+    
+    func closeSelectTimeView() {
+        
+        self.selectRow = 0
+        
+        self.isShowTimeView = false
+        self.timeSelectView.snp.updateConstraints({ (make) in
+            
+            make.top.equalTo(self.view).offset(-210)
+        })
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            
+            self.view.layoutIfNeeded()
+        })
         
     }
     
@@ -759,6 +894,13 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         title.font = UIFont.systemFont(ofSize: 13)
         title.textColor = RGBCOLOR(r: 58, 58, 58)
         
+        //改变选中行颜色（设置一个全局变量，在选择结束后获取到当前显示行，记录下来，刷新picker）
+        if (row == selectRow) {
+            //改变当前显示行的字体颜色，如果你愿意，也可以改变字体大小，状态
+            title.textColor = RGBCOLOR(r: 83, 147, 185)
+        }
+
+        
         return title
     }
 
@@ -771,7 +913,93 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         self.cacheTime = HourStr + ":" + minStr
         
+        
+        //记录下滚动结束时的行数
+        selectRow = row;
+        //刷新picker，看上面的代理
+        pickerView.reloadComponent(component)
+        
     }
+    
+    func setbottonPlayView() {
+        
+        let bottom = (Bundle.main.loadNibNamed("bottomPlayView", owner: nil, options: nil)![0] as! bottomPlayView)
+        self.bottomplayview = bottom
+        bottom.isHidden = true
+        self.view.addSubview(bottom)
+        bottom.delegate = self
+        bottom.snp.makeConstraints { (make) in
+            
+            make.left.right.bottom.equalTo(self.view).offset(0)
+            make.height.equalTo(70)
+        }
+
+    }
+    
+    func playBtnClick(btn: UIButton) {
+        
+        if !btn.isSelected {
+            
+            let item = CustPointAnnotation()
+            let m = self.Data?.returnObj!.first
+            item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
+            item.Model = m
+            self.midAnnotation = item
+            _mapView.addAnnotation(item)
+            
+            //开始播放
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(starPlayTrackAni), userInfo: nil, repeats: true)
+            
+            
+        }else{
+            
+            self.stropPlayTrackaAni()
+        }
+        
+        
+    }
+    
+    @objc func starPlayTrackAni() {
+        
+//        let arr = NSMutableArray()
+//        arr.add(self.Data?.returnObj?.first)
+//        arr.add(self.Data?.returnObj?.last)
+//        arr.add(self.Data?.returnObj![self.timerCount])
+        
+        if(self.timerCount == (self.Data?.returnObj?.count)!){
+            
+            _mapView.removeAnnotation(self.midAnnotation)
+            self.bottomplayview.progressView.progress = 0.0
+            
+            self.stropPlayTrackaAni()
+            self.timerCount = 0
+            return
+            
+        }
+        
+        let m = self.Data?.returnObj![self.timerCount]
+        
+        UIView.animate(withDuration: 0.1) {
+            
+            self.midAnnotation?.coordinate =  CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
+            
+            self.bottomplayview.progressView.progress = Float(Float(self.timerCount) / Float(((self.Data?.returnObj?.count)! - 1)))
+        }
+        
+  
+        
+        self.timerCount += 1
+        
+    }
+    
+    func stropPlayTrackaAni() {
+        
+        guard let timer1 = self.timer
+            else{ return }
+        timer1.invalidate()
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
