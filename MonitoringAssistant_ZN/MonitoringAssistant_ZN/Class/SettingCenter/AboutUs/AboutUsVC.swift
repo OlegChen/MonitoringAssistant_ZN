@@ -68,16 +68,35 @@ class AboutUsVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         
         title.text = indexPath.row == 0 ? "功能介绍" : (indexPath.row == 1 ? "法律条款" : "检查新版本")
         
-        let arrow = UIImageView()
-        arrow.contentMode = .scaleAspectFit
-        arrow.image = UIImage.init(named: "arror_right")
-        cell?.addSubview(arrow)
-        arrow.snp.makeConstraints { (make) in
+        if indexPath.row == 2 {
             
-            make.right.equalTo((cell?.contentView)!).offset(-15)
-            make.centerY.equalTo((cell?.contentView)!)
-            make.size.equalTo(CGSize(width:18 , height: 18))
+            let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+            let versonL = UILabel()
+            cell?.contentView.addSubview(versonL)
+            versonL.font = UIFont.systemFont(ofSize: 14)
+            versonL.textColor = RGBCOLOR(r: 58, 58, 58)
+            versonL.text = "V" + String(currentVersion)
+            versonL.snp.makeConstraints { (make) in
+                
+                make.right.equalTo((cell?.contentView)!).offset(-20)
+                make.centerY.equalTo((cell?.contentView.center)!)
+            }
+            
+        }else{
+            
+            let arrow = UIImageView()
+            arrow.contentMode = .scaleAspectFit
+            arrow.image = UIImage.init(named: "arror_right")
+            cell?.addSubview(arrow)
+            arrow.snp.makeConstraints { (make) in
+                
+                make.right.equalTo((cell?.contentView)!).offset(-15)
+                make.centerY.equalTo((cell?.contentView)!)
+                make.size.equalTo(CGSize(width:18 , height: 18))
+            }
         }
+        
+       
         
         return cell!
         
@@ -96,7 +115,10 @@ class AboutUsVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
             
         }else  if (indexPath.row == 1) {
             
+            self.navigationController?.pushViewController(lawVCViewController(), animated: true)
+            
         }else  if (indexPath.row == 2) {
+            
             
         }
         

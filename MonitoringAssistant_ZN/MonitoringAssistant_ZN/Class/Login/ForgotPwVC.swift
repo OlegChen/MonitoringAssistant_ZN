@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol ChangedPwDelegate: class {
+
+    func ChangedPw(phoneNum:String)
+}
+
+
 class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
+    
+    weak var delegate: ChangedPwDelegate!
     
     @IBOutlet weak var phoneNumTextField: UITextField!
     
@@ -18,7 +26,8 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
     
     @IBOutlet weak var sendBtn: UIButton!
     
-
+    @IBOutlet weak var vertifyBtn: PhoneCodeButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,12 +41,81 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
         self.phoneNumTextField.delegate = self
         self.newPwTextField.delegate = self
         
+        
+//        self.view.sho
     }
     
     
+    @IBAction func verifyBtnClick(_ sender: Any) {
+        
+        if (self.phoneNumTextField.text!.characters.count > 0 ) {
+            
+            let para = [
+                "companyCode" : "0000",
+                "mobile"   : self.phoneNumTextField.text ?? ""
+                ] as [String : Any]
+        
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: getVerifyUrl, modelClass: "BaseModel", response: { (obj) in
+                    
+                    let model = obj as! BaseModel
+
+                    if(model.statusCode == 800){
+                        
+                        self.vertifyBtn.startUpTimer()
+                        
+                    }else{
+                        
+                        YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                }
+                    
+                }, failture: { (error) in
+                    
+                    
+                    
+                })
+            
+        }
+        
+    }
+    
     @IBAction func sendBtnClick(_ sender: UIButton) {
         
-        
+        if (self.phoneNumTextField.text!.characters.count > 0 && self.messageTextField.text!.characters.count > 0 && self.newPwTextField.text!.characters.count > 0) {
+            
+            let para = [
+                        "companyCode" : "0000",
+                        "mobile"   : self.phoneNumTextField.text ?? "",
+                        "verify"    : self.messageTextField.text ?? "",
+                        "loginPwd":self.newPwTextField.text
+                ] as [String : Any]
+            
+            NetworkService.networkPostrequest(parameters: para as! [String : String], requestApi: forgetPwdUrl, modelClass: "BaseModel", response: { (obj) in
+                
+                let model = obj as! BaseModel
+
+                if(model.statusCode == 800){
+                    
+                    if self.delegate != nil{
+                        
+                        self.delegate.ChangedPw(phoneNum: self.phoneNumTextField.text!)
+                    }
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }
+                    
+                YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                
+                
+            }, failture: { (error) in
+                
+                
+                
+                
+            })
+            
+            
+            
+        }
         
     }
     
@@ -68,13 +146,14 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
             return true
         }
         
-        let textLength = text.characters.count + string.characters.count - range.length
-        
-        return textLength <= 16
+
         
         if textField.tag == 1000 {
             
             //新号码
+            let textLength = text.characters.count + string.characters.count - range.length
+            return textLength <= 11
+            
         }else if textField.tag == 2000 {
             
             //密码
@@ -84,6 +163,12 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
             
         }
         
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        return nil
         
     }
     

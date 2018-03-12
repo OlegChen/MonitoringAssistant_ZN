@@ -200,7 +200,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 
 + (void)showErrorWithStatus:(NSString *)string {
     [self sharedView];
-    [self showErrorWithStatus:string maskType:SVProgressHUDDefaultMaskType];
+    [self showErrorWithStatus:nil maskType:SVProgressHUDDefaultMaskType];
 }
 
 + (void)showErrorWithStatus:(NSString *)string maskType:(SVProgressHUDMaskType)maskType {

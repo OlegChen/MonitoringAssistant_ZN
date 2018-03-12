@@ -37,7 +37,6 @@
         
         //设置时间
         [SVProgressHUD setDuration:duration];
-
         
         //错误图片
         [SVProgressHUD setErrorImage:[UIImage imageNamed:@"CoreSVP.bundle/SVPError"]];

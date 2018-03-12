@@ -97,7 +97,7 @@ extension UserCenter {
     
     func loginMobile(mobile:@escaping ( _ mobile : String) -> ()) {
         
-        let str = (UserDefaults.standard.object(forKey: UserCenter.mobile) as? String)
+        let str = (UserDefaults.standard.object(forKey: UserCenter.loginMobile) as? String)
         
         mobile( str == nil ? "" : str!)
     }

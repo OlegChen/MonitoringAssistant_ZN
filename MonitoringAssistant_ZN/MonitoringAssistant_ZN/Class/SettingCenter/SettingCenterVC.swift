@@ -36,7 +36,25 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
 
         self.getData()
         
+        self.headImg.isUserInteractionEnabled = true
+        let singleTap =  UITapGestureRecognizer.init(target:self, action: #selector(handleSingleTap(tap:)))
+        self.headImg.addGestureRecognizer(singleTap)
+        
     }
+    
+    @objc private func handleSingleTap(tap:UITapGestureRecognizer) {
+        print("单击")
+        
+        let actionSheet=UIActionSheet()
+        
+        actionSheet.addButton(withTitle:"取消" )//addButtonWithTitle("取消")
+        actionSheet.addButton(withTitle:"拍照" )//addButtonWithTitle("动作1")
+        actionSheet.addButton(withTitle:"从相册选择" )//addButtonWithTitle("动作2")
+        actionSheet.cancelButtonIndex=0
+        actionSheet.delegate=self
+        actionSheet.show(in: self.view)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,20 +85,18 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
         return 15
     }
     
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        
+        return indexPath.section == 0 ? false : true
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0{
             
             if indexPath.row == 0{
-                
-                let actionSheet=UIActionSheet()
-                
-                actionSheet.addButton(withTitle:"取消" )//addButtonWithTitle("取消")
-                actionSheet.addButton(withTitle:"拍照" )//addButtonWithTitle("动作1")
-                actionSheet.addButton(withTitle:"从相册选择" )//addButtonWithTitle("动作2")
-                actionSheet.cancelButtonIndex=0
-                actionSheet.delegate=self
-                actionSheet.show(in: self.view)
+             
             }
             
         }else if indexPath.section == 1 {
@@ -101,16 +117,20 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
         }
         
         
-        tableView.deselectRow(at: indexPath, animated: true)
+//        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
     func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         
+        
+        
         print("点击了："+actionSheet.buttonTitle(at: buttonIndex)!)
         var sourceType: UIImagePickerControllerSourceType = .photoLibrary
-        
-        if (buttonIndex == 1) {
+        if (buttonIndex == 0) {
+            
+            return
+        }else if (buttonIndex == 1) {
 
             //拍照
             sourceType = .camera
@@ -205,6 +225,8 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
         
         weak var weakSelf = self // ADD THIS LINE AS WELL
         
+        YJProgressHUD.showProgress("图片上传..", in: UIApplication.shared.keyWindow)
+        
         UserCenter.shared.userInfo { (islogin, userInfo) in
             
             let para = ["companyCode":userInfo.companyCode ,
@@ -223,6 +245,11 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
                     let urlStr = model.returnObj
                     self.headImg.kf.setImage(with: URL.init(string:urlStr!))
                     
+                    YJProgressHUD.showSuccess("头像修改成功", inview: UIApplication.shared.keyWindow)
+                    
+                }else{
+                    
+                    YJProgressHUD.showSuccess(model.msg, inview: UIApplication.shared.keyWindow)
                 }
                 
                 

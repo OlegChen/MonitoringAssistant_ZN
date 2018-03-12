@@ -9,11 +9,16 @@
 import UIKit
 
 class functionVC: BaseVC {
+    
+    @IBOutlet weak var topH: NSLayoutConstraint!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "功能介绍"
+        
+        self.topH.constant = CGFloat(NavHeight)
     
     }
 

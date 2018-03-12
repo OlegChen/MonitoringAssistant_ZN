@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="functionVC" customModule="MonitoringAssistant_ZN" customModuleProvider="target">
             <connections>
+                <outlet property="topH" destination="1Wc-9A-RpB" id="kiX-v4-jyQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,49 +20,75 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="79b-eq-MNe">
-                    <rect key="frame" x="137.5" y="120" width="100" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="Hs9-Xn-zUg"/>
-                        <constraint firstAttribute="width" constant="100" id="wsh-z9-QeD"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中能云管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2E-R4-lqV">
-                    <rect key="frame" x="141.5" y="235" width="92" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrT-8p-gVb">
-                    <rect key="frame" x="20" y="316" width="335" height="84"/>
-                    <string key="text">中能云管家是由北京市中能兴科节能股份有限公司研发的一款监控软件，通过设备的序列号以云方式登录，将实时的监控，并把数据显示在移动设备上并对设备进行预览操作。
-</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiw-6h-iQR">
-                    <rect key="frame" x="49.5" y="609" width="276.5" height="43"/>
-                    <string key="text">Copyright @ 2017
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vh-Ij-ESl">
+                    <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                    <subviews>
+                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyb-2k-Pi7">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="nf5-ta-W7x">
+                                    <rect key="frame" x="138" y="40" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="Yze-e3-8ud"/>
+                                        <constraint firstAttribute="height" constant="100" id="iAm-65-nON"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中能云管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcX-Ji-FuX">
+                                    <rect key="frame" x="142" y="155" width="92" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-uE-v86">
+                                    <rect key="frame" x="20" y="206" width="335" height="251"/>
+                                    <mutableString key="text">管理人员的好助手，领导的智能云管家。“中能云管家”是服务于供暖、物业单位的智能管理软件，可同时实现报修情况统计、工单派转管理、设备管理、收费概况、员工分布及员工活动轨迹的回放等智能化管理。在信息化、智能化高度发达的今天，应用这款管理软件，可直接系统的查看当前机构的工单、设备、收费、用能等各方面的数据概况，可以更方便的进行相关工作的分析和管理，提摆脱传统报修工作量大、处理时间长、效率低、客户体验差的弊病，解决传统的设备运行记录、各种能耗记录等工作量大、记录不易长时间保管，容易丢失等问题，实现数据报表电子化——便查询、易保管，同时便于管理者的决策和考核。该款产品具有操作简单，使用方便的特点。
+</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-HV-Irv">
+                                    <rect key="frame" x="49" y="542" width="277" height="43"/>
+                                    <string key="text">Copyright @ 2017
 
 北京市朝阳区中能兴科节能股份有限公司  版权所有</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="EcX-Ji-FuX" firstAttribute="top" secondItem="nf5-ta-W7x" secondAttribute="bottom" constant="15" id="26l-hg-HxA"/>
+                                <constraint firstItem="HqD-HV-Irv" firstAttribute="centerX" secondItem="iyb-2k-Pi7" secondAttribute="centerX" id="7XG-Cd-G5S"/>
+                                <constraint firstItem="nf5-ta-W7x" firstAttribute="centerX" secondItem="iyb-2k-Pi7" secondAttribute="centerX" id="OoQ-EG-Y1k"/>
+                                <constraint firstItem="mCe-uE-v86" firstAttribute="top" secondItem="EcX-Ji-FuX" secondAttribute="bottom" constant="30" id="T68-Ur-Csn"/>
+                                <constraint firstItem="nf5-ta-W7x" firstAttribute="top" secondItem="iyb-2k-Pi7" secondAttribute="top" constant="40" id="Vlc-hm-Djb"/>
+                                <constraint firstItem="mCe-uE-v86" firstAttribute="leading" secondItem="iyb-2k-Pi7" secondAttribute="leading" constant="20" id="XQZ-fx-kFq"/>
+                                <constraint firstAttribute="bottom" secondItem="HqD-HV-Irv" secondAttribute="bottom" constant="15" id="s9K-D1-deE"/>
+                                <constraint firstAttribute="height" constant="600" id="sFD-Ky-BAo"/>
+                                <constraint firstItem="EcX-Ji-FuX" firstAttribute="centerX" secondItem="nf5-ta-W7x" secondAttribute="centerX" id="xmI-s4-yxX"/>
+                                <constraint firstAttribute="trailing" secondItem="mCe-uE-v86" secondAttribute="trailing" constant="20" id="ziB-pc-p6Q"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="iyb-2k-Pi7" firstAttribute="leading" secondItem="7Vh-Ij-ESl" secondAttribute="leading" id="2Gs-FN-X85"/>
+                        <constraint firstItem="iyb-2k-Pi7" firstAttribute="top" secondItem="7Vh-Ij-ESl" secondAttribute="top" id="FhT-UB-LBn"/>
+                        <constraint firstAttribute="bottom" secondItem="iyb-2k-Pi7" secondAttribute="bottom" constant="15" id="S1T-Kd-Wf7"/>
+                        <constraint firstAttribute="trailing" secondItem="iyb-2k-Pi7" secondAttribute="trailing" constant="-12" id="WSH-P9-mWC"/>
+                        <constraint firstItem="iyb-2k-Pi7" firstAttribute="width" secondItem="7Vh-Ij-ESl" secondAttribute="width" id="y1b-cg-ZbX"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="79b-eq-MNe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Hj-wR-gfN"/>
-                <constraint firstItem="ZrT-8p-gVb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="75Y-M7-bpg"/>
-                <constraint firstItem="O2E-R4-lqV" firstAttribute="top" secondItem="79b-eq-MNe" secondAttribute="bottom" constant="15" id="9sq-JJ-kEZ"/>
-                <constraint firstItem="fiw-6h-iQR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="T5A-Uz-Mlj"/>
-                <constraint firstItem="ZrT-8p-gVb" firstAttribute="top" secondItem="O2E-R4-lqV" secondAttribute="bottom" constant="60" id="Waf-w3-pMx"/>
-                <constraint firstAttribute="bottom" secondItem="fiw-6h-iQR" secondAttribute="bottom" constant="15" id="Xiy-Pb-XOJ"/>
-                <constraint firstItem="79b-eq-MNe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="dx4-Cy-e00"/>
-                <constraint firstItem="O2E-R4-lqV" firstAttribute="centerX" secondItem="79b-eq-MNe" secondAttribute="centerX" id="nBf-Rv-Tva"/>
-                <constraint firstAttribute="trailing" secondItem="ZrT-8p-gVb" secondAttribute="trailing" constant="20" id="vgK-sz-D05"/>
+                <constraint firstItem="7Vh-Ij-ESl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="1Wc-9A-RpB"/>
+                <constraint firstAttribute="trailing" secondItem="7Vh-Ij-ESl" secondAttribute="trailing" id="cxH-rr-FDC"/>
+                <constraint firstItem="7Vh-Ij-ESl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eVf-e5-xjQ"/>
+                <constraint firstAttribute="bottom" secondItem="7Vh-Ij-ESl" secondAttribute="bottom" id="vic-9W-zSi"/>
             </constraints>
+            <point key="canvasLocation" x="39" y="49"/>
         </view>
     </objects>
     <resources>

@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
+        
         _mapManager = BMKMapManager()
         // 如果要关注网络及授权验证事件，请设定generalDelegate参数
         let ret = _mapManager?.start("aA8lmVacxIfkixYrgsFw5PXmyNLr95jK", generalDelegate: self)

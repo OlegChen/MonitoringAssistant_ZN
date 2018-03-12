@@ -231,11 +231,12 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         //创建点击跳转显示上一月和下一月button
         let preBtn = UIButton()
         view.addSubview(preBtn)
-        preBtn.backgroundColor = .red
+        preBtn.setImage(UIImage.init(named: "左"), for: UIControlState.normal)
+        preBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -40, 0, 0)
         preBtn.addTarget(self, action: #selector(preBtnClick), for: UIControlEvents.touchUpInside)
         preBtn.snp.makeConstraints { (make) in
             
-            make.size.equalTo(CGSize(width:100 ,height:50))
+            make.size.equalTo(CGSize(width:100 ,height:40))
             make.top.equalTo(view).offset(0)
             make.left.equalTo(view).offset(0)
             
@@ -243,11 +244,12 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         let nextBtn = UIButton()
         view.addSubview(nextBtn)
-        nextBtn.backgroundColor = .red
+        nextBtn.setImage(UIImage.init(named: "右"), for: UIControlState.normal)
+        nextBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40)
         nextBtn.addTarget(self, action: #selector(nextBtnClick), for: UIControlEvents.touchUpInside)
         nextBtn.snp.makeConstraints { (make) in
             
-            make.size.equalTo(CGSize(width:100 ,height:50))
+            make.size.equalTo(CGSize(width:100 ,height:40))
             make.right.equalTo(view.snp.right).offset(0)
             make.top.equalTo(view).offset(0)
             

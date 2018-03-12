@@ -28,6 +28,7 @@ public struct NetworkService {
                 
             }) { (Error) in
                 
+                YJProgressHUD.showMessage("网络连接错误！", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
                 
                 failture(Error)
     
@@ -55,6 +56,8 @@ public struct NetworkService {
             
             
         }) { (Error) in
+            
+            YJProgressHUD.showMessage("网络连接错误！", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
             
             failture(Error)
             

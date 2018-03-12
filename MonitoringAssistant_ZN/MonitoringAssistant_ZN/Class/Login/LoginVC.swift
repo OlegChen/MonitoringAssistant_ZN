@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: BaseTableVC {
+class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
     
     let kNavBarBottom = WRNavigationBar.navBarBottom()
 
@@ -37,6 +37,8 @@ class LoginVC: BaseTableVC {
 
 //        self.title = "登录"
         navBarBackgroundAlpha = 0
+        
+        self.mobileTextfield.delegate = self
         
         self.rememberPWBtn.imageView?.contentMode = UIViewContentMode.center
         self.rememberPWBtn.adjustsImageWhenHighlighted = false //使触摸模式下按钮也不会变暗
@@ -78,40 +80,54 @@ class LoginVC: BaseTableVC {
     
     @IBAction func loginClick(_ sender: Any) {
         
-        let para = ["userName"   : "18610805524" ,
-                    "userPwd"    : "123456" ,
-                    "companyCode" : "0000"]
         
-        NetworkService.networkPostrequest(parameters: para, requestApi: LoginUrl, modelClass: String(describing: LoginModel.self), response: { (obj) in
+        if(self.mobileTextfield.text!.characters.count > 0 && self.pwTextField.text!.characters.count > 0){
             
-            let model : LoginModel = obj as! LoginModel
+            let para = ["userName"   : self.mobileTextfield.text! ,
+                        "userPwd"    : self.pwTextField.text! ,
+                        "companyCode" : "0000"] as [String : Any]
             
-            print( model.statusCode as Any )
-            
-            if(model.statusCode == 800){
+            NetworkService.networkPostrequest(parameters: para as! [String : String], requestApi: LoginUrl, modelClass: String(describing: LoginModel.self), response: { (obj) in
                 
-                print( model.returnObj?.empName as Any  )
+                let model : LoginModel = obj as! LoginModel
                 
-                UserCenter.shared.logIn(userModel: model)
-                UserCenter.shared.rememberLoginMobile(mobile: self.mobileTextfield.text!)
-                if(self.rememberPWBtn.isSelected){
+                print( model.statusCode as Any )
+                
+                if(model.statusCode == 800){
                     
-                    UserCenter.shared.rememberPw(Pw: self.pwTextField.text!)
+                    print( model.returnObj?.empName as Any  )
+                    
+                    UserCenter.shared.logIn(userModel: model)
+                    UserCenter.shared.rememberLoginMobile(mobile: self.mobileTextfield.text!)
+                    if(self.rememberPWBtn.isSelected){
+                        
+                        UserCenter.shared.rememberPw(Pw: self.pwTextField.text!)
+                    }
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
+                    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                    appdelegate.window?.rootViewController = initViewController
+                    
+                }else{
+                    
+                    YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                    
                 }
                 
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
-                let appdelegate = UIApplication.shared.delegate as! AppDelegate
-                appdelegate.window?.rootViewController = initViewController
+            }) { (error) in
+                
+                
                 
             }
             
-        }) { (error) in
+        }else{
             
-            
+            UIAlertView.init(title: "提示", message: "用户名、密码需填写完整", delegate: nil, cancelButtonTitle: "确定").show()
             
         }
         
+      
         
     }
     
@@ -125,13 +141,39 @@ class LoginVC: BaseTableVC {
         return 2
     }
     
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        return nil
+        
+    }
+    
     @IBOutlet weak var forgotPw: UIButton!
     
     @IBAction func forgotPwBtnClick(_ sender: UIButton) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ForgotPwVC") as! ForgotPwVC
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    func ChangedPw(phoneNum: String) {
+        
+        self.mobileTextfield.text = phoneNum
+        
+    }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else{
+            return true
+        }
+
+        //新号码
+        let textLength = text.characters.count + string.characters.count - range.length
+        return textLength <= 11
         
     }
     

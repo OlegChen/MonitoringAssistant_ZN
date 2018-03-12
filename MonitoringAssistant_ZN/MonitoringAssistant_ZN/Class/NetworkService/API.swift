@@ -54,6 +54,9 @@ public let getUserUrl = baseURL + "/user/getUser"
 public let modifyPwdUrl = baseURL + "/user/modifyPwd"
 // 修改头像
 public let modifyHeadUrlUrl = baseURL + "/user/modifyHeadUrl"
-
+// 忘记密码
+public let forgetPwdUrl = baseURL + "/user/forgetPwd"
+// 验证码
+public let getVerifyUrl = baseURL + "/user/getVerify"
 
 //private static let baseURL = "https://www.designernews.co"
