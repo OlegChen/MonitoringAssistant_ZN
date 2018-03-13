@@ -45,6 +45,10 @@ class HomeVC: BaseVC ,MainBtnDelegate {
         let logoView = UIImageView()
         logoView.image = UIImage.init(named: "home_text")
         logoView.contentMode = UIViewContentMode.scaleAspectFit
+        logoView.layer.shadowColor = UIColor.darkGray.cgColor;
+        logoView.layer.shadowOffset = CGSize(width:2, height:2);
+        logoView.layer.shadowOpacity = 0.7;
+        logoView.layer.shadowRadius = 5;
         self.view.addSubview(logoView)
         logoView.snp.makeConstraints { (make) in
             

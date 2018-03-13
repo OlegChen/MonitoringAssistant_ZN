@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,DispatchOrderVCCellDelegate {
 
@@ -17,6 +18,9 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         let array = NSMutableArray()
         return array
     }()
+    
+    var pageNo = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +39,28 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         self.tableView.backgroundColor = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
-        // Do any additional setup after loading the view.
+        self.tableView.es.addPullToRefresh {
+            
+            [weak self] in
+            self?.getData(pageNo: 1)
+            
+        }
+        
+        self.tableView.es.addInfiniteScrolling {
+            
+            [weak self] in
+            self?.getData(pageNo: (self?.pageNo)! + 1)
+            
+        }
+        
+        self.view.beginLoading()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.getData()
+        self.getData(pageNo: 1)
         
     }
     
@@ -61,7 +79,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         
         let cell = tableView.dequeueReusableCell(withIdentifier: DispatchOrderVCCell_id) as! DispatchOrderVCCell
         
-        let model = self.dataArr[indexPath.row] as! DispatchOrderReturnObjModel
+        let model = self.dataArr[indexPath.row] as! DispatchOrderResultModel
         
         cell.index = indexPath.section
         
@@ -98,7 +116,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let model = self.dataArr[indexPath.row] as! DispatchOrderReturnObjModel
+        let model = self.dataArr[indexPath.row] as! DispatchOrderResultModel
 
         let vc = OrderDetailVC()
         vc.workNo = model.workNo
@@ -106,16 +124,20 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         
     }
     
-    func getData() {
+    func getData(pageNo:Int) {
         
         
         weak var weakSelf = self // ADD THIS LINE AS WELL
         
         UserCenter.shared.userInfo { (islogin, userInfo) in
             
-            let para = ["companyCode":userInfo.companyCode ,"orgCode":userInfo.orgCode ,"empNo":userInfo.empNo ,"empName":userInfo.empName ]
-            
-            self.view.beginLoading()
+            let para = ["companyCode":userInfo.companyCode ,
+                        "orgCode":userInfo.orgCode ,
+                        "empNo":userInfo.empNo ,
+                        "empName":userInfo.empName,
+                        "pageNum":String(pageNo),
+                        "pageSize":"15",
+                        ]
           
             NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workSendPageUrl, modelClass: "DispatchOrderModel" , response: { (obj) in
                 
@@ -123,18 +145,30 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
                 
                 if model.statusCode == 800 {
                     
-  
+                    self.pageNo = pageNo
                     
-                    if((model.returnObj?.count)! > 0){
+                    if (pageNo == 1){
                         
-                        self.dataArr.addObjects(from: model.returnObj!)
-                        self.tableView.reloadData()
-                        
-                    }else{
+                        self.dataArr.removeAllObjects()
+                    }
+                    
+                    self.dataArr.addObjects(from: (model.returnObj?.result!)!)
+                    self.tableView.reloadData()
+                    
+                    if((model.returnObj?.totalCount)! == 0){
                         
                         self.tableView.configBlankPage(EaseBlankPageType(rawValue: 0)!, hasData: false, hasError: false, reloadButtonBlock: nil)
                     }
                     
+                    self.tableView.es.stopPullToRefresh()
+
+                    self.tableView.es.stopLoadingMore()
+                    
+                    if(pageNo == model.returnObj?.totalPage){
+                        self.tableView.es.noticeNoMoreData()
+                    }else{
+                        self.tableView.es.resetNoMoreData()
+                    }
                     
                 }
                 
@@ -155,7 +189,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
     
     func dispatchMethod(index: Int) {
         
-        let model = self.dataArr[index] as! DispatchOrderReturnObjModel
+        let model = self.dataArr[index] as! DispatchOrderResultModel
 
         let vc = SelectWorkerVCViewController()
         vc.lat = model.latitude

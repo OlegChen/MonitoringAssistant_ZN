@@ -10,7 +10,7 @@ import UIKit
 
 class DispatchOrderModel: BaseModel {
 
-    var returnObj : [DispatchOrderReturnObjModel]?
+    var returnObj : DispatchOrderReturnObjModel?
     
     
 }

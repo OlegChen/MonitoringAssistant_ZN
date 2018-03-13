@@ -10,43 +10,20 @@ import UIKit
 
 class DispatchOrderReturnObjModel: BaseReturnObjModel {
 
+  
+    var result : [DispatchOrderResultModel]?
     
-    var workNo : String?
-    var companyCode : String?
-    var source : String?
-    var workClass : String?
-    var workType : String?
-    var urgency : String?
-    var workContent : String?
-    var custId : String?
-    var houseCode : String?
-    var biotopeCode : String?
-    var longitude : String?
-    var latitude : String?
-    var houseName : String?
-    var unitName : String?
-    var houseNumber : String?
-    var address : String?
-    var contactMan : String?
-    var tel : String?
-    var repairsDesc : String?
-    var dealDesc : String?
-    var status : String?
-    var isEvaluate : String?
-    var isVisit : String?
-    var createDateStr : String?
-    var workName : String?
-
-    var typeName : String?
-    var sendEmpName : String?
-    var orderNo : String?
-    var repairsTime : String?
+    var pageSize : Int?
+    var pageNum : Int?
+    var totalCount : Int?
+    var totalPage : Int?
     
-    var workSendId : String?
-    var sendEmpNo : String?
 
-
-    
+//    "": 1,
+//    "": 1,
+//    "": 9,
+//    "": 9
+//
     
 //    "": "W100620171200148",
 //    "": "1006",

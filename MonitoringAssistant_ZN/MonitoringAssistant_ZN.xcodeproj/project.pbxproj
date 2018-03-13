@@ -86,6 +86,7 @@
 		185AA41C20566BFE00205256 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 185AA40B20566BFE00205256 /* IQKeyboardManager.bundle */; };
 		185AA41E205690CB00205256 /* 中能云管家.html in Resources */ = {isa = PBXBuildFile; fileRef = 185AA41D205690CA00205256 /* 中能云管家.html */; };
 		185AA4202056915900205256 /* lawVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA41F2056915900205256 /* lawVCViewController.swift */; };
+		185AA42220576D8D00205256 /* DispatchOrderResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA42120576D8D00205256 /* DispatchOrderResultModel.swift */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -497,6 +498,7 @@
 		185AA40B20566BFE00205256 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		185AA41D205690CA00205256 /* 中能云管家.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "中能云管家.html"; sourceTree = "<group>"; };
 		185AA41F2056915900205256 /* lawVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lawVCViewController.swift; sourceTree = "<group>"; };
+		185AA42120576D8D00205256 /* DispatchOrderResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchOrderResultModel.swift; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -2206,6 +2208,7 @@
 			children = (
 				74903E69203FBBCC00003EF2 /* DispatchOrderModel.swift */,
 				74903E6B203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift */,
+				185AA42120576D8D00205256 /* DispatchOrderResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3013,6 +3016,7 @@
 				18A57A7420457E7B00DA7D59 /* SDWebImageManager.m in Sources */,
 				74903EAE204BCC6000003EF2 /* FSCalendar.m in Sources */,
 				74903E7420402C1B00003EF2 /* SelectWorkerVCCell.swift in Sources */,
+				185AA42220576D8D00205256 /* DispatchOrderResultModel.swift in Sources */,
 				74903E852045B4FE00003EF2 /* EquipmentMonitorCell.swift in Sources */,
 				18A57A7020457E7B00DA7D59 /* SDWebImageCompat.m in Sources */,
 				18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */,

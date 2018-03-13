@@ -119,6 +119,8 @@ static const NSString *AnimationNameKey = @"AnimationNameKey";
     
     _centerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KselfWid / 4, KselfHlt / 4)];
     _centerView.userInteractionEnabled = YES;
+    _centerView.layer.borderWidth = 0.5;
+    _centerView.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5].CGColor;
     _centerView.layer.cornerRadius = KselfWid / 8;
     _centerView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
     _centerView.layer.shadowOffset = CGSizeMake(2, 2);
