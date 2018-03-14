@@ -35,6 +35,11 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     override func awakeFromNib() {
         
         
+        maxFeeL.font = UIFont.boldSystemFont(ofSize: 14)
+        averageFeeL.font = UIFont.boldSystemFont(ofSize: 14)
+        minFeeL.font = UIFont.boldSystemFont(ofSize: 14)
+        
+        
         chartView.delegate = self
         
         chartView.chartDescription?.enabled = false
@@ -52,39 +57,13 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         chartView.drawOrder = [DrawOrder.bar.rawValue,
                                DrawOrder.line.rawValue]
         
-//        let l = chartView.legend
-//        l.wordWrapEnabled = true
-//        l.horizontalAlignment = .center
-//        l.verticalAlignment = .bottom
-//        l.orientation = .horizontal
-//        l.drawInside = false
-        //        chartView.legend = l
-        
-//        let rightAxis = chartView.rightAxis
-//        rightAxis.axisMinimum = 0
-        
-//        let leftAxis = chartView.leftAxis
-//        leftAxis.axisMinimum = 0
-        
         chartView.xAxis.labelPosition = .bottom      //只显示底部的X轴
 //        chartView.xAxis.forceLabelsEnabled = true
         chartView.xAxis.drawGridLinesEnabled = false;//不绘制网格线
-        chartView.xAxis.setLabelCount(12 , force: false)
+//        chartView.xAxis.setLabelCount(12 , force: false)
         chartView.xAxis.spaceMax = 1 //设置label间隔，若设置为1，则如果能全部显示，则每个柱形下面都会显示label
         chartView.xAxis.spaceMin = 1
 
-//        chartView.xAxis.drawLabelsEnabled = true
-//        let xAxisLabels = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
-//        chartView.xAxis.axisMaximum = Double(xAxisLabels.count - 1)
-//        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels)
-//        chartView.xAxis.setLabelCount(xAxisLabels.count , force: false)
-
-//        chartView.leftAxis.drawLabelsEnabled = true
-//        let leftAxisLabels = ["0","500","1000","1500","2000","2500"]
-//        chartView.leftAxis.axisMaximum = Double(leftAxisLabels.count )
-//        chartView.leftAxis.valueFormatter = IndexAxisValueFormatter(values:leftAxisLabels
-//        )
-//        chartView.leftAxis.setLabelCount(leftAxisLabels.count , force: true)
 
         let leftAxis = chartView.leftAxis
         leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
@@ -93,26 +72,14 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         leftAxis.spaceMax = 500
         leftAxis.spaceMin = 500
         leftAxis.drawGridLinesEnabled = false
-//        leftAxis.granularityEnabled = true
-        
-//        leftAxis.drawLabelsEnabled = true
-//        leftAxis.axisMaximum = 2500
-        
-//        chartView.rightAxis.drawLabelsEnabled = true
-//        let rightAxisLabels = ["0%","20%","40%","60%","80%","100%"]
-//        chartView.rightAxis.axisMaximum = Double(rightAxisLabels.count + 1)
-//        chartView.rightAxis.valueFormatter = IndexAxisValueFormatter(values:rightAxisLabels
-//        )
-//        chartView.rightAxis.setLabelCount(rightAxisLabels.count , force: true)
-//        chartView.rightAxis.labelTextColor = .red
-//        chartView.rightAxis.granularityEnabled = true
+
 
         let rightAxis = chartView.rightAxis
         rightAxis.labelTextColor = .red
         rightAxis.axisMaximum = 100
         rightAxis.axisMinimum = 0
-        leftAxis.drawGridLinesEnabled = false
-//        rightAxis.granularityEnabled = false
+        rightAxis.drawGridLinesEnabled = false
+        
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
 
 
@@ -137,18 +104,6 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     
     func setChartData(dataArray:NSArray) {
         
-//        let lineDataArray = NSMutableArray()
-//        let barDataArray = NSMutableArray()
-//
-//
-//        for i in 0..<dataArray.count {
-//
-//            let model = dataArray[i] as! ReturnObjChargeRateVosModel
-//
-//            lineDataArray.add(Double(model.proportion!)!/100)
-//            barDataArray.add(Double(model.sumRealFee!)!)
-//        }
-        
         let data = CombinedChartData()
         data.lineData = generateLineData(dataArray: dataArray)
         data.barData = generateBarData(dataArray: dataArray)
@@ -160,6 +115,8 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     
     
     func generateLineData(dataArray:NSArray) -> LineChartData {
+
+        
         let entries = (0..<dataArray.count).map { (i) -> ChartDataEntry in
             
             let model = dataArray[i] as! ReturnObjChargeRateVosModel
@@ -176,8 +133,6 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
 //        set.fillColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
         set.mode = .linear
         set.drawValuesEnabled = false
-//        set.valueFont = .systemFont(ofSize: 10)
-//        set.valueTextColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
         
         set.axisDependency = .right
         
@@ -187,43 +142,42 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     
     func generateBarData(dataArray:NSArray) -> BarChartData {
         
-        let start = 1
-        let range : UInt32 = 2500
         
-        let yVals = (start..<dataArray.count).map { (i) -> BarChartDataEntry in
-//            let mult = range + 1
-//            let val = Double(arc4random_uniform(mult))
-//            if arc4random_uniform(100) < 25 {
-//                return BarChartDataEntry(x: Double(i), y: val, icon: UIImage(named: "icon"))
-//            } else {
+        let xAxisLabels = NSMutableArray()
+        xAxisLabels.add("")
+        for i in 0..<dataArray.count {
             
+            let model = dataArray[i] as! ReturnObjChargeRateVosModel
+            xAxisLabels.add(model.monthStr ?? "")
+        }
+        
+        chartView.xAxis.drawLabelsEnabled = true
+        chartView.xAxis.axisMinimum = 0
+        chartView.xAxis.axisMaximum = Double(xAxisLabels.count-1)
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
+        chartView.xAxis.setLabelCount(xAxisLabels.count , force: true)
+        
+        
+        let start = 0
+        let yVals = (start..<dataArray.count).map { (i) -> BarChartDataEntry in
              let model = dataArray[i] as! ReturnObjChargeRateVosModel
             
-            return BarChartDataEntry(x: Double(model.monthStr!)!, y: Double(model.sumRealFee!)!)
-//            }
+        return BarChartDataEntry(x: Double(model.monthStr!)!, y: Double(model.sumRealFee!)!)
         }
         
         var set1: BarChartDataSet! = nil
-//        if let set = chartView.data?.dataSets.first as? BarChartDataSet {
-//            set1 = set
-//            set1.values = yVals
-//            chartView.data?.notifyDataChanged()
-//            chartView.notifyDataSetChanged()
-//        } else {
-            set1 = BarChartDataSet(values: yVals, label: "The year 2017")
-            set1.colors = [UIColor.init(red: 71/255.0, green: 143/255.0, blue: 183/255.0, alpha: 1.0)]
-            set1.drawValuesEnabled = false
+
+        set1 = BarChartDataSet(values: yVals, label: "The year 2017")
+        set1.colors = [UIColor.init(red: 71/255.0, green: 143/255.0, blue: 183/255.0, alpha: 1.0)]
+        set1.drawValuesEnabled = false
+    
+        set1.axisDependency = .left
         
-            set1.axisDependency = .left
+        let data = BarChartData(dataSet: set1)
+        data.barWidth = 0.4
+        
+        return data
 
-            
-            let data = BarChartData(dataSet: set1)
-            data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
-            data.barWidth = 0.4
-            
-            return data
-
-//        }
         
     }
     

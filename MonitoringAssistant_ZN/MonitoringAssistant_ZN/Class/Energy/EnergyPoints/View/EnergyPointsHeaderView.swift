@@ -12,7 +12,7 @@ let EnergyPointsHeaderView_id = "EnergyPointsHeaderView"
 
 class EnergyPointsHeaderView: UITableViewHeaderFooterView {
 
-    let arr = ["今日能耗","5日能耗","5日计划","5日费用","单方能耗","计划单方能耗"]
+    let arr = ["今日能耗","日计划值","今日费用","累计用能计划","累计能耗","单方能耗","累计费用"]
     
     
     
@@ -25,9 +25,9 @@ class EnergyPointsHeaderView: UITableViewHeaderFooterView {
             let label = UILabel()
             label.text = arr[i]
             label.textColor = UIColor.black
-            label.font = UIFont.systemFont(ofSize: 14)
+            label.font = UIFont.boldSystemFont(ofSize: 14)
             label.textAlignment = NSTextAlignment.center
-            let btnW = ((ScreenH -   (ScreenH == 812 ? 180 : 100 ) ) / 6.0)
+            let btnW = ((ScreenH -   (ScreenH == 812 ? 180 : 100 ) ) / 7.0)
             label.frame = CGRect(x: (ScreenH == 812 ? 130 : 80 ) + btnW * CGFloat(i), y: 0, width: btnW , height: 50)
             self.addSubview(label)
             

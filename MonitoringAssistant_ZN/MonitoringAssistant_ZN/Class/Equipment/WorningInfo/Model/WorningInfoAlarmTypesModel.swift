@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorningInfoAlarmTypesModel: NSObject {
+class WorningInfoAlarmTypesModel: OtherBaseModel {
     
     var code : String?
     var name : String?

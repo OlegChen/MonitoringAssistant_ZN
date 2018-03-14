@@ -40,7 +40,7 @@ class OrderInfoVC: BaseVC, UITableViewDelegate,UITableViewDataSource {
         
         
         let view2 = UIView.init()
-        view2.frame = CGRect(x:0 ,y:0 , width: ScreenW , height : 360)
+        view2.frame = CGRect(x:0 ,y:0 , width: ScreenW , height : 358)
         self.footerView = Bundle.main.loadNibNamed("OrderInfoFooterView", owner: nil, options: nil)![0] as? OrderInfoFooterView
         view2.addSubview(self.footerView!)
         self.tableView?.tableFooterView = view2

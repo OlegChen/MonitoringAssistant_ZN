@@ -21,6 +21,13 @@ class EnergyTableViewCell: UITableViewCell {
 
         self.imgView.clipsToBounds = true
         
+        self.titleL.font=UIFont.boldSystemFont(ofSize: 20)
+        
+        titleL.layer.shadowColor = UIColor.black.cgColor;
+        titleL.layer.shadowOffset = CGSize(width:2, height:2);
+        titleL.layer.shadowOpacity = 0.7;
+        titleL.layer.shadowRadius = 5;
+        
     }
     
     func setuptitleAndImg(title:String , Img:String) {

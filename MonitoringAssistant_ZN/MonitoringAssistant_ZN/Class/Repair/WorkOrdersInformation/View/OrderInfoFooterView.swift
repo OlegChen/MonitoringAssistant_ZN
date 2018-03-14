@@ -34,7 +34,7 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
     func setDataArray(array:NSArray) {
         
         self.setDataCount(array)
-        chartsView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
+        chartsView.animate(xAxisDuration: 0, easingOption: .easeOutBack)
 
         
         for  i in 0..<array.count {
@@ -147,7 +147,7 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         pFormatter.percentSymbol = " %"
         data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
         data.setValueFont(.systemFont(ofSize: 11, weight: .light))
-        data.setValueTextColor(.black)
+        data.setValueTextColor(.white)
         
         chartsView.data = data
         chartsView.highlightValues(nil)
@@ -193,6 +193,13 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         l.yEntrySpace = 0
         l.yOffset = 0
         //        chartView.legend = l
+        
+        
+        chartsView.layer.shadowColor = UIColor.darkGray.cgColor;
+        chartsView.layer.shadowOffset = CGSize(width:2, height:2);
+        chartsView.layer.shadowOpacity = 0.5;
+        chartsView.layer.shadowRadius = 5;
+        
     }
     
     /*

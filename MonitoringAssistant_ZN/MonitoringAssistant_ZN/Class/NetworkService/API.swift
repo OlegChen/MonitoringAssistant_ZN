@@ -28,6 +28,8 @@ public let profilesDataUrl = baseURL + "/useenergy/profilesData"
 public let goldStandardDataUrl = baseURL + "/useenergy/goldStandardAllData"
 //用能监测
 public let moniterDataUrl = baseURL + "/useenergy/moniterData"
+//用能监测点位详情
+public let moniterPointDataUrl = baseURL + "/useenergy/moniterPointData"
 //工单管理
 public let workOrderAllDataUrl = baseURL + "/repair/workOrderAllData"
 //转派工单

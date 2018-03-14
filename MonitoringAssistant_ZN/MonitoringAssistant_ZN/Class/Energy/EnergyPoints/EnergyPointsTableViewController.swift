@@ -67,6 +67,8 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         
         self.tableView.tableFooterView = UIView()
         
+        self.view.beginLoading()
+        
         self.getdata()
         
     }
@@ -129,15 +131,17 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         
         let model : EnergyPointsReturnObjModel = self.dataArr[indexPath.row] as! EnergyPointsReturnObjModel
         
-        cell.titleL.text = model.energyTypeName
-        cell.label1.text = model.todayEnergy
+        cell.setIndex(index: indexPath.row)
         
-        cell.label2.text = model.fiveEnergy
-        cell.label3.text = model.fivePlanValue
-        cell.label4.text = model.fiveFee
-        cell.lable5.text = model.unilEnergy
-        cell.label6.text = model.planUnilEnergy
-
+        cell.titleL.text = model.energyTypeName
+        cell.label1.text = model.todayEnergy != nil ? model.todayEnergy : "--"
+        
+        cell.label2.text = model.todayPlanValue != nil ? model.totalPlanValue : "--"
+        cell.label3.text = model.totalFee != nil ? model.totalFee : "--"
+        cell.label4.text = model.totalPlanValue != nil ? model.totalPlanValue : "--"
+        cell.lable5.text = model.totalEnergy != nil ? model.totalEnergy : "--"
+        cell.label6.text = model.unilEnergy != nil ?  model.unilEnergy : "--"
+        cell.label7.text = model.totalFee != nil ? model.totalFee : "--"
         
         return cell
     }
@@ -170,11 +174,20 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
                 
                 let model = obj as! EnergyPointsModel
                 
-                self.dataArr.addObjects(from: model.returnObj!)
-                self.tableView.reloadData()
+                if(model.statusCode == 800){
+                    
+                    self.dataArr.addObjects(from: model.returnObj!)
+                    self.tableView.reloadData()
+                }else{
+                    
+                    YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                }
+                
+                self.view.endLoading()
                 
             }) { (error) in
                 
+                self.view.endLoading()
             }
             
         }

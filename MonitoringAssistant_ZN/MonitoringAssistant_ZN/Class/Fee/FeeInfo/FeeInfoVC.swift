@@ -37,7 +37,7 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         self.tableView?.register(UINib.init(nibName: "FeeInfoTableViewCell", bundle: nil), forCellReuseIdentifier:FeeInfoTableViewCell_id )
         
         let view = UIView.init()
-        view.frame = CGRect(x: 0, y: 0 , width:ScreenW ,height: 360 )
+        view.frame = CGRect(x: 0, y: 0 , width:ScreenW ,height: 350 )
         
         let headerView = Bundle.main.loadNibNamed("FeeInfoHeaderView", owner: nil, options: nil)?[0] as! FeeInfoHeaderView
         self.headerView = headerView
@@ -62,9 +62,9 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
                 
                 let model = obj as! FeeModel
                 
-                self.headerView?.maxFeeL.text = model.returnObj?.maxSumRealFee
-                self.headerView?.averageFeeL.text = model.returnObj?.avgSumRealFee
-                self.headerView?.minFeeL.text = model.returnObj?.minSumRealFee
+                self.headerView?.maxFeeL.text = (model.returnObj?.maxSumRealFee)! + "万元"
+                self.headerView?.averageFeeL.text = (model.returnObj?.avgSumRealFee)! + "万元"
+                self.headerView?.minFeeL.text = (model.returnObj?.minSumRealFee)! + "万元"
                 self.headerView?.setChartData(dataArray: model.returnObj?.chargeRateVos! as! NSArray)
                 
                 self.dataArr.removeAllObjects()
@@ -97,8 +97,8 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         
         let model = self.dataArr[indexPath.row] as! ReturnObjChargeRateVosModel
         cell.dateL.text = model.dateStr
-        cell.feeL.text = model.sumRealFee
-        cell.percentL.text = model.proportion
+        cell.feeL.text = (model.sumRealFee != nil ? model.sumRealFee! : "0") + "万元"
+        cell.percentL.text = (model.proportion != nil ? model.proportion! : "0") + "%"
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell

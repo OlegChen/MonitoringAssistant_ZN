@@ -30,6 +30,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "派单记录", target: self, action: #selector(toDispatchOrderListVC))
 
         self.tableView = UITableView()
+        self.tableView.backgroundColor = RGBCOLOR(r: 240, 240, 240)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
@@ -143,7 +144,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                 self.dataModel = model
                 
                 
-                
+                self.setupImagefooter(array: model.returnObj?.workDealImgs as! NSArray)
                 
                 //
 //                self.dataArr.addObjects(from: model.returnObj!)
@@ -157,19 +158,20 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
     }
     
-    func setupImagefooter() {
+    func setupImagefooter(array:NSArray) {
         
         let view = UIView()
         
         let imgW = (ScreenW - 15 * 4) / 3
         
-        for i in 0..<(self.dataModel?.returnObj?.workDealImgs?.count)! {
+        for i in 0..<(array.count) {
             
             let img = UIImageView.init()
             img.contentMode = UIViewContentMode.scaleAspectFill
             
             let urlStr = self.dataModel?.returnObj?.workDealImgs![i] as! String
-            img.kf.setImage(with: URL(string: urlStr))
+            img.kf.setImage(with:URL.init(string: urlStr), placeholder: UIImage(named: "test"), options: nil, progressBlock: nil, completionHandler: nil)
+            
             view.addSubview(img)
             let l = i % 3
             let row = i / 3

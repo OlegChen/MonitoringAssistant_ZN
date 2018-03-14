@@ -22,7 +22,7 @@ class WorningInfoVC: BaseTableVC {
         
         
         let view = UIView()
-        view.frame = CGRect(x:0 , y:0 , width:ScreenW  , height:300)
+        view.frame = CGRect(x:0 , y:0 , width:ScreenW  , height:733)
         
         let headView = (Bundle.main.loadNibNamed("WorningInfoHeaderView", owner: nil, options: nil)![0] as! WorningInfoHeaderView)
         headView.frame = view.bounds
@@ -32,6 +32,8 @@ class WorningInfoVC: BaseTableVC {
         self.tableView.tableHeaderView = view
         
         self.getData()
+        
+        self.view.beginLoading()
 
     }
     
@@ -68,10 +70,11 @@ class WorningInfoVC: BaseTableVC {
                     
                 }
                 
+                self.view.endLoading()
                 
             }, failture: { (error) in
                 
-                
+                self.view.endLoading()
                 
             })
             

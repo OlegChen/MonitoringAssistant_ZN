@@ -45,7 +45,7 @@ class EnergyFeeVC: BaseTableVC {
         let cell : EnergyTableViewCell  = tableView.dequeueReusableCell(withIdentifier: EnergyTableViewCell_id, for: indexPath) as! EnergyTableViewCell
         
         
-        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "abcd_charge_survey_touch")
+        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "abcd_charge_survey_untouch")
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
@@ -64,6 +64,7 @@ class EnergyFeeVC: BaseTableVC {
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
+        
     }
     
 }

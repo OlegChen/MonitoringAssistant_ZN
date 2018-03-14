@@ -69,6 +69,7 @@ class EnergyEquipment: BaseTableVC {
             
             self.navigationController?.pushViewController(WorningInfoVC(), animated: true)
         }
+        
     }
     
 }

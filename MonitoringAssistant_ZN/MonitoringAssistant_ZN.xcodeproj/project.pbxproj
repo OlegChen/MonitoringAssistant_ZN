@@ -87,6 +87,8 @@
 		185AA41E205690CB00205256 /* 中能云管家.html in Resources */ = {isa = PBXBuildFile; fileRef = 185AA41D205690CA00205256 /* 中能云管家.html */; };
 		185AA4202056915900205256 /* lawVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA41F2056915900205256 /* lawVCViewController.swift */; };
 		185AA42220576D8D00205256 /* DispatchOrderResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA42120576D8D00205256 /* DispatchOrderResultModel.swift */; };
+		185AA42C2059075C00205256 /* StationDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA42B2059075C00205256 /* StationDetailModel.swift */; };
+		185AA42E2059079200205256 /* StationDetailReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA42D2059079200205256 /* StationDetailReturnObjModel.swift */; };
 		18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C932008BBB000A2E282 /* AppDelegate.swift */; };
 		18791C962008BBB000A2E282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791C952008BBB000A2E282 /* ViewController.swift */; };
 		18791C992008BBB000A2E282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C972008BBB000A2E282 /* Main.storyboard */; };
@@ -499,6 +501,8 @@
 		185AA41D205690CA00205256 /* 中能云管家.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "中能云管家.html"; sourceTree = "<group>"; };
 		185AA41F2056915900205256 /* lawVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lawVCViewController.swift; sourceTree = "<group>"; };
 		185AA42120576D8D00205256 /* DispatchOrderResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchOrderResultModel.swift; sourceTree = "<group>"; };
+		185AA42B2059075C00205256 /* StationDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailModel.swift; sourceTree = "<group>"; };
+		185AA42D2059079200205256 /* StationDetailReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailReturnObjModel.swift; sourceTree = "<group>"; };
 		18791C902008BBB000A2E282 /* MonitoringAssistant_ZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitoringAssistant_ZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791C932008BBB000A2E282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18791C952008BBB000A2E282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -2159,6 +2163,8 @@
 				74903E482036B57500003EF2 /* moniterDataModel.swift */,
 				74903E4A2036B5CB00003EF2 /* moniterDataReturnObjModel.swift */,
 				74903E4C2036B5F100003EF2 /* moniterDataPointsModel.swift */,
+				185AA42B2059075C00205256 /* StationDetailModel.swift */,
+				185AA42D2059079200205256 /* StationDetailReturnObjModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2832,6 +2838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181F5C4820563A39003600DE /* SVIndefiniteAnimatedView.m in Sources */,
+				185AA42E2059079200205256 /* StationDetailReturnObjModel.swift in Sources */,
 				74903E7920403E3800003EF2 /* SelectWorkerReturnObjModel.swift in Sources */,
 				18A57A7520457E7B00DA7D59 /* SDWebImagePrefetcher.m in Sources */,
 				181F5BAD20481F4B003600DE /* CustPointAnnotation.swift in Sources */,
@@ -2958,6 +2965,7 @@
 				74903E542039A59200003EF2 /* OrderInfoVC.swift in Sources */,
 				74903E562039AB8F00003EF2 /* OrderInfoHeaderView.swift in Sources */,
 				18C8D2FC202C50E400E91527 /* ViewController+MASAdditions.m in Sources */,
+				185AA42C2059075C00205256 /* StationDetailModel.swift in Sources */,
 				18A57A4820455A4D00DA7D59 /* PhotoItemView.m in Sources */,
 				18A57A7220457E7B00DA7D59 /* SDWebImageDownloader.m in Sources */,
 				181F5C3020562807003600DE /* NSObject+ALiHUD.m in Sources */,

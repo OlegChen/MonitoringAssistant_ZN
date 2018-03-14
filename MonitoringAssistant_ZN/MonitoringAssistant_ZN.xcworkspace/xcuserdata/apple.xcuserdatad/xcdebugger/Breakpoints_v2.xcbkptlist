@@ -49,7 +49,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
-            timestampString = "542603675.513543"
+            timestampString = "542725529.255695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -177,7 +177,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-                  timestampString = "542603675.910482"
+                  timestampString = "542724332.2228"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "158"
@@ -192,7 +192,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-                  timestampString = "542603675.914162"
+                  timestampString = "542724332.2259279"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "158"
@@ -257,7 +257,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
-            timestampString = "542603675.514141"
+            timestampString = "542725529.256613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -273,7 +273,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Login/LoginVC.swift"
-            timestampString = "542603675.514217"
+            timestampString = "542725529.256694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -321,7 +321,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Login/ForgotPwVC.swift"
-            timestampString = "542603675.5143909"
+            timestampString = "542725529.256936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -336,44 +336,92 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/DispatchOrderVC.swift"
-            timestampString = "542603675.514465"
+            filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/OrderDetailVC/OrderDetailVC.swift"
+            timestampString = "542725529.257009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "getData(pageNo:)"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "setupImagefooter(array:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/OrderDetailVC/OrderDetailVC.swift"
+            timestampString = "542725529.257075"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "setupImagefooter(array:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/OrderDetailVC/OrderDetailVC.swift"
+            timestampString = "542725529.257139"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "getdata()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Equipment/WorningInfo/View/WorningInfoHeaderView.swift"
+            timestampString = "542725529.2572041"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "generateLineData(dataArray:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.AnyObject) -&gt; () in closure #1 (Swift.Bool, MonitoringAssistant_ZN.LoginReturnObjModel) -&gt; () in MonitoringAssistant_ZN.DispatchOrderVC.getData(pageNo: Swift.Int) -&gt; ()"
+                  symbolName = "MonitoringAssistant_ZN.WorningInfoHeaderView.generateLineData(dataArray: __ObjC.NSArray) -&gt; ()"
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/DispatchOrderVC.swift"
-                  timestampString = "542603675.953158"
+                  urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Equipment/WorningInfo/View/WorningInfoHeaderView.swift"
+                  timestampString = "542718742.300211"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "1043">
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "27">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.AnyObject) -&gt; () in closure #1 (Swift.Bool, MonitoringAssistant_ZN.LoginReturnObjModel) -&gt; () in MonitoringAssistant_ZN.DispatchOrderVC.getData(pageNo: Swift.Int) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Charts.ChartDataEntry in MonitoringAssistant_ZN.WorningInfoHeaderView.generateLineData(dataArray: __ObjC.NSArray) -&gt; ()"
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/DispatchOrderVC.swift"
-                  timestampString = "542603675.956754"
+                  urlString = "file:///Users/apple/Desktop/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Equipment/WorningInfo/View/WorningInfoHeaderView.swift"
+                  timestampString = "542718742.304122"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "158"
-                  endingLineNumber = "158"
-                  offsetFromSymbolStart = "4080">
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "21">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -384,13 +432,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/DispatchOrderVC.swift"
-            timestampString = "542603675.514871"
+            filePath = "MonitoringAssistant_ZN/Class/Equipment/WorningInfo/View/WorningInfoHeaderView.swift"
+            timestampString = "542725529.257302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "getData(pageNo:)"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "generateLineData(dataArray:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Equipment/WorningInfo/View/WorningInfoHeaderView.swift"
+            timestampString = "542725529.257388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "generateLineData(dataArray:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Fee/FeeInfo/View/FeeInfoHeaderView.swift"
+            timestampString = "542725529.257473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "generateBarData(dataArray:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

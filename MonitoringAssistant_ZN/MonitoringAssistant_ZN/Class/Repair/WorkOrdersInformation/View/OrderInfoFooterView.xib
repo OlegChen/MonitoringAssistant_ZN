@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OrderInfoFooterView" customModule="MonitoringAssistant_ZN" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="366"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="358"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88A-Aj-ec4" customClass="PieChartView" customModule="Charts">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                     <color key="backgroundColor" red="0.2784313725" green="0.56078431370000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="eGB-RL-CTP"/>
+                        <constraint firstAttribute="height" constant="180" id="eGB-RL-CTP"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BG0-EV-xwp">
-                    <rect key="frame" x="30" y="158" width="315" height="30"/>
+                    <rect key="frame" x="30" y="188" width="315" height="30"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niU-ic-EIB">
                             <rect key="frame" x="8" y="10" width="15" height="10"/>
@@ -79,7 +79,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Di3-hD-dpz">
-                    <rect key="frame" x="30" y="196" width="315" height="30"/>
+                    <rect key="frame" x="30" y="218" width="315" height="30"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scM-ok-0fg">
                             <rect key="frame" x="8" y="10" width="15" height="10"/>
@@ -135,7 +135,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmX-jm-ATL">
-                    <rect key="frame" x="30" y="234" width="315" height="30"/>
+                    <rect key="frame" x="30" y="248" width="315" height="30"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xue-gs-ZtR">
                             <rect key="frame" x="8" y="10" width="15" height="10"/>
@@ -191,7 +191,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFp-XY-jbE">
-                    <rect key="frame" x="30" y="272" width="315" height="30"/>
+                    <rect key="frame" x="30" y="278" width="315" height="30"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0m-yj-rhI">
                             <rect key="frame" x="8" y="10" width="15" height="10"/>
@@ -247,7 +247,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-Qt-dgl">
-                    <rect key="frame" x="30" y="310" width="315" height="30"/>
+                    <rect key="frame" x="30" y="308" width="315" height="30"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-wJ-fex">
                             <rect key="frame" x="8" y="10" width="15" height="10"/>
@@ -307,16 +307,16 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="88A-Aj-ec4" secondAttribute="trailing" id="84y-o3-HMs"/>
                 <constraint firstItem="BG0-EV-xwp" firstAttribute="top" secondItem="88A-Aj-ec4" secondAttribute="bottom" constant="8" id="HOK-Fx-ifC"/>
-                <constraint firstItem="KmX-jm-ATL" firstAttribute="top" secondItem="Di3-hD-dpz" secondAttribute="bottom" constant="8" id="Kgz-ZT-q2m"/>
+                <constraint firstItem="KmX-jm-ATL" firstAttribute="top" secondItem="Di3-hD-dpz" secondAttribute="bottom" id="Kgz-ZT-q2m"/>
                 <constraint firstItem="jFp-XY-jbE" firstAttribute="leading" secondItem="KmX-jm-ATL" secondAttribute="leading" id="QqW-tn-tAA"/>
                 <constraint firstItem="88A-Aj-ec4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="T3P-Sc-a8U"/>
                 <constraint firstItem="BG0-EV-xwp" firstAttribute="centerX" secondItem="88A-Aj-ec4" secondAttribute="centerX" id="VfH-8j-eej"/>
-                <constraint firstItem="jFp-XY-jbE" firstAttribute="top" secondItem="KmX-jm-ATL" secondAttribute="bottom" constant="8" symbolic="YES" id="WaS-L2-klm"/>
-                <constraint firstItem="Di3-hD-dpz" firstAttribute="top" secondItem="BG0-EV-xwp" secondAttribute="bottom" constant="8" id="YKg-7Q-EFc"/>
+                <constraint firstItem="jFp-XY-jbE" firstAttribute="top" secondItem="KmX-jm-ATL" secondAttribute="bottom" id="WaS-L2-klm"/>
+                <constraint firstItem="Di3-hD-dpz" firstAttribute="top" secondItem="BG0-EV-xwp" secondAttribute="bottom" id="YKg-7Q-EFc"/>
                 <constraint firstItem="88A-Aj-ec4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZDz-il-XNp"/>
                 <constraint firstItem="jFp-XY-jbE" firstAttribute="leading" secondItem="Di3-hD-dpz" secondAttribute="leading" id="Zdh-i6-Mrd"/>
                 <constraint firstItem="ddg-Qt-dgl" firstAttribute="leading" secondItem="jFp-XY-jbE" secondAttribute="leading" id="gus-1b-qLe"/>
-                <constraint firstItem="ddg-Qt-dgl" firstAttribute="top" secondItem="jFp-XY-jbE" secondAttribute="bottom" constant="8" id="qfS-mM-LLQ"/>
+                <constraint firstItem="ddg-Qt-dgl" firstAttribute="top" secondItem="jFp-XY-jbE" secondAttribute="bottom" id="qfS-mM-LLQ"/>
                 <constraint firstItem="Di3-hD-dpz" firstAttribute="leading" secondItem="BG0-EV-xwp" secondAttribute="leading" id="s8e-pt-kWs"/>
             </constraints>
             <nil key="simulatedBottomBarMetrics"/>
@@ -334,7 +334,7 @@
                 <outlet property="completeNumL" destination="hLw-gU-x4N" id="iDP-8p-e6M"/>
                 <outlet property="completeRateL" destination="UMT-Ja-3N8" id="WR5-WQ-kgw"/>
             </connections>
-            <point key="canvasLocation" x="34.5" y="259"/>
+            <point key="canvasLocation" x="34.5" y="255"/>
         </view>
     </objects>
 </document>

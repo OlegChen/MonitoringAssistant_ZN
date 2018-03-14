@@ -91,6 +91,11 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
 //        self.setDataCount(Int(4), range: UInt32(100))
 
         
+        chartsView.layer.shadowColor = UIColor.darkGray.cgColor;
+        chartsView.layer.shadowOffset = CGSize(width:2, height:2);
+        chartsView.layer.shadowOpacity = 0.5;
+        chartsView.layer.shadowRadius = 5;
+        
     }
     
     

@@ -11,7 +11,7 @@ import UIKit
 class EnergyRepairVC: BaseTableVC {
 
     let titleArr = ["工单信息", "转派工单" , "轨迹回放"]
-    let imgArr = ["abcd_work_order_details_touch", "abcd_equipment_monitor_touch" , "abcd_trajectory_play_touch"]
+    let imgArr = ["abcd_work_order_details_untouch", "abcd_equipment_monitor_untouch" , "abcd_trajectory_play_untouch"]
 
     
     override func viewDidLoad() {
@@ -75,6 +75,7 @@ class EnergyRepairVC: BaseTableVC {
 
             
         }
+        
     }
     
 }

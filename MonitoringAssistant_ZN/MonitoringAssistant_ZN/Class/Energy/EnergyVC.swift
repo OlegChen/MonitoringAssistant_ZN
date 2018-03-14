@@ -11,7 +11,7 @@ import UIKit
 class EnergyVC: BaseTableVC {
     
     let titleArr = ["用能概况", "用能监测" , "黄金对标"]
-    let imgArray = ["abcd_energy_use_profile_touch" , "abcd_energy_use_monitor_touch", "abcd_gold_bench_marke_touch"]
+    let imgArray = ["abcd_energy_use_profile_untouch" , "abcd_energy_use_monitor_untouch", "abcd_gold_bench_marke_untouch"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,7 @@ class EnergyVC: BaseTableVC {
             
             self.navigationController?.pushViewController(EnergyCompareVC(), animated: true)
         }
+                
     }
     
 }

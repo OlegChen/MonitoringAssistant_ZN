@@ -74,9 +74,7 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
         
         
         let custAnnotation = annotation as! monitorCustomAnnotation
-        popView.titleL.text  = custAnnotation.model?.stationName
-        popView.label1.text = custAnnotation.model?.stationNo
-        popView.label2.text = custAnnotation.model?.stationType
+        popView.setData(stationNo:  (custAnnotation.model?.stationNo)!, typeName: (custAnnotation.model?.stationType)! == "032001" ? "锅炉房" : "换热站")
         
                 
                 newAnnotation?.paopaoView = nil
@@ -89,7 +87,19 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
             // 设置可拖拽
         newAnnotation?.isDraggable = false
             //设置大头针图标
-        newAnnotation?.image = UIImage.init(named: "未标题-1")
+        
+        if (custAnnotation.model?.stationType == "032001") {
+            
+            //锅炉房
+            
+            newAnnotation?.image = UIImage.init(named: "起点")
+        }else {
+            
+            newAnnotation?.image = UIImage.init(named: "起点")
+            
+        }
+        
+        //"未标题-1")
             
 //            if (newAnnotation.paopaoView as AnyObject).isKind(of: EnergyMonitorPopView.self) == false {
 //

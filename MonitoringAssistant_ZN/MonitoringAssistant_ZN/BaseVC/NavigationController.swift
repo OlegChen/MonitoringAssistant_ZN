@@ -10,7 +10,18 @@ import UIKit
 
 class NavigationController: UINavigationController {
 
-   
+
+    
+    override func viewDidLayoutSubviews() {
+        
+        super.viewDidLayoutSubviews()
+
+        self.navigationBar.titleTextAttributes = [ NSAttributedStringKey.foregroundColor:UIColor.orange,
+                                                  NSAttributedStringKey.font : UIFont.systemFont(ofSize: 20)]
+        
+    }
+    
+    
     /**
      # 统一所有控制器导航栏左上角的返回按钮
      # 让所有push进来的控制器，它的导航栏左上角的内容都一样

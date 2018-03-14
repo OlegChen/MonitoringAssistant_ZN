@@ -12,7 +12,11 @@ import Charts
 
 class WorningInfoHeaderView: UIView ,ChartViewDelegate{
     
-    @IBOutlet weak var chartsView: CombinedChartView!
+    @IBOutlet weak var chartsView: LineChartView!
+    
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
     
     
     @IBOutlet weak var yearNumL: UILabel!
@@ -59,6 +63,21 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        
+        self.yearNumL.font = UIFont.boldSystemFont(ofSize: 14)
+        self.yearRateL.font = UIFont.boldSystemFont(ofSize: 14)
+        
+        ring1NumL.font = UIFont.boldSystemFont(ofSize: 13)
+        ring2NumL.font = UIFont.boldSystemFont(ofSize: 13)
+        ring3NumL.font = UIFont.boldSystemFont(ofSize: 13)
+        ring4NumL.font = UIFont.boldSystemFont(ofSize: 13)
+        ring5NumL.font = UIFont.boldSystemFont(ofSize: 13)
+        
+        
+        view1.cornerRadius = 4
+        view2.cornerRadius = 4
+        view3.cornerRadius = 4
+        
         self.ring1.ringWidth = 5
         self.ring2.ringWidth = 5
         self.ring3.ringWidth = 5
@@ -85,9 +104,7 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         chartsView.delegate = self
         
         chartsView.chartDescription?.enabled = false
-        
-        chartsView.drawBarShadowEnabled = false
-        chartsView.highlightFullBarEnabled = false
+    
         
         chartsView.scaleXEnabled = false
         chartsView.scaleYEnabled = false
@@ -96,105 +113,148 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         chartsView.legend.enabled = false
         
         
-        chartsView.drawOrder = [DrawOrder.line.rawValue,
-                               DrawOrder.line.rawValue]
-        
         chartsView.xAxis.labelPosition = .bottom      //只显示底部的X轴
         //        chartsView.xAxis.forceLabelsEnabled = true
         chartsView.xAxis.drawGridLinesEnabled = false;//不绘制网格线
-        chartsView.xAxis.setLabelCount(12 , force: false)
         chartsView.xAxis.spaceMax = 1 //设置label间隔，若设置为1，则如果能全部显示，则每个柱形下面都会显示label
         chartsView.xAxis.spaceMin = 1
+//        chartsView.xAxis.axisMaximum = 12
+//        chartsView.xAxis.axisMinimum = 1
         
-        chartsView.xAxis.drawLabelsEnabled = true
-        let xAxisLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-        chartsView.xAxis.axisMaximum = Double(xAxisLabels.count - 1)
-        chartsView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels)
-        chartsView.xAxis.setLabelCount(xAxisLabels.count , force: false)
+
         
         
         let leftAxis = chartsView.leftAxis
-        leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
-        leftAxis.axisMaximum = 3000
+//        leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
         leftAxis.axisMinimum = 0
-        leftAxis.spaceMax = 500
-        leftAxis.spaceMin = 500
+        leftAxis.spaceMax = 5000
+        leftAxis.spaceMin = 5000
         leftAxis.drawGridLinesEnabled = false
         
         let rightAxis = chartsView.rightAxis
-        rightAxis.labelTextColor = .red
+//        rightAxis.labelTextColor = .red
         rightAxis.axisMaximum = 100
         rightAxis.axisMinimum = 0
         leftAxis.drawGridLinesEnabled = false
         //        rightAxis.granularityEnabled = false
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
 
-        let data = CombinedChartData()
+        let data = LineChartData(dataSets: [])
+        data.setValueTextColor(.white)
+        data.setValueFont(.systemFont(ofSize: 9))
+        
         chartsView.data = data
     }
     
     func updateArray(array:NSArray) {
         
-        let data = CombinedChartData()
         
-        data.lineData = self.generateLineData(dataArray: array)
-        data.lineData = self.generateRateLineData(dataArray: array)
+        self.generateLineData(dataArray: array)
+        
+        
+    }
+    
+    
+    func generateLineData(dataArray:NSArray) {
+        
+        let xAxisLabels = NSMutableArray()
+        for i in 0..<dataArray.count {
+            
+            let model = dataArray[i] as! WorningInfoAlarmMonthsModel
+            xAxisLabels.add(model.name ?? "")
+        }
+        
+        chartsView.xAxis.drawLabelsEnabled = true
+        chartsView.xAxis.axisMinimum = 0
+        chartsView.xAxis.axisMaximum = Double(xAxisLabels.count - 1)
+        chartsView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
+        chartsView.xAxis.setLabelCount(xAxisLabels.count , force: true)
+        
+        
+        
+        let yVals1 = (0..<dataArray.count).map { (i) -> ChartDataEntry in
+            let model = dataArray[i] as! WorningInfoAlarmMonthsModel
+
+            return ChartDataEntry(x: Double(i), y: Double(model.sumCnt!)!)
+        }
+        
+        let yVals2 = (0..<dataArray.count).map { (i) -> ChartDataEntry in
+            let model = dataArray[i] as! WorningInfoAlarmMonthsModel
+
+            return ChartDataEntry(x: Double(i), y: Double(model.proportion!)!)
+        }
+        
+        
+        let set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
+        set1.axisDependency = .left
+        set1.setColor(RGBCOLOR(r: 204, 28, 32))
+        set1.circleRadius = 0
+        set1.lineWidth = 1
+        set1.fillAlpha = 0.1
+        set1.fillColor = RGBCOLOR(r: 204, 28, 32)
+        set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set1.drawCircleHoleEnabled = false
+        set1.drawFilledEnabled = true
+        set1.drawValuesEnabled = false
+        
+        let set2 = LineChartDataSet(values: yVals2, label: "DataSet 2")
+        set2.axisDependency = .right
+        set2.setColor(RGBCOLOR(r: 0, 128, 169))
+        set2.circleRadius = 2
+        set2.setCircleColor(RGBCOLOR(r: 0, 128, 169))
+        set2.lineWidth = 1
+        set2.fillAlpha = 65/255
+        set2.fillColor = .red
+        set2.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set2.drawCircleHoleEnabled = false
+        set2.drawValuesEnabled = false
+        
+        
+        let data = LineChartData(dataSets: [set1, set2])
+        data.setValueTextColor(.white)
+        data.setValueFont(.systemFont(ofSize: 9))
         
         chartsView.data = data
         
+        
+//        let set = LineChartDataSet(values: entries, label: "Line DataSet")
+//        set.setColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
+//        set.lineWidth = 1
+//        set.setCircleColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
+//        set.circleRadius = 2
+//        set.circleHoleRadius = 0
+//        //        set.fillColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
+//        set.mode = .linear
+//        set.drawValuesEnabled = false
+//        set.axisDependency = .left
+//
     }
     
-    
-    func generateLineData(dataArray:NSArray) -> LineChartData {
-        let entries = (0..<dataArray.count).map { (i) -> ChartDataEntry in
-            
-            let model = dataArray[i] as! WorningInfoAlarmMonthsModel
-            
-            return ChartDataEntry(x: Double(model.name!)! , y: (Double(model.sumCnt!)!) )
-        }
-        
-        let set = LineChartDataSet(values: entries, label: "Line DataSet")
-        set.setColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
-        set.lineWidth = 1
-        set.setCircleColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
-        set.circleRadius = 2
-        set.circleHoleRadius = 0
-        //        set.fillColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
-        set.mode = .linear
-        set.drawValuesEnabled = false
-        //        set.valueFont = .systemFont(ofSize: 10)
-        //        set.valueTextColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
-        
-        set.axisDependency = .left
-        
-        return LineChartData(dataSet: set)
-    }
-    
-    func generateRateLineData(dataArray:NSArray) -> LineChartData {
-        let entries = (0..<dataArray.count).map { (i) -> ChartDataEntry in
-            
-            let model = dataArray[i] as! WorningInfoAlarmMonthsModel
-            
-            return ChartDataEntry(x: Double(model.name!)! , y: (Double(model.proportion!)!/100) )
-        }
-        
-        let set = LineChartDataSet(values: entries, label: "Line DataSet")
-        set.setColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
-        set.lineWidth = 1
-        set.setCircleColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
-        set.circleRadius = 2
-        set.circleHoleRadius = 0
-        //        set.fillColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
-        set.mode = .linear
-        set.drawValuesEnabled = false
-        //        set.valueFont = .systemFont(ofSize: 10)
-        //        set.valueTextColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
-        
-        set.axisDependency = .right
-        
-        return LineChartData(dataSet: set)
-    }
-    
+//    func generateRateLineData(dataArray:NSArray) -> LineChartData {
+//        let entries = (0..<dataArray.count).map { (i) -> ChartDataEntry in
+//
+//            let model = dataArray[i] as! WorningInfoAlarmMonthsModel
+//
+//            return ChartDataEntry(x: Double(model.name!)! , y: (Double(model.proportion!)!/100) )
+//        }
+//
+//        let set = LineChartDataSet(values: entries, label: "Line DataSet")
+//        set.setColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
+//        set.lineWidth = 1
+//        set.setCircleColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
+//        set.circleRadius = 2
+//        set.circleHoleRadius = 0
+//        //        set.fillColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
+//        set.mode = .linear
+//        set.drawValuesEnabled = false
+//        //        set.valueFont = .systemFont(ofSize: 10)
+//        //        set.valueTextColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
+//
+//        set.axisDependency = .right
+//
+//        return LineChartData(dataSet: set)
+//    }
+//
     
     func setTypesData(array:NSArray) {
         
