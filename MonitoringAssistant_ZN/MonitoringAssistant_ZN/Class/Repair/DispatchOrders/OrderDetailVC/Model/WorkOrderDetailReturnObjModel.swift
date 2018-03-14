@@ -45,7 +45,7 @@ class WorkOrderDetailReturnObjModel: BaseReturnObjModel {
     var repairsTime : String?
     var urgencyName : String?
 
-    var workDealImgs : [String]?
+    var workDealImgs : [WorkOrderDetailImgsModel]?
     
     
     lazy var cellHeight : Double = {

@@ -66,7 +66,8 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
 
 
         let leftAxis = chartView.leftAxis
-        leftAxis.labelTextColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
+        leftAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
+
         leftAxis.axisMaximum = 2500
         leftAxis.axisMinimum = 0
         leftAxis.spaceMax = 500
@@ -75,7 +76,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
 
 
         let rightAxis = chartView.rightAxis
-        rightAxis.labelTextColor = .red
+        rightAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
         rightAxis.axisMaximum = 100
         rightAxis.axisMinimum = 0
         rightAxis.drawGridLinesEnabled = false
@@ -108,7 +109,6 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         data.lineData = generateLineData(dataArray: dataArray)
         data.barData = generateBarData(dataArray: dataArray)
       
-        chartView.xAxis.axisMaximum = data.xMax + 0.25
         
         chartView.data = data
     }
@@ -121,7 +121,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
             
             let model = dataArray[i] as! ReturnObjChargeRateVosModel
             
-            return ChartDataEntry(x: Double(model.monthStr!)! , y: (Double(model.proportion!)!/100) )
+            return ChartDataEntry(x: Double(i+1) , y: (Double(model.proportion!)!/100) )
         }
         
         let set = LineChartDataSet(values: entries, label: "Line DataSet")
@@ -130,7 +130,6 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         set.setCircleColor(UIColor(red: 254/255, green: 214/255, blue: 49/255, alpha: 1))
         set.circleRadius = 2
         set.circleHoleRadius = 0
-//        set.fillColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
         set.mode = .linear
         set.drawValuesEnabled = false
         
@@ -150,19 +149,21 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
             let model = dataArray[i] as! ReturnObjChargeRateVosModel
             xAxisLabels.add(model.monthStr ?? "")
         }
+        xAxisLabels.add("")
         
         chartView.xAxis.drawLabelsEnabled = true
         chartView.xAxis.axisMinimum = 0
         chartView.xAxis.axisMaximum = Double(xAxisLabels.count-1)
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
         chartView.xAxis.setLabelCount(xAxisLabels.count , force: true)
+        chartView.xAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
         
         
         let start = 0
         let yVals = (start..<dataArray.count).map { (i) -> BarChartDataEntry in
              let model = dataArray[i] as! ReturnObjChargeRateVosModel
             
-        return BarChartDataEntry(x: Double(model.monthStr!)!, y: Double(model.sumRealFee!)!)
+        return BarChartDataEntry(x: Double(i+1), y: Double(model.sumRealFee!)!)
         }
         
         var set1: BarChartDataSet! = nil

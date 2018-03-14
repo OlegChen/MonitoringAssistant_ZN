@@ -9,11 +9,11 @@
 import UIKit
 
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
 
     var window: UIWindow?
+    
 
     var blockRotation: Bool = false
     

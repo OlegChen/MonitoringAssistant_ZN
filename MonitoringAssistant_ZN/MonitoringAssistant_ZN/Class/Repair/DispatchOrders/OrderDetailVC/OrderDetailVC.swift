@@ -162,15 +162,37 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
         let view = UIView()
         
+        let A = NSMutableArray()
+        A.addObjects(from: array as! [Any])
+        A.addObjects(from: array as! [Any])
+        A.addObjects(from: array as! [Any])
+        A.addObjects(from: array as! [Any])
+        
         let imgW = (ScreenW - 15 * 4) / 3
         
-        for i in 0..<(array.count) {
+        for i in 0..<(A.count) {
+            
+            let model = A[2] as! WorkOrderDetailImgsModel
             
             let img = UIImageView.init()
             img.contentMode = UIViewContentMode.scaleAspectFill
+            img.clipsToBounds = true
             
-            let urlStr = self.dataModel?.returnObj?.workDealImgs![i] as! String
-            img.kf.setImage(with:URL.init(string: urlStr), placeholder: UIImage(named: "test"), options: nil, progressBlock: nil, completionHandler: nil)
+            img.backgroundColor = UIColor.red
+            
+            let urlStr = model.imgUrl
+//            img.kf.setImage(with:URL.init(string: urlStr!), placeholder: UIImage(named:"配置中心"), options: nil, progressBlock: nil, completionHandler: nil)
+            
+            img.kf.setImage(with: URL.init(string: urlStr!), placeholder: UIImage(named:"配置中心"), options: nil, progressBlock: { (a, b) in
+                
+                print("-----" + String(a))
+                print("++++" + String(b))
+                
+            }, completionHandler: { (img, error, chaheType, url) in
+                
+                print(error ?? "")
+                
+            })
             
             view.addSubview(img)
             let l = i % 3
@@ -184,7 +206,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             
         }
         
-        let height = 15 +  CGFloat((self.dataModel?.returnObj?.workDealImgs?.count)!) / 3 * (imgW + 15)
+        let height = 15 +  CGFloat((A.count)) / 3 * (imgW + 15)
         
         view.frame = CGRect(x: 0 , y : 0 , width: ScreenW , height: height )
         

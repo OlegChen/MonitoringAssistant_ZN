@@ -16,7 +16,7 @@ class NavigationController: UINavigationController {
         
         super.viewDidLayoutSubviews()
 
-        self.navigationBar.titleTextAttributes = [ NSAttributedStringKey.foregroundColor:UIColor.orange,
+        self.navigationBar.titleTextAttributes = [ NSAttributedStringKey.foregroundColor:UIColor.white,
                                                   NSAttributedStringKey.font : UIFont.systemFont(ofSize: 20)]
         
     }

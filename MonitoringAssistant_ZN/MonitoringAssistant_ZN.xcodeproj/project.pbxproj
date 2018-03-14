@@ -389,6 +389,7 @@
 		74DD1C02205596B5002EC264 /* login密码@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C00205596B4002EC264 /* login密码@2x.png */; };
 		74DD1C05205596C6002EC264 /* 用户@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C03205596C6002EC264 /* 用户@3x.png */; };
 		74DD1C06205596C6002EC264 /* 用户@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C04205596C6002EC264 /* 用户@2x.png */; };
+		74DD1C0820597758002EC264 /* WorkOrderDetailImgsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD1C0720597758002EC264 /* WorkOrderDetailImgsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -898,6 +899,7 @@
 		74DD1C00205596B4002EC264 /* login密码@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login密码@2x.png"; sourceTree = "<group>"; };
 		74DD1C03205596C6002EC264 /* 用户@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户@3x.png"; sourceTree = "<group>"; };
 		74DD1C04205596C6002EC264 /* 用户@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户@2x.png"; sourceTree = "<group>"; };
+		74DD1C0720597758002EC264 /* WorkOrderDetailImgsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOrderDetailImgsModel.swift; sourceTree = "<group>"; };
 		95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.release.xcconfig"; sourceTree = "<group>"; };
 		FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitoringAssistant_ZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -951,6 +953,7 @@
 			children = (
 				18A57A4C20455E6200DA7D59 /* WorkOrderDetailModel.swift */,
 				18A57A4E20455E8300DA7D59 /* WorkOrderDetailReturnObjModel.swift */,
+				74DD1C0720597758002EC264 /* WorkOrderDetailImgsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2884,6 +2887,7 @@
 				18D75038201615E20011866E /* WorningInfoVC.swift in Sources */,
 				185AA40E20566BFE00205256 /* IQUITextFieldView+Additions.swift in Sources */,
 				181F5BCF204FBE0A003600DE /* DispatchRecordListReturnObjModel.swift in Sources */,
+				74DD1C0820597758002EC264 /* WorkOrderDetailImgsModel.swift in Sources */,
 				74903E60203B179A00003EF2 /* OrderInfoReturnObjModel.swift in Sources */,
 				18A57A8220464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
