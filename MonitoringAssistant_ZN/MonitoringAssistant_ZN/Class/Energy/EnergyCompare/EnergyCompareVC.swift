@@ -39,7 +39,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
             
             make.left.right.equalTo(self.view).offset(0)
             make.top.equalTo(self.view).offset(NavHeight)
-            make.height.equalTo(50)
+            make.height.equalTo(60)
         }
         
         
@@ -53,10 +53,10 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         mySegmentedControl.addTarget(self, action: #selector(self.onChange), for: .valueChanged)
         
         mySegmentedControl.frame.size = CGSize(
-            width: ScreenW * 0.8, height: 30)
+            width: ScreenW * 0.8, height: 35)
         mySegmentedControl.center = CGPoint(
             x: ScreenW * 0.5,
-            y: CGFloat(25.0))
+            y: CGFloat(30.0))
         topView.addSubview(mySegmentedControl)
         
         
@@ -65,7 +65,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             
-            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight + 20.0 + 30 + 10), 0 , 0, 0))
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight + 60 + 10), 0 , 0, 0))
         }
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -201,7 +201,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate {
     func setHeadView() {
         
         let headerView = UIView()
-        headerView.frame = CGRect(x:0 , y : 0, width:ScreenW , height: 482)
+        headerView.frame = CGRect(x:0 , y : 0, width:ScreenW , height: 522)
         
         let view = (Bundle.main.loadNibNamed("EnergyCompareHeadView", owner: nil, options: nil)![0] as! EnergyCompareHeadView)
         self.headView = view

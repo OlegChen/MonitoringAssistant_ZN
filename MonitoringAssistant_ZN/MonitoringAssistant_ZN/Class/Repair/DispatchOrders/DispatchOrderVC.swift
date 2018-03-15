@@ -83,9 +83,10 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         
         cell.index = indexPath.section
         
-        cell.titleL.text = model.workClass! + " | " + model.workName!
+        
+        cell.titleL.text = model.workName! + " | " + model.workName!
         cell.dateL.text = "报修时间：" + model.createDateStr!
-        cell.longTimeL.text = "报修时长：" + model.repairsTime!
+        cell.longTimeL.text = "报修时长：" + model.repairsTime! + "分钟"
         cell.nameL.text = "接单人：" + model.sendEmpName!
         cell.detailL.text = model.dealDesc
         cell.addressL.text = model.address

@@ -10,6 +10,8 @@ import UIKit
 
 class EnergyEquipment: BaseTableVC {
     let titleArr = ["设备监控", "告警信息" ]
+    let iconArr = [ "设备监控icon","告警icon"]
+
     let imgArr = ["abcd_equipment_monitor_untouch","abcd_alarm_managem_untouch"]
     
     
@@ -48,14 +50,15 @@ class EnergyEquipment: BaseTableVC {
         
         
         cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: imgArr[indexPath.row])
-        
+        cell.iconImgView.image = UIImage.init(named: self.iconArr[indexPath.row])
+
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return ScreenW / 680.0 * 284.0
+        return ScreenW / 680.0 * 284.0 + 50
 
     }
     

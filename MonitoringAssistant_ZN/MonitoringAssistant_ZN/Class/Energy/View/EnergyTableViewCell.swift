@@ -11,7 +11,9 @@ import UIKit
 let EnergyTableViewCell_id = "EnergyTableViewCell"
 
 class EnergyTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var iconImgView: UIImageView!
+    
     @IBOutlet weak var titleL: UILabel!
     
     @IBOutlet weak var imgView: UIImageView!
@@ -21,13 +23,13 @@ class EnergyTableViewCell: UITableViewCell {
 
         self.imgView.clipsToBounds = true
         
-        self.titleL.font=UIFont.boldSystemFont(ofSize: 20)
+        self.titleL.font=UIFont.boldSystemFont(ofSize: 15)
         
-        titleL.layer.shadowColor = UIColor.black.cgColor;
-        titleL.layer.shadowOffset = CGSize(width:2, height:2);
-        titleL.layer.shadowOpacity = 0.7;
-        titleL.layer.shadowRadius = 5;
-        
+//        titleL.layer.shadowColor = UIColor.black.cgColor;
+//        titleL.layer.shadowOffset = CGSize(width:2, height:2);
+//        titleL.layer.shadowOpacity = 0.7;
+//        titleL.layer.shadowRadius = 5;
+//
     }
     
     func setuptitleAndImg(title:String , Img:String) {

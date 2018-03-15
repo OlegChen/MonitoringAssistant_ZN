@@ -69,6 +69,8 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         cell?.levelL.text = self.dataModel?.returnObj?.urgencyName
         cell?.contentL.text = self.dataModel?.returnObj?.repairsDesc
         
+        cell?.selectionStyle = UITableViewCellSelectionStyle.none
+        
         return cell!
     }
     
@@ -83,7 +85,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         self.view.addSubview(btn)
         btn.snp.makeConstraints { (make) in
             
-            make.top.equalTo(self.tableView.snp.bottom).offset(20)
+            make.top.equalTo(self.tableView.snp.bottom).offset(10)
             make.left.equalTo(self.view).offset(45)
             make.right.equalTo(self.view).offset(-45)
             make.height.equalTo(50)
@@ -135,6 +137,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                 
                 self.headView?.titleL.text = (model.returnObj?.workName)! + " | " + (model.returnObj?.typeName)!
                 self.headView?.longTimeL.text = (model.returnObj?.repairsTime)! + "分钟"
+                self.headView?.orderNoL.text = model.returnObj?.workNo
                 self.headView?.dateL.text = model.returnObj?.createDateStr
                 self.headView?.nameL.text = model.returnObj?.sendEmpName
                 self.headView?.connectPersonL.text = model.returnObj?.contactMan
@@ -161,38 +164,30 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     func setupImagefooter(array:NSArray) {
         
         let view = UIView()
+        view.backgroundColor = UIColor.white
         
         let A = NSMutableArray()
         A.addObjects(from: array as! [Any])
-        A.addObjects(from: array as! [Any])
-        A.addObjects(from: array as! [Any])
-        A.addObjects(from: array as! [Any])
+
         
         let imgW = (ScreenW - 15 * 4) / 3
         
         for i in 0..<(A.count) {
             
-            let model = A[2] as! WorkOrderDetailImgsModel
+            let model = A[i] as! WorkOrderDetailImgsModel
             
             let img = UIImageView.init()
             img.contentMode = UIViewContentMode.scaleAspectFill
             img.clipsToBounds = true
             
-            img.backgroundColor = UIColor.red
+            img.tag = i
+            img.isUserInteractionEnabled = true
+            let singleTap =  UITapGestureRecognizer.init(target:self, action: #selector(handleSingleTap(tap:)))
+            img.addGestureRecognizer(singleTap)
             
             let urlStr = model.imgUrl
-//            img.kf.setImage(with:URL.init(string: urlStr!), placeholder: UIImage(named:"配置中心"), options: nil, progressBlock: nil, completionHandler: nil)
             
-            img.kf.setImage(with: URL.init(string: urlStr!), placeholder: UIImage(named:"配置中心"), options: nil, progressBlock: { (a, b) in
-                
-                print("-----" + String(a))
-                print("++++" + String(b))
-                
-            }, completionHandler: { (img, error, chaheType, url) in
-                
-                print(error ?? "")
-                
-            })
+            img.sd_setImage(with: URL.init(string: urlStr!), placeholderImage: UIImage(named:"配置中心"), options: SDWebImageOptions.retryFailed, completed:nil)
             
             view.addSubview(img)
             let l = i % 3
@@ -211,6 +206,75 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         view.frame = CGRect(x: 0 , y : 0 , width: ScreenW , height: height )
         
         self.tableView.tableFooterView = view
+        
+    }
+    
+    @objc private func handleSingleTap(tap:UITapGestureRecognizer) {
+        print("单击")
+        
+        let tag = tap.view?.tag
+        
+        
+        PhotoBroswerVC.show(self, type: PhotoBroswerVCTypeZoom, index: UInt(tag!)) { () -> [Any]? in
+            
+            let modelsM = NSMutableArray()
+            
+            let num = self.dataModel?.returnObj?.workDealImgs!.count
+            
+            for  i in 0..<num! {
+                
+                let m =  self.dataModel?.returnObj?.workDealImgs![i];
+                
+                let pbModel : PhotoModel  = PhotoModel.init()
+                
+                
+                pbModel.mid = UInt(NSInteger( i + 1))
+//                pbModel.title = "";//[NSString stringWithFormat:@"这是标题%@",@(i+1)];
+//                pbModel.desc = "";//[NSString stringWithFormat:@"我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字%@",@(i+1)];
+                pbModel.image_HD_U = m?.imgUrl
+                
+                //源frame
+                pbModel.sourceImageView = tap.view as! UIImageView;
+                
+                modelsM.add(pbModel)
+              
+            }
+            
+            
+            return modelsM as! [Any];
+            
+            }
+        
+//        //避免循环引用
+//        __weak typeof(self) weakSelf=self;
+//
+//        [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
+//
+//
+//            NSArray *networkImages=@[
+//            @"http://www.netbian.com/d/file/20150519/f2897426d8747f2704f3d1e4c2e33fc2.jpg",
+//            @"http://www.netbian.com/d/file/20130502/701d50ab1c8ca5b5a7515b0098b7c3f3.jpg",
+//
+//            ];
+//
+//            NSMutableArray *modelsM = [NSMutableArray arrayWithCapacity:networkImages.count];
+//            for (NSUInteger i = 0; i< networkImages.count; i++) {
+//
+//            PhotoModel *pbModel=[[PhotoModel alloc] init];
+//            pbModel.mid = i + 1;
+//            pbModel.title = [NSString stringWithFormat:@"这是标题%@",@(i+1)];
+//            pbModel.desc = [NSString stringWithFormat:@"我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字我是一段很长的描述文字%@",@(i+1)];
+//            pbModel.image_HD_U = networkImages[i];
+//
+//            //源frame
+//            UIImageView *imageV =(UIImageView *) weakSelf.contentView.subviews[i];
+//            pbModel.sourceImageView = imageV;
+//
+//            [modelsM addObject:pbModel];
+//            }
+//
+//            return modelsM;
+//            }];
         
     }
     

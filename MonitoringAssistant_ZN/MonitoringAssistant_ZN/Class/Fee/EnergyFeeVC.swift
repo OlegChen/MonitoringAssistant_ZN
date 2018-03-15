@@ -46,14 +46,15 @@ class EnergyFeeVC: BaseTableVC {
         
         
         cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "abcd_charge_survey_untouch")
-        
+        cell.iconImgView.image = UIImage.init(named: "收费icon")
+
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return ScreenW / 680.0 * 284.0
+        return ScreenW / 680.0 * 284.0 + 50
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

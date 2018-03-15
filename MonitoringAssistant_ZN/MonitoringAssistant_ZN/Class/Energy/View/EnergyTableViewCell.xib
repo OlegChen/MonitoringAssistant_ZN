@@ -11,38 +11,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="EnergyTableViewCell" customModule="MonitoringAssistant_ZN" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="152" id="KGk-i7-Jjw" customClass="EnergyTableViewCell" customModule="MonitoringAssistant_ZN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="151.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-qQ-NEa">
-                        <rect key="frame" x="10" y="10" width="300" height="94.5"/>
+                        <rect key="frame" x="0.0" y="46" width="320" height="105.5"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIr-aY-u5g">
-                        <rect key="frame" x="24" y="23" width="41" height="24"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <rect key="frame" x="53" y="14.5" width="29" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="用能概况icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-Cx-t2J">
+                        <rect key="frame" x="15" y="8" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="02M-Sd-odb"/>
+                            <constraint firstAttribute="height" constant="30" id="I1r-gD-Bvb"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Okl-44-G2S">
+                        <rect key="frame" x="288" y="8" width="22" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="2hy-nc-zcI"/>
+                            <constraint firstAttribute="width" constant="22" id="jZd-Gu-eIB"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="bIr-aY-u5g" firstAttribute="leading" secondItem="6dZ-qQ-NEa" secondAttribute="leading" constant="14" id="6yf-Pb-Lhb"/>
-                    <constraint firstItem="6dZ-qQ-NEa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="B7x-vi-9dM"/>
-                    <constraint firstItem="bIr-aY-u5g" firstAttribute="top" secondItem="6dZ-qQ-NEa" secondAttribute="top" constant="13" id="LVT-9i-ChM"/>
-                    <constraint firstAttribute="trailing" secondItem="6dZ-qQ-NEa" secondAttribute="trailing" constant="10" id="cen-wf-o2f"/>
+                    <constraint firstItem="bIr-aY-u5g" firstAttribute="centerY" secondItem="8EI-Cx-t2J" secondAttribute="centerY" id="8A2-aK-tGA"/>
+                    <constraint firstItem="bIr-aY-u5g" firstAttribute="leading" secondItem="8EI-Cx-t2J" secondAttribute="trailing" constant="8" id="9b0-7R-5zX"/>
+                    <constraint firstItem="6dZ-qQ-NEa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="B7x-vi-9dM"/>
+                    <constraint firstItem="8EI-Cx-t2J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="WJw-hP-Cmf"/>
+                    <constraint firstAttribute="trailing" secondItem="Okl-44-G2S" secondAttribute="trailing" constant="10" id="alH-c2-faF"/>
+                    <constraint firstAttribute="trailing" secondItem="6dZ-qQ-NEa" secondAttribute="trailing" id="cen-wf-o2f"/>
                     <constraint firstAttribute="bottom" secondItem="6dZ-qQ-NEa" secondAttribute="bottom" id="fKV-6Y-iLV"/>
-                    <constraint firstItem="6dZ-qQ-NEa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="l2I-Da-H5N"/>
+                    <constraint firstItem="Okl-44-G2S" firstAttribute="centerY" secondItem="8EI-Cx-t2J" secondAttribute="centerY" id="jIc-Ej-rSR"/>
+                    <constraint firstItem="8EI-Cx-t2J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jux-Ov-DPu"/>
+                    <constraint firstItem="6dZ-qQ-NEa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="46" id="l2I-Da-H5N"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="iconImgView" destination="8EI-Cx-t2J" id="s4E-rG-Bbg"/>
                 <outlet property="imgView" destination="6dZ-qQ-NEa" id="iBd-os-9Fl"/>
                 <outlet property="titleL" destination="bIr-aY-u5g" id="fN6-ji-1vo"/>
             </connections>
-            <point key="canvasLocation" x="25" y="82.5"/>
+            <point key="canvasLocation" x="25" y="106"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="rightArrow.png" width="7" height="12"/>
+        <image name="用能概况icon.png" width="24" height="24"/>
+    </resources>
 </document>

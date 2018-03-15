@@ -92,10 +92,10 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
             
             //锅炉房
             
-            newAnnotation?.image = UIImage.init(named: "起点")
+            newAnnotation?.image = UIImage.init(named: "蓝标")
         }else {
             
-            newAnnotation?.image = UIImage.init(named: "起点")
+            newAnnotation?.image = UIImage.init(named: "紫标")
             
         }
         
@@ -149,23 +149,64 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
         
         let itemArray : NSMutableArray = []
         
+        let pointsArray = NSMutableArray()
+        
         
         for var model in array {
             
             let m = model as! moniterDataPointsModel
             
             let item = monitorCustomAnnotation()
-   
             item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m.latitude!)! , longitude: Double(m.longitude!)!)
-            
             item.model = m
-            
             itemArray.add(item)
+            
+            let point : BMKMapPoint =  BMKMapPointForCoordinate(item.coordinate);
+            pointsArray.add(point)
 
         }
 
         self._mapView?.addAnnotations(itemArray as! [Any])
+        
+        self.mapViewFit(pointArray: pointsArray)
+    }
+    
+    
+    
+    func mapViewFit(pointArray: NSArray!) {
+        
+        if pointArray.count < 1 {
+            
+            return
+        }
+        
+        let pt = pointArray[0] as! BMKMapPoint
+        var ltX = pt.x
+        var rbX = pt.x
+        var ltY = pt.y
+        var rbY = pt.y
 
+        for i in 1..<pointArray.count {
+            
+            let pt = pointArray[Int(i)] as! BMKMapPoint
+            if pt.x < ltX {
+                ltX = pt.x
+            }
+            if pt.x > rbX {
+                rbX = pt.x
+            }
+            
+            if pt.y > ltY {
+                ltY = pt.y
+            }
+            if pt.y < rbY {
+                rbY = pt.y
+            }
+        }
+        
+        let rect = BMKMapRectMake(ltX, ltY, rbX - ltX, rbY - ltY)
+        _mapView!.visibleMapRect = rect
+        _mapView!.zoomLevel = _mapView!.zoomLevel - 0.3
         
     }
 

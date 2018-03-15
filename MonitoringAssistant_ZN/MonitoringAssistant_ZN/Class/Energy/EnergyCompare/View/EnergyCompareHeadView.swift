@@ -36,13 +36,8 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
-        
         //折线图：
-        
-//        chartView = LineChartView.init(frame: CGRect(x:0, y:100, width:300, height:300))
-//        sel.addSubview(chartView)
-        
+
         chartView.delegate = self
         
         chartView.scaleXEnabled = false
@@ -52,47 +47,20 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         chartView.legend.enabled = false
         chartView.xAxis.drawGridLinesEnabled = false;
         
-        //        chartView.dragEnabled = true
-        //        chartView.setScaleEnabled(true)
-        //        chartView.pinchZoomEnabled = true
         
-        // x-axis limit line
-        //        let llXAxis = ChartLimitLine(limit: 10, label: "Index 10")
-        //        llXAxis.lineWidth = 4
-        //        llXAxis.lineDashLengths = [10, 10, 0]
-        //        llXAxis.labelPosition = .rightBottom
-        //        llXAxis.valueFont = .systemFont(ofSize: 10)
-        //网格线
-//        chartView.xAxis.gridLineDashLengths = [10, 10]
-//        chartView.xAxis.gridLineDashPhase = 0
-        
-        chartView.xAxis.labelPosition = .bottom      //只显示底部的X轴
-        chartView.xAxis.spaceMax = 1 //设置label间隔，若设置为1，则如果能全部显示，则每个柱形下面都会显示label
-        chartView.xAxis.spaceMin = 1
-        chartView.xAxis.drawLabelsEnabled = true
-        let xAxisLabels = ["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
-        chartView.xAxis.axisMaximum = Double(xAxisLabels.count)
-
-        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels)
-        chartView.xAxis.setLabelCount(xAxisLabels.count , force: false)
-        
-        
-        
-        
+        chartView.xAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
+        chartView.leftAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
         
         
         let leftAxis = chartView.leftAxis
         leftAxis.removeAllLimitLines()
         
-        leftAxis.axisMaximum = 3000
-        leftAxis.axisMinimum = 0
+//        leftAxis.axisMaximum = 3000
+//        leftAxis.axisMinimum = 0
         leftAxis.gridLineDashLengths = [5, 5]
-        leftAxis.drawLimitLinesBehindDataEnabled = true
+        leftAxis.drawLimitLinesBehindDataEnabled = false
         
         chartView.rightAxis.enabled = false
-        
-        //[_chartView.viewPortHandler setMaximumScaleY: 2.f];
-        //[_chartView.viewPortHandler setMaximumScaleX: 2.f];
         
         let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
                                    font: .systemFont(ofSize: 12),
@@ -103,10 +71,6 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         chartView.marker = marker
         
         chartView.legend.form = .line
-        
-        //        sliderX.value = 45
-        //        sliderY.value = 100
-        //        slidersValueChanged(nil)
         
         chartView.animate(xAxisDuration: 0)
         
@@ -120,33 +84,48 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
     
     // TODO: Refine data creation
     func setDataCount(array:NSArray) {
-        
-//        let block: (_ index:Int,_ model:EnergyCompareMonthUseEnergiesModel) -> ChartDataEntry = {
-//            (index:Int,model:EnergyCompareMonthUseEnergiesModel) -> ChartDataEntry in
-//
-//            let val = Double(arc4random_uniform(range) + 3)
-//            return ChartDataEntry(x: Double(model.monthStr), y: Double(model.))
-//        }
-        let dataSets = (0..<4).map { i -> LineChartDataSet in
-            
 
+        let xAxisLabels = NSMutableArray()
+        
+        for i in 0..<array.count {
             
+            let model = array[i] as! EnergyCompareMonthUseEnergiesModel
+            xAxisLabels.add(model.monthStr!)
+        }
+        chartView.xAxis.labelPosition = .bottom      //只显示底部的X轴
+        chartView.xAxis.spaceMax = 1 //设置label间隔，若设置为1，则如果能全部显示，则每个柱形下面都会显示label
+        chartView.xAxis.spaceMin = 1
+        chartView.xAxis.axisMinimum = 0
+        chartView.xAxis.drawLabelsEnabled = true
+        chartView.xAxis.axisMaximum = Double(xAxisLabels.count-1)
+        
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
+        chartView.xAxis.setLabelCount(xAxisLabels.count , force: true)
+        
+        
+        
+        
+        let dataSets = (0..<4).map { j -> LineChartDataSet in
+            
+          
             let yVals = (0..<array.count).map {
                 
                 i -> ChartDataEntry in
                 
                 let model = array[i] as! EnergyCompareMonthUseEnergiesModel
                 
-                let val = i == 0 ? Double(model.preUseEnergy!) : ( i == 1 ? Double(model.actualUseEnergy!) : (i == 2 ? Double(model.industryStandard!) : Double(model.planUseEnergy!)) ) //Double()
+                let val = j == 0 ? Double(model.preUseEnergy!) : ( j == 1 ? Double(model.actualUseEnergy!) : (j == 2 ? Double(model.industryStandard!) : Double(model.planUseEnergy!)) ) //Double()
                 let month : String = model.monthStr!
                 
-                return ChartDataEntry(x: Double(month.replacingOccurrences(of: "月", with: ""))!, y: val!)
+                return ChartDataEntry(x: Double(i), y: val!)
                 
             }
-            let set = LineChartDataSet(values: yVals, label: "DataSet \(i)")
+            
+            
+            let set = LineChartDataSet(values: yVals, label: "DataSet \(j)")
             set.drawCirclesEnabled = true
             set.drawValuesEnabled = false
-            
+            set.drawValuesEnabled = false
             set.mode = .horizontalBezier
             set.lineWidth = 1.5
             set.circleRadius = 3
@@ -155,7 +134,7 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
             var color : [UIColor]!
             var circleColor : [UIColor]!
             
-            switch i {
+            switch j {
                 
                 case 0 :
                     color =
@@ -182,10 +161,6 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
             
             return set
         }
-        
-        //        dataSets[0].lineDashLengths = [5, 5]
-        //        dataSets[0].colors = ChartColorTemplates.vordiplom()
-        //        dataSets[0].circleColors = ChartColorTemplates.vordiplom()
  
         let data = LineChartData(dataSets: dataSets)
         data.setValueFont(.systemFont(ofSize: 7, weight: .light))

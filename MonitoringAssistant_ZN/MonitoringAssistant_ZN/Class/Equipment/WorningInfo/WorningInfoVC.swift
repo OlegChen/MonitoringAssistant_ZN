@@ -33,7 +33,6 @@ class WorningInfoVC: BaseTableVC {
         
         self.getData()
         
-        self.view.beginLoading()
 
     }
     
@@ -48,6 +47,9 @@ class WorningInfoVC: BaseTableVC {
     }
     
     func getData() {
+        
+
+        YJProgressHUD.showProgress(nil, in: self.tableView)
         
         weak var weakSelf = self // ADD THIS LINE AS WELL
         
@@ -70,12 +72,11 @@ class WorningInfoVC: BaseTableVC {
                     
                 }
                 
-                self.view.endLoading()
+                YJProgressHUD.hide()
                 
             }, failture: { (error) in
                 
-                self.view.endLoading()
-                
+                YJProgressHUD.hide()
             })
             
             

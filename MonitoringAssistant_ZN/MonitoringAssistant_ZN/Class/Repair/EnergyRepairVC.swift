@@ -11,6 +11,8 @@ import UIKit
 class EnergyRepairVC: BaseTableVC {
 
     let titleArr = ["工单信息", "转派工单" , "轨迹回放"]
+    let iconArr = [ "工单信息icon","派转工单icon","黄金对标icon"]
+
     let imgArr = ["abcd_work_order_details_untouch", "abcd_equipment_monitor_untouch" , "abcd_trajectory_play_untouch"]
 
     
@@ -49,14 +51,15 @@ class EnergyRepairVC: BaseTableVC {
         
         
         cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: self.imgArr[indexPath.row])
-        
+        cell.iconImgView.image = UIImage.init(named: self.iconArr[indexPath.row])
+
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return ScreenW / 680.0 * 284.0
+        return ScreenW / 680.0 * 284.0 + 50
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

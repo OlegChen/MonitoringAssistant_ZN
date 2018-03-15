@@ -23,7 +23,7 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "工单记录"
+        self.title = "派单记录"
         self.view.backgroundColor = .white//RGBCOLOR(r: 240, 240, 240)
         
         
@@ -54,13 +54,48 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
         let model = self.dataArr[indexPath.row] as! DispatchRecordListReturnObjModel
         
+        let dateStr = self.timeStampToString(timeStamp: model.createDate!)
         
-        cell?.dateL.text = model.createDate
+        cell?.dateL.text = dateStr.substring(to: dateStr.index(dateStr.startIndex, offsetBy:11))
+        cell?.timeL.text = dateStr.substring(from: dateStr.index(dateStr.startIndex, offsetBy: 11))
         cell?.nameL.text = "维修师：" + model.sendEmpName!
-        cell?.statusL.text = "??????"
+        
+        var statusStr = ""
+        let str = model.type!
+        switch str {
+        case "1":
+            statusStr = "派单"
+        case "2":
+            statusStr = "改派"
+        case "3":
+            statusStr = "抢单"
+        default:
+            break
+        }
+        
+        let Str2 = model.stauts!
+        switch Str2 {
+        case "1":
+            statusStr =  statusStr + "派单/抢单"
+        case "2":
+            statusStr = statusStr + "接收"
+        case "3":
+            statusStr = statusStr + "到场"
+        case "4":
+            statusStr = statusStr + "完成"
+        case "8":
+            statusStr = statusStr + "取消"
+        case "9":
+            statusStr = statusStr + "改派"
+        default:
+            break
+        }
+        
+        cell?.statusL.text = statusStr
         
         cell?.setLine(isFirst: (indexPath.row == 0 ? true : false ), isLast: (indexPath.row == (self.dataArr.count - 1) ? true : false ))
         
+        cell?.selectionStyle = UITableViewCellSelectionStyle.none
         return cell!
     }
     
@@ -105,6 +140,24 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
     }
 
+    
+    func timeStampToString(timeStamp:String)->String {
+        
+//        let string = NSString(string: timeStamp)
+        
+        let timestampDoubleInSec:Double = Double(timeStamp)!/1000
+        
+//        let timeSta:TimeInterval = string.doubleValue
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat="yyyy年MM月dd日 HH:mm"
+        
+        let date = NSDate(timeIntervalSince1970:  TimeInterval(timestampDoubleInSec))
+        
+        print(dfmatter.string(from: date as Date))
+        return dfmatter.string(from: date as Date)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

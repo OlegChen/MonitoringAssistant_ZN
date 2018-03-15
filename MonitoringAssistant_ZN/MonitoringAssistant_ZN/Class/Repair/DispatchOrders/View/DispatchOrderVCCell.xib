@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报修 | 漏水" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsd-NQ-aIL">
-                        <rect key="frame" x="16" y="16" width="288" height="21"/>
+                        <rect key="frame" x="15" y="16" width="289" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="rtQ-qB-WGK"/>
                         </constraints>
@@ -49,7 +49,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报修时长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysg-Ia-clE">
-                        <rect key="frame" x="16" y="66" width="206" height="21"/>
+                        <rect key="frame" x="15" y="66" width="207" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Yr1-sA-jtv"/>
                         </constraints>
@@ -82,8 +82,8 @@
                     <constraint firstItem="PD6-z0-MA6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="81X-gz-PId"/>
                     <constraint firstAttribute="trailing" secondItem="Rgo-29-Jy5" secondAttribute="trailing" constant="15" id="CNX-eI-240"/>
                     <constraint firstItem="Rgo-29-Jy5" firstAttribute="leading" secondItem="cYO-JM-JsO" secondAttribute="trailing" id="ECb-MP-ezw"/>
-                    <constraint firstItem="Hsd-NQ-aIL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="HZh-Vc-uhG"/>
                     <constraint firstItem="Hsd-NQ-aIL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="K1k-Gr-KqA"/>
+                    <constraint firstItem="Hsd-NQ-aIL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="MqW-EG-DbZ"/>
                     <constraint firstItem="Rgo-29-Jy5" firstAttribute="leading" secondItem="ysg-Ia-clE" secondAttribute="trailing" constant="23" id="Q8K-pI-ty1"/>
                     <constraint firstItem="Rgo-29-Jy5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tzs-Gd-f4w"/>
                     <constraint firstItem="JTd-iB-g61" firstAttribute="top" secondItem="cYO-JM-JsO" secondAttribute="bottom" constant="5" id="WYv-dl-W6u"/>

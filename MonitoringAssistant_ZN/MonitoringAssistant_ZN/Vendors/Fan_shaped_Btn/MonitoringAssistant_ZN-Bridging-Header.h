@@ -25,3 +25,4 @@
 #import "MBProgressHUD.h"
 #import "YJProgressHUD.h"
 
+#import "PhotoBroswerVC.h"
