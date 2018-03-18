@@ -57,6 +57,21 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 设置导航栏颜色
+        navBarBarTintColor = UIColor.init(red: 71/255.0, green: 143/255.0, blue: 183/255.0, alpha: 1.0)
+        
+        // 设置初始导航栏透明度
+        navBarBackgroundAlpha = 1.0
+        
+        // 设置导航栏按钮和标题颜色
+        navBarTintColor = .white
+        navBarTitleColor = .white
+        statusBarStyle = UIStatusBarStyle.lightContent
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -101,6 +116,8 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     @objc func sureBtnClick(btn: UIButton) {
         
+        if(self.dataModel == nil){return}
+        
         let vc = SelectWorkerVCViewController()
         vc.lat = self.dataModel?.returnObj?.latitude
         vc.lon = self.dataModel?.returnObj?.longitude
@@ -111,7 +128,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     @objc func toDispatchOrderListVC() {
         
-        if(self.dataModel == nil){return}
+        if(self.dataModel?.returnObj?.workNo == nil){return}
         
         let vc = DispatchRecordVC()
         vc.workNo = self.dataModel?.returnObj?.workNo as! NSString
@@ -135,23 +152,31 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                 
                 let model = obj as! WorkOrderDetailModel
                 
-                self.headView?.titleL.text = (model.returnObj?.workName)! + " | " + (model.returnObj?.typeName)!
-                self.headView?.longTimeL.text = (model.returnObj?.repairsTime)! + "分钟"
-                self.headView?.orderNoL.text = model.returnObj?.workNo
-                self.headView?.dateL.text = model.returnObj?.createDateStr
-                self.headView?.nameL.text = model.returnObj?.sendEmpName
-                self.headView?.connectPersonL.text = model.returnObj?.contactMan
-                self.headView?.telL.text = model.returnObj?.tel
-                self.headView?.addressL.text = model.returnObj?.address
+                if(model.statusCode == 800){
+                    
+                    self.headView?.titleL.text = (model.returnObj?.workName)! + " | " + (model.returnObj?.typeName)!
+                    self.headView?.longTimeL.text = (model.returnObj?.repairsTime)! + "分钟"
+                    self.headView?.orderNoL.text = model.returnObj?.workNo
+                    self.headView?.dateL.text = model.returnObj?.createDateStr
+                    self.headView?.nameL.text = model.returnObj?.sendEmpName
+                    self.headView?.connectPersonL.text = model.returnObj?.contactMan
+                    self.headView?.telL.text = model.returnObj?.tel
+                    self.headView?.addressL.text = model.returnObj?.address
+                    
+                    self.dataModel = model
+                    
+                    
+                    self.setupImagefooter(array: model.returnObj?.workDealImgs as! NSArray)
+                    
+                    //
+                    //                self.dataArr.addObjects(from: model.returnObj!)
+                    self.tableView.reloadData()
+                }else{
+                    
+                    YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                }
                 
-                self.dataModel = model
-                
-                
-                self.setupImagefooter(array: model.returnObj?.workDealImgs as! NSArray)
-                
-                //
-//                self.dataArr.addObjects(from: model.returnObj!)
-                self.tableView.reloadData()
+               
                 
             }) { (error) in
                 
@@ -215,7 +240,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         let tag = tap.view?.tag
         
         
-        PhotoBroswerVC.show(self, type: PhotoBroswerVCTypeZoom, index: UInt(tag!)) { () -> [Any]? in
+        PhotoBroswerVC.show(self, type: PhotoBroswerVCTypeModal, index: UInt(tag!)) { () -> [Any]? in
             
             let modelsM = NSMutableArray()
             

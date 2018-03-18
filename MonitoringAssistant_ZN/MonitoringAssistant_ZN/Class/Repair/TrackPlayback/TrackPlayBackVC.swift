@@ -17,6 +17,8 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
         
         self.title = "工人分布"
         
+        self.fd_interactivePopDisabled = true
+        
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(_mapView!)
         _mapView?.zoomLevel = 13

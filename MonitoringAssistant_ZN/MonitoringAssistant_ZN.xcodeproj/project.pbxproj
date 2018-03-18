@@ -432,6 +432,8 @@
 		74DD1C05205596C6002EC264 /* 用户@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C03205596C6002EC264 /* 用户@3x.png */; };
 		74DD1C06205596C6002EC264 /* 用户@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DD1C04205596C6002EC264 /* 用户@2x.png */; };
 		74DD1C0820597758002EC264 /* WorkOrderDetailImgsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD1C0720597758002EC264 /* WorkOrderDetailImgsModel.swift */; };
+		74DD1C23205AD416002EC264 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DD1C22205AD415002EC264 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		74DD1C26205E8ED2002EC264 /* CheckVerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DD1C25205E8ED2002EC264 /* CheckVerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1002,6 +1004,10 @@
 		74DD1C03205596C6002EC264 /* 用户@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户@3x.png"; sourceTree = "<group>"; };
 		74DD1C04205596C6002EC264 /* 用户@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户@2x.png"; sourceTree = "<group>"; };
 		74DD1C0720597758002EC264 /* WorkOrderDetailImgsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOrderDetailImgsModel.swift; sourceTree = "<group>"; };
+		74DD1C21205AD415002EC264 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		74DD1C22205AD415002EC264 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		74DD1C24205E8ED2002EC264 /* CheckVerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckVerson.h; sourceTree = "<group>"; };
+		74DD1C25205E8ED2002EC264 /* CheckVerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckVerson.m; sourceTree = "<group>"; };
 		95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.release.xcconfig"; sourceTree = "<group>"; };
 		FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitoringAssistant_ZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1953,6 +1959,8 @@
 			isa = PBXGroup;
 			children = (
 				18D74FC5200C9A880011866E /* HomeVC.swift */,
+				74DD1C24205E8ED2002EC264 /* CheckVerson.h */,
+				74DD1C25205E8ED2002EC264 /* CheckVerson.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1970,6 +1978,7 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				74DD1C20205AD415002EC264 /* FDFullscreenPopGesture */,
 				185AA49A205A140F00205256 /* SDWebImage */,
 				185AA43B205A133200205256 /* WebP.framework */,
 				185AA432205A12FF00205256 /* FLAnimatedImage */,
@@ -2688,6 +2697,15 @@
 			path = "黄金对标";
 			sourceTree = "<group>";
 		};
+		74DD1C20205AD415002EC264 /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				74DD1C21205AD415002EC264 /* UINavigationController+FDFullscreenPopGesture.h */,
+				74DD1C22205AD415002EC264 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 		FC3B3F6FBEC639991887BADF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3057,6 +3075,7 @@
 				18D74FB72008BDA10011866E /* NetworkService.swift in Sources */,
 				18A57A2220455A4D00DA7D59 /* CALayer+Anim.m in Sources */,
 				181F5BF720529E0A003600DE /* EnergyCompareStandardVoModel.swift in Sources */,
+				74DD1C26205E8ED2002EC264 /* CheckVerson.m in Sources */,
 				74903E4B2036B5CB00003EF2 /* moniterDataReturnObjModel.swift in Sources */,
 				74903E7E204314FE00003EF2 /* OrderDetailVC.swift in Sources */,
 				74903E3A2034051300003EF2 /* FeeReturnObjModel.swift in Sources */,
@@ -3166,6 +3185,7 @@
 				74903E882045B78F00003EF2 /* EquipmentMonitorSectionHeaderView.swift in Sources */,
 				74903EB0204BCC6000003EF2 /* FSCalendarCalculator.m in Sources */,
 				74903E6C203FBBFD00003EF2 /* DispatchOrderReturnObjModel.swift in Sources */,
+				74DD1C23205AD416002EC264 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				74903E4F2036D6FE00003EF2 /* monitorCustomAnnotation.swift in Sources */,
 				18A57A4420455A4D00DA7D59 /* PBPGView.m in Sources */,
 				74903EB1204BCC6000003EF2 /* FSCalendarCell.m in Sources */,
@@ -3366,7 +3386,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fengyun Diyin Technologies (Beijing) Co., Ltd (5V85G7GVG3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZN THINKS (BEIJING) ENERGY SAVING TECHNOLOGY CO.,LTD. (C6QYJFAWU4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3423,7 +3443,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fengyun Diyin Technologies (Beijing) Co., Ltd (5V85G7GVG3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZN THINKS (BEIJING) ENERGY SAVING TECHNOLOGY CO.,LTD. (C6QYJFAWU4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3451,11 +3471,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fengyun Diyin Technologies (Beijing) Co., Ltd (5V85G7GVG3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fengyun Diyin Technologies (Beijing) Co., Ltd (5V85G7GVG3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZN THINKS (BEIJING) ENERGY SAVING TECHNOLOGY CO.,LTD. (C6QYJFAWU4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZN THINKS (BEIJING) ENERGY SAVING TECHNOLOGY CO.,LTD. (C6QYJFAWU4)";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5V85G7GVG3;
+				DEVELOPMENT_TEAM = C6QYJFAWU4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3474,11 +3494,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FengyunDiyin.Student;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "588a0152-97ca-4433-80a9-1a9b11afbe8b";
-				PROVISIONING_PROFILE_SPECIFIER = addHoc_2018_3_Studnet;
+				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
+				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -3493,11 +3513,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fengyun Diyin Technologies (Beijing) Co., Ltd (5V85G7GVG3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fengyun Diyin Technologies (Beijing) Co., Ltd (5V85G7GVG3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZN THINKS (BEIJING) ENERGY SAVING TECHNOLOGY CO.,LTD. (C6QYJFAWU4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZN THINKS (BEIJING) ENERGY SAVING TECHNOLOGY CO.,LTD. (C6QYJFAWU4)";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5V85G7GVG3;
+				DEVELOPMENT_TEAM = C6QYJFAWU4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3516,11 +3536,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI/thirdlibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FengyunDiyin.Student;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "588a0152-97ca-4433-80a9-1a9b11afbe8b";
-				PROVISIONING_PROFILE_SPECIFIER = addHoc_2018_3_Studnet;
+				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
+				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

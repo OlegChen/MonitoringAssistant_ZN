@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
             endingLineNumber = "229"
-            landmarkName = "getdataWithType(type:)"
-            landmarkType = "7">
+            landmarkName = "EnergyCompareVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Energy/EnergyPoints/EnergyPointsTableViewController.swift"
-            timestampString = "541862207.286203"
+            timestampString = "543083194.401796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "getdata()"
             landmarkType = "7">
             <Locations>
@@ -42,11 +42,11 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Energy/EnergyPoints/EnergyPointsTableViewController.swift"
-                  timestampString = "542737465.523102"
+                  timestampString = "543081968.032948"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
                   offsetFromSymbolStart = "505">
                </Location>
                <Location
@@ -57,11 +57,11 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Energy/EnergyPoints/EnergyPointsTableViewController.swift"
-                  timestampString = "542737465.526177"
+                  timestampString = "543081968.034337"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "175"
-                  endingLineNumber = "175"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
                   offsetFromSymbolStart = "21">
                </Location>
             </Locations>
@@ -133,11 +133,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/TrackPlayback/TrackDetail/TrackDetailVC.swift"
-            timestampString = "542481087.0121779"
+            timestampString = "543083194.401878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "643"
-            endingLineNumber = "643"
+            startingLineNumber = "665"
+            endingLineNumber = "665"
             landmarkName = "addTrackLine(array:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -165,7 +165,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Fee/FeeInfo/FeeInfoVC.swift"
-                  timestampString = "542737465.54046"
+                  timestampString = "543081968.053224"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
@@ -180,7 +180,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///My_Github_Progect/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Fee/FeeInfo/FeeInfoVC.swift"
-                  timestampString = "542737465.542824"
+                  timestampString = "543081968.054623"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
@@ -196,13 +196,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/OrderDetailVC/OrderDetailVC.swift"
-            timestampString = "542737464.874946"
+            filePath = "MonitoringAssistant_ZN/Class/Main/CheckVerson.m"
+            timestampString = "543083194.402009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "setupImagefooter(array:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "+checkVersionWithVC:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Vendors/CorePhotoBroswerVC/PhotoBroswerVC.m"
+            timestampString = "543083194.402074"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

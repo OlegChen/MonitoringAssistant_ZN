@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
 
@@ -18,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
     var blockRotation: Bool = false
     
     var _mapManager: BMKMapManager?
-
+    
+//    SJNavigationPopGesture.install()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
         
         _mapManager = BMKMapManager()
         // 如果要关注网络及授权验证事件，请设定generalDelegate参数
-        let ret = _mapManager?.start("aA8lmVacxIfkixYrgsFw5PXmyNLr95jK", generalDelegate: self)
+        let ret = _mapManager?.start("T861GXQXTnAYjvF1MxfGlGpXGgFg4yhY", generalDelegate: self)
         if ret == false {
             NSLog("manager start failed!")
         }

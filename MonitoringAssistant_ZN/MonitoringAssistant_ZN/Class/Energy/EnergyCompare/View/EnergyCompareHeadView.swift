@@ -55,9 +55,7 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         let leftAxis = chartView.leftAxis
         leftAxis.removeAllLimitLines()
         
-//        leftAxis.axisMaximum = 3000
-//        leftAxis.axisMinimum = 0
-        leftAxis.gridLineDashLengths = [5, 5]
+        leftAxis.gridLineDashLengths = [4, 3]
         leftAxis.drawLimitLinesBehindDataEnabled = false
         
         chartView.rightAxis.enabled = false

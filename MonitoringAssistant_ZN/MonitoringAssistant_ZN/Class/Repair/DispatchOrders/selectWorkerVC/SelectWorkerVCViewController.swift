@@ -229,15 +229,21 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    func alertViewCancel(_ alertView: UIAlertView) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         
         if(alertView.tag == 1000){
             
-            self.navigationController?.popViewController(animated: true)
-            
+
+            //获取viewController的个数
+            let vcCount = self.navigationController?.viewControllers.count
+        self.navigationController?.popToViewController((self.navigationController?.viewControllers[vcCount! - 2])!, animated: true)
+
+
+
         }
-        
     }
+    
+
     
     func setupTableViewHeaderView() {
         

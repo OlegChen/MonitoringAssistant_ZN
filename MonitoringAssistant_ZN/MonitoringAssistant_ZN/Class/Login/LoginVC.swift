@@ -80,6 +80,7 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
     
     @IBAction func loginClick(_ sender: Any) {
         
+        YJProgressHUD.showProgress(nil, in: UIApplication.shared.keyWindow)
         
         if(self.mobileTextfield.text!.characters.count > 0 && self.pwTextField.text!.characters.count > 0){
             
@@ -88,6 +89,8 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
                         "companyCode" : "0000"] as [String : Any]
             
             NetworkService.networkPostrequest(parameters: para as! [String : String], requestApi: LoginUrl, modelClass: String(describing: LoginModel.self), response: { (obj) in
+                
+                YJProgressHUD.hide()
                 
                 let model : LoginModel = obj as! LoginModel
                 
@@ -102,6 +105,9 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
                     if(self.rememberPWBtn.isSelected){
                         
                         UserCenter.shared.rememberPw(Pw: self.pwTextField.text!)
+                    }else{
+                        
+                        UserCenter.shared.rememberPw(Pw: "")
                     }
                     
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -117,7 +123,7 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
                 
             }) { (error) in
                 
-                
+                YJProgressHUD.hide()
                 
             }
             
@@ -174,6 +180,13 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
         //新号码
         let textLength = text.characters.count + string.characters.count - range.length
         return textLength <= 11
+        
+    }
+    
+    
+    @IBAction func rememberPwBtnClick(_ sender: UIButton) {
+        
+        sender.isSelected  = !sender.isSelected
         
     }
     

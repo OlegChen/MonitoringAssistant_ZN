@@ -24,6 +24,8 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
 
         self.title = "用能监测"
         
+        self.fd_interactivePopDisabled = true
+        
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(_mapView!)
         

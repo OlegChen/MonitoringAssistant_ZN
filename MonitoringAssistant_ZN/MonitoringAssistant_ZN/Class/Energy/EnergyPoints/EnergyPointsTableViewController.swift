@@ -25,6 +25,8 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         super.viewDidLoad()
 
 //        self.title = "用能概况"
+        
+        self.fd_interactivePopDisabled = true
 
 
         let custnav = UIView.init(frame: CGRect(x:0 ,y: 0 , width: ScreenH , height:64))
@@ -79,6 +81,7 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         UIDevice.current.setValue(value, forKey: "orientation")
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.fd_prefersNavigationBarHidden = true
         
     }
     

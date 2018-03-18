@@ -73,23 +73,24 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             break
         }
         
-        let Str2 = model.stauts!
-        switch Str2 {
-        case "1":
-            statusStr =  statusStr + "派单/抢单"
-        case "2":
-            statusStr = statusStr + "接收"
-        case "3":
-            statusStr = statusStr + "到场"
-        case "4":
-            statusStr = statusStr + "完成"
-        case "8":
-            statusStr = statusStr + "取消"
-        case "9":
-            statusStr = statusStr + "改派"
-        default:
-            break
-        }
+//        var Str2 = model.stauts!
+//        switch Str2 {
+//        case "1":
+//            statusStr =  statusStr + "派单/抢单"
+//        case "2":
+//            statusStr = statusStr + "接收"
+//        case "3":
+//            statusStr = statusStr + "到场"
+//        case "4":
+//            statusStr = statusStr + "完成"
+//        case "8":
+//            statusStr = statusStr + "取消"
+//        case "9":
+//            statusStr = statusStr + "改派"
+//        default:
+//            break
+//        }
+        
         
         cell?.statusL.text = statusStr
         

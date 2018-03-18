@@ -2,8 +2,8 @@
 //  YMNavigationController.swift
 //  DanTang
 //
-//  Created by 杨蒙 on 2017/3/24.
-//  Copyright © 2017年 hrscy. All rights reserved.
+//  Created  on 2017/3/24.
+//  Copyright © 2017年  All rights reserved.
 //
 
 import UIKit

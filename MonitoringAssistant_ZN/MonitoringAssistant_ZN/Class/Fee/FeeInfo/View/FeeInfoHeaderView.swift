@@ -58,21 +58,21 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
                                DrawOrder.line.rawValue]
         
         chartView.xAxis.labelPosition = .bottom      //只显示底部的X轴
-//        chartView.xAxis.forceLabelsEnabled = true
+        chartView.xAxis.drawLimitLinesBehindDataEnabled = false
         chartView.xAxis.drawGridLinesEnabled = false;//不绘制网格线
-//        chartView.xAxis.setLabelCount(12 , force: false)
         chartView.xAxis.spaceMax = 1 //设置label间隔，若设置为1，则如果能全部显示，则每个柱形下面都会显示label
         chartView.xAxis.spaceMin = 1
 
 
-        let leftAxis = chartView.leftAxis
-        leftAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
-
-        leftAxis.axisMaximum = 2500
-        leftAxis.axisMinimum = 0
-        leftAxis.spaceMax = 500
-        leftAxis.spaceMin = 500
-        leftAxis.drawGridLinesEnabled = false
+//        let leftAxis = chartView.leftAxis
+//        leftAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
+//
+//        leftAxis.axisMaximum = 2500
+//        leftAxis.axisMinimum = 0
+//        leftAxis.spaceMax = 500
+//        leftAxis.spaceMin = 500
+//        leftAxis.drawGridLinesEnabled = false
+//        leftAxis.gridLineDashLengths = [4, 3]
 
 
         let rightAxis = chartView.rightAxis
@@ -83,10 +83,29 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
 
+        
+        chartView.xAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
+        chartView.leftAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
+        
+        
+        let leftAxis = chartView.leftAxis
+        leftAxis.removeAllLimitLines()
+        leftAxis.axisMinimum = 0
+        leftAxis.spaceMax = 500
+        leftAxis.spaceMin = 500
 
+        leftAxis.gridLineDashLengths = [4, 3]
+        leftAxis.drawLimitLinesBehindDataEnabled = false
         
-//        self.updateChartData()
+        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
+                                   font: .systemFont(ofSize: 12),
+                                   textColor: .white,
+                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
+        marker.chartView = chartView
+        marker.minimumSize = CGSize(width: 80, height: 40)
+        chartView.marker = marker
         
+        chartView.legend.form = .line
         
         
         

@@ -78,6 +78,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
 
         self.title = "轨迹回放"
         
+        self.fd_interactivePopDisabled = true
+        
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(_mapView!)
         
@@ -245,7 +247,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         let nextBtn = UIButton()
         view.addSubview(nextBtn)
         nextBtn.setImage(UIImage.init(named: "右"), for: UIControlState.normal)
-        nextBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40)
+        nextBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
         nextBtn.addTarget(self, action: #selector(nextBtnClick), for: UIControlEvents.touchUpInside)
         nextBtn.snp.makeConstraints { (make) in
             
@@ -330,9 +332,10 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         }
         
         let dateL = UILabel()
-        dateL.text = "选择查询日期 --"
+        dateL.text = "选择查询日期"
         self.Date_L = dateL
-        dateL.font = UIFont.systemFont(ofSize: 14)
+        dateL.textColor = RGBCOLOR(r: 58, 58, 58)
+        dateL.font = UIFont.systemFont(ofSize: 15)
         dateView.addSubview(dateL)
         dateL.snp.makeConstraints { (make) in
             make.centerY.equalTo(dateView.snp.top).offset(30)
@@ -356,9 +359,10 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         
         let startTimeL = UILabel()
-        startTimeL.text = "选择开始时间 --"
+        startTimeL.text = "选择开始时间"
         self.StartTime_L = startTimeL
-        startTimeL.font = UIFont.systemFont(ofSize: 14)
+        startTimeL.textColor = RGBCOLOR(r: 58, 58, 58)
+        startTimeL.font = UIFont.systemFont(ofSize: 15)
         dateView.addSubview(startTimeL)
         startTimeL.snp.makeConstraints { (make) in
             make.centerY.equalTo(dateView.snp.top).offset(90)
@@ -377,15 +381,27 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
         }
         
+        let midLine = UILabel()
+        midLine.text = "----"
+        midLine.textColor = RGBCOLOR(r: 58, 58, 58)
+        midLine.font = UIFont.systemFont(ofSize: 14)
+        dateView.addSubview(midLine)
+        midLine.snp.makeConstraints { (make) in
+            make.centerY.equalTo(dateView.snp.top).offset(90)
+            make.centerX.equalTo(dateView.snp.centerX).offset(0)
+        }
+        
+        
         
         let endTimeL = UILabel()
-        endTimeL.text = "选择结束时间 --"
+        endTimeL.text = "选择结束时间"
         self.EndTime_L = endTimeL
-        endTimeL.font = UIFont.systemFont(ofSize: 14)
+        endTimeL.textColor = RGBCOLOR(r: 58, 58, 58)
+        endTimeL.font = UIFont.systemFont(ofSize: 15)
         dateView.addSubview(endTimeL)
         endTimeL.snp.makeConstraints { (make) in
             make.centerY.equalTo(dateView.snp.top).offset(90)
-            make.left.equalTo(dateView.snp.centerX).offset(20)
+            make.right.equalTo(dateView).offset(-20)
         }
         
         
@@ -407,13 +423,13 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         let timeView = UIView()
         self.timeSelectView = timeView
-        timeView.backgroundColor = .white
+        timeView.backgroundColor = RGBCOLOR(r: 238, 238, 238)
         self.view.addSubview(timeView)
         timeView.snp.makeConstraints { (make) in
             
-            make.top.equalTo(self.view).offset(-210)
+            make.top.equalTo(self.view).offset(-280)
             make.left.right.equalTo(self.view).offset(0)
-            make.height.equalTo(210)
+            make.height.equalTo(280)
             
         }
         
@@ -421,13 +437,13 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         timeView.addSubview(img)
         img.contentMode = UIViewContentMode.scaleAspectFill
         img.image = UIImage.init(named: "watch")
-        img.cornerRadius = 75
+        img.cornerRadius = 100
         img.clipsToBounds = true
         img.snp.makeConstraints { (make) in
             
             make.centerX.equalTo(timeView)
-            make.top.equalTo(timeView.snp.top).offset(0)
-            make.size.equalTo(CGSize(width:150, height:150))
+            make.top.equalTo(timeView.snp.top).offset(20)
+            make.size.equalTo(CGSize(width:190, height:190))
         }
         
         
@@ -439,28 +455,28 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         timePicker.snp.makeConstraints { (make) in
             
             make.center.equalTo(img)
-            make.size.equalTo(CGSize(width:120, height:120))
+            make.size.equalTo(CGSize(width:150, height:150))
         }
         
         
         let hour = UILabel()
         hour.text = "时"
-        hour.font = UIFont.systemFont(ofSize: 12)
+        hour.font = UIFont.systemFont(ofSize: 10)
         hour.textColor = RGBCOLOR(r: 83, 147, 185)
         timeView.addSubview(hour)
         hour.snp.makeConstraints { (make) in
             make.centerY.equalTo(timePicker.snp.centerY).offset(-7)
-            make.centerX.equalTo(timePicker.snp.centerX).offset(0)
+            make.centerX.equalTo(timePicker.snp.centerX).offset(-10)
         }
         
         let min = UILabel()
         min.text = "分"
-        min.font = UIFont.systemFont(ofSize: 12)
+        min.font = UIFont.systemFont(ofSize: 10)
         min.textColor = RGBCOLOR(r: 83, 147, 185)
         timeView.addSubview(min)
         min.snp.makeConstraints { (make) in
             make.centerY.equalTo(timePicker.snp.centerY).offset(-7)
-            make.centerX.equalTo(timePicker.snp.centerX).offset(50)
+            make.centerX.equalTo(timePicker.snp.centerX).offset(60)
         }
         
         let line = UIView()
@@ -469,8 +485,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         line.snp.makeConstraints { (make) in
             
             make.left.right.equalTo(timeView).offset(0)
-            make.height.equalTo(0.5)
-            make.bottom.equalTo(timeView.snp.bottom).offset(-40)
+            make.height.equalTo(1)
+            make.bottom.equalTo(timeView.snp.bottom).offset(-50)
             
         }
         
@@ -484,7 +500,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
             make.bottom.equalTo(timeView.snp.bottom).offset(0)
             make.left.equalTo(timeView).offset(0)
-            make.size.equalTo(CGSize(width:ScreenW / 2 , height:40))
+            make.size.equalTo(CGSize(width:ScreenW / 2 , height:50))
         }
         
         let sureBtn = UIButton()
@@ -496,7 +512,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
             make.bottom.equalTo(timeView.snp.bottom).offset(0)
             make.right.equalTo(timeView.snp.right).offset(0)
-            make.size.equalTo(CGSize(width:ScreenW / 2 , height:40))
+            make.size.equalTo(CGSize(width:ScreenW / 2 , height:50))
         }
         
         
@@ -556,6 +572,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         if((self.DateStr != nil) && (self.StartTimeStr != nil) && (self.EndTimeStr != nil)){
             
+            YJProgressHUD.showProgress(nil, in: UIApplication.shared.keyWindow)
+            
             weak var weakSelf = self // ADD THIS LINE AS WELL
             
             UserCenter.shared.userInfo { (islogin, userInfo) in
@@ -569,6 +587,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                             ]
                 
                 NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: getEmpPointsUrl, modelClass: "TrackPlayBackModel" , response: { (obj) in
+                    
+                    YJProgressHUD.hide()
                     
                     let model = obj as! TrackPlayBackModel
                     
@@ -599,6 +619,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                     
                     
                 }, failture: { (error) in
+                    
+                    YJProgressHUD.hide()
                     
                     
                 })
@@ -860,7 +882,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         self.isShowTimeView = false
         self.timeSelectView.snp.updateConstraints({ (make) in
             
-            make.top.equalTo(self.view).offset(-210)
+            make.top.equalTo(self.view).offset(-300)
         })
         
         UIView.animate(withDuration: 0.2, animations: {
@@ -893,7 +915,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         title.frame = CGRect(x:0, y : 0 ,width: 60 , height: 40)
         title.textAlignment = NSTextAlignment.center
         title.text = component == 0 ? self.HourArray[row] as! String : self.minuteArray[row] as! String
-        title.font = UIFont.systemFont(ofSize: 13)
+        title.font = UIFont.systemFont(ofSize: 15)
         title.textColor = RGBCOLOR(r: 58, 58, 58)
         
         //改变选中行颜色（设置一个全局变量，在选择结束后获取到当前显示行，记录下来，刷新picker）
@@ -942,6 +964,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         if !btn.isSelected {
             
+            _mapView.removeAnnotation(self.midAnnotation)
+            
             let item = CustPointAnnotation()
             let m = self.Data?.returnObj!.first
             item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
@@ -972,12 +996,13 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
             _mapView.removeAnnotation(self.midAnnotation)
             self.bottomplayview.progressView.progress = 0.0
-            
+            self.bottomplayview.playBtn.isSelected = false
             self.stropPlayTrackaAni()
             self.timerCount = 0
             return
             
         }
+        
         
         let m = self.Data?.returnObj![self.timerCount]
         

@@ -16,6 +16,8 @@ class HomeVC: BaseVC ,MainBtnDelegate {
         
         navBarBackgroundAlpha = 0.0
         
+        CheckVerson.checkVersion(withVC: self)
+        
         // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
         WRNavigationBar.defaultShadowImageHidden = true
         

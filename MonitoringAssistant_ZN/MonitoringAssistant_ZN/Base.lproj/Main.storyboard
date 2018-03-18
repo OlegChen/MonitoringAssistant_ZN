@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aAS-3t-38g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aAS-3t-38g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -102,6 +102,9 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="selected" image="checkbox_on.png"/>
+                                    <connections>
+                                        <action selector="rememberPwBtnClick:" destination="NRN-9B-bPc" eventType="touchUpInside" id="kZk-g4-25v"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjm-4z-a7w">
                                     <rect key="frame" x="30" y="55" width="315" height="45"/>
@@ -449,24 +452,25 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" id="vHs-da-9k7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="rVB-BQ-jCc">
                             <rect key="frame" x="0.0" y="165" width="375" height="120"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFv-hA-8Yv">
-                                    <rect key="frame" x="30" y="42" width="315" height="36"/>
+                                    <rect key="frame" x="45" y="40" width="285" height="40"/>
                                     <color key="backgroundColor" red="0.26262226700000002" green="0.55719852449999996" blue="0.72421723599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="36" id="nBx-Mg-ap9"/>
+                                        <constraint firstAttribute="height" constant="40" id="nBx-Mg-ap9"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                     <state key="normal" title="确认修改">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="18"/>
+                                            <real key="value" value="6"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
@@ -474,10 +478,10 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="ZFv-hA-8Yv" firstAttribute="leading" secondItem="rVB-BQ-jCc" secondAttribute="leading" constant="30" id="BkR-Eb-cUi"/>
-                                <constraint firstAttribute="trailing" secondItem="ZFv-hA-8Yv" secondAttribute="trailing" constant="30" id="RcM-0w-4Ji"/>
+                                <constraint firstItem="ZFv-hA-8Yv" firstAttribute="leading" secondItem="rVB-BQ-jCc" secondAttribute="leading" constant="45" id="BkR-Eb-cUi"/>
+                                <constraint firstAttribute="trailing" secondItem="ZFv-hA-8Yv" secondAttribute="trailing" constant="45" id="RcM-0w-4Ji"/>
                                 <constraint firstItem="ZFv-hA-8Yv" firstAttribute="centerX" secondItem="rVB-BQ-jCc" secondAttribute="centerX" id="b6x-Wq-kcf"/>
                                 <constraint firstItem="ZFv-hA-8Yv" firstAttribute="centerY" secondItem="rVB-BQ-jCc" secondAttribute="centerY" id="mSn-Ld-EFa"/>
                             </constraints>

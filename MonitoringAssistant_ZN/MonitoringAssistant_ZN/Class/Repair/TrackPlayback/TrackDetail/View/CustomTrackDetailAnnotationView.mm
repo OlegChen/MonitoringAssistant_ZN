@@ -16,8 +16,8 @@
 #define kHoriMargin 5.f
 #define kVertMargin 5.f
 
-#define kPortraitWidth  30.f
-#define kPortraitHeight 30.f
+#define kPortraitWidth  24.f
+#define kPortraitHeight 24.f
 
 
 @interface CustomTrackDetailAnnotationView ()
@@ -83,7 +83,7 @@
         
         self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
         self.portraitImageView.layer.masksToBounds = YES;
-        self.portraitImageView.layer.cornerRadius = 15.0;
+        self.portraitImageView.layer.cornerRadius = 12.0;
         self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
         self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
         self.portraitImageView.layer.borderWidth = 0.0f;

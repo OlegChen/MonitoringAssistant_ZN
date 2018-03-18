@@ -17,6 +17,7 @@
 #import "PBScrollView.h"
 #import "CALayer+Transition.h"
 
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 
 @interface PhotoBroswerVC ()<UIScrollViewDelegate>
@@ -105,6 +106,7 @@
     
     
     PhotoBroswerVC *pbVC = [[self alloc] init];
+
     
     if(index >= photoModels.count){
         NSLog(@"错误：index越界！");
@@ -128,6 +130,7 @@
 
 /** 真正展示 */
 -(void)show{
+    
     
     switch (_type) {
         case PhotoBroswerVCTypePush://push
@@ -245,6 +248,11 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    self.fd_interactivePopDisabled = NO;
+
 }
 
 

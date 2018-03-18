@@ -26,3 +26,6 @@
 #import "YJProgressHUD.h"
 
 #import "PhotoBroswerVC.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
+#import "CheckVerson.h"

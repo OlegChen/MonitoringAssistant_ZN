@@ -50,7 +50,7 @@ class DispatchRecordCell: UITableViewCell {
             self.iconImg.image = UIImage.init(named: "dispatch_record_first")
             self.line.snp.updateConstraints({ (make) in
                 
-                make.top.equalTo(self.snp.centerY).offset(0)
+                make.top.equalTo(self).offset(50)
                 make.bottom.equalTo(self).offset(0)
             })
             self.layoutIfNeeded()
@@ -67,7 +67,7 @@ class DispatchRecordCell: UITableViewCell {
             self.line.snp.updateConstraints({ (make) in
                 
                 make.top.equalTo(self).offset(0)
-                make.bottom.equalTo(self.snp.centerY).offset(0)
+                make.bottom.equalTo(self).offset(-50)
             })
             self.layoutIfNeeded()
             
