@@ -14,7 +14,7 @@ class OrderInfoStatusWorkStutVosModel: OtherBaseModel {
     var name : String?
     var cnt : String?   //个数
     var sumCnt : String?
-    var proportion : String?   //%
+    var proportion : Double?   //%
 
 //    "": "043002",
 //    "": "已安排",

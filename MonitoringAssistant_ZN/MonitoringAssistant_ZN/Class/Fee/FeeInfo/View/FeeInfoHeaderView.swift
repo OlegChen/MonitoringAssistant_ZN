@@ -140,7 +140,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
             
             let model = dataArray[i] as! ReturnObjChargeRateVosModel
             
-            return ChartDataEntry(x: Double(i+1) , y: (Double(model.proportion!)!/100) )
+            return ChartDataEntry(x: Double(i+1) , y: (model.proportion!/100) )
         }
         
         let set = LineChartDataSet(values: entries, label: "Line DataSet")
@@ -182,7 +182,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         let yVals = (start..<dataArray.count).map { (i) -> BarChartDataEntry in
              let model = dataArray[i] as! ReturnObjChargeRateVosModel
             
-        return BarChartDataEntry(x: Double(i+1), y: Double(model.sumRealFee!)!)
+        return BarChartDataEntry(x: Double(i+1), y: model.sumRealFee!)
         }
         
         var set1: BarChartDataSet! = nil

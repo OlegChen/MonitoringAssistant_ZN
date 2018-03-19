@@ -44,20 +44,20 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
                 switch (codeStr) {
                 case "040001":
                     //("客户来电");
-                    self.telNumL.text = model.cnt
-                    self.telPersentL.text = model.proportion! + "%"
+                    self.telNumL.text = model.cnt! + "个"
+                    self.telPersentL.text = String(model.proportion!) + "%"
                 case "040002":
                     //("现场报修");
-                    self.OnsiteRepairNumL.text = model.cnt
-                    self.OnsiteRepairPercentL.text = model.proportion! + "%"
+                    self.OnsiteRepairNumL.text = model.cnt! + "个"
+                    self.OnsiteRepairPercentL.text = String(model.proportion!) + "%"
                 case "040003":
                     //("移动APP报修");
-                    self.appRepairNumL.text = model.cnt
-                    self.appRepairPercentL.text = model.proportion! + "%"
+                    self.appRepairNumL.text = model.cnt! + "个"
+                    self.appRepairPercentL.text = String(model.proportion!) + "%"
                 case "040004":
                     //("微信端报修");
-                    self.WXRepairNumL.text = model.cnt
-                    self.WXRepairPercentL.text = model.proportion! + "%"
+                    self.WXRepairNumL.text = model.cnt! + "个"
+                    self.WXRepairPercentL.text = String(model.proportion!) + "%"
                 default:
                     break
                 }
@@ -127,7 +127,7 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
             print(model.name)
             print(model.proportion)
             
-            return PieChartDataEntry(value: Double(model.proportion!)! / 100.0,
+            return PieChartDataEntry(value: model.proportion! / 100.0,
                                      label: "" /*parties[i % parties.count]*/)
         }
         

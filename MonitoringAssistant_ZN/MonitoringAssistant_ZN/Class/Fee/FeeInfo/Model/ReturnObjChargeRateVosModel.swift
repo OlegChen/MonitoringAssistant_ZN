@@ -12,9 +12,9 @@ class ReturnObjChargeRateVosModel: OtherBaseModel {
 
     var dateStr : String?
     var monthStr : String?
-    var sumRealFee : String?
-    var sumReceivable : String?
-    var proportion : String?
+    var sumRealFee : Double?
+    var sumReceivable : Double?
+    var proportion : Double?
     
     
 }

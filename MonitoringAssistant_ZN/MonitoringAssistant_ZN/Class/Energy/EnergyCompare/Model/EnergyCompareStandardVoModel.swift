@@ -11,10 +11,10 @@ import UIKit
 class EnergyCompareStandardVoModel: OtherBaseModel {
     
     
-    var preUseEnergy : String?
-    var actualUseEnergy : String?
-    var industryStandard : String?
-    var planUseEnergy : String?
+    var preUseEnergy : Double?
+    var actualUseEnergy : Double?
+    var industryStandard : Double?
+    var planUseEnergy : Double?
     var monthUseEnergies : [EnergyCompareMonthUseEnergiesModel]?
 
     

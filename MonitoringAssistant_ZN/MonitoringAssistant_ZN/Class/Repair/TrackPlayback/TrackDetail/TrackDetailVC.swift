@@ -954,9 +954,17 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         bottom.delegate = self
         bottom.snp.makeConstraints { (make) in
             
-            make.left.right.bottom.equalTo(self.view).offset(0)
-            make.height.equalTo(70)
+            make.left.equalTo(self.view).offset(15)
+            make.right.equalTo(self.view).offset(-15)
+            make.bottom.equalTo(self.view).offset(-20)
+            make.height.equalTo(60)
         }
+        
+        bottom.layer.cornerRadius = 6
+        bottom.layer.shadowColor = UIColor.darkGray.cgColor;
+        bottom.layer.shadowOffset = CGSize(width:2, height:2);
+        bottom.layer.shadowOpacity = 0.5;
+        bottom.layer.shadowRadius = 5;
 
     }
     

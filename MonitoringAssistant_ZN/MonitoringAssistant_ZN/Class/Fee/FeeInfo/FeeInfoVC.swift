@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     
@@ -17,7 +18,7 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         return array
     }()
     
-    var headerView : FeeInfoHeaderView?
+    var headerView : FeeInfoHeaderView!
     
     
 
@@ -62,9 +63,9 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
                 
                 let model = obj as! FeeModel
                 
-                self.headerView?.maxFeeL.text = (model.returnObj?.maxSumRealFee)! + "万元"
-                self.headerView?.averageFeeL.text = (model.returnObj?.avgSumRealFee)! + "万元"
-                self.headerView?.minFeeL.text = (model.returnObj?.minSumRealFee)! + "万元"
+                self.headerView.maxFeeL.text = String(model.returnObj?.maxSumRealFee! as! Double) + "万元"
+                self.headerView.averageFeeL.text = String(model.returnObj?.avgSumRealFee! as! Double) + "万元"
+                self.headerView.minFeeL.text = String( model.returnObj?.minSumRealFee! as! Double) + "万元"
                 self.headerView?.setChartData(dataArray: model.returnObj?.chargeRateVos! as! NSArray)
                 
                 self.dataArr.removeAllObjects()
@@ -97,8 +98,8 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         
         let model = self.dataArr[indexPath.row] as! ReturnObjChargeRateVosModel
         cell.dateL.text = model.dateStr
-        cell.feeL.text = (model.sumRealFee != nil ? model.sumRealFee! : "0") + "万元"
-        cell.percentL.text = (model.proportion != nil ? model.proportion! : "0") + "%"
+        cell.feeL.text = (model.sumRealFee != nil ? String(model.sumRealFee!) : "0") + "万元"
+        cell.percentL.text = (model.proportion != nil ? String(model.proportion!) : "0") + "%"
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell

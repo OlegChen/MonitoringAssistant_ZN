@@ -20,6 +20,7 @@ class EquipmentMonitorHeaderView: UIView {
         var ring3Progress : Double = 0
         var ring4Progress : Double = 0
     
+        
     
         for i in 0..<array.count {
             
@@ -29,24 +30,26 @@ class EquipmentMonitorHeaderView: UIView {
             switch rank1{
             case "1"?:
                 print("在线")
-                ring1Progress = Double(model.proportion!)!
-                self.onlineNumL.text = model.sumCnt! + "个"
-                self.onlineRateL.text = model.proportion! + "%"
+                ring1Progress = Double(model.proportion!)
+                self.onlineNumL.text = model.cnt! + "个"
+                self.onlineRateL.text = String(model.proportion!) + "%"
+                
+                self.sumCntL.text = model.sumCnt! + "个"
             case "2"?:
                 print("离线")
-                ring2Progress = Double(model.proportion!)!
-                self.offLineNumL.text = model.sumCnt! + "个"
-                self.offLineRateL.text = model.proportion! + "%"
+                ring2Progress = Double(model.proportion!)
+                self.offLineNumL.text = model.cnt! + "个"
+                self.offLineRateL.text = String(model.proportion!) + "%"
             case "3"?:
                 print("故障")
-                ring3Progress = Double(model.proportion!)!
-                self.troubleNumL.text = model.sumCnt! + "个"
-                self.troubleRateL.text = model.proportion! + "%"
+                ring3Progress = Double(model.proportion!)
+                self.troubleNumL.text = model.cnt! + "个"
+                self.troubleRateL.text = String(model.proportion!) + "%"
             case "9"?:
                 print("停用")
-                ring4Progress = Double(model.proportion!)!
-                self.stopNumL.text = model.sumCnt! + "个"
-                self.stopRateL.text = model.proportion! + "%"
+                ring4Progress = Double(model.proportion!)
+                self.stopNumL.text = model.cnt! + "个"
+                self.stopRateL.text = String(model.proportion!) + "%"
             default:
                 print("没有评级")
             }
@@ -64,6 +67,9 @@ class EquipmentMonitorHeaderView: UIView {
         
         
     }
+    
+    
+    @IBOutlet weak var sumCntL: UILabel!
     
     @IBOutlet weak var groupContainerView: UIView!
     @IBOutlet weak var progressGroup: MKRingProgressGroupView!
@@ -104,6 +110,7 @@ class EquipmentMonitorHeaderView: UIView {
         exampleView3.layer.cornerRadius = 8
         exampleView4.layer.cornerRadius = 8
 
+        sumCntL.font = UIFont.boldSystemFont(ofSize: 16)
         
     }
     

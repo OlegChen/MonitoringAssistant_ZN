@@ -10,9 +10,9 @@ import UIKit
 
 class FeeReturnObjModel: BaseReturnObjModel {
 
-    var maxSumRealFee : String?
-    var avgSumRealFee : String?
-    var minSumRealFee : String?
+    var maxSumRealFee : Double?
+    var avgSumRealFee : Double?
+    var minSumRealFee : Double?
     
     var chargeRateVos: [ReturnObjChargeRateVosModel]?
 

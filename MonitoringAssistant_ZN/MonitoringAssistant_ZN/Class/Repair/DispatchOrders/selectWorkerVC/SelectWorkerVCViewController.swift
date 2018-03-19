@@ -14,6 +14,9 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
     var lon : String?
     var workNo : String?
     
+    //派单 还是转派
+    var workSendId : String?
+    
     var selectedWorkerModle : SelectWorkerReturnObjModel?
     
     
@@ -197,7 +200,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                         "empNo":userInfo.empNo ,
                         "empName":userInfo.empName,
                         "workNo" : self.workNo,
-                        "workSendId": "0",
+                        "workSendId": self.workSendId,
                         "sendEmpNo":self.selectedWorkerModle?.empNo,
                         "sendEmpName":self.selectedWorkerModle?.empName
             ]
@@ -235,11 +238,14 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             
 
             //获取viewController的个数
-            let vcCount = self.navigationController?.viewControllers.count
-        self.navigationController?.popToViewController((self.navigationController?.viewControllers[vcCount! - 2])!, animated: true)
-
-
-
+            for i in 0..<(self.navigationController?.viewControllers.count)! {
+                
+                if self.navigationController?.viewControllers[i].isKind(of: DispatchOrderVC.self) == true {
+                    
+                    _ = self.navigationController?.popToViewController(self.navigationController?.viewControllers[i] as! DispatchOrderVC, animated: true)
+                    break
+                }
+            }
         }
     }
     

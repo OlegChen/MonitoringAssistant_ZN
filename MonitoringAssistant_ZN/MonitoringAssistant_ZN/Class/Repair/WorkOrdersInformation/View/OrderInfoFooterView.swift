@@ -46,32 +46,30 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
                 switch (codeStr) {
                 case "043001":
                     //("已受理");
-                    self.ReceivedNumL.text = model.cnt
-                    self.ReceivedRateL.text = model.proportion! + "%"
+                    self.ReceivedNumL.text = model.cnt! + "个"
+                    self.ReceivedRateL.text = String(model.proportion!) + "%"
                 case "043002":
                     //("已安排");
-                    self.ArrangedNumL.text = model.cnt
-                    self.ArrangedRateL.text = model.proportion! + "%"
+                    self.ArrangedNumL.text = model.cnt! + "个"
+                    self.ArrangedRateL.text = String(model.proportion!) + "%"
                 case "043003":
                     //("修理中");
-                    self.RepairIngNumL.text = model.cnt
-                    self.RepairIngRateL.text = model.proportion! + "%"
+                    self.RepairIngNumL.text = model.cnt! + "个"
+                    self.RepairIngRateL.text = String(model.proportion!) + "%"
                 case "043004":
                     //("已完成");
-                    self.completeNumL.text = model.cnt
-                    self.completeRateL.text = model.proportion! + "%"
+                    self.completeNumL.text = model.cnt! + "个"
+                    self.completeRateL.text = String(model.proportion!) + "%"
                 case "043009":
                     //("取消");
-                    self.cancleNumL.text = model.cnt
-                    self.cancleRateL.text = model.proportion! + "%"
+                    self.cancleNumL.text = model.cnt! + "个"
+                    self.cancleRateL.text = String(model.proportion!) + "%"
                 default:
                     break
                 }
                 
                 
             }
-            
-            
             
         }
         
@@ -109,8 +107,8 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
             print(model.name)
             print(model.proportion)
             
-            return PieChartDataEntry(value: Double(model.proportion!)! / 100.0,
-                                     label: Double(model.proportion!)! > 0 ?  model.name : "" /*parties[i % parties.count]*/)
+            return PieChartDataEntry(value: model.proportion! / 100.0,
+                                     label: model.proportion! > 0 ?  model.name : "" /*parties[i % parties.count]*/)
         }
         
         let set = PieChartDataSet(values: entries, label: "Election Results")

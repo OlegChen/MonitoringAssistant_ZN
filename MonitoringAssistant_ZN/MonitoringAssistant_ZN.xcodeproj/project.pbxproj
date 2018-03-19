@@ -3497,8 +3497,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
-				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
+				PROVISIONING_PROFILE = "5b02ca82-8829-4b2a-9707-a8479efb3d3c";
+				PROVISIONING_PROFILE_SPECIFIER = companyPc_addHoc_zn;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -3539,8 +3539,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
-				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
+				PROVISIONING_PROFILE = "5b02ca82-8829-4b2a-9707-a8479efb3d3c";
+				PROVISIONING_PROFILE_SPECIFIER = companyPc_addHoc_zn;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

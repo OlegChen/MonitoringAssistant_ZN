@@ -65,8 +65,8 @@ class WorningInfoVC: BaseTableVC {
                     
                     self.headView?.updateArray(array: model.returnObj?.alarmMonths! as! NSArray)
                     
-                    self.headView?.yearNumL.text = model.returnObj?.yearCnt
-                    self.headView?.yearRateL.text = (model.returnObj?.yearProportion)! + "%"
+                    self.headView?.yearNumL.text = String(model.returnObj?.yearCnt! as! Int)
+                    self.headView?.yearRateL.text = String(model.returnObj?.yearProportion! as! Double) + "%"
                     
                     self.headView?.setTypesData(array: model.returnObj?.alarmTypes! as! NSArray)
                     

@@ -21,7 +21,27 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPD-WQ-x4O" customClass="MKRingProgressGroupView" customModule="MonitoringAssistant_ZN" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="215" height="215"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2G-tc-zQR">
+                                    <rect key="frame" x="82.5" y="86" width="49" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnb-vw-NVs">
+                                    <rect key="frame" x="100" y="110" width="14.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="P2G-tc-zQR" firstAttribute="centerX" secondItem="YPD-WQ-x4O" secondAttribute="centerX" id="PhK-wk-082"/>
+                                <constraint firstItem="P2G-tc-zQR" firstAttribute="centerY" secondItem="YPD-WQ-x4O" secondAttribute="centerY" constant="-12" id="aT5-mF-QY0"/>
+                                <constraint firstItem="qnb-vw-NVs" firstAttribute="centerX" secondItem="YPD-WQ-x4O" secondAttribute="centerX" id="uBL-t5-L4h"/>
+                                <constraint firstItem="qnb-vw-NVs" firstAttribute="centerY" secondItem="YPD-WQ-x4O" secondAttribute="centerY" constant="12" id="zfZ-ro-jcs"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="ring1StartColor">
                                     <color key="value" red="0.54728913307189941" green="0.86070746183395386" blue="0.48979181051254272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -253,6 +273,7 @@
                 <outlet property="progressGroup" destination="YPD-WQ-x4O" id="yg6-RA-fxR"/>
                 <outlet property="stopNumL" destination="TFO-SJ-yCF" id="iZP-mf-6Kx"/>
                 <outlet property="stopRateL" destination="bNL-Nb-Kpw" id="niq-Ao-EbL"/>
+                <outlet property="sumCntL" destination="qnb-vw-NVs" id="nau-3w-kw3"/>
                 <outlet property="troubleNumL" destination="2cR-ST-KU2" id="Wvz-av-1ab"/>
                 <outlet property="troubleRateL" destination="1xS-kh-g5U" id="0DI-ll-tF9"/>
             </connections>

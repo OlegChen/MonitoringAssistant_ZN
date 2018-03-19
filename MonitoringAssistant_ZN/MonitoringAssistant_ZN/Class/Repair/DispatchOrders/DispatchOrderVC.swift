@@ -196,6 +196,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         vc.lat = model.latitude
         vc.lon = model.longitude
         vc.workNo = model.workNo
+        vc.workSendId = model.workSendId
         self.navigationController?.pushViewController(vc, animated: true)
         
         

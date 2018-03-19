@@ -11,10 +11,10 @@ import UIKit
 class EnergyCompareMonthUseEnergiesModel: OtherBaseModel {
     
     var monthStr : String?
-    var preUseEnergy : String?
-    var actualUseEnergy : String?
-    var industryStandard : String?
-    var planUseEnergy : String?
+    var preUseEnergy : Double?
+    var actualUseEnergy : Double?
+    var industryStandard : Double?
+    var planUseEnergy : Double?
     
 //    "": "1月",
 //    "": 0,

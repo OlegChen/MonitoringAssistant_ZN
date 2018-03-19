@@ -14,6 +14,6 @@ class WorningInfoAlarmMonthsModel: OtherBaseModel {
     var name : String?
     var cnt : String?
     var sumCnt : String?
-    var proportion : String?
+    var proportion : Double?
     
 }

@@ -122,6 +122,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         vc.lat = self.dataModel?.returnObj?.latitude
         vc.lon = self.dataModel?.returnObj?.longitude
         vc.workNo = self.dataModel?.returnObj?.workNo
+        vc.workSendId = self.dataModel?.returnObj?.workSendId
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

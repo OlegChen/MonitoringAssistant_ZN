@@ -82,14 +82,14 @@ class EquipmentMonitorVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
         cell.titleL.text = model.name
         cell.allNumL.text = model.sumCnt! + "个"
         cell.onLineNumL.text = model.cnt! + "个"
-        cell.rateL.text = model.proportion! + "%"
+        cell.rateL.text = String(model.proportion!) + "%"
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 50
+        return 44
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -24,10 +24,10 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
     
     func updateData(model:EnergyCompareStandardVoModel)  {
         
-        self.label1.text = model.preUseEnergy
-        self.label2.text = model.actualUseEnergy
-        self.label3.text = model.industryStandard
-        self.label4.text = model.planUseEnergy
+        self.label1.text = String(model.preUseEnergy!)
+        self.label2.text = String( model.actualUseEnergy!)
+        self.label3.text = String(model.industryStandard!)
+        self.label4.text = String(model.planUseEnergy!)
         
         self.setDataCount(array: model.monthUseEnergies! as! NSArray)
         
@@ -113,9 +113,9 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
                 let model = array[i] as! EnergyCompareMonthUseEnergiesModel
                 
                 let val = j == 0 ? Double(model.preUseEnergy!) : ( j == 1 ? Double(model.actualUseEnergy!) : (j == 2 ? Double(model.industryStandard!) : Double(model.planUseEnergy!)) ) //Double()
-                let month : String = model.monthStr!
+                let month : String = String(model.monthStr!)
                 
-                return ChartDataEntry(x: Double(i), y: val!)
+                return ChartDataEntry(x: Double(i), y: val)
                 
             }
             

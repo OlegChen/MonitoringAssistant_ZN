@@ -204,7 +204,7 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         let yVals2 = (0..<dataArray.count).map { (i) -> ChartDataEntry in
             let model = dataArray[i] as! WorningInfoAlarmMonthsModel
 
-            return ChartDataEntry(x: Double(i), y: Double(model.proportion!)!)
+            return ChartDataEntry(x: Double(i), y: Double(model.proportion!))
         }
         
         
@@ -288,31 +288,31 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
             
             if(model.code == "1"){
                 
-                self.ring1.ring1.progress = Double(model.proportion!)! / 100
+                self.ring1.ring1.progress = Double(model.proportion!) / 100
                 self.ring1NumL.text = model.sumCnt
-                self.ring1RateL.text = model.proportion! + "%"
+                self.ring1RateL.text = String(model.proportion!) + "%"
                 
             }else  if(model.code == "2"){
                 
-                self.ring2.ring1.progress = Double(model.proportion!)! / 100
+                self.ring2.ring1.progress = Double(model.proportion!) / 100
                 self.ring2NumL.text = model.sumCnt
-                self.ring2RateL.text = model.proportion! + "%"
+                self.ring2RateL.text = String(model.proportion!) + "%"
                 
             }else  if(model.code == "3"){
                 
-                self.ring3.ring1.progress = Double(model.proportion!)! / 100
+                self.ring3.ring1.progress = Double(model.proportion!) / 100
                 self.ring3NumL.text = model.sumCnt
-                self.ring3RateL.text = model.proportion! + "%"
+                self.ring3RateL.text = String(model.proportion!) + "%"
             }else  if(model.code == "4"){
                 
-                self.ring4.ring1.progress = Double(model.proportion!)! / 100
+                self.ring4.ring1.progress = Double(model.proportion!) / 100
                 self.ring4NumL.text = model.sumCnt
-                self.ring4RateL.text = model.proportion! + "%"
+                self.ring4RateL.text = String(model.proportion!) + "%"
             }else  if(model.code == "5"){
                 
-                self.ring5.ring1.progress = Double(model.proportion!)! / 100
+                self.ring5.ring1.progress = Double(model.proportion!) / 100
                 self.ring5NumL.text = model.sumCnt
-                self.ring5RateL.text = model.proportion! + "%"
+                self.ring5RateL.text = String(model.proportion!) + "%"
             }else{
                 
                 

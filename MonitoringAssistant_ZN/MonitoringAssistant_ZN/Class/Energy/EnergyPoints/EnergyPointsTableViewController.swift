@@ -140,7 +140,7 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         cell.label1.text = model.todayEnergy != nil ? model.todayEnergy : "--"
         
         cell.label2.text = model.todayPlanValue != nil ? model.totalPlanValue : "--"
-        cell.label3.text = model.totalFee != nil ? model.totalFee : "--"
+        cell.label3.text = model.todayFee != nil ? model.todayFee : "--"
         cell.label4.text = model.totalPlanValue != nil ? model.totalPlanValue : "--"
         cell.lable5.text = model.totalEnergy != nil ? model.totalEnergy : "--"
         cell.label6.text = model.unilEnergy != nil ?  model.unilEnergy : "--"

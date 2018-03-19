@@ -12,8 +12,8 @@ class WorningInfoReturnObjModel: BaseReturnObjModel {
 
     var alarmMonths : [WorningInfoAlarmMonthsModel]?
     
-    var yearProportion : String?
-    var yearCnt : String?
+    var yearProportion : Double?
+    var yearCnt : Int?
     var alarmTypes : [WorningInfoAlarmTypesModel]?
     
     

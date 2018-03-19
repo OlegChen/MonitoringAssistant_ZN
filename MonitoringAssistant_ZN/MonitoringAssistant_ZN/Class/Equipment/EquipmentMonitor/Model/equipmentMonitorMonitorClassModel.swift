@@ -14,7 +14,7 @@ class equipmentMonitorMonitorClassModel: OtherBaseModel {
     var name : String?
     var cnt : String?
     var sumCnt : String?
-    var proportion : String?
+    var proportion : Double?
     
 //    "code": "6006",
 //    "": "温度传感器",
