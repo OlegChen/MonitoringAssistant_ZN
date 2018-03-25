@@ -164,7 +164,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e91-gB-uqU">
-                                                    <rect key="frame" x="45" y="12.5" width="310" height="30"/>
+                                                    <rect key="frame" x="45" y="14.5" width="310" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="nAO-QA-4dT"/>
                                                     </constraints>
@@ -181,7 +181,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="e91-gB-uqU" firstAttribute="centerY" secondItem="JwC-mc-ELk" secondAttribute="centerY" id="2eX-yV-WLF"/>
+                                                <constraint firstItem="e91-gB-uqU" firstAttribute="centerY" secondItem="JwC-mc-ELk" secondAttribute="centerY" constant="2" id="2eX-yV-WLF"/>
                                                 <constraint firstItem="bt3-Nk-cot" firstAttribute="leading" secondItem="JwC-mc-ELk" secondAttribute="leading" constant="15" id="5Ho-Sj-WU5"/>
                                                 <constraint firstAttribute="trailing" secondItem="b9K-SX-mSF" secondAttribute="trailing" constant="20" id="8au-uF-I6M"/>
                                                 <constraint firstItem="bt3-Nk-cot" firstAttribute="centerY" secondItem="JwC-mc-ELk" secondAttribute="centerY" id="EsR-K4-dSU"/>
@@ -215,7 +215,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opI-dt-oHB">
-                                                    <rect key="frame" x="45" y="12.5" width="310" height="30"/>
+                                                    <rect key="frame" x="45" y="14.5" width="310" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="LZK-Qe-7lX"/>
                                                     </constraints>
@@ -227,7 +227,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="lXk-To-Qmn" secondAttribute="trailing" constant="20" id="Ai8-cm-0sL"/>
                                                 <constraint firstItem="riR-kZ-g96" firstAttribute="centerY" secondItem="55u-c7-FVQ" secondAttribute="centerY" id="Dab-nq-AEI"/>
-                                                <constraint firstItem="opI-dt-oHB" firstAttribute="centerY" secondItem="55u-c7-FVQ" secondAttribute="centerY" id="Fhl-wb-cXa"/>
+                                                <constraint firstItem="opI-dt-oHB" firstAttribute="centerY" secondItem="55u-c7-FVQ" secondAttribute="centerY" constant="2" id="Fhl-wb-cXa"/>
                                                 <constraint firstItem="lXk-To-Qmn" firstAttribute="leading" secondItem="55u-c7-FVQ" secondAttribute="leading" constant="20" id="dd3-Im-lQr"/>
                                                 <constraint firstItem="opI-dt-oHB" firstAttribute="leading" secondItem="riR-kZ-g96" secondAttribute="trailing" constant="5" id="ikh-1g-8I2"/>
                                                 <constraint firstAttribute="bottom" secondItem="lXk-To-Qmn" secondAttribute="bottom" id="tDc-tX-Ohd"/>
@@ -354,7 +354,7 @@
                                                         <constraint firstAttribute="height" constant="35" id="IAJ-kY-XUz"/>
                                                         <constraint firstAttribute="width" constant="100" id="OcE-fE-OXt"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="获取验证码">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>

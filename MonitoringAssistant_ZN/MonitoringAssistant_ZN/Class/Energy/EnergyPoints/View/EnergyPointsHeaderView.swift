@@ -25,10 +25,10 @@ class EnergyPointsHeaderView: UITableViewHeaderFooterView {
             let label = UILabel()
             label.text = arr[i]
             label.textColor = UIColor.black
-            label.font = UIFont.boldSystemFont(ofSize: 14)
+            label.font = UIFont.boldSystemFont(ofSize: 13)
             label.textAlignment = NSTextAlignment.center
             let btnW = ((ScreenH -   (ScreenH == 812 ? 180 : 100 ) ) / 7.0)
-            label.frame = CGRect(x: (ScreenH == 812 ? 130 : 80 ) + btnW * CGFloat(i), y: 0, width: btnW , height: 50)
+            label.frame = CGRect(x: (ScreenH == 812 ? 130 : 80 ) + btnW * CGFloat(i), y: 0, width: btnW , height: 40)
             self.addSubview(label)
             
         }

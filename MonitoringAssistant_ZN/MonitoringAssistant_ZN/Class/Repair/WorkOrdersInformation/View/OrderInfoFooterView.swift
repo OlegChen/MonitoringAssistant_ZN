@@ -99,6 +99,8 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
     
     
     func setDataCount(_ Array: NSArray) {
+        
+        
         let entries = (0..<Array.count).map { (i) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
             
@@ -113,8 +115,8 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         
         let set = PieChartDataSet(values: entries, label: "Election Results")
         set.sliceSpace = 0
-        set.selectionShift = 2
-        set.drawValuesEnabled = false
+        set.selectionShift = 5
+//        set.drawValuesEnabled = true
         
         let ReceivedColor = [UIColor(red: 101/255, green: 148/255, blue: 242/255, alpha: 1)]
         let arrangedColor = [UIColor(red: 90/255, green: 190/255, blue: 220/255, alpha: 1)]
@@ -128,16 +130,19 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
             + CompleteColor
             + cancleColor
 
-
         
-        //        set.valueLinePart1OffsetPercentage = 0.8
-        //        set.valueLinePart1Length = 0.2
-        //        set.valueLinePart2Length = 0.4
-        //        set.xValuePosition = .outsideSlice
-        //        set.yValuePosition = .outsideSlice
+        set.valueLinePart1OffsetPercentage = 0.85
+        set.valueLinePart1Length = 0.5
+        set.valueLinePart2Length = 0.4
+        set.valueLineWidth = 1 //折线的粗细
+        set.valueLineColor = UIColor.gray //折线颜色
+      
+
+                set.xValuePosition = .outsideSlice
+//                set.yValuePosition = .outsideSlice
         
         let data = PieChartData(dataSet: set)
-        
+    
         let pFormatter = NumberFormatter()
         pFormatter.numberStyle = .percent
         pFormatter.maximumFractionDigits = 1
@@ -145,24 +150,28 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         pFormatter.percentSymbol = " %"
         data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
         data.setValueFont(.systemFont(ofSize: 11, weight: .light))
-        data.setValueTextColor(.white)
+        data.setValueTextColor(.black)
         
         chartsView.data = data
         chartsView.highlightValues(nil)
+ 
+ 
+        
     }
     
     
     func setup(pieChartView chartView: PieChartView) {
-        chartView.usePercentValuesEnabled = false
-        chartView.drawSlicesUnderHoleEnabled = false
-        chartView.holeRadiusPercent = 0
-        chartView.transparentCircleRadiusPercent = 0 //半透明空心半径占比
-
-//        chartView.transparentCircleRadiusPercent = 0.61
-        chartView.chartDescription?.enabled = false
-        chartView.setExtraOffsets(left: 0, top: 0, right: 0, bottom: 0)
         
-        chartView.drawCenterTextEnabled = true
+        chartView.usePercentValuesEnabled = true
+        chartView.drawSlicesUnderHoleEnabled = false
+
+        chartView.chartDescription?.enabled = false
+        chartView.setExtraOffsets(left: 20, top: 10, right: 20, bottom: 10)
+
+        chartView.drawCenterTextEnabled = false
+ 
+        
+        
         
         let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.lineBreakMode = .byTruncatingTail
@@ -177,7 +186,7 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         //                                  .foregroundColor : UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)], range: NSRange(location: centerText.length - 19, length: 19))
         //        chartView.centerAttributedText = centerText;
         
-        chartView.drawHoleEnabled = true
+        chartView.drawHoleEnabled = false
         chartView.rotationAngle = 0
         chartView.rotationEnabled = false
         chartView.highlightPerTapEnabled = true
@@ -191,6 +200,10 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         l.yEntrySpace = 0
         l.yOffset = 0
         //        chartView.legend = l
+        
+        chartsView.legend.enabled = false
+
+ 
         
         
         chartsView.layer.shadowColor = UIColor.darkGray.cgColor;

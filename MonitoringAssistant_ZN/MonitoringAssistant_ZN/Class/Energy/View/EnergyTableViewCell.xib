@@ -42,11 +42,21 @@
                             <constraint firstAttribute="width" constant="22" id="jZd-Gu-eIB"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKU-9d-sdb">
+                        <rect key="frame" x="0.0" y="46" width="320" height="105.5"/>
+                        <state key="normal" title="  "/>
+                        <connections>
+                            <action selector="imgBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IdV-T6-hzf"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="dKU-9d-sdb" firstAttribute="width" secondItem="6dZ-qQ-NEa" secondAttribute="width" id="4OQ-gI-eQR"/>
+                    <constraint firstItem="dKU-9d-sdb" firstAttribute="top" secondItem="6dZ-qQ-NEa" secondAttribute="top" id="7Ul-Xx-RXw"/>
                     <constraint firstItem="bIr-aY-u5g" firstAttribute="centerY" secondItem="8EI-Cx-t2J" secondAttribute="centerY" id="8A2-aK-tGA"/>
                     <constraint firstItem="bIr-aY-u5g" firstAttribute="leading" secondItem="8EI-Cx-t2J" secondAttribute="trailing" constant="8" id="9b0-7R-5zX"/>
                     <constraint firstItem="6dZ-qQ-NEa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="B7x-vi-9dM"/>
+                    <constraint firstItem="dKU-9d-sdb" firstAttribute="height" secondItem="6dZ-qQ-NEa" secondAttribute="height" id="VgN-sl-SYh"/>
                     <constraint firstItem="8EI-Cx-t2J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="WJw-hP-Cmf"/>
                     <constraint firstAttribute="trailing" secondItem="Okl-44-G2S" secondAttribute="trailing" constant="10" id="alH-c2-faF"/>
                     <constraint firstAttribute="trailing" secondItem="6dZ-qQ-NEa" secondAttribute="trailing" id="cen-wf-o2f"/>
@@ -54,10 +64,12 @@
                     <constraint firstItem="Okl-44-G2S" firstAttribute="centerY" secondItem="8EI-Cx-t2J" secondAttribute="centerY" id="jIc-Ej-rSR"/>
                     <constraint firstItem="8EI-Cx-t2J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jux-Ov-DPu"/>
                     <constraint firstItem="6dZ-qQ-NEa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="46" id="l2I-Da-H5N"/>
+                    <constraint firstItem="dKU-9d-sdb" firstAttribute="leading" secondItem="6dZ-qQ-NEa" secondAttribute="leading" id="pf9-8S-DcQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="iconImgView" destination="8EI-Cx-t2J" id="s4E-rG-Bbg"/>
+                <outlet property="imgBtn" destination="dKU-9d-sdb" id="5vv-SC-a7T"/>
                 <outlet property="imgView" destination="6dZ-qQ-NEa" id="iBd-os-9Fl"/>
                 <outlet property="titleL" destination="bIr-aY-u5g" id="fN6-ji-1vo"/>
             </connections>

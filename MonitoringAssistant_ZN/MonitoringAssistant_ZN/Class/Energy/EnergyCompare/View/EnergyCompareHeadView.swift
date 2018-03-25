@@ -22,6 +22,15 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
     @IBOutlet weak var label4: UILabel!
     
     
+    
+    @IBOutlet weak var leftTop: NSLayoutConstraint!
+    @IBOutlet weak var righTop: NSLayoutConstraint!
+    
+    @IBOutlet weak var leftBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var righBottom: NSLayoutConstraint!
+    
+    
     func updateData(model:EnergyCompareStandardVoModel)  {
         
         self.label1.text = String(model.preUseEnergy!)
@@ -36,6 +45,13 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        
+        let w = (ScreenW / 2.0 - 50) / 2.0
+        leftTop.constant = -w
+        righTop.constant = w
+        leftBottom.constant = -w
+        righBottom.constant = w
+        
         //折线图：
 
         chartView.delegate = self
@@ -46,7 +62,7 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         chartView.chartDescription?.enabled = false
         chartView.legend.enabled = false
         chartView.xAxis.drawGridLinesEnabled = false;
-        
+        chartView.leftAxis.axisMinimum = 0
         
         chartView.xAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
         chartView.leftAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
@@ -55,7 +71,8 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         let leftAxis = chartView.leftAxis
         leftAxis.removeAllLimitLines()
         
-        leftAxis.gridLineDashLengths = [4, 3]
+        leftAxis.gridLineDashLengths = [4, 0]
+        leftAxis.gridColor = RGBCOLOR(r: 210, 210, 210)
         leftAxis.drawLimitLinesBehindDataEnabled = false
         
         chartView.rightAxis.enabled = false

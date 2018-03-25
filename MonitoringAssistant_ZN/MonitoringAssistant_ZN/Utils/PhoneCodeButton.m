@@ -50,19 +50,19 @@
     UIColor *foreColor =  [UIColor whiteColor]; //enabled ? RedColor : [UIColor myColorWithHexString:@"#888888"];   //[UIColor colorWithHexString:enabled? @"0x3BBD79": @"0xCCCCCC"];
     [self setTitleColor:foreColor forState:UIControlStateNormal];
     if (enabled) {
-        [self setTitle:@"获取验证码" forState:UIControlStateNormal];
-    }else if ([self.titleLabel.text isEqualToString:@"获取验证码"]){
+        [self setTitle:@"重新发送" forState:UIControlStateNormal];
+    }else if ([self.titleLabel.text isEqualToString:@"获取验证码"] || [self.titleLabel.text isEqualToString:@"重新发送"]){
         [self setTitle:@"正在发送..." forState:UIControlStateNormal];
     }
 }
 
 - (void)startUpTimer{
     _durationToValidity = 60;
-    
+    self.backgroundColor = [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1.0];
     if (self.isEnabled) {
         self.enabled = NO;
     }
-    [self setTitle:[NSString stringWithFormat:@"%.0f 秒", _durationToValidity] forState:UIControlStateNormal];
+    [self setTitle:[NSString stringWithFormat:@"重新发送(%.0f秒)", _durationToValidity] forState:UIControlStateNormal];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1
                                                   target:self
                                                 selector:@selector(redrawTimer:)
@@ -76,13 +76,15 @@
     }
     [self.timer invalidate];
     self.timer = nil;
+    self.backgroundColor = [UIColor colorWithRed:247/255.0 green:101/255.0 blue:1/255.0 alpha:1.0];
+
 }
 
 - (void)redrawTimer:(NSTimer *)timer {
     _durationToValidity--;
     if (_durationToValidity > 0) {
-        self.titleLabel.text = [NSString stringWithFormat:@"%.0f 秒", _durationToValidity];//防止 button_title 闪烁
-        [self setTitle:[NSString stringWithFormat:@"%.0f 秒", _durationToValidity] forState:UIControlStateNormal];
+        self.titleLabel.text = [NSString stringWithFormat:@"重新发送(%.0f秒)", _durationToValidity];//防止 button_title 闪烁
+        [self setTitle:[NSString stringWithFormat:@"重新发送(%.0f秒)", _durationToValidity] forState:UIControlStateNormal];
     }else{
         [self invalidateTimer];
     }

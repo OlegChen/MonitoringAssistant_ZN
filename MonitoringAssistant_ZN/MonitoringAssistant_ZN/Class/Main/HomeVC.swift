@@ -54,7 +54,7 @@ class HomeVC: BaseVC ,MainBtnDelegate {
         self.view.addSubview(logoView)
         logoView.snp.makeConstraints { (make) in
             
-            make.bottom.equalTo(fanView.snp.top).offset(-35)
+            make.bottom.equalTo(fanView.snp.top).offset(-50)
             make.width.equalTo(300);
             make.height.equalTo(65);
             make.centerX.equalTo(self.view)

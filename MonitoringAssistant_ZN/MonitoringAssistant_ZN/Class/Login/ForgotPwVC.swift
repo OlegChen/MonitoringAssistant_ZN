@@ -41,6 +41,9 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
         self.phoneNumTextField.delegate = self
         self.newPwTextField.delegate = self
         
+        self.vertifyBtn.layer.borderColor = RGBCOLOR(r: 210, 210, 210).cgColor
+        self.vertifyBtn.layer.borderWidth = 0.5
+        
         
 //        self.view.sho
     }
@@ -49,31 +52,31 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
     @IBAction func verifyBtnClick(_ sender: Any) {
         
         if (self.phoneNumTextField.text!.characters.count > 0 ) {
-            
+
             let para = [
                 "companyCode" : "0000",
                 "mobile"   : self.phoneNumTextField.text ?? ""
                 ] as [String : Any]
-        
+
             NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: getVerifyUrl, modelClass: "BaseModel", response: { (obj) in
-                    
+
                     let model = obj as! BaseModel
 
                     if(model.statusCode == 800){
-                        
+
                         self.vertifyBtn.startUpTimer()
-                        
+
                     }else{
-                        
+
                         YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
                 }
-                    
+
                 }, failture: { (error) in
-                    
-                    
-                    
+
+
+
                 })
-            
+
         }
         
     }

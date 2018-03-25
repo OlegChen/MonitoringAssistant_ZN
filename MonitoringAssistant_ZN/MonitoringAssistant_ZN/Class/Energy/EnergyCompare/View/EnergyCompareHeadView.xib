@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -99,14 +99,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogb-kD-nSJ" customClass="LineChartView" customModule="Charts">
-                    <rect key="frame" x="15" y="62" width="310" height="250"/>
+                    <rect key="frame" x="15" y="72" width="310" height="250"/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="Aj9-fP-BiH"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJX-Yr-8HJ">
-                    <rect key="frame" x="15" y="322" width="310" height="180"/>
+                    <rect key="frame" x="15" y="332" width="310" height="180"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xa-fu-6bF">
                             <rect key="frame" x="155" y="5" width="0.5" height="170"/>
@@ -176,6 +176,7 @@
                         <constraint firstItem="5fH-cf-xs5" firstAttribute="centerX" secondItem="FJX-Yr-8HJ" secondAttribute="centerX" constant="-50" id="995-tv-M7U"/>
                         <constraint firstAttribute="bottom" secondItem="7xa-fu-6bF" secondAttribute="bottom" constant="5" id="GeD-7r-FZz"/>
                         <constraint firstItem="7xa-fu-6bF" firstAttribute="centerX" secondItem="FJX-Yr-8HJ" secondAttribute="centerX" id="H9h-sJ-4ms"/>
+                        <constraint firstItem="7Ge-Wh-8Xb" firstAttribute="centerX" secondItem="FJX-Yr-8HJ" secondAttribute="centerX" constant="50" id="HmV-CV-Q1B"/>
                         <constraint firstItem="002-P6-8LE" firstAttribute="top" secondItem="jgy-hT-uGe" secondAttribute="bottom" constant="2" id="JQd-lS-rOP"/>
                         <constraint firstItem="7xa-fu-6bF" firstAttribute="centerY" secondItem="FJX-Yr-8HJ" secondAttribute="centerY" id="KPh-iF-N2k"/>
                         <constraint firstItem="g9N-eu-7AX" firstAttribute="centerX" secondItem="plA-6N-WVV" secondAttribute="centerX" id="KY5-1i-E7c"/>
@@ -193,13 +194,18 @@
                         <constraint firstItem="gNX-Xy-XRN" firstAttribute="centerX" secondItem="FJX-Yr-8HJ" secondAttribute="centerX" id="nEr-db-51V"/>
                         <constraint firstItem="jgy-hT-uGe" firstAttribute="centerY" secondItem="FJX-Yr-8HJ" secondAttribute="centerY" constant="20" id="qeR-5T-y05"/>
                         <constraint firstItem="mCi-IS-Nzy" firstAttribute="centerX" secondItem="7Ge-Wh-8Xb" secondAttribute="centerX" id="rsS-bw-l6p"/>
-                        <constraint firstItem="7Ge-Wh-8Xb" firstAttribute="centerX" secondItem="FJX-Yr-8HJ" secondAttribute="centerX" constant="50" id="vyd-qD-jGp"/>
                         <constraint firstItem="7Ge-Wh-8Xb" firstAttribute="centerY" secondItem="FJX-Yr-8HJ" secondAttribute="centerY" constant="-40" id="wLW-c9-mmG"/>
                         <constraint firstItem="gNX-Xy-XRN" firstAttribute="leading" secondItem="FJX-Yr-8HJ" secondAttribute="leading" constant="50" id="wYo-nv-IfN"/>
                         <constraint firstItem="plA-6N-WVV" firstAttribute="centerX" secondItem="FJX-Yr-8HJ" secondAttribute="centerX" constant="50" id="xKK-wB-cVW"/>
                         <constraint firstItem="gNX-Xy-XRN" firstAttribute="centerY" secondItem="FJX-Yr-8HJ" secondAttribute="centerY" id="zcV-pF-mhq"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="能耗（千克·标煤）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Su-8h-Pms">
+                    <rect key="frame" x="15" y="56.5" width="93.5" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -215,10 +221,12 @@
                 <constraint firstAttribute="trailing" secondItem="ogb-kD-nSJ" secondAttribute="trailing" constant="15" id="EG0-1f-pKj"/>
                 <constraint firstItem="dGV-J0-8Br" firstAttribute="centerY" secondItem="Hkd-ab-Rep" secondAttribute="centerY" id="Fzm-6b-rld"/>
                 <constraint firstItem="bOr-hs-LnP" firstAttribute="centerY" secondItem="Hkd-ab-Rep" secondAttribute="centerY" id="G2D-zs-be4"/>
-                <constraint firstItem="ogb-kD-nSJ" firstAttribute="top" secondItem="i57-5k-CEg" secondAttribute="bottom" constant="15" id="Gn0-zc-Ed6"/>
+                <constraint firstItem="ogb-kD-nSJ" firstAttribute="top" secondItem="i57-5k-CEg" secondAttribute="bottom" constant="25" id="Gn0-zc-Ed6"/>
                 <constraint firstItem="Hkd-ab-Rep" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="MsP-a3-acc"/>
+                <constraint firstItem="ogb-kD-nSJ" firstAttribute="top" secondItem="3Su-8h-Pms" secondAttribute="bottom" constant="2" id="ObS-de-5af"/>
                 <constraint firstItem="dGV-J0-8Br" firstAttribute="leading" secondItem="j59-na-5QV" secondAttribute="trailing" id="Q9o-dl-4kL"/>
                 <constraint firstItem="i57-5k-CEg" firstAttribute="centerY" secondItem="Hkd-ab-Rep" secondAttribute="centerY" id="SIR-R8-wez"/>
+                <constraint firstItem="3Su-8h-Pms" firstAttribute="leading" secondItem="QjF-T9-vam" secondAttribute="leading" id="SO7-Nl-0qh"/>
                 <constraint firstItem="FJX-Yr-8HJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="XMX-dX-gjh"/>
                 <constraint firstItem="i57-5k-CEg" firstAttribute="leading" secondItem="Hkd-ab-Rep" secondAttribute="trailing" id="aGd-lB-rOw"/>
                 <constraint firstItem="Uae-Ib-zz0" firstAttribute="leading" secondItem="9WY-0S-noI" secondAttribute="trailing" id="b82-zV-Ahs"/>
@@ -240,6 +248,10 @@
                 <outlet property="label2" destination="7Ge-Wh-8Xb" id="zLI-E0-NNp"/>
                 <outlet property="label3" destination="jgy-hT-uGe" id="bsg-hZ-aT8"/>
                 <outlet property="label4" destination="plA-6N-WVV" id="MU5-Jm-N2v"/>
+                <outlet property="leftBottom" destination="blq-tI-6P9" id="NjW-s7-Kdn"/>
+                <outlet property="leftTop" destination="995-tv-M7U" id="cyI-hS-Jvw"/>
+                <outlet property="righBottom" destination="xKK-wB-cVW" id="Oad-Oc-4Cm"/>
+                <outlet property="righTop" destination="HmV-CV-Q1B" id="BxU-X7-X5j"/>
             </connections>
             <point key="canvasLocation" x="2" y="240"/>
         </view>

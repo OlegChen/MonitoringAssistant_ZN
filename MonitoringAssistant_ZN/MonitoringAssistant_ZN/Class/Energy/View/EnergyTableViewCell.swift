@@ -18,10 +18,23 @@ class EnergyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imgView: UIImageView!
     
+    
+    @IBOutlet weak var imgBtn: UIButton!
+    
+    
+    @IBAction func imgBtnClick(_ sender: UIButton) {
+        
+        
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
         self.imgView.clipsToBounds = true
+        self.imgView.isHidden = true
+        self.imgBtn.clipsToBounds = true
+        self.imgBtn.adjustsImageWhenHighlighted = false
         
         self.titleL.font=UIFont.boldSystemFont(ofSize: 15)
         
@@ -35,14 +48,18 @@ class EnergyTableViewCell: UITableViewCell {
     func setuptitleAndImg(title:String , Img:String) {
         
         self.titleL.text = title
-        self.imgView.image = UIImage.init(named: Img)
+        
+        self.imgBtn.setBackgroundImage(UIImage.init(named: Img), for: .normal)
+        self.imgBtn.setBackgroundImage(UIImage.init(named: Img), for: .highlighted)
+        
+
         
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
+
 }

@@ -81,7 +81,6 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
         chartsView.legend.enabled = false
         chartsView.setExtraOffsets(left: 0, top: 10, right: 0, bottom: 0)
         
-        
 //         chartView.drawEntryLabelsEnabled = !chartView.drawEntryLabelsEnabled
 //        set.drawValuesEnabled = !set.drawValuesEnabled
 
@@ -109,11 +108,11 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
         paragraphStyle.alignment = .center
         
         let centerText = NSMutableAttributedString(string: "工单数量\n" + model.sumCnt! + "个")
-        centerText.setAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 13)!,
+        centerText.setAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 16)!,
                                   .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
-        centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 11)!,
+        centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 15)!,
                                   .foregroundColor : UIColor.black], range: NSRange(location: 0, length: centerText.length ))
-        centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 11)!,
+        centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 15)!,
                                   .foregroundColor : UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)], range: NSRange(location: centerText.length, length: 0))
         chartsView.centerAttributedText = centerText;
 

@@ -95,7 +95,7 @@ class OrderInfoVC: BaseVC, UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 20
+        return 10
     }
     
 

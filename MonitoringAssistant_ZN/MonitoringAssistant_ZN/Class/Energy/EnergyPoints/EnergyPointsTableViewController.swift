@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import ESPullToRefresh
 
 class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -69,9 +70,20 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         
         self.tableView.tableFooterView = UIView()
         
-        self.view.beginLoading()
+//        self.view.beginLoading()
         
         self.getdata()
+        
+        
+        self.tableView.es.addPullToRefresh {
+            
+            [weak self] in
+            
+            self?.getdata()
+            
+        }
+        
+        self.tableView.es.startPullToRefresh()
         
     }
     
@@ -158,12 +170,12 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 60
+        return 35
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 50
+        return 40
     }
     
     
@@ -179,6 +191,8 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
                 
                 if(model.statusCode == 800){
                     
+                    self.dataArr.removeAllObjects()
+                    
                     self.dataArr.addObjects(from: model.returnObj!)
                     self.tableView.reloadData()
                 }else{
@@ -188,9 +202,12 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
                 
                 self.view.endLoading()
                 
+                self.tableView.es.stopPullToRefresh()
+                
             }) { (error) in
                 
                 self.view.endLoading()
+                self.tableView.es.stopPullToRefresh()
             }
             
         }
