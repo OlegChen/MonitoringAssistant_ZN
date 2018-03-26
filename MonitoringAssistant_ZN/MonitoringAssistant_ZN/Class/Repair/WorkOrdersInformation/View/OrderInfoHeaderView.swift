@@ -34,6 +34,8 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
     func setDataArray(array:NSArray) {
         
         self.setDataCount(array)
+        chartsView.animate(xAxisDuration: 0.5, easingOption: .linear)
+
         
         for  i in 0..<array.count {
             
@@ -95,7 +97,7 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
 //        set.drawValuesEnabled = !set.drawValuesEnabled
 
         
-        chartsView.animate(xAxisDuration: 0, easingOption: .easeOutBack)
+//        chartsView.animate(xAxisDuration: 0.5, easingOption: .easeOutBack)
         
 //        self.setDataCount(Int(4), range: UInt32(100))
 

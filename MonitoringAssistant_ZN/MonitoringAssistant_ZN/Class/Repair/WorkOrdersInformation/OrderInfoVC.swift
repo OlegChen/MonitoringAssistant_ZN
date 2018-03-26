@@ -22,6 +22,7 @@ class OrderInfoVC: BaseVC, UITableViewDelegate,UITableViewDataSource {
         self.title = "工单信息"
 
         self.tableView = UITableView()
+        self.tableView?.backgroundColor = RGBCOLOR(r: 242, 242, 242)
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.view.addSubview(self.tableView!)
@@ -46,13 +47,22 @@ class OrderInfoVC: BaseVC, UITableViewDelegate,UITableViewDataSource {
         self.tableView?.tableFooterView = view2
         
         
-        self.getDataInfo()
+        
+        
+        
+        self.tableView?.es.addPullToRefresh {
+            
+            [weak self] in
+            self?.getDataInfo()
+            
+        }
+        
+        self.tableView?.es.startPullToRefresh()
         
     }
     
     func getDataInfo() {
         
-        weak var weakSelf = self // ADD THIS LINE AS WELL
         
         UserCenter.shared.userInfo { (islogin, userInfo) in
             
@@ -69,9 +79,14 @@ class OrderInfoVC: BaseVC, UITableViewDelegate,UITableViewDataSource {
                     
                 }
                 
+                self.tableView?.es.stopPullToRefresh()
+
+                
             }, failture: { (error) in
                 
-                
+                self.tableView?.es.stopPullToRefresh()
+
+
             })
             
         }

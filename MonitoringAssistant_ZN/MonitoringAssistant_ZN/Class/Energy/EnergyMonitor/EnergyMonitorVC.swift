@@ -60,7 +60,7 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
         
         
     }
-    
+
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
     
             let AnnotationViewID = "123123"
@@ -69,52 +69,56 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
 //
 //            if newAnnotation == nil {
         
-                var newAnnotation = BMKPinAnnotationView.init(annotation: annotation, reuseIdentifier: AnnotationViewID)
-                
-                let popView = Bundle.main.loadNibNamed("EnergyMonitorPopView", owner: nil, options: nil)?[0] as! EnergyMonitorPopView
-                let custPopView =  BMKActionPaopaoView.init(customView: popView)
-        
-        
+        let newAnnotation : monitorCustomPinAnnotation  = monitorCustomPinAnnotation.init(annotation: annotation, reuseIdentifier: AnnotationViewID)
+
+        let popView = Bundle.main.loadNibNamed("EnergyMonitorPopView", owner: nil, options: nil)?[0] as! EnergyMonitorPopView
+        popView.width = 0
         let custAnnotation = annotation as! monitorCustomAnnotation
         popView.setData(stationNo:  (custAnnotation.model?.stationNo)!, typeName: (custAnnotation.model?.stationType)! == "032001" ? "锅炉房" : "换热站")
+
+
+        let custPopView =  BMKActionPaopaoView.init(customView: popView)
+
+        newAnnotation.paopaoView = nil
+        newAnnotation.paopaoView = custPopView
         
-                
-                newAnnotation?.paopaoView = nil
-                newAnnotation?.paopaoView = custPopView
-//            }
-        
-            //BMKPinAnnotationView.init(annotation: annotation, reuseIdentifier: AnnotationViewID)  //as! BMKPinAnnotationView //[[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        newAnnotation.model = custAnnotation.model
+
             // 从天上掉下效果
-        newAnnotation?.animatesDrop = false
+        newAnnotation.animatesDrop = false
             // 设置可拖拽
-        newAnnotation?.isDraggable = false
+        newAnnotation.isDraggable = false
             //设置大头针图标
         
         if (custAnnotation.model?.stationType == "032001") {
             
             //锅炉房
             
-            newAnnotation?.image = UIImage.init(named: "蓝标")
+            newAnnotation.image = UIImage.init(named: "蓝标")
         }else {
             
-            newAnnotation?.image = UIImage.init(named: "紫标")
+            newAnnotation.image = UIImage.init(named: "紫标")
             
         }
-        
-        //"未标题-1")
-            
-//            if (newAnnotation.paopaoView as AnyObject).isKind(of: EnergyMonitorPopView.self) == false {
-//
-//
-//            }
             
      
-            
         return newAnnotation;
             
     
         }
     
+    func mapView(_ mapView: BMKMapView!, annotationViewForBubble view: BMKAnnotationView!) {
+        
+
+
+        
+    }
+    
+    func mapView(_ mapView: BMKMapView!, didSelect view: BMKAnnotationView!) {
+        
+
+        
+    }
     
     func getData() {
         
@@ -215,6 +219,64 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    func setData(stationNo:String , typeName:String , completionHandler: @escaping (_ width:Double , _ model:StationDetailModel) -> Void) {
+        
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            let para = ["companyCode":userInfo.companyCode ,
+                        "orgCode":userInfo.orgCode ,
+                        "empNo":userInfo.empNo ,
+                        "empName":userInfo.empName,
+                        "stationNo":stationNo ]
+            
+            
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: moniterPointDataUrl, modelClass: "StationDetailModel", response: { (obj) in
+                
+                let model = obj as! StationDetailModel
+                
+                
+                let titleWidth = self.textSize(text: ((model.returnObj?.stationName)! + "#" + typeName), font: UIFont.systemFont(ofSize: 15), maxSize: CGSize(width: 1000 ,height: 20))
+                let addressWidth = self.textSize(text: ("地址：" + (model.returnObj?.address != nil ? (model.returnObj?.address)! : "--")), font: UIFont.systemFont(ofSize: 15), maxSize: CGSize(width: 1000 ,height: 20))
+                
+                let maxW = max(titleWidth.width + 50, addressWidth.width + 50)
+                
+                var w = 0.0
+                
+                
+                if maxW < 180 {
+                    
+                    w = 180
+                }else if maxW > (ScreenW - 60){
+                    
+                    w = Double(ScreenW - 60)
+                    
+                }else{
+                    
+                    w = Double(maxW)
+                    
+                }
+                
+                completionHandler(w, model)
+                
+                
+            }, failture: { (error) in
+                
+                
+            })
+            
+            
+        }
+        
+    }
+    
+    
+    func textSize(text : String , font : UIFont , maxSize : CGSize) -> CGSize{
+        return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font : font], context: nil).size
     }
     
 

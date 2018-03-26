@@ -26,6 +26,10 @@ class EnergyMonitorPopView: UIView {
     @IBOutlet weak var label6: UILabel!
     
     
+    var rectangleShaplayer : CAShapeLayer!
+    var triangleShaplayer : CAShapeLayer!
+
+    
     func setData(stationNo:String , typeName:String) {
         
         
@@ -50,6 +54,46 @@ class EnergyMonitorPopView: UIView {
                 self.label5.text = "累计用水：" + (model.returnObj?.accumulatedWater != nil ? (model.returnObj?.accumulatedWater)! : "--") + "t"
                 self.label6.text = "累计用气：" + (model.returnObj?.accumulatedGas != nil ? (model.returnObj?.accumulatedGas)! : "--") + "m³"
                 
+                
+                let titleWidth = self.textSize(text: self.titleL.text!, font: UIFont.systemFont(ofSize: 15), maxSize: CGSize(width: 1000 ,height: 20))
+                let addressWidth = self.textSize(text: self.label1.text!, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+                let telWidth = self.textSize(text: self.label3.text!, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+                let eleWidth = self.textSize(text: self.label4.text!, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+                let waterWidth = self.textSize(text: self.label5.text!, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+                let gasWidth = self.textSize(text: self.label6.text!, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+                
+                let maxW = max(titleWidth.width + 50, addressWidth.width + 50, telWidth.width + 50, eleWidth.width + 50 , waterWidth.width + 50 , gasWidth.width + 50)
+                
+                
+                
+                if maxW < 180 {
+                    
+                    self.x = -90
+                    self.width = 180
+                }else if maxW > (ScreenW - 60){
+                    self.x = -(ScreenW - 60) / 2.0
+                    self.width = ScreenW - 60
+                    
+                }else{
+                    
+                    self.x = -(maxW / 2.0)
+                    self.width = maxW
+                    
+                }
+                
+                let path : UIBezierPath = UIBezierPath.init(roundedRect: CGRect(x: 10 ,y:10 ,width: maxW - 20 , height:235-30), cornerRadius: 6)
+                self.rectangleShaplayer.path = path.cgPath
+                
+                let path1 = UIBezierPath()
+                path1.move(to: CGPoint(x:maxW / 2.0 + 5 , y :205 ))
+                path1.addLine(to: CGPoint(x:maxW / 2.0 , y :235 ))
+                path1.addLine(to: CGPoint(x:maxW / 2.0 + 40 , y :205 ))
+                path1.close()
+                self.triangleShaplayer.path = path1.cgPath
+                
+                self.layoutIfNeeded()
+                
+                
             }, failture: { (error) in
                 
                 
@@ -64,32 +108,38 @@ class EnergyMonitorPopView: UIView {
         super.awakeFromNib()
         
         self.backgroundColor = UIColor.clear
-        
-        
+
+
         let shapLayer : CAShapeLayer = CAShapeLayer()
-        let path : UIBezierPath = UIBezierPath.init(roundedRect: CGRect(x: 10 ,y:10 ,width: 280 - 20 , height:235-30), cornerRadius: 6)
-        shapLayer.path = path.cgPath
+        self.rectangleShaplayer = shapLayer
+//        let path : UIBezierPath = UIBezierPath.init(roundedRect: CGRect(x: 10 ,y:10 ,width: 280 - 20 , height:235-30), cornerRadius: 6)
+//        shapLayer.path = path.cgPath
         self.layer.insertSublayer(shapLayer, at: 0)
         shapLayer.fillColor = UIColor.white.cgColor
-        
-        
+
+
         let shapLayer1 : CAShapeLayer = CAShapeLayer()
-        let path1 = UIBezierPath()
-        path1.move(to: CGPoint(x:145 , y :205 ))
-        path1.addLine(to: CGPoint(x:140 , y :235 ))
-        path1.addLine(to: CGPoint(x:180 , y :205 ))
-        path1.close()
-        shapLayer1.path = path1.cgPath
+        self.triangleShaplayer = shapLayer1
+//        let path1 = UIBezierPath()
+//        path1.move(to: CGPoint(x:145 , y :205 ))
+//        path1.addLine(to: CGPoint(x:140 , y :235 ))
+//        path1.addLine(to: CGPoint(x:180 , y :205 ))
+//        path1.close()
+//        shapLayer1.path = path1.cgPath
         self.layer.insertSublayer(shapLayer1, at: 0)
         shapLayer1.fillColor = UIColor.white.cgColor
         
         
-        self.layer.shadowColor = UIColor.black.cgColor;
-        self.layer.shadowOffset = CGSize(width:2, height:2);
-        self.layer.shadowOpacity = 0.5;
-        self.layer.shadowRadius = 8;
+//        self.layer.shadowColor = UIColor.black.cgColor;
+//        self.layer.shadowOffset = CGSize(width:2, height:2);
+//        self.layer.shadowOpacity = 0.5;
+//        self.layer.shadowRadius = 8;
         
         
+    }
+    
+    func textSize(text : String , font : UIFont , maxSize : CGSize) -> CGSize{
+        return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font : font], context: nil).size
     }
     
     

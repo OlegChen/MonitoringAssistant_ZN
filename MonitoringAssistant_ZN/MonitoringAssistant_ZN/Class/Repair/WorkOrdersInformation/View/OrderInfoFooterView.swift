@@ -34,7 +34,7 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
     func setDataArray(array:NSArray) {
         
         self.setDataCount(array)
-        chartsView.animate(xAxisDuration: 0, easingOption: .easeOutBack)
+        chartsView.animate(xAxisDuration: 0.5, easingOption: .linear)
 
         
         for  i in 0..<array.count {
@@ -143,8 +143,8 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         set.valueLinePart1OffsetPercentage = 0.85
         set.valueLinePart1Length = 0.5
         set.valueLinePart2Length = 0.4
-        set.valueLineWidth = 1 //折线的粗细
-        set.valueLineColor = UIColor.gray //折线颜色
+        set.valueLineWidth = 0.5 //折线的粗细
+        set.valueLineColor = UIColor.black //折线颜色
       
 
                 set.xValuePosition = .outsideSlice

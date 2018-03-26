@@ -12,4 +12,7 @@ class monitorCustomAnnotation: BMKPointAnnotation {
 
     var model : moniterDataPointsModel?
     
+    
+    
+    
 }

@@ -85,11 +85,13 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         
         
         cell.titleL.text = model.workName! + " | " + model.workName!
-        cell.dateL.text = "报修时间：" + model.createDateStr!
-        cell.longTimeL.text = "报修时长：" + model.repairsTime! + "分钟"
-        cell.nameL.text = "接单人：" + model.sendEmpName!
-        cell.detailL.text = model.dealDesc
+        cell.dateL.text = model.createDateStr!
+        cell.longTimeL.text =  model.repairsTime! + "分钟"
+        cell.nameL.text = model.sendEmpName!
+        cell.detailL.text = model.repairsDesc
         cell.addressL.text = model.address
+        
+        cell.dispatchBtn.setTitle(model.workSendId == "0" ? "派单" : "转派", for: UIControlState.normal)
         
         cell.delegate = self
         cell.selectionStyle = UITableViewCellSelectionStyle.none
@@ -99,7 +101,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 150
+        return 180
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -137,7 +139,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
                         "empNo":userInfo.empNo ,
                         "empName":userInfo.empName,
                         "pageNum":String(pageNo),
-                        "pageSize":"15",
+                        "pageSize":"10",
                         ]
           
             NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: workSendPageUrl, modelClass: "DispatchOrderModel" , response: { (obj) in

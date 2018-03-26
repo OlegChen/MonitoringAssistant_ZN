@@ -25,6 +25,7 @@ class DispatchOrderVCCell: UITableViewCell {
 
     var index : Int?
     
+    @IBOutlet weak var dispatchBtn: UIButton!
     
     
     @IBOutlet weak var titleL: UILabel!
