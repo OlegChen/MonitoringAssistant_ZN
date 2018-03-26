@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnergyFeeVC: BaseTableVC {
+class EnergyFeeVC: BaseTableVC ,EnergyTableViewCellDelegate{
 
     let titleArr = ["收费信息"]
     
@@ -44,8 +44,9 @@ class EnergyFeeVC: BaseTableVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : EnergyTableViewCell  = tableView.dequeueReusableCell(withIdentifier: EnergyTableViewCell_id, for: indexPath) as! EnergyTableViewCell
         
-        
-        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "abcd_charge_survey_untouch")
+        cell.index = indexPath.row
+        cell.delegate = self
+        cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: "abcd_charge_survey")
         cell.iconImgView.image = UIImage.init(named: "收费icon")
 
         cell.selectionStyle = UITableViewCellSelectionStyle.none
@@ -55,6 +56,16 @@ class EnergyFeeVC: BaseTableVC {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return ScreenW / 680.0 * 284.0 + 50
+    }
+    
+    func BtnSelected(index: Int) {
+        
+        if index == 0 {
+            
+            let vc = FeeInfoVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

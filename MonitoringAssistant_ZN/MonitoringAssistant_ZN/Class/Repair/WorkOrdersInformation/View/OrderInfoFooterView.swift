@@ -41,29 +41,38 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
             
             let model = array[i] as! OrderInfoStatusWorkStutVosModel
             
+            let legend = (Bundle.main.loadNibNamed("legendView", owner: nil, options: nil)![0] as! legendView)
+            
+            legend.titleL.text = model.name
+            legend.numL.text = model.cnt! + "个"
+            legend.rateL.text = String(model.proportion!) + "%"
+            
+            self.addSubview(legend)
+            legend.snp.makeConstraints({ (make) in
+                
+                make.top.equalTo(self.chartsView.snp.bottom).offset(10 + i * (25 + 2))
+                make.left.right.equalTo(self).offset(0)
+                make.height.equalTo(25)
+            })
+            
             if let codeStr = model.code {
                 
                 switch (codeStr) {
                 case "043001":
                     //("已受理");
-                    self.ReceivedNumL.text = model.cnt! + "个"
-                    self.ReceivedRateL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 101, 148, 242)
                 case "043002":
                     //("已安排");
-                    self.ArrangedNumL.text = model.cnt! + "个"
-                    self.ArrangedRateL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 90, 190, 220)
                 case "043003":
                     //("修理中");
-                    self.RepairIngNumL.text = model.cnt! + "个"
-                    self.RepairIngRateL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 37, 219, 200)
                 case "043004":
                     //("已完成");
-                    self.completeNumL.text = model.cnt! + "个"
-                    self.completeRateL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 128, 206, 52)
                 case "043009":
                     //("取消");
-                    self.cancleNumL.text = model.cnt! + "个"
-                    self.cancleRateL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 164, 120, 250)
                 default:
                     break
                 }
@@ -110,13 +119,13 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
             print(model.proportion)
             
             return PieChartDataEntry(value: model.proportion! / 100.0,
-                                     label: model.proportion! > 0 ?  model.name : "" /*parties[i % parties.count]*/)
-        }
+                                     label: model.name  /*parties[i % parties.count]*/)
+        } //model.proportion! > 0 ?  model.name : ""
         
         let set = PieChartDataSet(values: entries, label: "Election Results")
         set.sliceSpace = 0
         set.selectionShift = 5
-//        set.drawValuesEnabled = true
+        set.drawValuesEnabled = false
         
         let ReceivedColor = [UIColor(red: 101/255, green: 148/255, blue: 242/255, alpha: 1)]
         let arrangedColor = [UIColor(red: 90/255, green: 190/255, blue: 220/255, alpha: 1)]

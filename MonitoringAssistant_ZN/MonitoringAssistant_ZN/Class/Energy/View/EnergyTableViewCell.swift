@@ -10,7 +10,18 @@ import UIKit
 
 let EnergyTableViewCell_id = "EnergyTableViewCell"
 
+protocol EnergyTableViewCellDelegate : NSObjectProtocol {
+    
+    func BtnSelected( index: Int );
+    
+}
+
+
 class EnergyTableViewCell: UITableViewCell {
+    
+    var index : Int?
+    var delegate:EnergyTableViewCellDelegate?
+
     
     @IBOutlet weak var iconImgView: UIImageView!
     
@@ -24,7 +35,10 @@ class EnergyTableViewCell: UITableViewCell {
     
     @IBAction func imgBtnClick(_ sender: UIButton) {
         
-        
+        if((delegate) != nil)
+        {
+            self.delegate?.BtnSelected(index: self.index!)
+        }
         
     }
     
@@ -35,8 +49,9 @@ class EnergyTableViewCell: UITableViewCell {
         self.imgView.isHidden = true
         self.imgBtn.clipsToBounds = true
         self.imgBtn.adjustsImageWhenHighlighted = false
+//        self.imgBtn.addTarget(self, action: #selector(touchdown), for: UIControlEvents.touchDown)
         
-        self.titleL.font=UIFont.boldSystemFont(ofSize: 15)
+//        self.titleL.font=UIFont.boldSystemFont(ofSize: 15)
         
 //        titleL.layer.shadowColor = UIColor.black.cgColor;
 //        titleL.layer.shadowOffset = CGSize(width:2, height:2);
@@ -45,14 +60,17 @@ class EnergyTableViewCell: UITableViewCell {
 //
     }
     
+//    @objc func touchdown() {
+//
+//        self.imgBtn
+//    }
+    
     func setuptitleAndImg(title:String , Img:String) {
         
         self.titleL.text = title
         
-        self.imgBtn.setBackgroundImage(UIImage.init(named: Img), for: .normal)
-        self.imgBtn.setBackgroundImage(UIImage.init(named: Img), for: .highlighted)
-        
-
+        self.imgBtn.setBackgroundImage(UIImage.init(named: Img + "_untouch"), for: UIControlState.normal)
+        self.imgBtn.setBackgroundImage(UIImage.init(named: Img + "_touch"), for: UIControlState.highlighted)
         
     }
     

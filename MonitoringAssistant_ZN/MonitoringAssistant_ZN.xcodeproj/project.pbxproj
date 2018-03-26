@@ -67,6 +67,12 @@
 		181F5C522056519B003600DE /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 181F5C4F2056519A003600DE /* README.mdown */; };
 		181F5C5720565259003600DE /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 181F5C5420565258003600DE /* images.bundle */; };
 		181F5C5820565259003600DE /* YJProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F5C5620565258003600DE /* YJProgressHUD.m */; };
+		183E20C7206897FD00186D45 /* MXIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20C2206897FD00186D45 /* MXIndicator.swift */; };
+		183E20C8206897FD00186D45 /* MXSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20C3206897FD00186D45 /* MXSegmentedControl.swift */; };
+		183E20C9206897FD00186D45 /* MXSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20C4206897FD00186D45 /* MXSegment.swift */; };
+		183E20CF206898CF00186D45 /* EnergyCompareContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20CE206898CF00186D45 /* EnergyCompareContentVC.swift */; };
+		183E20D12068E38300186D45 /* legendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20D02068E38300186D45 /* legendView.swift */; };
+		183E20D32068E39800186D45 /* legendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183E20D22068E39800186D45 /* legendView.xib */; };
 		185AA40C20566BFE00205256 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */; };
 		185AA40D20566BFE00205256 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */; };
 		185AA40E20566BFE00205256 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */; };
@@ -525,6 +531,13 @@
 		181F5C5420565258003600DE /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
 		181F5C5520565258003600DE /* YJProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJProgressHUD.h; sourceTree = "<group>"; };
 		181F5C5620565258003600DE /* YJProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJProgressHUD.m; sourceTree = "<group>"; };
+		183E20C2206897FD00186D45 /* MXIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXIndicator.swift; sourceTree = "<group>"; };
+		183E20C3206897FD00186D45 /* MXSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXSegmentedControl.swift; sourceTree = "<group>"; };
+		183E20C4206897FD00186D45 /* MXSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXSegment.swift; sourceTree = "<group>"; };
+		183E20C5206897FD00186D45 /* MXSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSegmentedControl.h; sourceTree = "<group>"; };
+		183E20CE206898CF00186D45 /* EnergyCompareContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareContentVC.swift; sourceTree = "<group>"; };
+		183E20D02068E38300186D45 /* legendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = legendView.swift; sourceTree = "<group>"; };
+		183E20D22068E39800186D45 /* legendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = legendView.xib; sourceTree = "<group>"; };
 		185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -1274,6 +1287,17 @@
 			path = YJProgressHUDK;
 			sourceTree = "<group>";
 		};
+		183E20C1206897FD00186D45 /* MXSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				183E20C2206897FD00186D45 /* MXIndicator.swift */,
+				183E20C3206897FD00186D45 /* MXSegmentedControl.swift */,
+				183E20C4206897FD00186D45 /* MXSegment.swift */,
+				183E20C5206897FD00186D45 /* MXSegmentedControl.h */,
+			);
+			path = MXSegmentedControl;
+			sourceTree = "<group>";
+		};
 		185AA3F420566BFE00205256 /* IQKeyboardManagerSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -1978,6 +2002,7 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				183E20C1206897FD00186D45 /* MXSegmentedControl */,
 				74DD1C20205AD415002EC264 /* FDFullscreenPopGesture */,
 				185AA49A205A140F00205256 /* SDWebImage */,
 				185AA43B205A133200205256 /* WebP.framework */,
@@ -2109,6 +2134,7 @@
 				181F5BED20526DC9003600DE /* Model */,
 				181F5BEC20526DC8003600DE /* View */,
 				18D7500E201213410011866E /* EnergyCompareVC.swift */,
+				183E20CE206898CF00186D45 /* EnergyCompareContentVC.swift */,
 			);
 			path = EnergyCompare;
 			sourceTree = "<group>";
@@ -2355,6 +2381,8 @@
 				74903E592039ABD300003EF2 /* OrderInfoHeaderView.xib */,
 				74903E572039ABAC00003EF2 /* OrderInfoFooterView.swift */,
 				74903E5B2039ABE200003EF2 /* OrderInfoFooterView.xib */,
+				183E20D02068E38300186D45 /* legendView.swift */,
+				183E20D22068E39800186D45 /* legendView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2886,6 +2914,7 @@
 				74A8D3F1202DEA9600535BC2 /* abcd_dispatch_order_touch.png in Resources */,
 				74A8D3FA202DEA9600535BC2 /* abcd_gold_bench_marke_untouch.png in Resources */,
 				74903E1D2031EB5600003EF2 /* 设备@2x.png in Resources */,
+				183E20D32068E39800186D45 /* legendView.xib in Resources */,
 				181F5BF120526EEF003600DE /* EnergyCompareHeadView.xib in Resources */,
 				181F5C4920563A39003600DE /* SVProgressHUD.bundle in Resources */,
 				74A8D407202DEA9600535BC2 /* dount_3.png in Resources */,
@@ -3121,6 +3150,7 @@
 				18A57A3220455A4D00DA7D59 /* UIView+Extend.m in Sources */,
 				185AA4DF205A141000205256 /* SDImageCache.m in Sources */,
 				18F373AD2030525E00D2662A /* LoginReturnObjModel.swift in Sources */,
+				183E20D12068E38300186D45 /* legendView.swift in Sources */,
 				74DD1BE32055146B002EC264 /* bottomPlayView.swift in Sources */,
 				18D74FF82010CC8D0011866E /* NavigationController.swift in Sources */,
 				185AA4202056915900205256 /* lawVCViewController.swift in Sources */,
@@ -3136,6 +3166,7 @@
 				18A57A8020464D3800DA7D59 /* equipmentMonitorReturnObjModel.swift in Sources */,
 				18C8D2F8202C50E400E91527 /* MASViewConstraint.m in Sources */,
 				74903EBA204BCC6000003EF2 /* FSCalendarStickyHeader.m in Sources */,
+				183E20C8206897FD00186D45 /* MXSegmentedControl.swift in Sources */,
 				181F5C5820565259003600DE /* YJProgressHUD.m in Sources */,
 				74903E6A203FBBCC00003EF2 /* DispatchOrderModel.swift in Sources */,
 				74903E332032DA1F00003EF2 /* FeeInfoTableViewCell.swift in Sources */,
@@ -3169,6 +3200,7 @@
 				18F373A420304F2B00D2662A /* LoginModel.swift in Sources */,
 				185AA41820566BFE00205256 /* IQPreviousNextView.swift in Sources */,
 				185AA41220566BFE00205256 /* IQKeyboardManagerConstants.swift in Sources */,
+				183E20C9206897FD00186D45 /* MXSegment.swift in Sources */,
 				74903EB2204BCC6000003EF2 /* FSCalendarCollectionView.m in Sources */,
 				74903EBB204BCC6000003EF2 /* FSCalendarTransitionCoordinator.m in Sources */,
 				185AA4E1205A141000205256 /* SDWebImageCoder.m in Sources */,
@@ -3229,6 +3261,7 @@
 				185AA4DA205A141000205256 /* MKAnnotationView+WebCache.m in Sources */,
 				185AA4E5205A141000205256 /* SDWebImageDownloader.m in Sources */,
 				18A57A3F20455A4D00DA7D59 /* PBConst.m in Sources */,
+				183E20CF206898CF00186D45 /* EnergyCompareContentVC.swift in Sources */,
 				181F5BCD204FBDD8003600DE /* DispatchRecordListModel.swift in Sources */,
 				18A57A2020455A4D00DA7D59 /* NSString+File.m in Sources */,
 				18A57A3320455A4D00DA7D59 /* UIWindow+Launch.m in Sources */,
@@ -3298,6 +3331,7 @@
 				74903EAF204BCC6000003EF2 /* FSCalendarAppearance.m in Sources */,
 				74903EAD204BCC6000003EF2 /* FSCalendar+Deprecated.m in Sources */,
 				18A57A2120455A4D00DA7D59 /* CoreArchive.m in Sources */,
+				183E20C7206897FD00186D45 /* MXIndicator.swift in Sources */,
 				185AA41020566BFE00205256 /* IQUIViewController+Additions.swift in Sources */,
 				18C8D30120301C9B00E91527 /* DispatchOrderVC.swift in Sources */,
 				74903E7720403D7800003EF2 /* SelectWorkerModel.swift in Sources */,

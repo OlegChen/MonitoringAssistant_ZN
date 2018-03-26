@@ -13,22 +13,22 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
     
     @IBOutlet weak var chartsView: PieChartView!
     
-    @IBOutlet weak var telPersentL: UILabel!
-    
-    @IBOutlet weak var telNumL: UILabel!
-    
-    @IBOutlet weak var OnsiteRepairPercentL: UILabel!
-    
-    @IBOutlet weak var OnsiteRepairNumL: UILabel!
-    
-    
-    @IBOutlet weak var appRepairPercentL: UILabel!
-    
-    @IBOutlet weak var appRepairNumL: UILabel!
-    
-    @IBOutlet weak var WXRepairPercentL: UILabel!
-    
-    @IBOutlet weak var WXRepairNumL: UILabel!
+//    @IBOutlet weak var telPersentL: UILabel!
+//
+//    @IBOutlet weak var telNumL: UILabel!
+//
+//    @IBOutlet weak var OnsiteRepairPercentL: UILabel!
+//
+//    @IBOutlet weak var OnsiteRepairNumL: UILabel!
+//
+//
+//    @IBOutlet weak var appRepairPercentL: UILabel!
+//
+//    @IBOutlet weak var appRepairNumL: UILabel!
+//
+//    @IBOutlet weak var WXRepairPercentL: UILabel!
+//
+//    @IBOutlet weak var WXRepairNumL: UILabel!
     
     
     func setDataArray(array:NSArray) {
@@ -39,25 +39,35 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
             
             let model = array[i] as! OrderInfoStatusWorkStutVosModel
             
+             let legend = (Bundle.main.loadNibNamed("legendView", owner: nil, options: nil)![0] as! legendView)
+            
+            legend.titleL.text = model.name
+            legend.numL.text = model.cnt! + "个"
+            legend.rateL.text = String(model.proportion!) + "%"
+            
+            self.addSubview(legend)
+            legend.snp.makeConstraints({ (make) in
+                
+                make.top.equalTo(self.chartsView.snp.bottom).offset(10 + i * (25 + 2))
+                make.left.right.equalTo(self).offset(0)
+                make.height.equalTo(25)
+            })
+            
             if let codeStr = model.code {
                 
                 switch (codeStr) {
                 case "040001":
                     //("客户来电");
-                    self.telNumL.text = model.cnt! + "个"
-                    self.telPersentL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 101, 148, 242)
                 case "040002":
                     //("现场报修");
-                    self.OnsiteRepairNumL.text = model.cnt! + "个"
-                    self.OnsiteRepairPercentL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 37, 220, 201)
                 case "040003":
                     //("移动APP报修");
-                    self.appRepairNumL.text = model.cnt! + "个"
-                    self.appRepairPercentL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 165, 120, 252)
                 case "040004":
                     //("微信端报修");
-                    self.WXRepairNumL.text = model.cnt! + "个"
-                    self.WXRepairPercentL.text = String(model.proportion!) + "%"
+                    legend.legendView.backgroundColor = RGBCOLOR(r: 90, 191, 221)
                 default:
                     break
                 }

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class EnergyEquipment: BaseTableVC {
+class EnergyEquipment: BaseTableVC ,EnergyTableViewCellDelegate{
     let titleArr = ["设备监控", "告警信息" ]
     let iconArr = [ "设备监控icon","告警icon"]
 
-    let imgArr = ["abcd_equipment_monitor_untouch","abcd_alarm_managem_untouch"]
+    let imgArr = ["abcd_equipment_monitor","abcd_alarm_managem"]
     
     
     override func viewDidLoad() {
@@ -48,7 +48,8 @@ class EnergyEquipment: BaseTableVC {
         let cell : EnergyTableViewCell  = tableView.dequeueReusableCell(withIdentifier: EnergyTableViewCell_id, for: indexPath) as! EnergyTableViewCell
         
         
-        
+        cell.index = indexPath.row
+        cell.delegate = self
         cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: imgArr[indexPath.row])
         cell.iconImgView.image = UIImage.init(named: self.iconArr[indexPath.row])
 
@@ -60,6 +61,19 @@ class EnergyEquipment: BaseTableVC {
         
         return ScreenW / 680.0 * 284.0 + 50
 
+    }
+    
+    func BtnSelected(index: Int) {
+        
+        if index == 0 {
+            
+            self.navigationController?.pushViewController(EquipmentMonitorVC(), animated: true)
+            
+        }else if index == 1 {
+            
+            self.navigationController?.pushViewController(WorningInfoVC(), animated: true)
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

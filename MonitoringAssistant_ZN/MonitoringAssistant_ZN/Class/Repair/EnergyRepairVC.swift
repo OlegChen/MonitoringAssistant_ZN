@@ -8,12 +8,12 @@
 
 import UIKit
 
-class EnergyRepairVC: BaseTableVC {
+class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
 
     let titleArr = ["工单信息", "转派工单" , "轨迹回放"]
     let iconArr = [ "工单信息icon","派转工单icon","黄金对标icon"]
 
-    let imgArr = ["abcd_work_order_details_untouch", "abcd_equipment_monitor_untouch" , "abcd_trajectory_play_untouch"]
+    let imgArr = ["abcd_work_order_details", "abcd_equipment_monitor" , "abcd_trajectory_play"]
 
     
     override func viewDidLoad() {
@@ -49,7 +49,8 @@ class EnergyRepairVC: BaseTableVC {
         let cell : EnergyTableViewCell  = tableView.dequeueReusableCell(withIdentifier: EnergyTableViewCell_id, for: indexPath) as! EnergyTableViewCell
         
         
-        
+        cell.index = indexPath.row
+        cell.delegate = self
         cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: self.imgArr[indexPath.row])
         cell.iconImgView.image = UIImage.init(named: self.iconArr[indexPath.row])
 
@@ -60,6 +61,25 @@ class EnergyRepairVC: BaseTableVC {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return ScreenW / 680.0 * 284.0 + 50
+    }
+    
+    func BtnSelected(index: Int) {
+        
+        if index == 0 {
+            
+            self.navigationController?.pushViewController(OrderInfoVC(), animated: true)
+            
+        }else if index == 1 {
+            
+            self.navigationController?.pushViewController(DispatchOrderVC(), animated: true)
+            
+        }else if index == 2 {
+            
+            self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
+            
+            
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

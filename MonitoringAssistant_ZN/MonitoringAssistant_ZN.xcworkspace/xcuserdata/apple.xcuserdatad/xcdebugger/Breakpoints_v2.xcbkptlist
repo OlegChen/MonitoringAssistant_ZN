@@ -161,7 +161,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/TrackPlayback/TrackDetail/TrackDetailVC.swift"
-            timestampString = "543142132.191049"
+            timestampString = "543725218.747178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
@@ -177,7 +177,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/TrackPlayback/TrackDetail/TrackDetailVC.swift"
-            timestampString = "543142132.191519"
+            timestampString = "543725218.747543"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "449"
@@ -408,6 +408,38 @@
             endingLineNumber = "79"
             landmarkName = "getRequest(urlString:params:success:failture:)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Vendors/MXSegmentedControl/MXSegmentedControl.swift"
+            timestampString = "543747075.084051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "layoutIndicator()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/Class/Energy/View/EnergyTableViewCell.swift"
+            timestampString = "543747075.084125"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

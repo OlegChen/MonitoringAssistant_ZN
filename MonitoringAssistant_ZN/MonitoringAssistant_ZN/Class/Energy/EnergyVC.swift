@@ -8,11 +8,11 @@
 
 import UIKit
 
-class EnergyVC: BaseTableVC {
+class EnergyVC: BaseTableVC , EnergyTableViewCellDelegate{
     
     let titleArr = ["用能概况", "用能监测" , "黄金对标"]
     let iconArr = [ "用能概况icon","用能监测icon","黄金对标icon"]
-    let imgArray = ["abcd_energy_use_profile_untouch" , "abcd_energy_use_monitor_untouch", "abcd_gold_bench_marke_untouch"]
+    let imgArray = ["abcd_energy_use_profile" , "abcd_energy_use_monitor", "abcd_gold_bench_marke"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class EnergyVC: BaseTableVC {
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.register(UINib.init(nibName: "EnergyTableViewCell", bundle: nil), forCellReuseIdentifier: EnergyTableViewCell_id)
         
-
         
     }
 
@@ -46,10 +45,27 @@ class EnergyVC: BaseTableVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : EnergyTableViewCell  = tableView.dequeueReusableCell(withIdentifier: EnergyTableViewCell_id, for: indexPath) as! EnergyTableViewCell
 
+        cell.index = indexPath.row
+        cell.delegate = self
         cell.setuptitleAndImg(title: titleArr[indexPath.row], Img: imgArray[indexPath.row])
         cell.iconImgView.image = UIImage.init(named: self.iconArr[indexPath.row])
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
+    }
+    
+    func BtnSelected(index: Int) {
+        
+        if index == 0 {
+        self.navigationController?.pushViewController(EnergyPointsTableViewController(), animated: true)
+        }else if index == 1 {
+            
+            self.navigationController?.pushViewController(EnergyMonitorVC(), animated: true)
+        }else if index == 2 {
+            
+            self.navigationController?.pushViewController(EnergyCompareVC(), animated: true)
+        }
+        
+        
     }
  
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
