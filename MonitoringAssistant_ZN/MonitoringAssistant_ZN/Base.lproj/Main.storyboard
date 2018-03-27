@@ -464,7 +464,7 @@
                                         <constraint firstAttribute="height" constant="40" id="nBx-Mg-ap9"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                    <state key="normal" title="确认修改">
+                                    <state key="normal" title="保  存">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>

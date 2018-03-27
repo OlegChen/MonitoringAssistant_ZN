@@ -29,3 +29,6 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 #import "CheckVerson.h"
+#import "CustomerAlertViewManger.h"
+
+

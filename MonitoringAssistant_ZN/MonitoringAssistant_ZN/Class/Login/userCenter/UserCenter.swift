@@ -55,6 +55,8 @@ extension UserCenter {
     
         //1、 保存
         UserDefaults .standard.set(false, forKey:UserCenter.isLogin)
+        UserDefaults .standard.set("", forKey:UserCenter.loginPw)
+
         
         UserDefaults .standard.set("", forKey:UserCenter.companyCode)
         UserDefaults .standard.set("", forKey:UserCenter.orgCode)

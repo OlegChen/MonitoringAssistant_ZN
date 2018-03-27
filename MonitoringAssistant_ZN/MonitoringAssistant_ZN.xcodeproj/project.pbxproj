@@ -443,6 +443,7 @@
 		74DD1C23205AD416002EC264 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DD1C22205AD415002EC264 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		74DD1C26205E8ED2002EC264 /* CheckVerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DD1C25205E8ED2002EC264 /* CheckVerson.m */; };
 		74FFAF2320693F2B00283DB4 /* monitorCustomPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FFAF2220693F2B00283DB4 /* monitorCustomPinAnnotation.swift */; };
+		74FFAF26206AB75800283DB4 /* CustomerAlertViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FFAF24206AB75700283DB4 /* CustomerAlertViewManger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1027,6 +1028,8 @@
 		74DD1C24205E8ED2002EC264 /* CheckVerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckVerson.h; sourceTree = "<group>"; };
 		74DD1C25205E8ED2002EC264 /* CheckVerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckVerson.m; sourceTree = "<group>"; };
 		74FFAF2220693F2B00283DB4 /* monitorCustomPinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monitorCustomPinAnnotation.swift; sourceTree = "<group>"; };
+		74FFAF24206AB75700283DB4 /* CustomerAlertViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerAlertViewManger.m; sourceTree = "<group>"; };
+		74FFAF25206AB75700283DB4 /* CustomerAlertViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerAlertViewManger.h; sourceTree = "<group>"; };
 		95C685819D3E11102682C3FD /* Pods-MonitoringAssistant_ZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitoringAssistant_ZN.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitoringAssistant_ZN/Pods-MonitoringAssistant_ZN.release.xcconfig"; sourceTree = "<group>"; };
 		FE369A68230EEEDFB064E587 /* Pods_MonitoringAssistant_ZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitoringAssistant_ZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -2008,6 +2011,8 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				74FFAF25206AB75700283DB4 /* CustomerAlertViewManger.h */,
+				74FFAF24206AB75700283DB4 /* CustomerAlertViewManger.m */,
 				183E20C1206897FD00186D45 /* MXSegmentedControl */,
 				74DD1C20205AD415002EC264 /* FDFullscreenPopGesture */,
 				185AA49A205A140F00205256 /* SDWebImage */,
@@ -3197,6 +3202,7 @@
 				181F5BBC20497E85003600DE /* UIView+FP.m in Sources */,
 				18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */,
 				185AA4EE205A141000205256 /* UIButton+WebCache.m in Sources */,
+				74FFAF26206AB75800283DB4 /* CustomerAlertViewManger.m in Sources */,
 				18A57A3120455A4D00DA7D59 /* UITableViewCell+Extend.m in Sources */,
 				181F5C512056519B003600DE /* MBProgressHUD.m in Sources */,
 				18A57A4F20455E8300DA7D59 /* WorkOrderDetailReturnObjModel.swift in Sources */,
@@ -3543,8 +3549,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b02ca82-8829-4b2a-9707-a8479efb3d3c";
-				PROVISIONING_PROFILE_SPECIFIER = companyPc_addHoc_zn;
+				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
+				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -3585,8 +3591,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b02ca82-8829-4b2a-9707-a8479efb3d3c";
-				PROVISIONING_PROFILE_SPECIFIER = companyPc_addHoc_zn;
+				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
+				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
