@@ -44,10 +44,10 @@ class EquipmentMonitorVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
             
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight), 0, 0, 0))
         }
-        
+        self.tableView.backgroundColor = RGBCOLOR(r: 245, 245, 245)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         let headerView = UIView()
-        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 150 + (ScreenW - 160))
+        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 150 + (ScreenW - 68*2))
         
         let view = (Bundle.main.loadNibNamed("EquipmentMonitorHeaderView", owner: nil, options: nil)![0] as! EquipmentMonitorHeaderView)
         self.headView = view
@@ -60,6 +60,14 @@ class EquipmentMonitorVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
         self.tableView.register(UINib.init(nibName: "EquipmentMonitorCell" , bundle: nil), forCellReuseIdentifier: EquipmentMonitorCell_id)
 
        self.getData()
+        
+        self.tableView.es.addPullToRefresh {
+            
+            [weak self] in
+            self?.getData()
+            
+        }
+        
     }
     
     
@@ -124,6 +132,9 @@ class EquipmentMonitorVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
                 
                 if (model.statusCode == 800){
                     
+                    self.statusDataArr.removeAllObjects()
+                    self.classDataArr.removeAllObjects()
+                    
                     self.statusDataArr.addObjects(from: (model.returnObj?.monitorStatus)!)
                     self.classDataArr.addObjects(from: (model.returnObj?.monitorClass)! )
                     
@@ -133,9 +144,11 @@ class EquipmentMonitorVC: BaseVC,UITableViewDelegate,UITableViewDataSource{
                     self.tableView.reloadData()
                 }
                 
-               
+               self.tableView.es.stopPullToRefresh()
                 
             }) { (error) in
+                
+                self.tableView.es.stopPullToRefresh()
                 
             }
             

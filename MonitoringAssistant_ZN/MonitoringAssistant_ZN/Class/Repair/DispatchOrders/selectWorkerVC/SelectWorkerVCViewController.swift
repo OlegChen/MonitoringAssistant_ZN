@@ -36,12 +36,15 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
         self.view.backgroundColor = .white
         
         self.tableView = UITableView()
+        self.tableView.backgroundColor = RGBCOLOR(r: 242, 242, 242)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             
-            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight), 0, 80, 0))
+            make.left.right.equalTo(self.view).offset(0)
+            make.top.equalTo(self.view).offset(NavHeight)
+            make.bottom.equalTo(self.view).offset(-80)
         }
         self.tableView.register(UINib.init(nibName: "SelectWorkerVCCell" , bundle: nil), forCellReuseIdentifier: SelectWorkerVCCell_id)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -140,6 +143,20 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                         self.dataArr.addObjects(from: model.returnObj!)
                         self.tableView.reloadData()
                         
+                        
+                         let bottomH = Double(ScreenH) - Double(NavHeight) - (Double(self.dataArr.count) * 45 + 50)
+                        self.tableView.snp.updateConstraints({ (make) in
+                            make.bottom.equalTo(self.view).offset(-(bottomH < 200 ? 200 : bottomH))
+                            
+                            if(bottomH < 200){
+                                
+                                self.tableView.isScrollEnabled = true
+                            }else{
+                                
+                                self.tableView.isScrollEnabled = false
+                            }
+                        })
+                        
                     }else{
                         
                         self.tableView.configBlankPage(EaseBlankPageType(rawValue: 0)!, hasData: false, hasError: false, reloadButtonBlock: nil)
@@ -174,12 +191,12 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             
             make.left.equalTo(self.view).offset(30)
             make.right.equalTo(self.view).offset(-30)
-            make.bottom.equalTo(self.view).offset(-20)
+            make.top.equalTo(self.tableView.snp.bottom).offset(40)
             make.height.equalTo(45)
         }
         btn.layer.cornerRadius = 4
         btn.backgroundColor = RGBCOLOR(r: 71, 143, 183)
-        btn.setTitle("派  单", for: UIControlState.normal)
+        btn.setTitle( self.workSendId == "0" ?  "派  单" : "转  派", for: UIControlState.normal)
         btn.setTitleColor(.white, for: UIControlState.normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         btn.addTarget(self, action: #selector(sureBtnClick(btn:)), for: UIControlEvents.touchUpInside)
@@ -280,11 +297,11 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             view.addSubview(label)
             label.snp.makeConstraints({ (make) in
                 
-                let width = (ScreenW - 30 - 35) / 4
-                make.left.equalTo(view).offset( (i < 2 ? (Double( i ) *  Double( 35)): (35 + Double( i - 1) *  Double( width )))  )
+                let width = (ScreenW - 30 - 45) / 4
+                make.left.equalTo(view).offset( (i < 2 ? (Double( i ) *  Double( 45)): (45 + Double( i - 1) *  Double( width )))  )
                 make.top.equalTo(view).offset(0)
                 make.bottom.equalTo(view).offset(0)
-                make.width.equalTo(i == 0 ? 35 : width)
+                make.width.equalTo(i == 0 ? 45 : width)
                 
             })
         }

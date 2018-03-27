@@ -32,6 +32,7 @@ class MKRingProgressGroupView: UIView {
     let ring3 = MKRingProgressView()
     let ring4 = MKRingProgressView()
     
+    
     @IBInspectable var ring1StartColor: UIColor = .red {
         didSet {
             ring1.startColor = ring1StartColor
@@ -88,6 +89,14 @@ class MKRingProgressGroupView: UIView {
             ring2.ringWidth = ringWidth
             ring3.ringWidth = ringWidth
             ring4.ringWidth = ringWidth
+            
+            
+            ring1.shadowOpacity = 0
+            ring2.shadowOpacity = 0
+            ring3.shadowOpacity = 0
+            ring4.shadowOpacity = 0
+            
+            
             setNeedsLayout()
         }
     }
@@ -98,6 +107,81 @@ class MKRingProgressGroupView: UIView {
             ringSpacing = 7
             setNeedsLayout()
         }
+    }
+    
+    
+    func setRing1_progress(value:Double){
+            
+            if(value == 0){
+                
+                ring1.startColor = UIColor.clear
+                ring1.endColor = UIColor.clear
+            }else{
+                
+                ring1.startColor = RGBCOLOR(r: 140, 219, 125)
+                ring1.endColor = RGBCOLOR(r: 140, 219, 125)
+                CATransaction.begin()
+                CATransaction.setAnimationDuration(1.0)
+                ring1.progress = value
+                CATransaction.commit()
+            }
+        
+    }
+    
+    func setRing2_progress(value:Double){
+            
+            if(value == 0){
+                
+                ring2.startColor = UIColor.clear
+                ring2.endColor = UIColor.clear
+            }else{
+                
+                ring2.startColor = RGBCOLOR(r: 67, 142, 185)
+                ring2.endColor = RGBCOLOR(r: 67, 142, 185)
+                CATransaction.begin()
+                CATransaction.setAnimationDuration(1.0)
+                ring2.progress = value
+                CATransaction.commit()
+            }
+    }
+    
+    
+    func setRing3_progress(value:Double)  {
+        
+        if(value == 0){
+            
+            ring3.startColor = UIColor.clear
+            ring3.endColor = UIColor.clear
+        }else{
+            
+            ring3.startColor = RGBCOLOR(r: 233, 155, 86)
+            ring3.endColor = RGBCOLOR(r: 233, 155, 86)
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(1.0)
+            ring3.progress = value
+            CATransaction.commit()
+        }
+        
+        
+    }
+
+    
+    func setRing4_progress(value:Double){
+            
+            if(value == 0){
+                
+                ring4.startColor = UIColor.clear
+                ring4.endColor = UIColor.clear
+            }else{
+                
+                ring4.startColor = RGBCOLOR(r: 165, 115, 255)
+                ring4.endColor = RGBCOLOR(r: 165, 115, 255)
+                CATransaction.begin()
+                CATransaction.setAnimationDuration(1.0)
+                ring4.progress = value
+                CATransaction.commit()
+            }
+        
     }
     
     override init(frame: CGRect) {
@@ -128,6 +212,7 @@ class MKRingProgressGroupView: UIView {
         ring2.frame = bounds.insetBy(dx: ringWidth + ringSpacing, dy: ringWidth + ringSpacing)
         ring3.frame = bounds.insetBy(dx: 2 * ringWidth + 2 * ringSpacing, dy: 2 * ringWidth + 2 * ringSpacing)
         ring4.frame = bounds.insetBy(dx: 3 * ringWidth + 3 * ringSpacing, dy: 3 * ringWidth + 3 * ringSpacing)
+        
 
     }
 

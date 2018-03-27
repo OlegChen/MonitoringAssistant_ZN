@@ -41,17 +41,18 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-uE-v86">
                                     <rect key="frame" x="20" y="206" width="335" height="251"/>
-                                    <mutableString key="text">管理人员的好助手，领导的智能云管家。“中能云管家”是服务于供暖、物业单位的智能管理软件，可同时实现报修情况统计、工单派转管理、设备管理、收费概况、员工分布及员工活动轨迹的回放等智能化管理。在信息化、智能化高度发达的今天，应用这款管理软件，可直接系统的查看当前机构的工单、设备、收费、用能等各方面的数据概况，可以更方便的进行相关工作的分析和管理，提摆脱传统报修工作量大、处理时间长、效率低、客户体验差的弊病，解决传统的设备运行记录、各种能耗记录等工作量大、记录不易长时间保管，容易丢失等问题，实现数据报表电子化——便查询、易保管，同时便于管理者的决策和考核。该款产品具有操作简单，使用方便的特点。
+                                    <mutableString key="text">　　管理人员的好助手，领导的智能云管家。
+　　“中能云管家”是服务于供暖、物业单位的智能管理软件，可同时实现报修情况统计、工单派转管理、设备管理、收费概况、员工分布及员工活动轨迹的回放等智能化管理。在信息化、智能化高度发达的今天，应用这款管理软件，可直接系统的查看当前机构的工单、设备、收费、用能等各方面的数据概况，可以更方便的进行相关工作的分析和管理，提摆脱传统报修工作量大、处理时间长、效率低、客户体验差的弊病，解决传统的设备运行记录、各种能耗记录等工作量大、记录不易长时间保管，容易丢失等问题，实现数据报表电子化——便查询、易保管，同时便于管理者的决策和考核。该款产品具有操作简单，使用方便的特点。
 </mutableString>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-HV-Irv">
-                                    <rect key="frame" x="49" y="542" width="277" height="43"/>
+                                    <rect key="frame" x="57" y="512" width="261" height="43"/>
                                     <string key="text">Copyright @ 2017
 
-北京市朝阳区中能兴科节能股份有限公司  版权所有</string>
+中能兴科(北京)节能科技股份有限公司  版权所有</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -65,7 +66,7 @@
                                 <constraint firstItem="mCe-uE-v86" firstAttribute="top" secondItem="EcX-Ji-FuX" secondAttribute="bottom" constant="30" id="T68-Ur-Csn"/>
                                 <constraint firstItem="nf5-ta-W7x" firstAttribute="top" secondItem="iyb-2k-Pi7" secondAttribute="top" constant="40" id="Vlc-hm-Djb"/>
                                 <constraint firstItem="mCe-uE-v86" firstAttribute="leading" secondItem="iyb-2k-Pi7" secondAttribute="leading" constant="20" id="XQZ-fx-kFq"/>
-                                <constraint firstAttribute="bottom" secondItem="HqD-HV-Irv" secondAttribute="bottom" constant="15" id="s9K-D1-deE"/>
+                                <constraint firstAttribute="bottom" secondItem="HqD-HV-Irv" secondAttribute="bottom" constant="45" id="s9K-D1-deE"/>
                                 <constraint firstAttribute="height" constant="600" id="sFD-Ky-BAo"/>
                                 <constraint firstItem="EcX-Ji-FuX" firstAttribute="centerX" secondItem="nf5-ta-W7x" secondAttribute="centerX" id="xmI-s4-yxX"/>
                                 <constraint firstAttribute="trailing" secondItem="mCe-uE-v86" secondAttribute="trailing" constant="20" id="ziB-pc-p6Q"/>
@@ -75,7 +76,7 @@
                     <constraints>
                         <constraint firstItem="iyb-2k-Pi7" firstAttribute="leading" secondItem="7Vh-Ij-ESl" secondAttribute="leading" id="2Gs-FN-X85"/>
                         <constraint firstItem="iyb-2k-Pi7" firstAttribute="top" secondItem="7Vh-Ij-ESl" secondAttribute="top" id="FhT-UB-LBn"/>
-                        <constraint firstAttribute="bottom" secondItem="iyb-2k-Pi7" secondAttribute="bottom" constant="15" id="S1T-Kd-Wf7"/>
+                        <constraint firstAttribute="bottom" secondItem="iyb-2k-Pi7" secondAttribute="bottom" id="S1T-Kd-Wf7"/>
                         <constraint firstAttribute="trailing" secondItem="iyb-2k-Pi7" secondAttribute="trailing" constant="-12" id="WSH-P9-mWC"/>
                         <constraint firstItem="iyb-2k-Pi7" firstAttribute="width" secondItem="7Vh-Ij-ESl" secondAttribute="width" id="y1b-cg-ZbX"/>
                     </constraints>
@@ -88,7 +89,7 @@
                 <constraint firstItem="7Vh-Ij-ESl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eVf-e5-xjQ"/>
                 <constraint firstAttribute="bottom" secondItem="7Vh-Ij-ESl" secondAttribute="bottom" id="vic-9W-zSi"/>
             </constraints>
-            <point key="canvasLocation" x="39" y="49"/>
+            <point key="canvasLocation" x="38.5" y="96.5"/>
         </view>
     </objects>
     <resources>

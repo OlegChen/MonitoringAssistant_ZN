@@ -122,6 +122,7 @@ open class MKRingProgressView: UIView {
             return Double(ringProgressLayer.progress)
         }
         set {
+
             ringProgressLayer.progress = CGFloat(newValue)
         }
     }
@@ -283,6 +284,7 @@ open class MKRingProgressLayer: CALayer {
             let r2 = r - ringWidth/2
             let s = Float(1.5 * ringWidth / (2 * π * r2))
             _gradientImage = MKGradientGenerator.gradientImage(type: .conical, size: CGSize(width: r, height: r), colors: [endColor, endColor, startColor, startColor], locations: [0.0, s, (1.0 - s), 1.0], endPoint: CGPoint(x: 0.5 - CGFloat(2 * s), y: 1.0), scale: gradientImageScale)
+            //
         }
         return _gradientImage!
     }
@@ -326,7 +328,7 @@ open class MKRingProgressLayer: CALayer {
         
         // Draw solid arc
         
-        if angle > maxAngle {
+        if angle > maxAngle  {
             
             let offset = angle - maxAngle
             

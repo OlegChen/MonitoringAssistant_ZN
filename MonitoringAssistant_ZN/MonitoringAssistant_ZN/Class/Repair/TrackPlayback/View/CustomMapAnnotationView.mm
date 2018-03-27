@@ -8,6 +8,8 @@
 
 #import "CustomMapAnnotationView.h"
 #import "Masonry.h"
+#import "UIImageView+WebCache.h"
+
 
 #define kWidth  40.f
 #define kHeight 42.f
@@ -15,13 +17,13 @@
 #define kHoriMargin 5.f
 #define kVertMargin 5.f
 
-#define kPortraitWidth  40.f
-#define kPortraitHeight 40.f
+#define kPortraitWidth  24.f
+#define kPortraitHeight 24.f
 
 
 @interface CustomMapAnnotationView ()
 
-//@property (nonatomic, strong) UIImageView *portraitImageView;
+@property (nonatomic, strong) UIImageView *portraitImageView;
 @property (nonatomic, strong) UIImageView *BGView;
 
 @end
@@ -64,7 +66,7 @@
         UILabel *name = [[UILabel alloc]init];
         self.nameLabel = name;
         name.text = @"";
-        name.font = [UIFont systemFontOfSize:9];
+        name.font = [UIFont systemFontOfSize:7];
         name.textColor = [UIColor whiteColor];
         name.textAlignment = NSTextAlignmentCenter;
 //        name.backgroundColor = [UIColor orangeColor];
@@ -73,27 +75,27 @@
         [self addSubview:name];
         [name mas_makeConstraints:^(MASConstraintMaker *make) {
         
-            make.centerX.equalTo(self).offset(-5);
-            make.centerY.equalTo(self).offset(-4);
-            make.size.mas_equalTo(CGSizeMake(30, 20));
+            make.centerX.equalTo(self).offset(-4.5);
+            make.centerY.equalTo(self).offset(-3);
+            make.size.mas_equalTo(CGSizeMake(26, 20));
         }];
         
         
-//        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
-//        self.portraitImageView.layer.masksToBounds = YES;
-//        self.portraitImageView.layer.cornerRadius = 20.0;
-//        self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
-//        self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-//        self.portraitImageView.layer.borderWidth = 3.0f;
-//        self.portraitImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-//        self.portraitImageView.layer.shouldRasterize = YES;
-//        self.portraitImageView.clipsToBounds = YES;
-//        [self addSubview:self.portraitImageView];
-//
-//        [self.portraitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(kPortraitWidth, kPortraitHeight));
-//            make.center.equalTo(view);
-//        }];
+        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
+        self.portraitImageView.layer.masksToBounds = YES;
+        self.portraitImageView.layer.cornerRadius = 12.0;
+        self.portraitImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.portraitImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+        self.portraitImageView.layer.borderWidth = 0.0f;
+        self.portraitImageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        self.portraitImageView.layer.shouldRasterize = YES;
+        self.portraitImageView.clipsToBounds = YES;
+        [self addSubview:self.portraitImageView];
+        
+        [self.portraitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(kPortraitWidth, kPortraitHeight));
+            make.center.equalTo(name);
+        }];
         
         
         
@@ -148,6 +150,25 @@
 //    }];
 //
 //}
+
+
+- (void)setImg:(NSString *)img{
+    
+    _img = img;
+    
+#pragma mark - 图片缩小变模糊
+    
+    __weak typeof(self) weakself = self;
+    NSURL *url = [NSURL URLWithString:img];
+    
+    
+    
+    [self.portraitImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"head_portrait"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+        weakself.portraitImageView.image =  [weakself imageCompressForSize:image targetSize:CGSizeMake(kPortraitWidth, kPortraitHeight)];
+        
+    }];
+}
 
 
 -(UIImage *)imageCompressForSize:(UIImage *)sourceImage targetSize:(CGSize)size{

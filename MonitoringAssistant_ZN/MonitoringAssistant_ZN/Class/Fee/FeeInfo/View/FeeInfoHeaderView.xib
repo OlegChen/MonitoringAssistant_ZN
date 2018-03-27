@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeeInfoHeaderView" customModule="MonitoringAssistant_ZN" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高收费" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK2-8U-xF0">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单月最高" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK2-8U-xF0">
                     <rect key="frame" x="15" y="20" width="61.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -27,7 +27,7 @@
                     <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最低收费" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGT-bl-a1g">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单月最低" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGT-bl-a1g">
                     <rect key="frame" x="298.5" y="20" width="61.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,8 +40,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31g-Il-JZ0">
-                    <rect key="frame" x="181" y="46" width="13" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <rect key="frame" x="180.5" y="46" width="14" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.2784313725" green="0.56078431370000004" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -62,8 +62,8 @@
                                 <constraint firstAttribute="width" constant="8" id="eJS-Xl-emx"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累积实收（万元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKX-OK-HKg">
-                            <rect key="frame" x="36" y="3.5" width="90" height="13.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额（万元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKX-OK-HKg">
+                            <rect key="frame" x="36" y="3.5" width="67.5" height="13.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -102,6 +102,23 @@
                         <constraint firstAttribute="height" constant="220" id="xfh-XL-VF5"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyE-QX-cvu">
+                    <rect key="frame" x="0.0" y="336" width="375" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-E9-45O">
+                            <rect key="frame" x="15" y="10.5" width="33" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="gKc-E9-45O" firstAttribute="leading" secondItem="lyE-QX-cvu" secondAttribute="leading" constant="15" id="1gQ-hE-HgC"/>
+                        <constraint firstItem="gKc-E9-45O" firstAttribute="centerY" secondItem="lyE-QX-cvu" secondAttribute="centerY" id="ED7-uM-wxt"/>
+                        <constraint firstAttribute="height" constant="40" id="pGP-7C-iG3"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.99989503622055054" green="1" blue="0.99987143278121948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -110,12 +127,15 @@
                 <constraint firstAttribute="trailing" secondItem="kxl-gD-2LJ" secondAttribute="trailing" constant="15" id="8mT-Zk-nJQ"/>
                 <constraint firstAttribute="trailing" secondItem="orf-yN-JQX" secondAttribute="trailing" constant="20" id="Bda-Wr-JDn"/>
                 <constraint firstItem="orf-yN-JQX" firstAttribute="top" secondItem="kxl-gD-2LJ" secondAttribute="bottom" constant="5" id="DY3-LB-XdV"/>
+                <constraint firstAttribute="trailing" secondItem="lyE-QX-cvu" secondAttribute="trailing" id="Fmm-oH-EfH"/>
                 <constraint firstItem="Gui-ni-RPU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="G80-dd-HVy"/>
+                <constraint firstItem="lyE-QX-cvu" firstAttribute="top" secondItem="orf-yN-JQX" secondAttribute="bottom" constant="15" id="M5N-j7-SyM"/>
                 <constraint firstItem="kxl-gD-2LJ" firstAttribute="top" secondItem="Q1f-Eq-6c6" secondAttribute="bottom" constant="15" id="MwV-AF-pp5"/>
                 <constraint firstItem="orf-yN-JQX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Un4-UC-Suc"/>
                 <constraint firstItem="kxl-gD-2LJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Urx-y9-kqt"/>
                 <constraint firstItem="31g-Il-JZ0" firstAttribute="top" secondItem="Gui-ni-RPU" secondAttribute="bottom" constant="8" id="XeD-5C-Z4h"/>
                 <constraint firstItem="Q1f-Eq-6c6" firstAttribute="centerX" secondItem="PK2-8U-xF0" secondAttribute="centerX" id="Xqg-gm-76r"/>
+                <constraint firstItem="lyE-QX-cvu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bGa-Ab-R8K"/>
                 <constraint firstItem="PK2-8U-xF0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="d53-BH-3PJ"/>
                 <constraint firstItem="31g-Il-JZ0" firstAttribute="centerX" secondItem="Gui-ni-RPU" secondAttribute="centerX" id="fIP-Cs-Zuu"/>
                 <constraint firstAttribute="trailing" secondItem="WGT-bl-a1g" secondAttribute="trailing" constant="15" id="i1k-ii-Oh6"/>
@@ -131,7 +151,7 @@
                 <outlet property="maxFeeL" destination="Q1f-Eq-6c6" id="9gV-tN-R13"/>
                 <outlet property="minFeeL" destination="ljd-d5-wUT" id="QhW-tP-b5n"/>
             </connections>
-            <point key="canvasLocation" x="43.5" y="-104"/>
+            <point key="canvasLocation" x="43.5" y="-91"/>
         </view>
     </objects>
     <resources>

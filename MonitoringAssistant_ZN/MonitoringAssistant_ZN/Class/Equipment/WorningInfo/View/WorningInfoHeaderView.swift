@@ -288,28 +288,33 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
             
             if(model.code == "1"){
                 
+                self.setRingClolor(color: RGBCOLOR(r: 176, 183, 186), rate: Double(model.proportion!) / 100, ringView: self.ring1)
                 self.ring1.ring1.progress = Double(model.proportion!) / 100
                 self.ring1NumL.text = model.sumCnt
                 self.ring1RateL.text = String(model.proportion!) + "%"
                 
             }else  if(model.code == "2"){
                 
+                self.setRingClolor(color: RGBCOLOR(r: 203, 80, 76), rate: Double(model.proportion!) / 100, ringView: self.ring2)
                 self.ring2.ring1.progress = Double(model.proportion!) / 100
                 self.ring2NumL.text = model.sumCnt
                 self.ring2RateL.text = String(model.proportion!) + "%"
                 
             }else  if(model.code == "3"){
                 
+                self.setRingClolor(color: RGBCOLOR(r: 91, 206, 128), rate: Double(model.proportion!) / 100, ringView: self.ring3)
                 self.ring3.ring1.progress = Double(model.proportion!) / 100
                 self.ring3NumL.text = model.sumCnt
                 self.ring3RateL.text = String(model.proportion!) + "%"
             }else  if(model.code == "4"){
                 
+                self.setRingClolor(color: RGBCOLOR(r: 240, 181, 60), rate: Double(model.proportion!) / 100, ringView: self.ring4)
                 self.ring4.ring1.progress = Double(model.proportion!) / 100
                 self.ring4NumL.text = model.sumCnt
                 self.ring4RateL.text = String(model.proportion!) + "%"
             }else  if(model.code == "5"){
                 
+                self.setRingClolor(color: RGBCOLOR(r: 81, 188, 180), rate: Double(model.proportion!) / 100, ringView: self.ring5)
                 self.ring5.ring1.progress = Double(model.proportion!) / 100
                 self.ring5NumL.text = model.sumCnt
                 self.ring5RateL.text = String(model.proportion!) + "%"
@@ -322,5 +327,22 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         
         
     }
+    
+    func setRingClolor(color:UIColor , rate:Double ,ringView:MKRingSingleView) {
+        
+        if(rate == 0){
+            
+            ringView.ring1.startColor = UIColor.clear
+            ringView.ring1.endColor = UIColor.clear
+            
+        }else{
+            
+            ringView.ring1.startColor = color
+            ringView.ring1.endColor = color
+            
+        }
+        
+    }
+    
 
 }

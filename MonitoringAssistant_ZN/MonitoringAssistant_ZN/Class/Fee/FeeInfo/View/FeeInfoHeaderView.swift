@@ -36,7 +36,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         
         
         maxFeeL.font = UIFont.boldSystemFont(ofSize: 14)
-        averageFeeL.font = UIFont.boldSystemFont(ofSize: 14)
+        averageFeeL.font = UIFont.boldSystemFont(ofSize: 16)
         minFeeL.font = UIFont.boldSystemFont(ofSize: 14)
         
         
@@ -93,19 +93,20 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         leftAxis.axisMinimum = 0
         leftAxis.spaceMax = 500
         leftAxis.spaceMin = 500
+        leftAxis.drawGridLinesEnabled = false
 
-        leftAxis.gridLineDashLengths = [4, 3]
-        leftAxis.drawLimitLinesBehindDataEnabled = false
-        
-        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
-                                   font: .systemFont(ofSize: 12),
-                                   textColor: .white,
-                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-        marker.chartView = chartView
-        marker.minimumSize = CGSize(width: 80, height: 40)
-        chartView.marker = marker
-        
-        chartView.legend.form = .line
+//        leftAxis.gridLineDashLengths = [4, 3]
+//        leftAxis.drawLimitLinesBehindDataEnabled = false
+//
+//        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
+//                                   font: .systemFont(ofSize: 12),
+//                                   textColor: .white,
+//                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
+//        marker.chartView = chartView
+//        marker.minimumSize = CGSize(width: 80, height: 40)
+//        chartView.marker = marker
+//
+//        chartView.legend.form = .line
         
         
         
@@ -162,17 +163,15 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         
         
         let xAxisLabels = NSMutableArray()
-        xAxisLabels.add("")
         for i in 0..<dataArray.count {
             
             let model = dataArray[i] as! ReturnObjChargeRateVosModel
             xAxisLabels.add(model.monthStr ?? "")
         }
-        xAxisLabels.add("")
         
         chartView.xAxis.drawLabelsEnabled = true
         chartView.xAxis.axisMinimum = 0
-        chartView.xAxis.axisMaximum = Double(xAxisLabels.count-1)
+        chartView.xAxis.axisMaximum = Double(Double(xAxisLabels.count) - 1)
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
         chartView.xAxis.setLabelCount(xAxisLabels.count , force: true)
         chartView.xAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
@@ -194,7 +193,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         set1.axisDependency = .left
         
         let data = BarChartData(dataSet: set1)
-        data.barWidth = 0.4
+        data.barWidth = 0.5
         
         return data
 

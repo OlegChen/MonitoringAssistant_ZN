@@ -130,10 +130,10 @@ class EnergyMonitorPopView: UIView {
         shapLayer1.fillColor = UIColor.white.cgColor
         
         
-//        self.layer.shadowColor = UIColor.black.cgColor;
-//        self.layer.shadowOffset = CGSize(width:2, height:2);
-//        self.layer.shadowOpacity = 0.5;
-//        self.layer.shadowRadius = 8;
+        self.layer.shadowColor = UIColor.black.cgColor;
+        self.layer.shadowOffset = CGSize(width:2, height:2);
+        self.layer.shadowOpacity = 0.5;
+        self.layer.shadowRadius = 5;
         
         
     }

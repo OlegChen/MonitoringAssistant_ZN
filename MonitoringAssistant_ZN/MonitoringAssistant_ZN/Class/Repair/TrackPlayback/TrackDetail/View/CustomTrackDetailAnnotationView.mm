@@ -66,7 +66,7 @@
         UILabel *name = [[UILabel alloc]init];
         self.nameLabel = name;
         name.text = @"";
-        name.font = [UIFont systemFontOfSize:9];
+        name.font = [UIFont systemFontOfSize:7];
         name.textColor = [UIColor whiteColor];
         name.textAlignment = NSTextAlignmentCenter;
 //        name.backgroundColor = [UIColor orangeColor];
@@ -75,8 +75,8 @@
         [self addSubview:name];
         [name mas_makeConstraints:^(MASConstraintMaker *make) {
         
-            make.centerX.equalTo(self).offset(-5);
-            make.centerY.equalTo(self).offset(-4);
+            make.centerX.equalTo(self).offset(-4.5);
+            make.centerY.equalTo(self).offset(-3);
             make.size.mas_equalTo(CGSizeMake(30, 20));
         }];
         
@@ -167,6 +167,14 @@
             weakself.portraitImageView.image =  [weakself imageCompressForSize:image targetSize:CGSizeMake(kPortraitWidth, kPortraitHeight)];
     
         }];
+}
+
+- (void)setName:(NSString *)name{
+    
+    _name = name;
+    
+    self.nameLabel.text = name;
+    
 }
 
 

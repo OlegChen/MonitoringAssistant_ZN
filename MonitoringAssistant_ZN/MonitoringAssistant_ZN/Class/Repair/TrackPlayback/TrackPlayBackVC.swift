@@ -61,22 +61,32 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
 
         
         let newAnnotationView = CustomMapAnnotationView.init(annotation: annotation, reuseIdentifier: "12345")
-//
-//        let popView = Bundle.main.loadNibNamed("EnergyMonitorPopView", owner: nil, options: nil)?[0] as! EnergyMonitorPopView
-//        let custPopView =  BMKActionPaopaoView.init(customView: popView)
-        
         
         let custAnnotation = annotation as! CustPointAnnotation
         
         
         newAnnotationView?.centerOffset = CGPoint(x:10, y:-20) ;
         
-        let custView = TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width: 120 , height: 120 ))
+        
+        let companyStr = "机构：" + (custAnnotation.Model?.companyAlias)!
+        let nameStr = "联系人：" + (custAnnotation.Model?.empName)!
+        let telStr = "电话：" + (custAnnotation.Model?.mobile)!
+        
+        
+        let Width1 = self.textSize(text: companyStr, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+        let Width2 = self.textSize(text: nameStr, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+        let Width3 = self.textSize(text: telStr, font: UIFont.systemFont(ofSize: 12), maxSize: CGSize(width: 1000 ,height: 20))
+        
+        let maxW = max(Width1.width + 20,Width2.width + 20,Width3.width + 20)
+        
+        let popW = maxW > (ScreenW - 80) ? (ScreenW - 80) : maxW
+        
+        let custView = TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width:popW  , height: 120 ))
             custView.delegate = self
             custView.model = custAnnotation.Model
-            custView.companyL.text = "机构：" + (custAnnotation.Model?.companyAlias)!
-            custView.nameL.text = "联系人：" + (custAnnotation.Model?.empName)!
-            custView.TelL.text = "电话：" + (custAnnotation.Model?.mobile)!
+            custView.companyL.text = companyStr
+            custView.nameL.text = nameStr
+            custView.TelL.text = telStr
         
         newAnnotationView?.nameLabel.text = custAnnotation.Model?.empName
         
@@ -202,6 +212,11 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func textSize(text : String , font : UIFont , maxSize : CGSize) -> CGSize{
+        return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font : font], context: nil).size
     }
     
 

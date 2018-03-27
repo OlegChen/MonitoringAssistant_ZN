@@ -24,6 +24,7 @@
 @interface CustomTrackDetailAnnotationView : BMKPinAnnotationView //BMKAnnotationView
 
 @property (nonatomic ,copy) NSString *img;
+@property (nonatomic ,copy) NSString *name;
 
 //@property (nonatomic ,strong) TrackPlayBackReturnObjModel *teacherModel;
 

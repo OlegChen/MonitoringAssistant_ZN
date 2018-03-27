@@ -18,17 +18,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="50.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-ho-cRZ">
-                        <rect key="frame" x="15" y="15.5" width="35" height="20"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-ho-cRZ">
+                        <rect key="frame" x="15" y="13" width="45" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="35" id="YNw-ex-xfd"/>
-                            <constraint firstAttribute="height" constant="20" id="xLT-y6-BK2"/>
+                            <constraint firstAttribute="width" constant="45" id="YNw-ex-xfd"/>
+                            <constraint firstAttribute="height" constant="25" id="xLT-y6-BK2"/>
                         </constraints>
                         <state key="normal" title="Button" image="checked_off.png"/>
                         <state key="selected" image="checked_on.png"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-iD-APF">
-                        <rect key="frame" x="114" y="15" width="63.5" height="21"/>
+                        <rect key="frame" x="121.5" y="15" width="61" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="87V-gb-hkJ"/>
                         </constraints>
@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqi-CK-b9F">
-                        <rect key="frame" x="177.5" y="15" width="64" height="21"/>
+                        <rect key="frame" x="182.5" y="15" width="61.5" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="CHn-Of-zTn"/>
                         </constraints>
@@ -46,7 +46,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxN-Tn-wkv">
-                        <rect key="frame" x="241.5" y="14" width="63.5" height="21"/>
+                        <rect key="frame" x="244" y="14" width="61" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="KCS-ea-fPT"/>
                         </constraints>
@@ -55,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2w-xb-vCd">
-                        <rect key="frame" x="50" y="15" width="64" height="21"/>
+                        <rect key="frame" x="60" y="15" width="61.5" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="fJq-vf-E3F"/>
                         </constraints>

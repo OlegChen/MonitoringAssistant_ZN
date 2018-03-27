@@ -71,7 +71,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     
      var _mapView: BMKMapView!
     
-    var midAnnotation : CustPointAnnotation?
+    var workerAnnotation : CustPointAnnotation?
+    var startAnnotation : CustPointAnnotation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,20 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         _mapView?.viewWillAppear()
         _mapView?.delegate = self // 此处记得不用的时候需要置nil，否则影响内存的释放
         
+        
+        //显示选中的工人位置
+        let item = CustPointAnnotation()
+        self.workerAnnotation = item
+        item.coordinate = CLLocationCoordinate2D.init(latitude: Double(WorkerModel!.latitude!)! , longitude: Double(WorkerModel!.longitude!)!)
+        let m = TrackPlayBackReturnObjModel()
+        m.latitude = WorkerModel?.latitude
+        m.longitude = WorkerModel?.longitude
+        m.headUrl = WorkerModel?.headUrl;
+        m.empName = WorkerModel?.empName
+        item.Model = m
+        _mapView.addAnnotation(item)
+        _mapView.centerCoordinate = item.coordinate
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -130,48 +145,51 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         
         let custAnnotation = annotation as! CustPointAnnotation
-        
+
         if (custAnnotation.isStartAnno == starOrEnd.star.rawValue) {
-            
+
             let AnnotationViewID = "begain"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
             if annotationView == nil {
                 annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
-                
+
                 annotationView?.image  = UIImage.init(named: "起点")
-                
+
             }
             return annotationView
-            
+
         }else if (custAnnotation.isStartAnno == starOrEnd.end.rawValue) {
-            
+
             let AnnotationViewID = "end"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
             if annotationView == nil {
                 annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
-                
+
                 annotationView?.image  = UIImage.init(named: "终点")
-                
+
             }
             return annotationView
-            
+
         }
         
-        let newAnnotationView = CustomTrackDetailAnnotationView.init(annotation: annotation, reuseIdentifier: "12345")
-        newAnnotationView?.img = custAnnotation.Model?.headUrl
+//        let newAnnotationView = CustomTrackDetailAnnotationView.init(annotation: annotation, reuseIdentifier: "gwea")
+//        newAnnotationView?.img = custAnnotation.Model?.headUrl
+//        newAnnotationView?.name = custAnnotation.Model?.empName
+//
+//        newAnnotationView?.centerOffset = CGPoint(x:10, y:-20) ;
+//        newAnnotationView?.animatesDrop = false
+//
+//
+//
+//        return newAnnotationView;
         
         
+        
+        let newAnnotationView = CustomMapAnnotationView.init(annotation: annotation, reuseIdentifier: "12345546")
+
         newAnnotationView?.centerOffset = CGPoint(x:10, y:-20) ;
-        newAnnotationView?.animatesDrop = false
-        
-//
-//        let custView = TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width: 120 , height: 120 ))
-//        custView.delegate = self
-//        let popView = BMKActionPaopaoView.init(customView: custView )
-//
-//        newAnnotationView?.paopaoView = nil
-//        newAnnotationView?.paopaoView = popView
-        
+        newAnnotationView?.nameLabel.text = custAnnotation.Model?.empName
+        newAnnotationView?.img = custAnnotation.Model?.headUrl
         return newAnnotationView;
         
     }
@@ -181,7 +199,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         if let overlayTemp = overlay as? BMKPolyline {
             let polylineView = BMKPolylineView(overlay: overlay)
             if overlayTemp == polyLine {
-                polylineView?.strokeColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
+                polylineView?.strokeColor = UIColor(red: 215/255.0, green: 49/255.0, blue: 53/255.0, alpha: 1)
                 polylineView?.lineWidth = 1
                 polylineView?.loadStrokeTextureImage(UIImage(named: "texture_arrow.png"))
             }
@@ -215,7 +233,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         calendar.appearance.weekdayTextColor = RGBCOLOR(r: 58, 58, 58)
         calendar.appearance.headerMinimumDissolvedAlpha = 0
         calendar.calendarHeaderView.height = 55
-        
+        calendar.appearance.headerDateFormat = "yyyy年MM月"
+
         calendar.appearance.todayColor = .clear
         calendar.appearance.titleTodayColor = RGBCOLOR(r: 58, 58, 58)
         calendar.appearance.subtitleTodayColor = RGBCOLOR(r: 150, 150, 150)
@@ -749,6 +768,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
         }
         
+        self.startAnnotation = itemArray.firstObject as! CustPointAnnotation
+        
         self._mapView?.addAnnotations(itemArray as! [Any])
         
         
@@ -972,14 +993,14 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         if !btn.isSelected {
             
-            _mapView.removeAnnotation(self.midAnnotation)
-            
-            let item = CustPointAnnotation()
-            let m = self.Data?.returnObj!.first
-            item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
-            item.Model = m
-            self.midAnnotation = item
-            _mapView.addAnnotation(item)
+//            _mapView.removeAnnotation(self.startAnnotation)
+//
+//            let item = CustPointAnnotation()
+//            let m = self.Data?.returnObj!.first
+//            item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
+//            item.Model = m
+//            self.midAnnotation = item
+//            _mapView.addAnnotation(item)
             
             //开始播放
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(starPlayTrackAni), userInfo: nil, repeats: true)
@@ -1002,7 +1023,10 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         if(self.timerCount == (self.Data?.returnObj?.count)!){
             
-            _mapView.removeAnnotation(self.midAnnotation)
+                
+            let m = self.Data?.returnObj![0]
+            self.startAnnotation?.coordinate =  CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
+                
             self.bottomplayview.progressView.progress = 0.0
             self.bottomplayview.playBtn.isSelected = false
             self.stropPlayTrackaAni()
@@ -1016,7 +1040,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         UIView.animate(withDuration: 0.1) {
             
-            self.midAnnotation?.coordinate =  CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
+            self.startAnnotation?.coordinate =  CLLocationCoordinate2D.init(latitude: Double(m!.latitude!)! , longitude: Double(m!.longitude!)!)
             
             self.bottomplayview.progressView.progress = Float(Float(self.timerCount) / Float(((self.Data?.returnObj?.count)! - 1)))
         }

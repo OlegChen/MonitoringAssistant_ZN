@@ -73,6 +73,8 @@
 		183E20CF206898CF00186D45 /* EnergyCompareContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20CE206898CF00186D45 /* EnergyCompareContentVC.swift */; };
 		183E20D12068E38300186D45 /* legendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20D02068E38300186D45 /* legendView.swift */; };
 		183E20D32068E39800186D45 /* legendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183E20D22068E39800186D45 /* legendView.xib */; };
+		183E20D7206A7A8F00186D45 /* FeeCectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20D6206A7A8F00186D45 /* FeeCectionHeaderView.swift */; };
+		183E20DB206A7AAD00186D45 /* FeeCectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183E20DA206A7AAD00186D45 /* FeeCectionHeaderView.xib */; };
 		185AA40C20566BFE00205256 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */; };
 		185AA40D20566BFE00205256 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */; };
 		185AA40E20566BFE00205256 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */; };
@@ -393,9 +395,9 @@
 		74A8D407202DEA9600535BC2 /* dount_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3BB202DEA9600535BC2 /* dount_3.png */; };
 		74A8D408202DEA9600535BC2 /* dount_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3BC202DEA9600535BC2 /* dount_4.png */; };
 		74A8D409202DEA9600535BC2 /* dount_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3BD202DEA9600535BC2 /* dount_5.png */; };
-		74A8D40A202DEA9600535BC2 /* dispatch_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3BF202DEA9600535BC2 /* dispatch_record.png */; };
-		74A8D40B202DEA9600535BC2 /* dispatch_record_first.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3C0202DEA9600535BC2 /* dispatch_record_first.png */; };
-		74A8D40C202DEA9600535BC2 /* dispatch_record_last.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3C1202DEA9600535BC2 /* dispatch_record_last.png */; };
+		74A8D40A202DEA9600535BC2 /* dispatch_record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3BF202DEA9600535BC2 /* dispatch_record@2x.png */; };
+		74A8D40B202DEA9600535BC2 /* dispatch_record_first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3C0202DEA9600535BC2 /* dispatch_record_first@2x.png */; };
+		74A8D40C202DEA9600535BC2 /* dispatch_record_last@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3C1202DEA9600535BC2 /* dispatch_record_last@2x.png */; };
 		74A8D40D202DEA9600535BC2 /* mux.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3C3202DEA9600535BC2 /* mux.png */; };
 		74A8D40E202DEA9600535BC2 /* checked_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3C5202DEA9600535BC2 /* checked_off.png */; };
 		74A8D40F202DEA9600535BC2 /* checked_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 74A8D3C6202DEA9600535BC2 /* checked_on.png */; };
@@ -539,6 +541,8 @@
 		183E20CE206898CF00186D45 /* EnergyCompareContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCompareContentVC.swift; sourceTree = "<group>"; };
 		183E20D02068E38300186D45 /* legendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = legendView.swift; sourceTree = "<group>"; };
 		183E20D22068E39800186D45 /* legendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = legendView.xib; sourceTree = "<group>"; };
+		183E20D6206A7A8F00186D45 /* FeeCectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeCectionHeaderView.swift; sourceTree = "<group>"; };
+		183E20DA206A7AAD00186D45 /* FeeCectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeeCectionHeaderView.xib; sourceTree = "<group>"; };
 		185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -973,9 +977,9 @@
 		74A8D3BB202DEA9600535BC2 /* dount_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dount_3.png; sourceTree = "<group>"; };
 		74A8D3BC202DEA9600535BC2 /* dount_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dount_4.png; sourceTree = "<group>"; };
 		74A8D3BD202DEA9600535BC2 /* dount_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dount_5.png; sourceTree = "<group>"; };
-		74A8D3BF202DEA9600535BC2 /* dispatch_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dispatch_record.png; sourceTree = "<group>"; };
-		74A8D3C0202DEA9600535BC2 /* dispatch_record_first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dispatch_record_first.png; sourceTree = "<group>"; };
-		74A8D3C1202DEA9600535BC2 /* dispatch_record_last.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dispatch_record_last.png; sourceTree = "<group>"; };
+		74A8D3BF202DEA9600535BC2 /* dispatch_record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dispatch_record@2x.png"; sourceTree = "<group>"; };
+		74A8D3C0202DEA9600535BC2 /* dispatch_record_first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dispatch_record_first@2x.png"; sourceTree = "<group>"; };
+		74A8D3C1202DEA9600535BC2 /* dispatch_record_last@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dispatch_record_last@2x.png"; sourceTree = "<group>"; };
 		74A8D3C3202DEA9600535BC2 /* mux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mux.png; sourceTree = "<group>"; };
 		74A8D3C5202DEA9600535BC2 /* checked_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_off.png; sourceTree = "<group>"; };
 		74A8D3C6202DEA9600535BC2 /* checked_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_on.png; sourceTree = "<group>"; };
@@ -2331,6 +2335,8 @@
 				74903E2F2032D8F200003EF2 /* FeeInfoHeaderView.xib */,
 				74903E312032DA1F00003EF2 /* FeeInfoTableViewCell.swift */,
 				74903E322032DA1F00003EF2 /* FeeInfoTableViewCell.xib */,
+				183E20D6206A7A8F00186D45 /* FeeCectionHeaderView.swift */,
+				183E20DA206A7AAD00186D45 /* FeeCectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2633,9 +2639,9 @@
 		74A8D3BE202DEA9600535BC2 /* 拍单记录 */ = {
 			isa = PBXGroup;
 			children = (
-				74A8D3BF202DEA9600535BC2 /* dispatch_record.png */,
-				74A8D3C0202DEA9600535BC2 /* dispatch_record_first.png */,
-				74A8D3C1202DEA9600535BC2 /* dispatch_record_last.png */,
+				74A8D3BF202DEA9600535BC2 /* dispatch_record@2x.png */,
+				74A8D3C0202DEA9600535BC2 /* dispatch_record_first@2x.png */,
+				74A8D3C1202DEA9600535BC2 /* dispatch_record_last@2x.png */,
 			);
 			path = "拍单记录";
 			sourceTree = "<group>";
@@ -2861,7 +2867,7 @@
 				185AA523205A757B00205256 /* 黄金对标icon@2x.png in Resources */,
 				74DD1BE520551477002EC264 /* bottomPlayView.xib in Resources */,
 				74903E302032D8F200003EF2 /* FeeInfoHeaderView.xib in Resources */,
-				74A8D40B202DEA9600535BC2 /* dispatch_record_first.png in Resources */,
+				74A8D40B202DEA9600535BC2 /* dispatch_record_first@2x.png in Resources */,
 				181F5B7E2046E1C7003600DE /* functionVC.xib in Resources */,
 				74903E02202F413000003EF2 /* checkbox_off@2x.png in Resources */,
 				74DD1BF1205518CF002EC264 /* 起点@2x.png in Resources */,
@@ -2892,7 +2898,7 @@
 				74DD1BFD20559651002EC264 /* 密码@3x.png in Resources */,
 				74903E172031EB5600003EF2 /* 报修@3x.png in Resources */,
 				74A8D425202DEA9600535BC2 /* gold_3.png in Resources */,
-				74A8D40A202DEA9600535BC2 /* dispatch_record.png in Resources */,
+				74A8D40A202DEA9600535BC2 /* dispatch_record@2x.png in Resources */,
 				74A8D3F5202DEA9600535BC2 /* abcd_energy_use_profile_touch.png in Resources */,
 				185AA51F205A757B00205256 /* 告警icon@3x.png in Resources */,
 				181F5C29205627FC003600DE /* HUD_error@3x.png in Resources */,
@@ -2951,6 +2957,7 @@
 				74A8D3EF202DEA9600535BC2 /* abcd_charge_survey_touch.png in Resources */,
 				18A57A3520455A4D00DA7D59 /* CoreSDWebImage.bundle in Resources */,
 				185AA521205A757B00205256 /* 工单信息icon@3x.png in Resources */,
+				183E20DB206A7AAD00186D45 /* FeeCectionHeaderView.xib in Resources */,
 				74A8D3FC202DEA9600535BC2 /* abcd_trajectory_play_untouch.png in Resources */,
 				185AA4F9205A6C3C00205256 /* 紫标@2x.png in Resources */,
 				74903E462036A14100003EF2 /* EnergyMonitorPopView.xib in Resources */,
@@ -3014,7 +3021,7 @@
 				74A8D424202DEA9600535BC2 /* gold_2.png in Resources */,
 				74A8D40D202DEA9600535BC2 /* mux.png in Resources */,
 				185AA514205A757B00205256 /* 派转工单icon@2x.png in Resources */,
-				74A8D40C202DEA9600535BC2 /* dispatch_record_last.png in Resources */,
+				74A8D40C202DEA9600535BC2 /* dispatch_record_last@2x.png in Resources */,
 				74A8D426202DEA9600535BC2 /* gold_4.png in Resources */,
 				74DD1BF0205518CF002EC264 /* 起点@3x.png in Resources */,
 				74A8D404202DEA9600535BC2 /* 未标题-2.png in Resources */,
@@ -3182,6 +3189,7 @@
 				18D74FED20107C860011866E /* WRCycleScrollView.swift in Sources */,
 				18C8D2FB202C50E400E91527 /* View+MASAdditions.m in Sources */,
 				18D74FEF20107C860011866E /* WRNavigationBar.swift in Sources */,
+				183E20D7206A7A8F00186D45 /* FeeCectionHeaderView.swift in Sources */,
 				74903E0B2030806A00003EF2 /* UserCenter.swift in Sources */,
 				74903EBC204BCC6000003EF2 /* FSCalendarWeekdayView.m in Sources */,
 				18D750202015FFFC0011866E /* EnergyFeeVC.swift in Sources */,

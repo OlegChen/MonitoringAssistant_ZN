@@ -29,8 +29,8 @@ class SelectWorkerVCCell: UITableViewCell {
             self.addSubview(line)
             line.snp.makeConstraints({ (make) in
                 
-                let width = (ScreenW - 30 - 35) / 4
-                make.left.equalTo(self).offset(15 + (i < 2 ? (Double( i ) *  Double( 35)): (35 + Double( i - 1) *  Double( width )))  )
+                let width = (ScreenW - 30 - 45) / 4
+                make.left.equalTo(self).offset(15 + (i < 2 ? (Double( i ) *  Double( 45)): (45 + Double( i - 1) *  Double( width )))  )
                 make.top.equalTo(self).offset(0)
                 make.bottom.equalTo(self).offset(0)
                 make.width.equalTo(0.5)

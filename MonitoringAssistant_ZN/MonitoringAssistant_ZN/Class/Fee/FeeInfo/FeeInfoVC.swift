@@ -36,9 +36,10 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight), 0, 0, 0))
         })
         self.tableView?.register(UINib.init(nibName: "FeeInfoTableViewCell", bundle: nil), forCellReuseIdentifier:FeeInfoTableViewCell_id )
+        self.tableView?.register(UINib.init(nibName: "FeeCectionHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: FeeCectionHeaderView_id)
         
         let view = UIView.init()
-        view.frame = CGRect(x: 0, y: 0 , width:ScreenW ,height: 350 )
+        view.frame = CGRect(x: 0, y: 0 , width:ScreenW ,height: 376 )
         
         let headerView = Bundle.main.loadNibNamed("FeeInfoHeaderView", owner: nil, options: nil)?[0] as! FeeInfoHeaderView
         self.headerView = headerView
@@ -48,6 +49,12 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         
         //数据
         self.getData()
+        
+        self.tableView?.es.addPullToRefresh {
+            
+            [weak self] in
+            self?.getData()
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -72,8 +79,12 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
                 self.dataArr.addObjects(from: (model.returnObj?.chargeRateVos)!)
                 self.tableView?.reloadData()
                 
+                
+                self.tableView?.es.stopPullToRefresh()
+                
             }, failture: { (errow) in
                 
+                self.tableView?.es.stopPullToRefresh()
             })
     
         }
@@ -107,26 +118,30 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 55
+        return 40
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let view = UIView()
-        view.backgroundColor = UIColor.init(red: 245/255.0, green:  245/255.0, blue:  245/255.0, alpha: 1.0)
+//        let view = UIView()
+//        view.backgroundColor = UIColor.init(red: 245/255.0, green:  245/255.0, blue:  245/255.0, alpha: 1.0)
+//
+//        let label = UILabel()
+//        label.text = "记录"
+//        label.font = UIFont.systemFont(ofSize: 16)
+//        label.textColor = UIColor.init(red: 58/255.0, green: 58/255.0, blue: 58/255.0, alpha: 1.0)
+//        view.addSubview(label)
+//        label.snp.makeConstraints { (make) in
+//
+//            make.centerY.equalTo(view)
+//            make.left.equalTo(view).offset(15)
+//        }
+//
+//        return view
         
-        let label = UILabel()
-        label.text = "记录"
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.init(red: 58/255.0, green: 58/255.0, blue: 58/255.0, alpha: 1.0)
-        view.addSubview(label)
-        label.snp.makeConstraints { (make) in
-            
-            make.centerY.equalTo(view)
-            make.left.equalTo(view).offset(15)
-        }
+        let header =   tableView.dequeueReusableHeaderFooterView(withIdentifier: FeeCectionHeaderView_id) as! FeeCectionHeaderView
+        return header
         
-        return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

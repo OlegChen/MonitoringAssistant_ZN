@@ -24,6 +24,7 @@
 @interface CustomMapAnnotationView : BMKAnnotationView
 
 @property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic ,copy) NSString *img;
 
 
 //@property (nonatomic ,strong) TeacherListDataModel *teacherModel;

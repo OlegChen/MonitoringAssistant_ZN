@@ -14,9 +14,9 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     var workNo : String?
     
     var headView : OrderDetailHeaderView?
-    
     var dataModel : WorkOrderDetailModel?
     
+    var dispatchBtn : UIButton!
     
     var tableView : UITableView!
     
@@ -25,31 +25,33 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         super.viewDidLoad()
         
         self.title = "工单详情"
-        self.view.backgroundColor = RGBCOLOR(r: 240, 240, 240)
+        self.view.backgroundColor = RGBCOLOR(r: 242, 242, 242)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "派单记录", target: self, action: #selector(toDispatchOrderListVC))
 
         self.tableView = UITableView()
-        self.tableView.backgroundColor = RGBCOLOR(r: 240, 240, 240)
+        self.tableView.backgroundColor = RGBCOLOR(r: 242, 242, 242)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             
-            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight), 0, 80, 0))
+            make.left.right.equalTo(self.view).offset(0)
+            make.top.equalTo(self.view).offset(NavHeight)
+            make.bottom.equalTo(self.view).offset(-80)
         }
         self.tableView.register(UINib.init(nibName: "OrderDetailCell" , bundle: nil), forCellReuseIdentifier: OrderDetailCell_id)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         
         let headerView = UIView()
-        headerView.backgroundColor = UIColor.white
-        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 220)
+        headerView.backgroundColor = UIColor.clear
+        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 217)
        
         let view = (Bundle.main.loadNibNamed("OrderDetailHeaderView", owner: nil, options: nil)![0] as! OrderDetailHeaderView)
         self.headView = view
         headerView.addSubview(view)
-        
+        view.backgroundColor = UIColor.clear
         self.tableView.tableHeaderView = headerView
     
         self.setupBottomBtn()
@@ -97,10 +99,11 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     func setupBottomBtn() {
         
         let btn = UIButton()
+        self.dispatchBtn = btn
         self.view.addSubview(btn)
         btn.snp.makeConstraints { (make) in
             
-            make.top.equalTo(self.tableView.snp.bottom).offset(10)
+            make.top.equalTo(self.tableView.snp.bottom).offset(40)
             make.left.equalTo(self.view).offset(45)
             make.right.equalTo(self.view).offset(-45)
             make.height.equalTo(50)
@@ -169,9 +172,11 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                     
                     self.setupImagefooter(array: model.returnObj?.workDealImgs as! NSArray)
                     
-                    //
-                    //                self.dataArr.addObjects(from: model.returnObj!)
                     self.tableView.reloadData()
+                    
+                    self.dispatchBtn.setTitle(model.returnObj?.workSendId == "0" ? "派单" : "转派", for: UIControlState.normal)
+                    
+                    
                 }else{
                     
                     YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
@@ -188,6 +193,10 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     }
     
     func setupImagefooter(array:NSArray) {
+        
+        if array.count == 0 || array == nil {
+            return
+        }
         
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -227,11 +236,21 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             
         }
         
-        let height = 15 +  CGFloat((A.count)) / 3 * (imgW + 15)
+        let height =  15 + CGFloat((A.count - 1) / 3 + 1) * (imgW + 15)
         
         view.frame = CGRect(x: 0 , y : 0 , width: ScreenW , height: height )
         
         self.tableView.tableFooterView = view
+        
+        
+        //底部按钮 位置设置
+        let cellheight = Double((self.dataModel?.returnObj?.cellHeight)!)
+
+        let bottomH = Double(ScreenH) - Double(NavHeight) - 217 - cellheight - Double(height)
+        
+        self.tableView.snp.updateConstraints({ (make) in
+                make.bottom.equalTo(self.view).offset(-(bottomH < 120 ? 120 : bottomH))
+            })
         
     }
     

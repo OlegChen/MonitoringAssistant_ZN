@@ -19,7 +19,6 @@ class EquipmentMonitorHeaderView: UIView {
         var ring2Progress : Double = 0
         var ring3Progress : Double = 0
         var ring4Progress : Double = 0
-    
         
     
         for i in 0..<array.count {
@@ -56,13 +55,13 @@ class EquipmentMonitorHeaderView: UIView {
             
         }
         
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(1.0)
-        self.progressGroup.ring1.progress = ring1Progress / 100 //selectedGroup.contentView.ring1.progress
-        self.progressGroup.ring2.progress = ring2Progress / 100 //selectedGroup.contentView.ring2.progress
-        self.progressGroup.ring3.progress = ring3Progress / 100 //selectedGroup.contentView.ring3.progress
-        self.progressGroup.ring4.progress = ring4Progress / 100 //selectedGroup.contentView.ring3.progress
-        CATransaction.commit()
+//        CATransaction.begin()
+//        CATransaction.setAnimationDuration(1.0)
+        self.progressGroup.setRing1_progress(value: ring1Progress / 100)  //selectedGroup.contentView.ring1.progress
+        self.progressGroup.setRing2_progress(value: ring2Progress / 100)   //selectedGroup.contentView.ring2.progress
+        self.progressGroup.setRing3_progress(value: ring3Progress / 100 ) //selectedGroup.contentView.ring3.progress
+        self.progressGroup.setRing4_progress(value: ring4Progress / 100)  //selectedGroup.contentView.ring3.progress
+//        CATransaction.commit()
     
         
         
@@ -101,9 +100,8 @@ class EquipmentMonitorHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.progressGroup.ringWidth = 15
+        self.progressGroup.ringWidth = 12
         
-
         
         exampleView1.layer.cornerRadius = 8
         exampleView2.layer.cornerRadius = 8
@@ -111,6 +109,12 @@ class EquipmentMonitorHeaderView: UIView {
         exampleView4.layer.cornerRadius = 8
 
         sumCntL.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        
+        self.progressGroup.setRing1_progress(value: 0)
+        self.progressGroup.setRing2_progress(value: 0)
+        self.progressGroup.setRing3_progress(value: 0)
+        self.progressGroup.setRing4_progress(value: 0)
         
     }
     

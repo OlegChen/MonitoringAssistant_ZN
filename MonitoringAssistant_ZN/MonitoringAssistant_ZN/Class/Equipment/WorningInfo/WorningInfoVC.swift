@@ -8,15 +8,26 @@
 
 import UIKit
 
-class WorningInfoVC: BaseTableVC {
+class WorningInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
 
     var headView : WorningInfoHeaderView?
     
+    var tableView : UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "告警信息"
+        
+        self.tableView = UITableView()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.backgroundColor = RGBCOLOR(r: 242, 242, 242)
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight), 0, 0, 0))
+        }
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
@@ -31,25 +42,37 @@ class WorningInfoVC: BaseTableVC {
         
         self.tableView.tableHeaderView = view
         
+        YJProgressHUD.showProgress(nil, in: self.tableView)
         self.getData()
+        
+        self.tableView.es.addPullToRefresh {
+            
+            [weak self] in
+            self?.getData()
+            
+        }
         
 
     }
     
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return 0
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        return cell
+    }
+    
     func getData() {
         
-
-        YJProgressHUD.showProgress(nil, in: self.tableView)
         
         weak var weakSelf = self // ADD THIS LINE AS WELL
         
@@ -74,9 +97,12 @@ class WorningInfoVC: BaseTableVC {
                 
                 YJProgressHUD.hide()
                 
+                self.tableView.es.stopPullToRefresh()
+                
             }, failture: { (error) in
                 
                 YJProgressHUD.hide()
+                self.tableView.es.stopPullToRefresh()
             })
             
             

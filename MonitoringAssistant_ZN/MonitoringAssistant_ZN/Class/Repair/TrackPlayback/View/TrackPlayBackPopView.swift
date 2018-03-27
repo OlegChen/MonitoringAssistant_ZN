@@ -31,13 +31,13 @@ class TrackPlayBackPopView: UIView {
     
 //        self.backgroundColor = .red
         
-        let bg = UIImageView()
-        bg.image = UIImage.init(named: "未标题-2")
-        self.addSubview(bg)
-        bg.snp.makeConstraints { (make) in
-            
-            make.edges.equalTo(self).inset(UIEdgeInsetsMake(0, 0, 0, 0))
-        }
+//        let bg = UIImageView()
+//        bg.image = UIImage.init(named: "未标题-2")
+//        self.addSubview(bg)
+//        bg.snp.makeConstraints { (make) in
+//
+//            make.edges.equalTo(self).inset(UIEdgeInsetsMake(0, 0, 0, 0))
+//        }
         
         
         
@@ -48,7 +48,7 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(companyL)
         companyL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(8);
+            make.left.equalTo(self).offset(10);
             make.right.equalTo(self).offset(-8);
             make.top.equalTo(self).offset(10);
             
@@ -61,7 +61,7 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(nameL)
         nameL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(8);
+            make.left.equalTo(self).offset(10);
             make.right.equalTo(self).offset(-8);
             make.top.equalTo(companyL.snp.bottom).offset(8);
             
@@ -75,7 +75,7 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(TelL)
         TelL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(8);
+            make.left.equalTo(self).offset(10);
             make.right.equalTo(self).offset(-4);
             make.top.equalTo(nameL.snp.bottom).offset(8);
             
@@ -92,12 +92,35 @@ class TrackPlayBackPopView: UIView {
         btn.snp.makeConstraints { (make) in
             
             make.centerX.equalTo(self).offset(0);
-            make.top.equalTo(TelL.snp.bottom).offset(12);
+            make.top.equalTo(TelL.snp.bottom).offset(10);
             make.size.equalTo(CGSize(width:80, height: 18))
             
         }
         
         
+        self.backgroundColor = UIColor.clear
+        
+        let shapLayer : CAShapeLayer = CAShapeLayer()
+                let path : UIBezierPath = UIBezierPath.init(roundedRect: CGRect(x: 0 ,y:0 ,width: frame.width , height:frame.height-15), cornerRadius: 6)
+                shapLayer.path = path.cgPath
+        self.layer.insertSublayer(shapLayer, at: 0)
+        shapLayer.fillColor = UIColor.white.cgColor
+        
+        
+        let shapLayer1 : CAShapeLayer = CAShapeLayer()
+                let path1 = UIBezierPath()
+                path1.move(to: CGPoint(x:frame.width/2.0 + 5 , y :frame.height - 30 ))
+                path1.addLine(to: CGPoint(x:frame.width/2.0 , y :frame.height ))
+                path1.addLine(to: CGPoint(x:frame.width/2.0 + 40 , y :frame.height - 30 ))
+                path1.close()
+                shapLayer1.path = path1.cgPath
+        self.layer.insertSublayer(shapLayer1, at: 0)
+        shapLayer1.fillColor = UIColor.white.cgColor
+        
+                self.layer.shadowColor = UIColor.black.cgColor;
+                self.layer.shadowOffset = CGSize(width:2, height:2);
+                self.layer.shadowOpacity = 0.4;
+                self.layer.shadowRadius = 5;
     }
     
     @objc func btnClick() {
