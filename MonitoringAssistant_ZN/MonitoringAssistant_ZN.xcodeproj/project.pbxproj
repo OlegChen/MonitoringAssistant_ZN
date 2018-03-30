@@ -75,6 +75,10 @@
 		183E20D32068E39800186D45 /* legendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183E20D22068E39800186D45 /* legendView.xib */; };
 		183E20D7206A7A8F00186D45 /* FeeCectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E20D6206A7A8F00186D45 /* FeeCectionHeaderView.swift */; };
 		183E20DB206A7AAD00186D45 /* FeeCectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183E20DA206A7AAD00186D45 /* FeeCectionHeaderView.xib */; };
+		183E20DE206B272E00186D45 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E20DC206B272D00186D45 /* UITextField+Placeholder.m */; };
+		183E20E4206E229300186D45 /* UIImageView+WebCache.h in Sources */ = {isa = PBXBuildFile; fileRef = 185AA4D3205A141000205256 /* UIImageView+WebCache.h */; };
+		183E20E5206E22CA00186D45 /* SDImageCache.h in Sources */ = {isa = PBXBuildFile; fileRef = 185AA4A8205A140F00205256 /* SDImageCache.h */; };
+		183E20E9206E26E900186D45 /* placeHolderImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E20E8206E26E800186D45 /* placeHolderImg.png */; };
 		185AA40C20566BFE00205256 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */; };
 		185AA40D20566BFE00205256 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */; };
 		185AA40E20566BFE00205256 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */; };
@@ -544,6 +548,9 @@
 		183E20D22068E39800186D45 /* legendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = legendView.xib; sourceTree = "<group>"; };
 		183E20D6206A7A8F00186D45 /* FeeCectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeCectionHeaderView.swift; sourceTree = "<group>"; };
 		183E20DA206A7AAD00186D45 /* FeeCectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeeCectionHeaderView.xib; sourceTree = "<group>"; };
+		183E20DC206B272D00186D45 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
+		183E20DD206B272E00186D45 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
+		183E20E8206E26E800186D45 /* placeHolderImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeHolderImg.png; sourceTree = "<group>"; };
 		185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -1150,6 +1157,8 @@
 		181F5BB620497E3C003600DE /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				183E20DD206B272E00186D45 /* UITextField+Placeholder.h */,
+				183E20DC206B272D00186D45 /* UITextField+Placeholder.m */,
 				181F5BB720497E3C003600DE /* UIView+Common.h */,
 				181F5BB820497E3C003600DE /* UIView+Common.m */,
 				181F5BBB20497E85003600DE /* UIView+FP.h */,
@@ -2662,6 +2671,7 @@
 		74A8D3C4202DEA9600535BC2 /* 派转工单 */ = {
 			isa = PBXGroup;
 			children = (
+				183E20E8206E26E800186D45 /* placeHolderImg.png */,
 				74A8D3C5202DEA9600535BC2 /* checked_off.png */,
 				74A8D3C6202DEA9600535BC2 /* checked_on.png */,
 				74A8D3C7202DEA9600535BC2 /* touch.png */,
@@ -2895,6 +2905,7 @@
 				74A8D408202DEA9600535BC2 /* dount_4.png in Resources */,
 				181F5C28205627FC003600DE /* HUD_error@2x.png in Resources */,
 				181F5C072056169C003600DE /* 右@2x.png in Resources */,
+				183E20E9206E26E900186D45 /* placeHolderImg.png in Resources */,
 				74903E68203F10E600003EF2 /* DispatchOrderVCCell.xib in Resources */,
 				18A57A4920455A4D00DA7D59 /* PhotoItemView.xib in Resources */,
 				74A8D40F202DEA9600535BC2 /* checked_on.png in Resources */,
@@ -3104,6 +3115,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183E20E5206E22CA00186D45 /* SDImageCache.h in Sources */,
+				183E20E4206E229300186D45 /* UIImageView+WebCache.h in Sources */,
 				181F5C4820563A39003600DE /* SVIndefiniteAnimatedView.m in Sources */,
 				185AA42E2059079200205256 /* StationDetailReturnObjModel.swift in Sources */,
 				74903E7920403E3800003EF2 /* SelectWorkerReturnObjModel.swift in Sources */,
@@ -3137,6 +3150,7 @@
 				18A57A2E20455A4D00DA7D59 /* UIImage+Extend.m in Sources */,
 				181F5BBF20497EE6003600DE /* UIColor+expanded.m in Sources */,
 				74903EB8204BCC6000003EF2 /* FSCalendarHeaderView.m in Sources */,
+				183E20DE206B272E00186D45 /* UITextField+Placeholder.m in Sources */,
 				181F5C0C205619D4003600DE /* PhoneCodeButton.m in Sources */,
 				74903E802045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift in Sources */,
 				181F5BD72051164D003600DE /* MKRingSingleView.swift in Sources */,
@@ -3549,8 +3563,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
-				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
+				PROVISIONING_PROFILE = "e3aa4bd8-0437-467f-8472-6c56f73f8772";
+				PROVISIONING_PROFILE_SPECIFIER = newCompany_addHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -3591,8 +3605,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d1851ddc-2fee-4038-b420-7f3cc1cd4b1f";
-				PROVISIONING_PROFILE_SPECIFIER = ZN_jianKongZhuShou_addHoc_2018_3_5;
+				PROVISIONING_PROFILE = "e3aa4bd8-0437-467f-8472-6c56f73f8772";
+				PROVISIONING_PROFILE_SPECIFIER = newCompany_addHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

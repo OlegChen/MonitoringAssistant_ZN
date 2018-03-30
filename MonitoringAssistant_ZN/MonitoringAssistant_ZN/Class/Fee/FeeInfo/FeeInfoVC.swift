@@ -140,6 +140,7 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
 //        return view
         
         let header =   tableView.dequeueReusableHeaderFooterView(withIdentifier: FeeCectionHeaderView_id) as! FeeCectionHeaderView
+        header.backgroundColor = UIColor.white
         return header
         
     }

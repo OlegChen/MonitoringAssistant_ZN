@@ -53,14 +53,32 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
             
         }
         
+        self.getData(pageNo: 1)
+        
         self.view.beginLoading()
         
+        
+        /// 通知名
+        let notificationName = "xhNotification"
+        /// 自定义通知
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationMethod), name: NSNotification.Name(rawValue: notificationName), object: nil)
+        
+    }
+    
+    @objc func notificationMethod() {
+        
+        self.tableView.scrollRectToVisible(CGRect(x:0, y:0, width:1,height:1), animated: false)
+        self.tableView.es.startPullToRefresh()
+        
+    }
+    
+    deinit {
+        /// 移除通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.getData(pageNo: 1)
         
     }
     
@@ -201,7 +219,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         vc.workSendId = model.workSendId
         self.navigationController?.pushViewController(vc, animated: true)
         
-        
+      
     }
     
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
     
     let kNavBarBottom = WRNavigationBar.navBarBottom()
@@ -39,6 +40,10 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
         navBarBackgroundAlpha = 0
         
         self.mobileTextfield.delegate = self
+        
+        self.mobileTextfield.placeholderColor = UIColor.white
+        self.pwTextField.placeholderColor = UIColor.white
+
         
         self.rememberPWBtn.imageView?.contentMode = UIViewContentMode.center
         self.rememberPWBtn.adjustsImageWhenHighlighted = false //使触摸模式下按钮也不会变暗

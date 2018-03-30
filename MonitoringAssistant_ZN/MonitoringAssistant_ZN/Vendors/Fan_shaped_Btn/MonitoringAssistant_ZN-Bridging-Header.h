@@ -31,4 +31,7 @@
 #import "CheckVerson.h"
 #import "CustomerAlertViewManger.h"
 
+#import "UITextField+Placeholder.h"
+
+
 

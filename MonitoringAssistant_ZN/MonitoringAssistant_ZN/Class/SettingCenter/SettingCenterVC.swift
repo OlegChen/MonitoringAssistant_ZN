@@ -173,7 +173,8 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
                 
                 if (model.statusCode == 800){
                     
-                    self.headImg.kf.setImage(with: URL.init(string: (model.returnObj?.headUrl)!))
+                    self.headImg.sd_setImage(with: URL.init(string: (model.returnObj?.headUrl)!), placeholderImage: UIImage(named:"head_portrait"), options: SDWebImageOptions(rawValue: SDWebImageOptions.RawValue(UInt8(SDWebImageOptions.retryFailed.rawValue) | UInt8(SDWebImageOptions.lowPriority.rawValue))) , completed:nil)
+
                     self.nameL.text = model.returnObj?.empName
                     self.TelL.text = model.returnObj?.mobile
                 }

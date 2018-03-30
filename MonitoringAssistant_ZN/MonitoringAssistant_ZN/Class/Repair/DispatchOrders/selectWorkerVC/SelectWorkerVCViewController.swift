@@ -148,14 +148,14 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                         self.tableView.snp.updateConstraints({ (make) in
                             make.bottom.equalTo(self.view).offset(-(bottomH < 200 ? 200 : bottomH))
                             
-                            if(bottomH < 200){
-                                
-                                self.tableView.isScrollEnabled = true
-                            }else{
-                                
-                                self.tableView.isScrollEnabled = false
-                            }
                         })
+                        if(bottomH < 200){
+                            
+                            self.tableView.isScrollEnabled = true
+                        }else{
+                            
+                            self.tableView.isScrollEnabled = false
+                        }
                         
                     }else{
                         
@@ -260,6 +260,9 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                 if self.navigationController?.viewControllers[i].isKind(of: DispatchOrderVC.self) == true {
                     
                     _ = self.navigationController?.popToViewController(self.navigationController?.viewControllers[i] as! DispatchOrderVC, animated: true)
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "xhNotification"), object: nil)
+                    
                     break
                 }
             }

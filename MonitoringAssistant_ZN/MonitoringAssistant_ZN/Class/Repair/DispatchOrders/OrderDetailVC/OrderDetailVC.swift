@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
 
     var workNo : String?
@@ -222,7 +221,10 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             
             let urlStr = model.imgUrl
             
-            img.sd_setImage(with: URL.init(string: urlStr!), placeholderImage: UIImage(named:"配置中心"), options: SDWebImageOptions.retryFailed, completed:nil)
+            img.sd_setImage(with: URL.init(string: urlStr!), placeholderImage: UIImage(named:"placeHolderImg"), options: SDWebImageOptions(rawValue: SDWebImageOptions.RawValue(UInt8(SDWebImageOptions.retryFailed.rawValue) | UInt8(SDWebImageOptions.lowPriority.rawValue))) , completed:nil)
+        
+//            img.sd_setImage(with: <#T##URL?#>, completed: <#T##SDExternalCompletionBlock?##SDExternalCompletionBlock?##(UIImage?, Error?, SDImageCacheType, URL?) -> Void#>)
+            //placeHolderImg
             
             view.addSubview(img)
             let l = i % 3
@@ -251,6 +253,13 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         self.tableView.snp.updateConstraints({ (make) in
                 make.bottom.equalTo(self.view).offset(-(bottomH < 120 ? 120 : bottomH))
             })
+        if(bottomH < 120){
+            
+            self.tableView.isScrollEnabled = true
+        }else{
+            
+            self.tableView.isScrollEnabled = false
+        }
         
     }
     

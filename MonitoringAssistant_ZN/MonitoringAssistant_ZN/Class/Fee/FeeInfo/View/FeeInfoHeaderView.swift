@@ -163,17 +163,19 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         
         
         let xAxisLabels = NSMutableArray()
+        xAxisLabels.add("")
         for i in 0..<dataArray.count {
             
             let model = dataArray[i] as! ReturnObjChargeRateVosModel
             xAxisLabels.add(model.monthStr ?? "")
         }
+//        xAxisLabels.add("")
         
         chartView.xAxis.drawLabelsEnabled = true
-        chartView.xAxis.axisMinimum = 0
-        chartView.xAxis.axisMaximum = Double(Double(xAxisLabels.count) - 1)
+        chartView.xAxis.axisMinimum = 0.5
+        chartView.xAxis.axisMaximum = Double(Double(xAxisLabels.count)-0.5)
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
-        chartView.xAxis.setLabelCount(xAxisLabels.count , force: true)
+        chartView.xAxis.setLabelCount(xAxisLabels.count-1, force: false)
         chartView.xAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
         
         
