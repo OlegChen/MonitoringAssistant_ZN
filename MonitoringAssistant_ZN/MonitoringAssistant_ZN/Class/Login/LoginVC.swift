@@ -39,15 +39,18 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
 //        self.title = "登录"
         navBarBackgroundAlpha = 0
         
-        self.mobileTextfield.delegate = self
+        self.pwTextField.delegate = self
         
         self.mobileTextfield.placeholderColor = UIColor.white
         self.pwTextField.placeholderColor = UIColor.white
-
+        
+        self.mobileTextfield.tintColor = UIColor.white
+        self.pwTextField.tintColor = UIColor.white
         
         self.rememberPWBtn.imageView?.contentMode = UIViewContentMode.center
         self.rememberPWBtn.adjustsImageWhenHighlighted = false //使触摸模式下按钮也不会变暗
         self.rememberPWBtn.isSelected = true
+        self.rememberPWBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         
         var image = UIImage(named: "login_button_touch")
         var imageHigh = UIImage(named: "login_button_touchch")
@@ -56,8 +59,8 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
         image = image?.stretchableImage(withLeftCapWidth: leftCapWidth, topCapHeight: topCapHeight)
         imageHigh = imageHigh?.stretchableImage(withLeftCapWidth: leftCapWidth, topCapHeight: topCapHeight)
 
-        self.loginBtn.setBackgroundImage(image, for: UIControlState.normal)
-        self.loginBtn.setBackgroundImage(imageHigh, for: UIControlState.highlighted)
+//        self.loginBtn.setBackgroundImage(image, for: UIControlState.normal)
+//        self.loginBtn.setBackgroundImage(imageHigh, for: UIControlState.highlighted)
         
         self.tableView.frame = CGRect(x: 0, y: CGFloat(kNavBarBottom), width: ScreenW, height: ScreenH)
         let img = UIImageView(frame:self.tableView.bounds)
@@ -85,7 +88,6 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
     
     @IBAction func loginClick(_ sender: Any) {
         
-        YJProgressHUD.showProgress(nil, in: UIApplication.shared.keyWindow)
         
         if(self.mobileTextfield.text!.characters.count > 0 && self.pwTextField.text!.characters.count > 0){
             
@@ -93,6 +95,8 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
                         "userPwd"    : self.pwTextField.text! ,
                         "companyCode" : "0000"] as [String : Any]
             
+            YJProgressHUD.showProgress(nil, in: UIApplication.shared.keyWindow)
+
             NetworkService.networkPostrequest(parameters: para as! [String : String], requestApi: LoginUrl, modelClass: String(describing: LoginModel.self), response: { (obj) in
                 
                 YJProgressHUD.hide()
@@ -134,7 +138,11 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
             
         }else{
             
-            UIAlertView.init(title: "提示", message: "用户名、密码需填写完整", delegate: nil, cancelButtonTitle: "确定").show()
+            ZNCustomAlertView.handleTip("用户名、密码需填写完整", isShowCancelBtn: false, completion: { (isSure) in
+                
+                
+                
+            })
             
         }
         
@@ -177,16 +185,17 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        guard let text = textField.text else{
-            return true
-        }
 
-        //新号码
-        let textLength = text.characters.count + string.characters.count - range.length
-        return textLength <= 11
+        if(string == ""){return true}
         
-    }
+        let regex = "^[A-Za-z0-9]+$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        let isValid = predicate.evaluate(with: string)
+        print("------" + string)
+        
+        return isValid
+
+    }  //^[A-Za-z0-9]+$
     
     
     @IBAction func rememberPwBtnClick(_ sender: UIButton) {

@@ -32,6 +32,7 @@
 #import "CustomerAlertViewManger.h"
 
 #import "UITextField+Placeholder.h"
+#import "ZNCustomAlertView.h"
 
 
 

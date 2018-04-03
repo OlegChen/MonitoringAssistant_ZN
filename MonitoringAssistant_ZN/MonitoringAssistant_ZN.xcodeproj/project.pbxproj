@@ -79,6 +79,13 @@
 		183E20E4206E229300186D45 /* UIImageView+WebCache.h in Sources */ = {isa = PBXBuildFile; fileRef = 185AA4D3205A141000205256 /* UIImageView+WebCache.h */; };
 		183E20E5206E22CA00186D45 /* SDImageCache.h in Sources */ = {isa = PBXBuildFile; fileRef = 185AA4A8205A140F00205256 /* SDImageCache.h */; };
 		183E20E9206E26E900186D45 /* placeHolderImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E20E8206E26E800186D45 /* placeHolderImg.png */; };
+		183E20EE207378CA00186D45 /* 记住密码选择@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E20EA207378C800186D45 /* 记住密码选择@2x.png */; };
+		183E20EF207378CA00186D45 /* 记住密码选择@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E20EB207378C800186D45 /* 记住密码选择@3x.png */; };
+		183E20F0207378CA00186D45 /* 记住密码@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E20EC207378C900186D45 /* 记住密码@2x.png */; };
+		183E20F1207378CA00186D45 /* 记住密码@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E20ED207378C900186D45 /* 记住密码@3x.png */; };
+		183E20F82073828B00186D45 /* ZNCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E20F72073828B00186D45 /* ZNCustomAlertView.m */; };
+		183E20FA207382B600186D45 /* ZNCustomAlertContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183E20F9207382B600186D45 /* ZNCustomAlertContentView.xib */; };
+		183E20FD207382CD00186D45 /* ZNCustomAlertContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E20FC207382CD00186D45 /* ZNCustomAlertContentView.m */; };
 		185AA40C20566BFE00205256 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */; };
 		185AA40D20566BFE00205256 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */; };
 		185AA40E20566BFE00205256 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */; };
@@ -551,6 +558,15 @@
 		183E20DC206B272D00186D45 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
 		183E20DD206B272E00186D45 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
 		183E20E8206E26E800186D45 /* placeHolderImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeHolderImg.png; sourceTree = "<group>"; };
+		183E20EA207378C800186D45 /* 记住密码选择@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记住密码选择@2x.png"; sourceTree = "<group>"; };
+		183E20EB207378C800186D45 /* 记住密码选择@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记住密码选择@3x.png"; sourceTree = "<group>"; };
+		183E20EC207378C900186D45 /* 记住密码@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记住密码@2x.png"; sourceTree = "<group>"; };
+		183E20ED207378C900186D45 /* 记住密码@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记住密码@3x.png"; sourceTree = "<group>"; };
+		183E20F62073828B00186D45 /* ZNCustomAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNCustomAlertView.h; sourceTree = "<group>"; };
+		183E20F72073828B00186D45 /* ZNCustomAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNCustomAlertView.m; sourceTree = "<group>"; };
+		183E20F9207382B600186D45 /* ZNCustomAlertContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZNCustomAlertContentView.xib; sourceTree = "<group>"; };
+		183E20FB207382CD00186D45 /* ZNCustomAlertContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNCustomAlertContentView.h; sourceTree = "<group>"; };
+		183E20FC207382CD00186D45 /* ZNCustomAlertContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNCustomAlertContentView.m; sourceTree = "<group>"; };
 		185AA3F620566BFE00205256 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		185AA3F720566BFE00205256 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		185AA3F820566BFE00205256 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -1316,6 +1332,18 @@
 			path = MXSegmentedControl;
 			sourceTree = "<group>";
 		};
+		183E20F52073826A00186D45 /* ZNCustomAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				183E20F62073828B00186D45 /* ZNCustomAlertView.h */,
+				183E20F72073828B00186D45 /* ZNCustomAlertView.m */,
+				183E20FB207382CD00186D45 /* ZNCustomAlertContentView.h */,
+				183E20FC207382CD00186D45 /* ZNCustomAlertContentView.m */,
+				183E20F9207382B600186D45 /* ZNCustomAlertContentView.xib */,
+			);
+			path = ZNCustomAlertView;
+			sourceTree = "<group>";
+		};
 		185AA3F420566BFE00205256 /* IQKeyboardManagerSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -2020,6 +2048,7 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				183E20F52073826A00186D45 /* ZNCustomAlertView */,
 				74FFAF25206AB75700283DB4 /* CustomerAlertViewManger.h */,
 				74FFAF24206AB75700283DB4 /* CustomerAlertViewManger.m */,
 				183E20C1206897FD00186D45 /* MXSegmentedControl */,
@@ -2695,6 +2724,10 @@
 		74A8D3CD202DEA9600535BC2 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
+				183E20EC207378C900186D45 /* 记住密码@2x.png */,
+				183E20ED207378C900186D45 /* 记住密码@3x.png */,
+				183E20EA207378C800186D45 /* 记住密码选择@2x.png */,
+				183E20EB207378C800186D45 /* 记住密码选择@3x.png */,
 				74DD1C04205596C6002EC264 /* 用户@2x.png */,
 				74DD1C03205596C6002EC264 /* 用户@3x.png */,
 				74DD1C00205596B4002EC264 /* login密码@2x.png */,
@@ -2882,6 +2915,7 @@
 				185AA523205A757B00205256 /* 黄金对标icon@2x.png in Resources */,
 				74DD1BE520551477002EC264 /* bottomPlayView.xib in Resources */,
 				74903E302032D8F200003EF2 /* FeeInfoHeaderView.xib in Resources */,
+				183E20FA207382B600186D45 /* ZNCustomAlertContentView.xib in Resources */,
 				74A8D40B202DEA9600535BC2 /* dispatch_record_first@2x.png in Resources */,
 				181F5B7E2046E1C7003600DE /* functionVC.xib in Resources */,
 				74903E02202F413000003EF2 /* checkbox_off@2x.png in Resources */,
@@ -2937,6 +2971,7 @@
 				185AA516205A757B00205256 /* 用能概况icon@3x.png in Resources */,
 				74A8D405202DEA9600535BC2 /* dount_1.png in Resources */,
 				74A8D3F1202DEA9600535BC2 /* abcd_dispatch_order_touch.png in Resources */,
+				183E20EE207378CA00186D45 /* 记住密码选择@2x.png in Resources */,
 				74A8D3FA202DEA9600535BC2 /* abcd_gold_bench_marke_untouch.png in Resources */,
 				74903E1D2031EB5600003EF2 /* 设备@2x.png in Resources */,
 				183E20D32068E39800186D45 /* legendView.xib in Resources */,
@@ -2962,6 +2997,8 @@
 				74A8D3F0202DEA9600535BC2 /* abcd_charge_survey_untouch.png in Resources */,
 				74A8D400202DEA9600535BC2 /* 故障数量.png in Resources */,
 				74DD1BF2205518CF002EC264 /* 播放@2x.png in Resources */,
+				183E20F0207378CA00186D45 /* 记住密码@2x.png in Resources */,
+				183E20EF207378CA00186D45 /* 记住密码选择@3x.png in Resources */,
 				74A8D41D202DEA9600535BC2 /* circle_3.png in Resources */,
 				74DD1C02205596B5002EC264 /* login密码@2x.png in Resources */,
 				18A57A4B20455A4D00DA7D59 /* PhotoBroswerVC.xib in Resources */,
@@ -3022,6 +3059,7 @@
 				185AA51A205A757B00205256 /* 派转工单icon@3x.png in Resources */,
 				74DD1BFB20559651002EC264 /* 手机@3x.png in Resources */,
 				74A8D3FF202DEA9600535BC2 /* alarm_managem_bottom_broken_bottom.png in Resources */,
+				183E20F1207378CA00186D45 /* 记住密码@3x.png in Resources */,
 				74A8D3F9202DEA9600535BC2 /* abcd_gold_bench_marke_touch.png in Resources */,
 				74DD1C06205596C6002EC264 /* 用户@2x.png in Resources */,
 				185AA526205A757B00205256 /* 收费icon@3x.png in Resources */,
@@ -3185,6 +3223,7 @@
 				185AA4202056915900205256 /* lawVCViewController.swift in Sources */,
 				180477442044289700B410CB /* OrderDetailHeaderView.swift in Sources */,
 				18D75017201321520011866E /* XYMarkerView.swift in Sources */,
+				183E20FD207382CD00186D45 /* ZNCustomAlertContentView.m in Sources */,
 				18D7500F201213410011866E /* EnergyCompareVC.swift in Sources */,
 				18D74FD4200DDA980011866E /* FanBtn.m in Sources */,
 				18A57A4320455A4D00DA7D59 /* PBBlurImageView.m in Sources */,
@@ -3216,6 +3255,7 @@
 				181F5BBC20497E85003600DE /* UIView+FP.m in Sources */,
 				18C8D2F5202C50E400E91527 /* MASConstraintMaker.m in Sources */,
 				185AA4EE205A141000205256 /* UIButton+WebCache.m in Sources */,
+				183E20F82073828B00186D45 /* ZNCustomAlertView.m in Sources */,
 				74FFAF26206AB75800283DB4 /* CustomerAlertViewManger.m in Sources */,
 				18A57A3120455A4D00DA7D59 /* UITableViewCell+Extend.m in Sources */,
 				181F5C512056519B003600DE /* MBProgressHUD.m in Sources */,
