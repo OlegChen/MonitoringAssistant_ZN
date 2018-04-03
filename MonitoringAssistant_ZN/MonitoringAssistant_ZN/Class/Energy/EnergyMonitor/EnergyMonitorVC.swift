@@ -240,7 +240,7 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
                 let model = obj as! StationDetailModel
                 
                 
-                let titleWidth = self.textSize(text: ((model.returnObj?.stationName)! + "#" + typeName), font: UIFont.systemFont(ofSize: 15), maxSize: CGSize(width: 1000 ,height: 20))
+                let titleWidth = self.textSize(text: ((model.returnObj?.stationName)!), font: UIFont.systemFont(ofSize: 15), maxSize: CGSize(width: 1000 ,height: 20))
                 let addressWidth = self.textSize(text: ("地址：" + (model.returnObj?.address != nil ? (model.returnObj?.address)! : "--")), font: UIFont.systemFont(ofSize: 15), maxSize: CGSize(width: 1000 ,height: 20))
                 
                 let maxW = max(titleWidth.width + 50, addressWidth.width + 50)

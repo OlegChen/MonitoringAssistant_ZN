@@ -126,8 +126,9 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
                     
                 }else{
                     
-                    YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                    ZNCustomAlertView.handleTip(model.msg, isShowCancelBtn: false, completion: { (isSure) in
                     
+                    })
                 }
                 
             }) { (error) in
@@ -138,11 +139,16 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
             
         }else{
             
-            ZNCustomAlertView.handleTip("用户名、密码需填写完整", isShowCancelBtn: false, completion: { (isSure) in
+            if (!(self.mobileTextfield.text!.characters.count > 0)){
+                
+                YJProgressHUD.showMessage("请输入用户名", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
                 
                 
+            }else if(!(self.pwTextField.text!.characters.count > 0)){
                 
-            })
+                YJProgressHUD.showMessage("请输入密码", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                
+            }
             
         }
         
@@ -179,7 +185,8 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
     
     func ChangedPw(phoneNum: String) {
         
-        self.mobileTextfield.text = phoneNum
+        self.mobileTextfield.text = ""
+        self.pwTextField.text = ""
         
     }
     

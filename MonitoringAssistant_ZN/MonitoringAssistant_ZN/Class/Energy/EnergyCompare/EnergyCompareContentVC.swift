@@ -32,7 +32,9 @@ class EnergyCompareContentVC: UIViewController {
         super.viewDidLoad()
 
         
-        self.tableView = UITableView(frame:CGRect(x:0 , y : CGFloat(NavHeight + 20.0 + 30 + 10) , width:ScreenW , height: 412))
+        self.tableView = UITableView(frame:CGRect(x:0 , y : 0 , width:ScreenW , height:CGFloat(ScreenH - 63.0 - CGFloat(NavHeight))))
+        
+            
         self.view.addSubview(self.tableView)
         self.tableView.backgroundColor = RGBCOLOR(r: 242, 242, 242)
         self.tableView.snp.makeConstraints { (make) in
@@ -68,7 +70,7 @@ class EnergyCompareContentVC: UIViewController {
     func setHeadView() {
         
         let headerView = UIView()
-        headerView.frame = CGRect(x:0 , y : 0, width:ScreenW , height: 522)
+        headerView.frame = CGRect(x:0 , y : 0, width:ScreenW , height: 433)
         
         let view = (Bundle.main.loadNibNamed("EnergyCompareHeadView", owner: nil, options: nil)![0] as! EnergyCompareHeadView)
         self.headView = view

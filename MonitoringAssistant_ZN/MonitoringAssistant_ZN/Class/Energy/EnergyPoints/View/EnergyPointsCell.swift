@@ -52,6 +52,18 @@ class EnergyPointsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    
+        let line = UIView()
+        line.backgroundColor = RGBCOLOR(r: 210, 210, 210)
+        self.contentView.addSubview(line)
+        line.snp.makeConstraints { (make) in
+            
+            make.bottom.equalTo(self).offset(0)
+            make.left.equalTo(self).offset(15)
+            make.right.equalTo(self).offset(-15)
+            make.height.equalTo(0.5)
+        }
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

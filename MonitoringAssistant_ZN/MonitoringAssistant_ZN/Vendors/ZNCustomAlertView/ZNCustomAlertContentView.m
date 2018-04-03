@@ -24,7 +24,9 @@
     
     [super awakeFromNib];
     
-    
+    [self.sureBtn setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0]] forState:UIControlStateHighlighted];
+    [self.cancelBtn setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0]] forState:UIControlStateHighlighted];
+
 }
 
 - (IBAction)cancelBtnClick:(UIButton *)sender {
@@ -43,7 +45,33 @@
     }
 }
 
+- (UIImage *)imageWithColor:(UIColor *)color
 
+{
+    
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    
+    CGContextFillRect(context, rect);
+    
+    
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    
+    
+    return image;
+    
+}
 
 
 /*

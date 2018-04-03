@@ -50,6 +50,7 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         let title = UILabel.init()
         title.text = "用能概况"
         title.font=UIFont.boldSystemFont(ofSize:17)//调整文字为加粗类型
+        title.textColor = UIColor.white
         custnav.addSubview(title)
         title.snp.makeConstraints { (make) in
             
@@ -65,6 +66,7 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.frame = CGRect(x:0 ,y:64 , width: ScreenH , height :ScreenW - 64)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.register(UINib.init(nibName: "EnergyPointsCell", bundle: nil), forCellReuseIdentifier: EnergyPointsCell_id)
         self.tableView.register(EnergyPointsHeaderView.self, forHeaderFooterViewReuseIdentifier: EnergyPointsHeaderView_id)
         
@@ -95,6 +97,8 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.fd_prefersNavigationBarHidden = true
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -116,6 +120,12 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
     
     override var prefersStatusBarHidden: Bool {
         return false
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        
+        return .lightContent
         
     }
     
@@ -164,7 +174,6 @@ class EnergyPointsTableViewController: UIViewController,UITableViewDelegate,UITa
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: EnergyPointsHeaderView_id)
-        
         return header
     }
  

@@ -26,6 +26,8 @@
 //        _lineView.backgroundColor = [UIColor greenColor];
 //        [self addSubview:_lineView];
         
+        
+        
     }
 
     return self;

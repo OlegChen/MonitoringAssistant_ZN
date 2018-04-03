@@ -49,12 +49,12 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
             
             make.left.right.equalTo(self.view).offset(0)
             make.top.equalTo(self.view).offset(NavHeight)
-            make.height.equalTo(60)
+            make.height.equalTo(53)
         }
         
         
         let SegmentControl = MXSegmentedControl()
-        SegmentControl.cornerRadius = 6
+        SegmentControl.cornerRadius = 4
         SegmentControl.textColor = UIColor.white
         SegmentControl.selectedTextColor = RGBCOLOR(r: 11, 46, 77)
         SegmentControl.borderColor = RGBCOLOR(r: 11, 46, 77)
@@ -65,6 +65,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
         SegmentControl.separatorColor = RGBCOLOR(r: 11, 46, 77)
         SegmentControl.separatorWidth = 1
         SegmentControl.indicatorHeight = 0
+        SegmentControl.font = UIFont.systemFont(ofSize: 15)
 
         
         SegmentControl.append(title: "总耗能")
@@ -72,7 +73,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
         SegmentControl.append(title: "电耗能")
         SegmentControl.append(title: "气耗能")
         topView.addSubview(SegmentControl)
-        SegmentControl.frame = CGRect(x: 10  , y: 10 , width: ScreenW - 20 , height:40)
+        SegmentControl.frame = CGRect(x: 15  , y: 13 , width: ScreenW - 30 , height:27)
         
         
 //        self.tableView = UITableView(frame:CGRect(x:0 , y : CGFloat(NavHeight + 20.0 + 30 + 10) , width:ScreenW , height: 412))
@@ -87,7 +88,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
         let myScrollView = UIScrollView()
         myScrollView.contentSize = CGSize(width:Double(ScreenW)*4 ,height:Double(ScreenH)-NavHeight-70)
         self.view.addSubview(myScrollView)
-        myScrollView.frame =  CGRect(x:0 , y:70 + Double(NavHeight) , width:Double(ScreenW) , height:Double(ScreenH) - 70 - Double(NavHeight))
+        myScrollView.frame =  CGRect(x:0 , y:53 + 10 + Double(NavHeight) , width:Double(ScreenW) , height:Double(ScreenH) - 63 - Double(NavHeight))
         myScrollView.backgroundColor = .white
         myScrollView.isPagingEnabled = true
         
@@ -108,7 +109,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
             }
             
             myScrollView.addSubview(content.view)
-            content.view.frame = CGRect(x:Double(i) * Double(ScreenW) , y:0 , width:Double(ScreenW) , height:Double(ScreenH) - 70)
+            content.view.frame = CGRect(x:Double(i) * Double(ScreenW) , y:0 , width:Double(ScreenW) , height:Double(ScreenH) - 63)
 
         }
         

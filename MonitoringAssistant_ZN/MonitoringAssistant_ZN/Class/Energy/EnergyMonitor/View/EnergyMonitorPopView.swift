@@ -46,7 +46,7 @@ class EnergyMonitorPopView: UIView {
                 
                 let model = obj as! StationDetailModel
                 
-                self.titleL.text  = (model.returnObj?.stationName)! + "#" + typeName
+                self.titleL.text  = (model.returnObj?.stationName)! //+ "#" + typeName
                 self.label1.text = "地址：" + (model.returnObj?.address != nil ? (model.returnObj?.address)! : "--")
                 self.label2.text = "联系人：" + (model.returnObj?.contactMan != nil ? (model.returnObj?.contactMan)! : "--")
                 self.label3.text = "电话：" + (model.returnObj?.tel != nil ? (model.returnObj?.tel)! : "--")

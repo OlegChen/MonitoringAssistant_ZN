@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
 
     var window: UIWindow?
     
-
     var blockRotation: Bool = false
     
     var _mapManager: BMKMapManager?
@@ -26,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         
+        UITextField.appearance().tintColor = RGBCOLOR(r: 74, 144, 181)
+        
         _mapManager = BMKMapManager()
         // 如果要关注网络及授权验证事件，请设定generalDelegate参数
         let ret = _mapManager?.start("T861GXQXTnAYjvF1MxfGlGpXGgFg4yhY", generalDelegate: self)
@@ -35,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
         
         //登录 ？
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        
         
         UserCenter.shared.userInfo{ (islogin, userReturnModel) in
             
