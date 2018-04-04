@@ -32,6 +32,8 @@ class ChangePwVC: BaseTableVC ,UITextFieldDelegate, UIAlertViewDelegate{
         super.viewDidAppear(animated)
         
         self.newPw.delegate = self
+        self.oldPw.delegate = self
+        self.makeSurePw.delegate = self
 
     }
     
@@ -70,7 +72,9 @@ class ChangePwVC: BaseTableVC ,UITextFieldDelegate, UIAlertViewDelegate{
             
             if(new != makesure){
                 
-                 UIAlertView.init(title: "提示", message: "新密码与确认密码不一致", delegate: nil, cancelButtonTitle: "确定").show()
+                ZNCustomAlertView.handleTip("新密码与确认密码不一致", isShowCancelBtn: false, completion: { (sisure) in
+                    
+                })
                 
                 return
                 
@@ -94,11 +98,15 @@ class ChangePwVC: BaseTableVC ,UITextFieldDelegate, UIAlertViewDelegate{
                     let model = obj as! BaseModel
                     if(model.statusCode == 800){
                         
-                        UIAlertView.init(title: "提示", message: "密码修改成功", delegate: self, cancelButtonTitle: "确定").show()
+                        UserCenter.shared.rememberPw(Pw: "", isRemember: false)
+                        let vc = LoginVC.getLoginVC()
+                        UIApplication.shared.keyWindow?.rootViewController = vc
                         
                     }else{
                         
-                        UIAlertView.init(title: "提示", message: model.msg, delegate: nil, cancelButtonTitle: "确定").show()
+                        ZNCustomAlertView.handleTip(model.msg, isShowCancelBtn: false, completion: { (issure) in
+                            
+                        })
                         
                     }
                     
@@ -113,7 +121,26 @@ class ChangePwVC: BaseTableVC ,UITextFieldDelegate, UIAlertViewDelegate{
             
         }else{
             
-             UIAlertView.init(title: "提示", message: "请将内容填写完整", delegate: nil, cancelButtonTitle: "确定").show()
+            
+            
+            if (!(old.characters.count > 0)){
+                
+                ZNCustomAlertView.handleTip("请输入旧密码", isShowCancelBtn: false, completion: { (issure) in
+                    
+                })
+                
+            }else if(!(new.characters.count > 0 )){
+                
+                ZNCustomAlertView.handleTip("请输入新密码", isShowCancelBtn: false, completion: { (issure) in
+                    
+                })
+                
+            }else if(!(makesure.characters.count > 0)){
+                
+                ZNCustomAlertView.handleTip("请输入确认密码", isShowCancelBtn: false, completion: { (issure) in
+                    
+                })
+            }
             
         }
         
@@ -122,13 +149,22 @@ class ChangePwVC: BaseTableVC ,UITextFieldDelegate, UIAlertViewDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        guard let text = textField.text else{
-            return true
-        }
+//        guard let text = textField.text else{
+//            return true
+//        }
+//
+//        let textLength = text.characters.count + string.characters.count - range.length
+//
+//        return textLength <= 16
         
-        let textLength = text.characters.count + string.characters.count - range.length
+        if(string == ""){return true}
         
-        return textLength <= 16
+        let regex = "^[A-Za-z0-9]+$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        let isValid = predicate.evaluate(with: string)
+        print("------" + string)
+        
+        return isValid
         
     }
 

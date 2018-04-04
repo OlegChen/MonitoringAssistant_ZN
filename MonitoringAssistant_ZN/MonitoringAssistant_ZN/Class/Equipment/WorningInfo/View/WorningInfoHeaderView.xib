@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="733"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事故数量（个）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLw-KN-Bsf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="故障数量（个）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLw-KN-Bsf">
                     <rect key="frame" x="15" y="15" width="79" height="14"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,7 +35,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-1J-rNZ">
-                    <rect key="frame" x="15" y="241" width="157.5" height="85"/>
+                    <rect key="frame" x="15" y="249" width="157.5" height="85"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="故障数量.png" translatesAutoresizingMaskIntoConstraints="NO" id="dyk-Ak-WaT">
                             <rect key="frame" x="57" y="12" width="44" height="10"/>
@@ -69,7 +69,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="May-jy-mg2">
-                    <rect key="frame" x="202.5" y="241" width="157.5" height="85"/>
+                    <rect key="frame" x="202.5" y="249" width="157.5" height="85"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="故障消缺率.png" translatesAutoresizingMaskIntoConstraints="NO" id="joe-AQ-aAd">
                             <rect key="frame" x="57" y="12" width="44" height="10"/>
@@ -102,14 +102,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIS-q1-3dt">
-                    <rect key="frame" x="0.0" y="344" width="375" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="351" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="0.5" id="ppI-dd-x4h"/>
+                        <constraint firstAttribute="height" constant="1" id="ppI-dd-x4h"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTq-9X-4B0">
-                    <rect key="frame" x="15" y="363" width="345" height="350"/>
+                    <rect key="frame" x="15" y="369" width="345" height="350"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8r4-8x-TX4">
                             <rect key="frame" x="20" y="15" width="88.5" height="150"/>
@@ -457,8 +457,8 @@
                 <constraint firstAttribute="trailing" secondItem="RIS-q1-3dt" secondAttribute="trailing" id="9y2-Hd-d3P"/>
                 <constraint firstItem="raZ-Du-1UZ" firstAttribute="top" secondItem="gLw-KN-Bsf" secondAttribute="bottom" constant="7.5" id="FrU-a3-CdV"/>
                 <constraint firstAttribute="trailing" secondItem="raZ-Du-1UZ" secondAttribute="trailing" constant="15" id="IpJ-jE-SmI"/>
-                <constraint firstItem="RIS-q1-3dt" firstAttribute="top" secondItem="RGg-1J-rNZ" secondAttribute="bottom" constant="18" id="KTR-km-48x"/>
-                <constraint firstItem="MTq-9X-4B0" firstAttribute="top" secondItem="RIS-q1-3dt" secondAttribute="bottom" constant="18" id="OVw-XJ-g2a"/>
+                <constraint firstItem="RIS-q1-3dt" firstAttribute="top" secondItem="RGg-1J-rNZ" secondAttribute="bottom" constant="17" id="KTR-km-48x"/>
+                <constraint firstItem="MTq-9X-4B0" firstAttribute="top" secondItem="RIS-q1-3dt" secondAttribute="bottom" constant="17" id="OVw-XJ-g2a"/>
                 <constraint firstItem="MTq-9X-4B0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="PEX-Sk-l8F"/>
                 <constraint firstAttribute="trailing" secondItem="F00-PH-vgA" secondAttribute="trailing" constant="15" id="Xf5-IT-3ZG"/>
                 <constraint firstItem="May-jy-mg2" firstAttribute="top" secondItem="RGg-1J-rNZ" secondAttribute="top" id="bQS-Wn-gKy"/>
@@ -467,7 +467,7 @@
                 <constraint firstItem="May-jy-mg2" firstAttribute="leading" secondItem="RGg-1J-rNZ" secondAttribute="trailing" constant="30" id="jNh-FJ-FfK"/>
                 <constraint firstItem="May-jy-mg2" firstAttribute="bottom" secondItem="RGg-1J-rNZ" secondAttribute="bottom" id="m0E-nt-QsS"/>
                 <constraint firstAttribute="trailing" secondItem="May-jy-mg2" secondAttribute="trailing" constant="15" id="o6s-LB-2NF"/>
-                <constraint firstItem="RGg-1J-rNZ" firstAttribute="top" secondItem="raZ-Du-1UZ" secondAttribute="bottom" constant="15" id="uPg-iT-cLr"/>
+                <constraint firstItem="RGg-1J-rNZ" firstAttribute="top" secondItem="raZ-Du-1UZ" secondAttribute="bottom" constant="23" id="uPg-iT-cLr"/>
                 <constraint firstItem="gLw-KN-Bsf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="yjD-Ba-w5h"/>
                 <constraint firstItem="RGg-1J-rNZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="ykb-cY-Aqk"/>
             </constraints>

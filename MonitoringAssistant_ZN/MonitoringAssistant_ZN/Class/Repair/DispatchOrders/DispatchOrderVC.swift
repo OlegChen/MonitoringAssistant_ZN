@@ -97,7 +97,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         
         let cell = tableView.dequeueReusableCell(withIdentifier: DispatchOrderVCCell_id) as! DispatchOrderVCCell
         
-        let model = self.dataArr[indexPath.row] as! DispatchOrderResultModel
+        let model = self.dataArr[indexPath.section] as! DispatchOrderResultModel
         
         cell.index = indexPath.section
         

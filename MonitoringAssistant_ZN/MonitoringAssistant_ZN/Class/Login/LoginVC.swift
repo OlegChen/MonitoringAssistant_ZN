@@ -111,13 +111,9 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
                     
                     UserCenter.shared.logIn(userModel: model)
                     UserCenter.shared.rememberLoginMobile(mobile: self.mobileTextfield.text!)
-                    if(self.rememberPWBtn.isSelected){
-                        
-                        UserCenter.shared.rememberPw(Pw: self.pwTextField.text!)
-                    }else{
-                        
-                        UserCenter.shared.rememberPw(Pw: "")
-                    }
+                    
+                    UserCenter.shared.rememberPw(Pw: self.rememberPWBtn.isSelected ? self.pwTextField.text! : "", isRemember: self.rememberPWBtn.isSelected)
+                    
                     
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController

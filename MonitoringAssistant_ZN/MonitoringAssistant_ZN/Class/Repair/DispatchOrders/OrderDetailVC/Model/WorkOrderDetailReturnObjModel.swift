@@ -50,17 +50,18 @@ class WorkOrderDetailReturnObjModel: BaseReturnObjModel {
     
     lazy var cellHeight : Double = {
         
-        let statusLabelText: String = (self.repairsDesc as String?)!
+        if let a = self.repairsDesc{
+            
+            
+            let statusLabelText: String = ("　　" + a)
+            
+            let h = statusLabelText.ga_heightForComment(fontSize: 14, width: ScreenW - 30)
+            
+            return Double(h + 86)
+        }
         
-//        let size = CGSize(width: ScreenW - 30, height: 10000)
-//
-//        let dic = NSDictionary(object: 14, forKey: NSAttributedStringKey.font as NSCopying)
-//
-//        let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: (dic as! [NSAttributedStringKey : Any]) , context: nil).size
-        
-       let h = statusLabelText.ga_heightForComment(fontSize: 14, width: ScreenW - 30)
-        
-        return Double(h + 86)
+     
+        return 86
         
     }()
     

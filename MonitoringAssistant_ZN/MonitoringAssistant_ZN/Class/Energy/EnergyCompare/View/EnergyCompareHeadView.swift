@@ -54,6 +54,8 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         
         //折线图：
 
+        chartView.isUserInteractionEnabled = false
+        
         chartView.delegate = self
         
         chartView.scaleXEnabled = false
@@ -74,6 +76,7 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         leftAxis.gridLineDashLengths = [4, 0]
         leftAxis.gridColor = RGBCOLOR(r: 210, 210, 210)
         leftAxis.drawLimitLinesBehindDataEnabled = false
+        leftAxis.labelFont = UIFont.systemFont(ofSize: 8)
         
         chartView.rightAxis.enabled = false
         
@@ -117,7 +120,7 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
         chartView.xAxis.setLabelCount(xAxisLabels.count , force: true)
         
-        
+        chartView.xAxis.labelFont = UIFont.systemFont(ofSize: 8)
         
         
         let dataSets = (0..<4).map { j -> LineChartDataSet in
@@ -145,6 +148,10 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
             set.lineWidth = 1.5
             set.circleRadius = 3
             set.circleHoleRadius = 2
+            
+            set.drawIconsEnabled = false
+            set.drawVerticalHighlightIndicatorEnabled = false
+            set.setDrawHighlightIndicators(false)
             
             var color : [UIColor]!
             var circleColor : [UIColor]!

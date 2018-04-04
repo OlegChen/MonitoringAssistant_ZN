@@ -192,11 +192,18 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
 
     
     @IBAction func loginOutClick(_ sender: UIButton) {
-        
-        UserCenter.shared.logOut()
-        
-        let vc = LoginVC.getLoginVC()
-        UIApplication.shared.keyWindow?.rootViewController = vc
+
+        ZNCustomAlertView.handleTip("是否确定退出？", isShowCancelBtn: true) { (issure) in
+            
+            if(issure){
+                
+                UserCenter.shared.logOut()
+                let vc = LoginVC.getLoginVC()
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            }
+            
+        }
+    
     }
     
   

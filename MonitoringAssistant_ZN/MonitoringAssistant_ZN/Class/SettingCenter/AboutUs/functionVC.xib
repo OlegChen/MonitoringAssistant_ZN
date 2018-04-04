@@ -20,11 +20,47 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-HV-Irv">
+                    <rect key="frame" x="0.0" y="614" width="375" height="38"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">Copyright @2018
+</string>
+                            <attributes>
+                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" metaFont="cellTitle"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="9" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="中能兴科(北京)节能科技股份有限公司">
+                            <attributes>
+                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name=".PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="17" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="  ">
+                            <attributes>
+                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" metaFont="cellTitle"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="17" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="版权所有">
+                            <attributes>
+                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name=".PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="17" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vh-Ij-ESl">
-                    <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                    <rect key="frame" x="0.0" y="100" width="375" height="489"/>
                     <subviews>
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyb-2k-Pi7">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="550"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="nf5-ta-W7x">
                                     <rect key="frame" x="138" y="40" width="100" height="100"/>
@@ -39,35 +75,68 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-uE-v86">
-                                    <rect key="frame" x="20" y="206" width="335" height="251"/>
-                                    <mutableString key="text">　　管理人员的好助手，领导的智能云管家。
-　　“中能云管家”是服务于供暖、物业单位的智能管理软件，可同时实现报修情况统计、工单派转管理、设备管理、收费概况、员工分布及员工活动轨迹的回放等智能化管理。在信息化、智能化高度发达的今天，应用这款管理软件，可直接系统的查看当前机构的工单、设备、收费、用能等各方面的数据概况，可以更方便的进行相关工作的分析和管理，提摆脱传统报修工作量大、处理时间长、效率低、客户体验差的弊病，解决传统的设备运行记录、各种能耗记录等工作量大、记录不易长时间保管，容易丢失等问题，实现数据报表电子化——便查询、易保管，同时便于管理者的决策和考核。该款产品具有操作简单，使用方便的特点。
-</mutableString>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-HV-Irv">
-                                    <rect key="frame" x="57" y="512" width="261" height="43"/>
-                                    <string key="text">Copyright @ 2017
-
-中能兴科(北京)节能科技股份有限公司  版权所有</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-uE-v86">
+                                    <rect key="frame" x="20" y="206" width="335" height="315.5"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="　　管理人员的好助手，领导的智能云管家。">
+                                            <attributes>
+                                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                            <attributes>
+                                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" metaFont="system" size="14"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">　　“中能云管家”是服务于供暖、物业单位的智能管理软件，可同时实现报修情况统计、工单派转管理、设备管理、收费概况、员工分布及员工活动轨迹的回放等智能化管理。在信息化、智能化高度发达的今天，应用这款管理软件，可直接系统的查看当前机构的工单、设备、收费、用能等各方面的数据概况，可以更方便的进行相关工作的分析和管理，提摆脱传统报修工作量大、处理时间长、效率低、客户体验差的弊病，解决传统的设备运行记录、各种能耗记录等工作量大、记录不易长时间保管，容易丢失等问题，实现数据报表电子化</string>
+                                            <attributes>
+                                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" paragraphSpacingBefore="11" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="——">
+                                            <attributes>
+                                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" paragraphSpacingBefore="11" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="便查询、易保管，同时便于管理者的决策和考核。该款产品具有操作简单，使用方便的特点。">
+                                            <attributes>
+                                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" paragraphSpacingBefore="11" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                            <attributes>
+                                                <color key="NSColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" paragraphSpacingBefore="11" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="EcX-Ji-FuX" firstAttribute="top" secondItem="nf5-ta-W7x" secondAttribute="bottom" constant="15" id="26l-hg-HxA"/>
-                                <constraint firstItem="HqD-HV-Irv" firstAttribute="centerX" secondItem="iyb-2k-Pi7" secondAttribute="centerX" id="7XG-Cd-G5S"/>
                                 <constraint firstItem="nf5-ta-W7x" firstAttribute="centerX" secondItem="iyb-2k-Pi7" secondAttribute="centerX" id="OoQ-EG-Y1k"/>
                                 <constraint firstItem="mCe-uE-v86" firstAttribute="top" secondItem="EcX-Ji-FuX" secondAttribute="bottom" constant="30" id="T68-Ur-Csn"/>
                                 <constraint firstItem="nf5-ta-W7x" firstAttribute="top" secondItem="iyb-2k-Pi7" secondAttribute="top" constant="40" id="Vlc-hm-Djb"/>
                                 <constraint firstItem="mCe-uE-v86" firstAttribute="leading" secondItem="iyb-2k-Pi7" secondAttribute="leading" constant="20" id="XQZ-fx-kFq"/>
-                                <constraint firstAttribute="bottom" secondItem="HqD-HV-Irv" secondAttribute="bottom" constant="45" id="s9K-D1-deE"/>
-                                <constraint firstAttribute="height" constant="600" id="sFD-Ky-BAo"/>
+                                <constraint firstAttribute="height" constant="550" id="sFD-Ky-BAo"/>
                                 <constraint firstItem="EcX-Ji-FuX" firstAttribute="centerX" secondItem="nf5-ta-W7x" secondAttribute="centerX" id="xmI-s4-yxX"/>
                                 <constraint firstAttribute="trailing" secondItem="mCe-uE-v86" secondAttribute="trailing" constant="20" id="ziB-pc-p6Q"/>
                             </constraints>
@@ -85,9 +154,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="7Vh-Ij-ESl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="1Wc-9A-RpB"/>
+                <constraint firstItem="HqD-HV-Irv" firstAttribute="top" secondItem="7Vh-Ij-ESl" secondAttribute="bottom" constant="25" id="KR3-x7-HCz"/>
+                <constraint firstAttribute="bottom" secondItem="HqD-HV-Irv" secondAttribute="bottom" constant="15" id="O8W-aV-zcC"/>
+                <constraint firstAttribute="trailing" secondItem="HqD-HV-Irv" secondAttribute="trailing" id="SLd-xd-yjD"/>
                 <constraint firstAttribute="trailing" secondItem="7Vh-Ij-ESl" secondAttribute="trailing" id="cxH-rr-FDC"/>
                 <constraint firstItem="7Vh-Ij-ESl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eVf-e5-xjQ"/>
-                <constraint firstAttribute="bottom" secondItem="7Vh-Ij-ESl" secondAttribute="bottom" id="vic-9W-zSi"/>
+                <constraint firstItem="HqD-HV-Irv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="j0f-4m-6V8"/>
             </constraints>
             <point key="canvasLocation" x="38.5" y="96.5"/>
         </view>

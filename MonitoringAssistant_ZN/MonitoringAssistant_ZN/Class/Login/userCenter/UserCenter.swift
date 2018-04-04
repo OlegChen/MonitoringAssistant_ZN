@@ -37,7 +37,6 @@ extension UserCenter {
     func logIn( userModel : LoginModel) {
         
         //1、 保存
-        UserDefaults .standard.set(true, forKey:UserCenter.isLogin)
         
         UserDefaults .standard.set(userModel.returnObj?.companyCode, forKey:UserCenter.companyCode)
         UserDefaults .standard.set(userModel.returnObj?.orgCode, forKey:UserCenter.orgCode)
@@ -88,13 +87,23 @@ extension UserCenter {
 //        return ( UserDefaults.standard.bool(forKey: UserCenter.isLogin), objModel)
     }
     
-    func rememberPw(Pw:String) -> () {
+    func rememberPw(Pw:String, isRemember:Bool) -> () {
         
         UserDefaults.standard.set(Pw, forKey:UserCenter.loginPw)
+        
+        UserDefaults .standard.set(isRemember, forKey:UserCenter.isLogin)
+
+        //2、同步
+        UserDefaults .standard.synchronize()
+
     }
     func rememberLoginMobile(mobile:String) -> () {
         
         UserDefaults.standard.set(mobile, forKey:UserCenter.loginMobile)
+        
+        //2、同步
+        UserDefaults .standard.synchronize()
+
     }
     
     

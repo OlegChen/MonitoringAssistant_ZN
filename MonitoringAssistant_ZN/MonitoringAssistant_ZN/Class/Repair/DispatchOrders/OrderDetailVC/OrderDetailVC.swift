@@ -83,7 +83,10 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: OrderDetailCell_id) as? OrderDetailCell
         cell?.levelL.text = self.dataModel?.returnObj?.urgencyName
-        cell?.contentL.text = self.dataModel?.returnObj?.repairsDesc
+        if let a = self.dataModel?.returnObj?.repairsDesc {
+            
+            cell?.contentL.text = "　　" + a
+        }
         
         cell?.selectionStyle = UITableViewCellSelectionStyle.none
         
@@ -111,7 +114,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         btn.backgroundColor = RGBCOLOR(r: 71, 143, 183)
         btn.setTitle("派  单", for: UIControlState.normal)
         btn.setTitleColor(.white, for: UIControlState.normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.addTarget(self, action: #selector(sureBtnClick(btn:)), for: UIControlEvents.touchUpInside)
         
     }
@@ -173,7 +176,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                     
                     self.tableView.reloadData()
                     
-                    self.dispatchBtn.setTitle(model.returnObj?.workSendId == "0" ? "派单" : "转派", for: UIControlState.normal)
+                    self.dispatchBtn.setTitle(model.returnObj?.workSendId == "0" ? "派　　单" : "转　　派", for: UIControlState.normal)
                     
                     
                 }else{
@@ -193,10 +196,10 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     func setupImagefooter(array:NSArray) {
         
-        if array.count == 0 || array == nil {
-            return
-        }
-        
+//        if array.count == 0 || array == nil {
+//            return
+//        }
+//
         let view = UIView()
         view.backgroundColor = UIColor.white
         
@@ -221,10 +224,8 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             
             let urlStr = model.imgUrl
             
-            img.sd_setImage(with: URL.init(string: urlStr!), placeholderImage: UIImage(named:"placeHolderImg"), options: SDWebImageOptions(rawValue: SDWebImageOptions.RawValue(UInt8(SDWebImageOptions.retryFailed.rawValue) | UInt8(SDWebImageOptions.lowPriority.rawValue))) , completed:nil)
-        
-//            img.sd_setImage(with: <#T##URL?#>, completed: <#T##SDExternalCompletionBlock?##SDExternalCompletionBlock?##(UIImage?, Error?, SDImageCacheType, URL?) -> Void#>)
-            //placeHolderImg
+            img.sd_setImage(with: URL.init(string: urlStr != nil ? urlStr! : ""), placeholderImage: UIImage(named:"placeHolderImg"), options: SDWebImageOptions(rawValue: SDWebImageOptions.RawValue(UInt8(SDWebImageOptions.retryFailed.rawValue) | UInt8(SDWebImageOptions.lowPriority.rawValue))) , completed:nil)
+
             
             view.addSubview(img)
             let l = i % 3
@@ -238,7 +239,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             
         }
         
-        let height =  15 + CGFloat((A.count - 1) / 3 + 1) * (imgW + 15)
+        let height = A.count > 0 ?  (15 + CGFloat((A.count - 1) / 3 + 1) * (imgW + 15)) : 0
         
         view.frame = CGRect(x: 0 , y : 0 , width: ScreenW , height: height )
         

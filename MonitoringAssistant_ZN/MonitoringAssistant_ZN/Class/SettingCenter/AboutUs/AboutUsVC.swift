@@ -26,8 +26,12 @@ class AboutUsVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
             
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight), 0, 0, 0))
         }
-        
+        self.tableView.backgroundColor = RGBCOLOR(r: 245, 245, 245)
 //        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        //设置分割线颜色
+        self.tableView.separatorColor = RGBCOLOR(r: 245, 245, 245)
+        //设置分割线内边距
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
         let headerView = UIView()
         headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 15)
@@ -66,7 +70,7 @@ class AboutUsVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
             make.centerY.equalTo((cell?.contentView.center)!)
         }
         
-        title.text = indexPath.row == 0 ? "功能介绍" : (indexPath.row == 1 ? "法律条款" : "检查新版本")
+        title.text = indexPath.row == 0 ? "功能介绍" : (indexPath.row == 1 ? "法律条款" : "当前版本")
         
         if indexPath.row == 2 {
             

@@ -49,7 +49,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-            timestampString = "544091880.187627"
+            timestampString = "544516988.871165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -65,7 +65,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-            timestampString = "544091880.1877019"
+            timestampString = "544516988.871564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -81,12 +81,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Login/userCenter/UserCenter.swift"
-            timestampString = "542526891.3265539"
+            timestampString = "544516988.871822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "rememberLoginMobile(mobile:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "rememberPw(Pw:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -97,13 +97,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Login/userCenter/UserCenter.swift"
-            timestampString = "542526891.3269989"
+            timestampString = "544516988.8718801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "loginMobile(mobile:)"
-            landmarkType = "7">
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "UserCenter"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,11 +129,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Equipment/WorningInfo/View/WorningInfoHeaderView.swift"
-            timestampString = "543897254.159199"
+            timestampString = "544516988.872033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "updateArray(array:)"
             landmarkType = "7">
             <Locations>
@@ -193,7 +193,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Vendors/MXSegmentedControl/MXSegmentedControl.swift"
-            timestampString = "543897254.159341"
+            timestampString = "544516988.872157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
@@ -209,11 +209,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Fee/FeeInfo/View/FeeInfoHeaderView.swift"
-            timestampString = "543897254.159404"
+            timestampString = "544516988.87222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "generateBarData(dataArray:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -225,7 +225,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-            timestampString = "544092188.067259"
+            timestampString = "544516988.872272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -241,7 +241,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/GitHub/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-                  timestampString = "544440180.806669"
+                  timestampString = "544515798.487211"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
@@ -256,7 +256,7 @@
                   moduleName = "MonitoringAssistant_ZN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/GitHub/MonitoringAssistant_ZN/MonitoringAssistant_ZN/MonitoringAssistant_ZN/Class/Repair/DispatchOrders/selectWorkerVC/SelectWorkerVCViewController.swift"
-                  timestampString = "544440180.808555"
+                  timestampString = "544515798.489259"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "133"
@@ -264,6 +264,22 @@
                   offsetFromSymbolStart = "21">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MonitoringAssistant_ZN/AppDelegate.swift"
+            timestampString = "544515823.409469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

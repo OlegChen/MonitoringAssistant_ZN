@@ -33,10 +33,10 @@ class EnergyCompareContentVC: UIViewController {
 
         
         self.tableView = UITableView(frame:CGRect(x:0 , y : 0 , width:ScreenW , height:CGFloat(ScreenH - 63.0 - CGFloat(NavHeight))))
-        
+        self.tableView.isScrollEnabled = false
             
         self.view.addSubview(self.tableView)
-        self.tableView.backgroundColor = RGBCOLOR(r: 242, 242, 242)
+        self.tableView.backgroundColor = UIColor.white//RGBCOLOR(r: 242, 242, 242)
         self.tableView.snp.makeConstraints { (make) in
             
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0 , 0, 0))
@@ -45,16 +45,16 @@ class EnergyCompareContentVC: UIViewController {
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.setHeadView()
         
-        self.tableView.es.addPullToRefresh {
-            
-            [weak self] in
-            
-            if((self?.delegate) != nil)
-            {
-                self?.delegate?.refreshData()
-            }
-
-        }
+//        self.tableView.es.addPullToRefresh {
+//
+//            [weak self] in
+//
+//            if((self?.delegate) != nil)
+//            {
+//                self?.delegate?.refreshData()
+//            }
+//
+//        }
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,7 +70,7 @@ class EnergyCompareContentVC: UIViewController {
     func setHeadView() {
         
         let headerView = UIView()
-        headerView.frame = CGRect(x:0 , y : 0, width:ScreenW , height: 433)
+        headerView.frame = CGRect(x:0 , y : 0, width:ScreenW , height: (ScreenH - 466 - 63) > 0 ? (ScreenH - CGFloat(NavHeight)) : 466)
         
         let view = (Bundle.main.loadNibNamed("EnergyCompareHeadView", owner: nil, options: nil)![0] as! EnergyCompareHeadView)
         self.headView = view

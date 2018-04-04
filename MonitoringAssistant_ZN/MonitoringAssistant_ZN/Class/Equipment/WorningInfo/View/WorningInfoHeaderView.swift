@@ -84,6 +84,18 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         self.ring4.ringWidth = 5
         self.ring5.ringWidth = 5
         
+        self.ring1.ring1.shadowOpacity = 0
+        self.ring2.ring1.shadowOpacity = 0
+        self.ring3.ring1.shadowOpacity = 0
+        self.ring4.ring1.shadowOpacity = 0
+        self.ring5.ring1.shadowOpacity = 0
+        
+        self.ring1.ring1.style = ProgressStyle.square
+        self.ring2.ring1.style = ProgressStyle.square
+        self.ring3.ring1.style = ProgressStyle.square
+        self.ring4.ring1.style = ProgressStyle.square
+        self.ring5.ring1.style = ProgressStyle.square
+        
         self.ring1.ring1StartColor = RGBCOLOR(r: 173, 181, 183)
         self.ring1.ring1EndColor = RGBCOLOR(r: 173, 181, 183)
         
@@ -104,7 +116,7 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         chartsView.delegate = self
         
         chartsView.chartDescription?.enabled = false
-    
+        chartsView.isUserInteractionEnabled = false
         
         chartsView.scaleXEnabled = false
         chartsView.scaleYEnabled = false
@@ -140,16 +152,18 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         rightAxis.drawGridLinesEnabled = false
         //        rightAxis.granularityEnabled = false
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
-
+        rightAxis.labelFont = UIFont.systemFont(ofSize: 8)
+        rightAxis.labelTextColor = RGBCOLOR(r: 136, 136, 136)
         
         let leftAxis = chartsView.leftAxis
         leftAxis.removeAllLimitLines()
         leftAxis.axisMinimum = 0
         leftAxis.spaceMax = 5000
         leftAxis.spaceMin = 5000
-        
-        leftAxis.gridLineDashLengths = [4, 3]
+        leftAxis.labelFont = UIFont.systemFont(ofSize: 8)
+        leftAxis.gridLineDashLengths = [3, 2]
         leftAxis.drawLimitLinesBehindDataEnabled = false
+        leftAxis.labelTextColor = RGBCOLOR(r: 136, 136, 136)
         
         let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
                                    font: .systemFont(ofSize: 12),
@@ -192,7 +206,8 @@ class WorningInfoHeaderView: UIView ,ChartViewDelegate{
         chartsView.xAxis.axisMaximum = Double(xAxisLabels.count - 1)
         chartsView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
         chartsView.xAxis.setLabelCount(xAxisLabels.count , force: true)
-        
+        chartsView.xAxis.labelFont = UIFont.systemFont(ofSize: 8)
+        chartsView.xAxis.labelTextColor = RGBCOLOR(r: 136, 136, 136)
         
         
         let yVals1 = (0..<dataArray.count).map { (i) -> ChartDataEntry in

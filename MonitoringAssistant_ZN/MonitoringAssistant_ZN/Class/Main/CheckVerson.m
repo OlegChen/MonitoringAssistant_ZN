@@ -44,7 +44,7 @@
     
     NSLog(@"通过appStore获取的版本号是：%@",newVersion);
     
-    newVersion = @"2.0";
+//    newVersion = @"2.0";
     
     //获取本地软件的版本号
     NSString *localVersion = [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleVersion"];

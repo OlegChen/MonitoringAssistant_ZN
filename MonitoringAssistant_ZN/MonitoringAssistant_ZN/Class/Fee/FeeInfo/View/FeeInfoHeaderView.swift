@@ -80,6 +80,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         rightAxis.axisMaximum = 100
         rightAxis.axisMinimum = 0
         rightAxis.drawGridLinesEnabled = false
+        rightAxis.labelFont = UIFont.systemFont(ofSize: 8)
         
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
 
@@ -94,6 +95,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         leftAxis.spaceMax = 500
         leftAxis.spaceMin = 500
         leftAxis.drawGridLinesEnabled = false
+        leftAxis.labelFont = UIFont.systemFont(ofSize: 8)
 
 //        leftAxis.gridLineDashLengths = [4, 3]
 //        leftAxis.drawLimitLinesBehindDataEnabled = false
@@ -177,7 +179,7 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xAxisLabels as! [String])
         chartView.xAxis.setLabelCount(xAxisLabels.count-1, force: false)
         chartView.xAxis.labelTextColor = RGBCOLOR(r: 86, 86, 86)
-        
+        chartView.xAxis.labelFont = UIFont.systemFont(ofSize: 8)
         
         let start = 0
         let yVals = (start..<dataArray.count).map { (i) -> BarChartDataEntry in

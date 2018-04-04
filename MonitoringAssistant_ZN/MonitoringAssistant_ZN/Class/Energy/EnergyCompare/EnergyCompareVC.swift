@@ -10,7 +10,7 @@ import UIKit
 import Charts
 
 
-class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate{
+class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate ,UITableViewDelegate,UITableViewDataSource{
     func refreshData() {
         
         self.getdataWithType(type: "1")
@@ -42,13 +42,36 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
         
         self.view.backgroundColor = RGBCOLOR(r: 245, 245, 245)
         
+        
+        
+        self.tableView = UITableView(frame:CGRect(x:0 , y : CGFloat(NavHeight) , width:ScreenW , height: ScreenH - CGFloat(NavHeight)))
+        self.view.addSubview(self.tableView)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.backgroundColor = RGBCOLOR(r: 245, 245, 245)
+        self.tableView.snp.makeConstraints { (make) in
+
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight), 0 , 0, 0))
+        }
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableView.es.addPullToRefresh {
+
+            [weak self] in
+            
+            self?.getdataWithType(type: "1")
+        }
+        
+        let view = UIView()
+        view.backgroundColor = RGBCOLOR(r: 245, 245, 245)
+        view.height = 466 + 63
+        
         let topView = UIView()
         topView.backgroundColor = .white
-        self.view.addSubview(topView)
+        view.addSubview(topView)
         topView.snp.makeConstraints { (make) in
             
-            make.left.right.equalTo(self.view).offset(0)
-            make.top.equalTo(self.view).offset(NavHeight)
+            make.left.right.equalTo(view).offset(0)
+            make.top.equalTo(view).offset(0)
             make.height.equalTo(53)
         }
         
@@ -67,6 +90,7 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
         SegmentControl.indicatorHeight = 0
         SegmentControl.font = UIFont.systemFont(ofSize: 15)
 
+        SegmentControl.animation.duration = 0
         
         SegmentControl.append(title: "总耗能")
         SegmentControl.append(title: "水耗能")
@@ -75,20 +99,11 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
         topView.addSubview(SegmentControl)
         SegmentControl.frame = CGRect(x: 15  , y: 13 , width: ScreenW - 30 , height:27)
         
-        
-//        self.tableView = UITableView(frame:CGRect(x:0 , y : CGFloat(NavHeight + 20.0 + 30 + 10) , width:ScreenW , height: 412))
-//        self.view.addSubview(self.tableView)
-//        self.tableView.snp.makeConstraints { (make) in
-//
-//            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(CGFloat(NavHeight + 60 + 10), 0 , 0, 0))
-//        }
-//        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        
-        
+
         let myScrollView = UIScrollView()
-        myScrollView.contentSize = CGSize(width:Double(ScreenW)*4 ,height:Double(ScreenH)-NavHeight-70)
-        self.view.addSubview(myScrollView)
-        myScrollView.frame =  CGRect(x:0 , y:53 + 10 + Double(NavHeight) , width:Double(ScreenW) , height:Double(ScreenH) - 63 - Double(NavHeight))
+        myScrollView.contentSize = CGSize(width:Double(ScreenW)*4 ,height:466)
+        view.addSubview(myScrollView)
+        myScrollView.frame =  CGRect(x:0 , y:53 + 10 , width:Double(ScreenW) , height:(ScreenH - 466 - 63) > 0 ? (Double(ScreenH) - NavHeight - 63) : 466)
         myScrollView.backgroundColor = .white
         myScrollView.isPagingEnabled = true
         
@@ -109,15 +124,33 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
             }
             
             myScrollView.addSubview(content.view)
-            content.view.frame = CGRect(x:Double(i) * Double(ScreenW) , y:0 , width:Double(ScreenW) , height:Double(ScreenH) - 63)
+            content.view.frame = CGRect(x:Double(i) * Double(ScreenW) , y:0 , width:Double(ScreenW) , height:(ScreenH - 466 - 63) > 0 ? (Double(ScreenH) - NavHeight) : 466)
 
         }
         
         SegmentControl.scrollView = myScrollView
         
+        
+        self.tableView.tableHeaderView = view;
+        
+        
+        
         self.getdataWithType(type: "1")   //1：总能耗2：水能耗3：电能耗4：气能耗
         self.view.beginLoading()
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "123123")
+        
+        
+        return cell
     }
     
 
@@ -175,9 +208,15 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
                 
                 self.view.endLoading()
                 
+                self.tableView.es.stopPullToRefresh()
+
+                
             }, failture: { (error) in
                 
                 self.view.endLoading()
+                
+                self.tableView.es.stopPullToRefresh()
+
             })
         }
 

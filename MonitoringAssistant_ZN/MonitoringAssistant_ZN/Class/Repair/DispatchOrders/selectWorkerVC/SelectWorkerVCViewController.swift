@@ -44,7 +44,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             
             make.left.right.equalTo(self.view).offset(0)
             make.top.equalTo(self.view).offset(NavHeight)
-            make.bottom.equalTo(self.view).offset(-80)
+            make.bottom.equalTo(self.view).offset(-100)
         }
         self.tableView.register(UINib.init(nibName: "SelectWorkerVCCell" , bundle: nil), forCellReuseIdentifier: SelectWorkerVCCell_id)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -91,7 +91,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 45
+        return 35
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -144,7 +144,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                         self.tableView.reloadData()
                         
                         
-                         let bottomH = Double(ScreenH) - Double(NavHeight) - (Double(self.dataArr.count) * 45 + 50)
+                         let bottomH = Double(ScreenH) - Double(NavHeight) - (Double(self.dataArr.count) * 35 + 50)
                         self.tableView.snp.updateConstraints({ (make) in
                             make.bottom.equalTo(self.view).offset(-(bottomH < 200 ? 200 : bottomH))
                             
@@ -191,14 +191,14 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
             
             make.left.equalTo(self.view).offset(30)
             make.right.equalTo(self.view).offset(-30)
-            make.top.equalTo(self.tableView.snp.bottom).offset(40)
+            make.bottom.equalTo(self.view).offset(-80)
             make.height.equalTo(45)
         }
         btn.layer.cornerRadius = 4
         btn.backgroundColor = RGBCOLOR(r: 71, 143, 183)
-        btn.setTitle( self.workSendId == "0" ?  "派  单" : "转  派", for: UIControlState.normal)
+        btn.setTitle( self.workSendId == "0" ?  "派　　单" : "转　　派", for: UIControlState.normal)
         btn.setTitleColor(.white, for: UIControlState.normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.addTarget(self, action: #selector(sureBtnClick(btn:)), for: UIControlEvents.touchUpInside)
         
         
@@ -227,15 +227,27 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
                 
                 if model.statusCode == 800{
                     
-                    let alertView = UIAlertView(title: "提示", message: "派单成功", delegate: nil, cancelButtonTitle: "确定")
-                    alertView.tag = 1000
-                    alertView.delegate = self
-                    alertView.show()
+                    //获取viewController的个数
+                    for i in 0..<(self.navigationController?.viewControllers.count)! {
+                        
+                        if self.navigationController?.viewControllers[i].isKind(of: DispatchOrderVC.self) == true {
+                            
+                            _ = self.navigationController?.popToViewController(self.navigationController?.viewControllers[i] as! DispatchOrderVC, animated: true)
+                            
+                            NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "xhNotification"), object: nil)
+                            
+                            break
+                        }
+                    }
+                    
                     
                 }else{
                     
-                    let alertView = UIAlertView(title: "提示", message: "派单失败", delegate: nil, cancelButtonTitle: "确定")
-                    alertView.show()
+                    ZNCustomAlertView.handleTip("派单失败", isShowCancelBtn: false, completion: { (issure) in
+                        
+                        
+                    })
+                    
                 }
                 
                 
