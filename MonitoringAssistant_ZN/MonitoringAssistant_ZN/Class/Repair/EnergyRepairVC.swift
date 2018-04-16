@@ -10,10 +10,10 @@ import UIKit
 
 class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
 
-    let titleArr = ["工单信息", "转派工单" , "轨迹回放"]
-    let iconArr = [ "工单信息icon","派转工单icon","黄金对标icon"]
+    let titleArr = ["工单信息", "转派工单" , "轨迹回放","现场报修"]
+    let iconArr = [ "工单信息icon","派转工单icon","黄金对标icon","现场报修"]
 
-    let imgArr = ["abcd_work_order_details", "abcd_equipment_monitor" , "abcd_trajectory_play"]
+    let imgArr = ["abcd_work_order_details", "abcd_equipment_monitor" , "abcd_trajectory_play","现场报修"]
 
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 4
     }
     
     
@@ -78,6 +78,11 @@ class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
             self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
             
             
+        }else{
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "onlineRepaire") as! onlineRepaire
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
@@ -96,6 +101,12 @@ class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
             
             self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
 
+            
+        }else{
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "onlineRepaire") as! onlineRepaire
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
         

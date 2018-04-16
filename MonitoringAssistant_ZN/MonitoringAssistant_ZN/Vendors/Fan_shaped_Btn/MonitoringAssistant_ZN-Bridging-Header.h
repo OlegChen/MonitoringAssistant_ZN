@@ -33,6 +33,10 @@
 
 #import "UITextField+Placeholder.h"
 #import "ZNCustomAlertView.h"
+#import "MKDropdownMenu.h"
+#import "PersonDataAddPicCell.h"
+#import "UIView+FP.h"
+#import "UIPlaceHolderTextView.h"
 
 
 
