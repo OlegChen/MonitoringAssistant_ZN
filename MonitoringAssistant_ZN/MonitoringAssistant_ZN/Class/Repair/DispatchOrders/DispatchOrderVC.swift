@@ -137,7 +137,7 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let model = self.dataArr[indexPath.row] as! DispatchOrderResultModel
+        let model = self.dataArr[indexPath.section] as! DispatchOrderResultModel
 
         let vc = OrderDetailVC()
         vc.workNo = model.workNo

@@ -11,7 +11,7 @@ import HandyJSON
 
 public struct NetworkService {
 
-    public static func networkPostrequest(parameters: [String : String], requestApi: String, modelClass :String, response: @escaping (_ responseObject : AnyObject) -> (), failture : @escaping (_ error : NSError)->())  {
+    public static func networkPostrequest(parameters: [String : Any], requestApi: String, modelClass :String, response: @escaping (_ responseObject : AnyObject) -> (), failture : @escaping (_ error : NSError)->())  {
         
             NetworkRequest.sharedInstance.NetworkPostRequest(URL: requestApi, params:parameters as [String : AnyObject] , success: { (responseObject) in
                 
@@ -39,7 +39,7 @@ public struct NetworkService {
     
     
     
-    public static func networkGetrequest(parameters: [String : String], requestApi: String, modelClass :String, response: @escaping (_ responseObject : AnyObject) -> (), failture : @escaping (_ error : NSError)->())  {
+    public static func networkGetrequest(parameters: [String : Any], requestApi: String, modelClass :String, response: @escaping (_ responseObject : AnyObject) -> (), failture : @escaping (_ error : NSError)->())  {
         
         NetworkRequest.sharedInstance.NetworkGetRequest(URL: requestApi, params: parameters as [String : AnyObject], success: { (responseObject) in
             

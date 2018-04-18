@@ -13,6 +13,9 @@
 #import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
+#import <BMKLocationkit/BMKLocationComponent.h>
+#import <BMKLocationkit/BMKLocationAuth.h>
+
 #import "UIImageView+WebCache.h"
 #import "CustomMapAnnotationView.h"
 #import "UIView+Common.h"

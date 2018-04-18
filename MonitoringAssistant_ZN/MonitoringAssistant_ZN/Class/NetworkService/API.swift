@@ -14,6 +14,9 @@ import Foundation
 
 private let baseURL = "http://plat.znxk.net:6803"
 
+private let base1URL = "http://plat.znxk.net:6801" //现场维修
+
+
 
 //MARK:- ---  接口
 //登录
@@ -60,5 +63,10 @@ public let modifyHeadUrlUrl = baseURL + "/user/modifyHeadUrl"
 public let forgetPwdUrl = baseURL + "/user/forgetPwd"
 // 验证码
 public let getVerifyUrl = baseURL + "/user/getVerify"
+
+//1.1.    获取报修类型
+public let getRepairsTypeUrl = base1URL + "/fieldRepairs/getRepairsType"
+//1.1.    现场报修提交
+public let commitUrl = base1URL + "/fieldRepairs/commit"
 
 //private static let baseURL = "https://www.designernews.co"

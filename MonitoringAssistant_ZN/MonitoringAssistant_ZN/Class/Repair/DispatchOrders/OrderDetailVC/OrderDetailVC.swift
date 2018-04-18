@@ -171,7 +171,6 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                     
                     self.dataModel = model
                     
-                    
                     self.setupImagefooter(array: model.returnObj?.workDealImgs as! NSArray)
                     
                     self.tableView.reloadData()

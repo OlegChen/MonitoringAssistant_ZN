@@ -16,6 +16,7 @@
 #import "personDataAddPicCollectionCell.h"
 #import "UICustomCollectionView.h"
 //#import "MJPhotoBrowser.h"
+#import "PhotoBroswerVC.h"
 
 @interface PersonDataAddPicCell ()
 
@@ -127,9 +128,10 @@
     CGFloat cellHeight = 0;
     //    if (obj > 0) {
     NSInteger row;
-    if (obj <= 0) {
+    if (obj <= 0 || obj == 3) {
         row = 1;
-    }else{
+    }
+    else{
         row = ceilf((float)(obj +1)/3.0);
     }
     cellHeight = ([personDataAddPicCollectionCell ccellSize].height +10) *row;
@@ -140,7 +142,7 @@
 #pragma mark Collection M
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     NSInteger num = _curTweet.count;
-    return num < 6? num+ 1: num;
+    return num < 3? num+ 1: num;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -220,7 +222,74 @@
         [browser show];
         */
         
+        [PhotoBroswerVC show:[self getCurrentViewController] type:PhotoBroswerVCTypeModal index:indexPath.row photoModelBlock:^NSArray *{
+            
+            __weak typeof(self) weakSelf=self;
+            NSArray *localImages = weakSelf.curTweet;
+            
+            NSMutableArray *modelsM = [NSMutableArray arrayWithCapacity:localImages.count];
+            for (NSUInteger i = 0; i< localImages.count; i++) {
+                
+                PhotoModel *pbModel=[[PhotoModel alloc] init];
+                pbModel.mid = i + 1;
+//                pbModel.title = [NSString stringWithFormat:@"这是标题%@",@(i+1)];
+//                pbModel.desc = [NSString stringWithFormat:@",@(i+1)];
+                pbModel.image = localImages[i];
+                
+//                TitleViewCell * cell = (TitleViewCell *)[self collectionView:collectionView cellForItemAtIndexPath:indexPath];//即为要得到的cell
+//                //源frame
+//                UIImageView *imageV =(UIImageView *) weakSelf.contentView.subviews[i];
+//                pbModel.sourceImageView = imageV;
+                
+                [modelsM addObject:pbModel];
+            }
+            
+            return modelsM;
+        }];
+        
     }
+}
+
+
+
+- (UIViewController *)getCurrentViewController {
+    UIViewController *result = nil;
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    //app默认windowLevel是UIWindowLevelNormal，如果不是，找到它
+    if (window.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows) {
+            if (tmpWin.windowLevel == UIWindowLevelNormal) {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    id nextResponder = nil;
+    UIViewController *appRootVC = window.rootViewController;
+    //1、通过present弹出VC，appRootVC.presentedViewController不为nil
+    if (appRootVC.presentedViewController) {
+        nextResponder = appRootVC.presentedViewController;
+    }else{
+        //2、通过navigationcontroller弹出VC
+        NSLog(@"subviews == %@",[window subviews]);
+        UIView *frontView = [[window subviews] objectAtIndex:0];
+        nextResponder = [frontView nextResponder];
+    }
+    //1、tabBarController
+    if ([nextResponder isKindOfClass:[UITabBarController class]]){
+        UITabBarController * tabbar = (UITabBarController *)nextResponder;
+        UINavigationController * nav = (UINavigationController *)tabbar.viewControllers[tabbar.selectedIndex];
+        //或者 UINavigationController * nav = tabbar.selectedViewController;
+        result = nav.childViewControllers.lastObject;
+    }else if ([nextResponder isKindOfClass:[UINavigationController class]]){
+        //2、navigationController
+        UIViewController * nav = (UIViewController *)nextResponder;
+        result = nav.childViewControllers.lastObject;
+    }else{//3、viewControler
+        result = nextResponder;
+    }
+    return result;
 }
 
 

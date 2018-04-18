@@ -249,6 +249,11 @@
 		18B4B867208470F400A2F164 /* 拍照@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4B865208470F300A2F164 /* 拍照@2x.png */; };
 		18B4B868208470F400A2F164 /* 拍照@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4B866208470F300A2F164 /* 拍照@3x.png */; };
 		18B4B86B20847C4C00A2F164 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4B86A20847C4C00A2F164 /* UIPlaceHolderTextView.m */; };
+		18B4B86E2085978C00A2F164 /* RepairsTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4B86D2085978C00A2F164 /* RepairsTypeModel.swift */; };
+		18B4B870208597E900A2F164 /* RepairsTypeReturnObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B4B86F208597E900A2F164 /* RepairsTypeReturnObjModel.swift */; };
+		18B4B8732085CD7300A2F164 /* BMKLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B4B8722085CD7300A2F164 /* BMKLocationKit.framework */; };
+		18B4B8752085CF9E00A2F164 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B4B8742085CF9D00A2F164 /* AdSupport.framework */; };
+		18B4B8772085ED8800A2F164 /* pic_deletel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4B8762085ED8700A2F164 /* pic_deletel@2x.png */; };
 		18C8D244202B02E000E91527 /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D241202B02DE00E91527 /* DispatchQueueExtension.swift */; };
 		18C8D245202B02E000E91527 /* UIBarButtonItemFixSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D242202B02DF00E91527 /* UIBarButtonItemFixSpace.swift */; };
 		18C8D246202B02E000E91527 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D243202B02E000E91527 /* UIBarButtonItemExtension.swift */; };
@@ -840,6 +845,11 @@
 		18B4B866208470F300A2F164 /* 拍照@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "拍照@3x.png"; sourceTree = "<group>"; };
 		18B4B86920847C4C00A2F164 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		18B4B86A20847C4C00A2F164 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		18B4B86D2085978C00A2F164 /* RepairsTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairsTypeModel.swift; sourceTree = "<group>"; };
+		18B4B86F208597E900A2F164 /* RepairsTypeReturnObjModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairsTypeReturnObjModel.swift; sourceTree = "<group>"; };
+		18B4B8722085CD7300A2F164 /* BMKLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BMKLocationKit.framework; sourceTree = "<group>"; };
+		18B4B8742085CF9D00A2F164 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		18B4B8762085ED8700A2F164 /* pic_deletel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_deletel@2x.png"; sourceTree = "<group>"; };
 		18C8D241202B02DE00E91527 /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
 		18C8D242202B02DF00E91527 /* UIBarButtonItemFixSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemFixSpace.swift; sourceTree = "<group>"; };
 		18C8D243202B02E000E91527 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
@@ -1121,6 +1131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B4B8752085CF9E00A2F164 /* AdSupport.framework in Frameworks */,
+				18B4B8732085CD7300A2F164 /* BMKLocationKit.framework in Frameworks */,
 				185AA43C205A133200205256 /* WebP.framework in Frameworks */,
 				18C8D2C3202C3F2700E91527 /* libstdc++.6.0.9.tbd in Frameworks */,
 				18C8D2C1202C3F1600E91527 /* CoreTelephony.framework in Frameworks */,
@@ -1408,6 +1420,7 @@
 		183E211E207B626000186D45 /* onlineRepaire */ = {
 			isa = PBXGroup;
 			children = (
+				18B4B86C2085961400A2F164 /* Model */,
 				183E2125207CA0E400186D45 /* View */,
 				183E211F207B651E00186D45 /* onlineRepaire.swift */,
 				18B4B85F207E0D2900A2F164 /* olineRepaireContentTableview.swift */,
@@ -2026,6 +2039,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18B4B86C2085961400A2F164 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18B4B86D2085978C00A2F164 /* RepairsTypeModel.swift */,
+				18B4B86F208597E900A2F164 /* RepairsTypeReturnObjModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18B4B8712085CD7300A2F164 /* BaiduLoc_iOSSDK_Libs_Bitcode_v1.1 */ = {
+			isa = PBXGroup;
+			children = (
+				18B4B8722085CD7300A2F164 /* BMKLocationKit.framework */,
+			);
+			path = BaiduLoc_iOSSDK_Libs_Bitcode_v1.1;
+			sourceTree = "<group>";
+		};
 		18C8D240202B02A700E91527 /* navSet */ = {
 			isa = PBXGroup;
 			children = (
@@ -2141,6 +2171,7 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				18B4B8712085CD7300A2F164 /* BaiduLoc_iOSSDK_Libs_Bitcode_v1.1 */,
 				183E2121207C9DB500186D45 /* MKDropdownMenu */,
 				183E20F52073826A00186D45 /* ZNCustomAlertView */,
 				74FFAF25206AB75700283DB4 /* CustomerAlertViewManger.h */,
@@ -2424,6 +2455,7 @@
 		41C759CFC8F4366C3B8CDD59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18B4B8742085CF9D00A2F164 /* AdSupport.framework */,
 				18C8D2C2202C3F2700E91527 /* libstdc++.6.0.9.tbd */,
 				18C8D2C0202C3F1600E91527 /* CoreTelephony.framework */,
 				18C8D2BE202C3F0A00E91527 /* libsqlite3.0.tbd */,
@@ -2765,6 +2797,7 @@
 		74A8D3B8202DEA9600535BC2 /* 工单信息 */ = {
 			isa = PBXGroup;
 			children = (
+				18B4B8762085ED8700A2F164 /* pic_deletel@2x.png */,
 				18B4B865208470F300A2F164 /* 拍照@2x.png */,
 				18B4B866208470F300A2F164 /* 拍照@3x.png */,
 				18B4B862207F5DFF00A2F164 /* 倒三角@2x.png */,
@@ -3094,6 +3127,7 @@
 				74A8D3F1202DEA9600535BC2 /* abcd_dispatch_order_touch.png in Resources */,
 				183E2119207B54D600186D45 /* 位置@3x.png in Resources */,
 				183E20EE207378CA00186D45 /* 记住密码选择@2x.png in Resources */,
+				18B4B8772085ED8800A2F164 /* pic_deletel@2x.png in Resources */,
 				74A8D3FA202DEA9600535BC2 /* abcd_gold_bench_marke_untouch.png in Resources */,
 				74903E1D2031EB5600003EF2 /* 设备@2x.png in Resources */,
 				183E20D32068E39800186D45 /* legendView.xib in Resources */,
@@ -3346,6 +3380,7 @@
 				74903E60203B179A00003EF2 /* OrderInfoReturnObjModel.swift in Sources */,
 				18A57A8220464D8000DA7D59 /* equipmentMonitorMonitorClassModel.swift in Sources */,
 				185AA4DB205A141000205256 /* NSButton+WebCache.m in Sources */,
+				18B4B86E2085978C00A2F164 /* RepairsTypeModel.swift in Sources */,
 				18D75015201321520011866E /* BalloonMarker.swift in Sources */,
 				18C8D2D8202C4EF900E91527 /* CustomMapAnnotationView.mm in Sources */,
 				181F5BD920512B4B003600DE /* WorningInfoModel.swift in Sources */,
@@ -3368,6 +3403,7 @@
 				181F5BAB20481B12003600DE /* TrackPlayBackReturnObjModel.swift in Sources */,
 				18A57A8020464D3800DA7D59 /* equipmentMonitorReturnObjModel.swift in Sources */,
 				18C8D2F8202C50E400E91527 /* MASViewConstraint.m in Sources */,
+				18B4B870208597E900A2F164 /* RepairsTypeReturnObjModel.swift in Sources */,
 				74903EBA204BCC6000003EF2 /* FSCalendarStickyHeader.m in Sources */,
 				183E20C8206897FD00186D45 /* MXSegmentedControl.swift in Sources */,
 				181F5C5820565259003600DE /* YJProgressHUD.m in Sources */,
@@ -3729,6 +3765,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors",
+					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduLoc_iOSSDK_Libs_Bitcode_v1.1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -3771,6 +3808,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduMapAPI",
 					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors",
+					"$(PROJECT_DIR)/MonitoringAssistant_ZN/Vendors/BaiduLoc_iOSSDK_Libs_Bitcode_v1.1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",

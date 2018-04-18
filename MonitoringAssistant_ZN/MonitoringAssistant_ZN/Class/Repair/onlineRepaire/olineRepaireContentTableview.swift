@@ -9,10 +9,12 @@
 import UIKit
 
 class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSource, MKDropdownMenuDelegate
-,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate ,UITextFieldDelegate , UITextViewDelegate{
     
-    let typeTitles : NSArray = ["Circle", "Triangle", "Rectangle", "Pentagon", "Hexagon"]
+//    let typeTitles : NSArray = ["Circle", "Triangle", "Rectangle", "Pentagon", "Hexagon"]
     
+    var repairTypeArr : NSArray = []
+    var selectedRepaireTypeModel : RepairsTypeReturnObjModel?
     
     @IBOutlet weak var dropDownMenu: MKDropdownMenu!
     
@@ -20,6 +22,12 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
     
     
     @IBOutlet weak var contentTextView: UIPlaceHolderTextView!
+    
+    @IBOutlet weak var wokerName: UITextField!
+    
+    @IBOutlet weak var tel: UITextField!
+    
+    @IBOutlet weak var address: UITextField!
     
     ///相机，相册
     var cameraPicker: UIImagePickerController!
@@ -57,6 +65,12 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         self.contentTextView.placeholder = "请输入您的内容"
         self.contentTextView.placeholderColor = RGBCOLOR(r: 208, 208, 208)
         
+        
+        self.wokerName.delegate = self
+        self.tel.delegate = self
+        self.address.delegate = self
+        self.contentTextView.delegate = self
+        
         let view:UIView = UIView()
         view.backgroundColor = UIColor.white
         view.clipsToBounds = true
@@ -88,18 +102,29 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
             actionSheet.show(in: self.view)
             
         }
-        
+        weak var weakSelf = self
+
         footerVeiw.deleteTweetImageBlock = {
             index in
             
-            
-            
+            weakSelf?.imageArr.removeObject(at: Int(index))
+            weakSelf?.footerVeiw.setDataArray(weakSelf?.imageArr as! [Any], isLoading: false)
         }
         
         
         self.footerVeiw.height = PersonDataAddPicCell.cellHeight(withObj: self.imageArr.count)
         self.tableView.reloadData()
         
+        self.getRepairsType()
+        
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            self.wokerName.text = userInfo.empName
+            self.tel.text = userInfo.mobile
+            
+            
+        }
         
     }
     
@@ -134,7 +159,7 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         let pickerVC = UIImagePickerController()
         pickerVC.view.backgroundColor = UIColor.white
         pickerVC.delegate = self
-        pickerVC.allowsEditing = true
+        pickerVC.allowsEditing = false
         pickerVC.sourceType = sourceType
         present(pickerVC, animated: true, completion: nil)
         
@@ -142,12 +167,12 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        self.dismiss(animated: true, completion: nil)
+        
         //获得照片
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        let data = UIImageJPEGRepresentation(image,0.4);
-        let imageBase64String = data?.base64EncodedString()
+//        let data = UIImageJPEGRepresentation(image,0.4);
+//        let imageBase64String = data?.base64EncodedString()
         
         self.imageArr.add(image)
         
@@ -155,6 +180,8 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         
         self.footerVeiw.height = PersonDataAddPicCell.cellHeight(withObj: self.imageArr.count)
         self.tableView.reloadData()
+        
+        picker.dismiss(animated: true, completion: nil)
         
     }
     
@@ -201,14 +228,23 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
     
     func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForComponent component: Int) -> NSAttributedString? {
         
-        let att = NSAttributedString.init(string: "--请选择报修类型--", attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14) , NSAttributedStringKey.foregroundColor : RGBCOLOR(r: 51, 51, 51)])
+        let title : String!
+        if self.selectedRepaireTypeModel != nil {
+            
+            title = self.selectedRepaireTypeModel?.typeName
+        }else{
+            
+            title = "--请选择报修类型--"
+        }
+        
+        let att = NSAttributedString.init(string: title , attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14) , NSAttributedStringKey.foregroundColor : RGBCOLOR(r: 51, 51, 51)])
         
         return att
     }
     
     func dropdownMenu(_ dropdownMenu: MKDropdownMenu, numberOfRowsInComponent component: Int) -> Int {
         
-        return self.typeTitles.count
+        return self.repairTypeArr.count
     }
     
     //MKDropdownMenuDelegate
@@ -231,8 +267,10 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         
         let view : UIView = UIView()
         
+        let model = self.repairTypeArr[row] as! RepairsTypeReturnObjModel
+        
         let label : UILabel = UILabel()
-        label.text = self.typeTitles[row] as? String
+        label.text = model.typeName
         label.font = UIFont.systemFont(ofSize:13 )
         
         view.addSubview(label)
@@ -252,7 +290,66 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         
         print(row)
         
+        let model = self.repairTypeArr[row] as! RepairsTypeReturnObjModel
+        self.selectedRepaireTypeModel = model
+        
+        dropdownMenu.reloadAllComponents()
+        
         dropdownMenu.closeAllComponents(animated: true)
+        
+    }
+    
+    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, didOpenComponent component: Int) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if (text == "\n") {  // textView点击完成隐藏键盘
+            
+            textView.resignFirstResponder()
+            
+            return false
+            
+        }
+        return true
+    }
+    
+    func getRepairsType() {
+        
+        UserCenter.shared.userInfo { (islogin, userInfo) in
+            
+            
+            let para = ["companyCode":userInfo.companyCode ,
+                        "orgCode":userInfo.orgCode ,
+                        "empNo":userInfo.empNo ,
+                        "empName":userInfo.empName,
+                        
+                        ]
+            
+            NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: getRepairsTypeUrl, modelClass: "RepairsTypeModel", response: { (obj) in
+                
+                let model = obj as! RepairsTypeModel
+                self.repairTypeArr = model.returnObj as! NSArray
+                
+                self.dropDownMenu.reloadAllComponents()
+                
+            }, failture: { (error) in
+                
+                
+            })
+            
+            
+        }
+        
         
     }
     

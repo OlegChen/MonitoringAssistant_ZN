@@ -209,7 +209,7 @@
     
     if (!_deleteBtn) {
         _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(Cell_Width-20, 0, 20, 20)];
-        [_deleteBtn setImage:[UIImage imageNamed:@"delete-9"] forState:UIControlStateNormal];
+        [_deleteBtn setImage:[UIImage imageNamed:@"pic_deletel"] forState:UIControlStateNormal];
         _deleteBtn.backgroundColor = [UIColor blackColor];
         _deleteBtn.layer.cornerRadius = CGRectGetWidth(_deleteBtn.bounds)/2;
         _deleteBtn.layer.masksToBounds = YES;
