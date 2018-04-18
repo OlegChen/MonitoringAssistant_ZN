@@ -142,10 +142,10 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
                     
                     
                     
-//                    let data = try? JSONSerialization.data(withJSONObject: imgArr, options: JSONSerialization.WritingOptions.prettyPrinted)
-//                    let strJson = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                    let data = try? JSONSerialization.data(withJSONObject: imgArr, options: JSONSerialization.WritingOptions.prettyPrinted)
+                    let strJson = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                     
-                    para.setValue(imgArr, forKey:"base64List" )
+                    para.setValue(strJson, forKey:"base64List" )
                 }
  
                 NetworkService.networkPostrequest(parameters: para as! [String : Any], requestApi: commitUrl, modelClass: "BaseModel", response: { (obj) in
