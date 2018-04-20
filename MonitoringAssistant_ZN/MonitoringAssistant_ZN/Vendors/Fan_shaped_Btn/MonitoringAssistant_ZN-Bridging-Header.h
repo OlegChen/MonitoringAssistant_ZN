@@ -40,6 +40,7 @@
 #import "PersonDataAddPicCell.h"
 #import "UIView+FP.h"
 #import "UIPlaceHolderTextView.h"
+#import "UIImage+Compress.h"
 
 
 

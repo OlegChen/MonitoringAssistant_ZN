@@ -194,6 +194,7 @@
 		18791C9E2008BBB000A2E282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791C9C2008BBB000A2E282 /* LaunchScreen.storyboard */; };
 		18791CA92008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CA82008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift */; };
 		18791CB42008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */; };
+		1898AF1A20883CD100CB0389 /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898AF1920883CD100CB0389 /* UIImage+Compress.m */; };
 		18A57A2020455A4D00DA7D59 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A579AF20455A4D00DA7D59 /* NSString+File.m */; };
 		18A57A2120455A4D00DA7D59 /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B120455A4D00DA7D59 /* CoreArchive.m */; };
 		18A57A2220455A4D00DA7D59 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B520455A4D00DA7D59 /* CALayer+Anim.m */; };
@@ -751,6 +752,8 @@
 		18791CAF2008BBB100A2E282 /* MonitoringAssistant_ZNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonitoringAssistant_ZNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringAssistant_ZNUITests.swift; sourceTree = "<group>"; };
 		18791CB52008BBB100A2E282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1898AF1820883CD100CB0389 /* UIImage+Compress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compress.h"; sourceTree = "<group>"; };
+		1898AF1920883CD100CB0389 /* UIImage+Compress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
 		18A579AE20455A4D00DA7D59 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
 		18A579AF20455A4D00DA7D59 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		18A579B020455A4D00DA7D59 /* CoreArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreArchive.h; sourceTree = "<group>"; };
@@ -1254,6 +1257,8 @@
 				181F5BBA20497E84003600DE /* UIView+FP.m */,
 				181F5BBD20497EE6003600DE /* UIColor+expanded.h */,
 				181F5BBE20497EE6003600DE /* UIColor+expanded.m */,
+				1898AF1820883CD100CB0389 /* UIImage+Compress.h */,
+				1898AF1920883CD100CB0389 /* UIImage+Compress.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3361,6 +3366,7 @@
 				181F5C0C205619D4003600DE /* PhoneCodeButton.m in Sources */,
 				74903E802045AA2B00003EF2 /* EquipmentMonitorHeaderView.swift in Sources */,
 				181F5BD72051164D003600DE /* MKRingSingleView.swift in Sources */,
+				1898AF1A20883CD100CB0389 /* UIImage+Compress.m in Sources */,
 				181F5BB920497E3C003600DE /* UIView+Common.m in Sources */,
 				18A57A2620455A4D00DA7D59 /* NSObject+Extend.m in Sources */,
 				185AA438205A12FF00205256 /* FLAnimatedImage.m in Sources */,

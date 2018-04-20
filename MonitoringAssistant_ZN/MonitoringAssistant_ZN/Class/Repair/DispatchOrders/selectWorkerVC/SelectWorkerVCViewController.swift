@@ -79,7 +79,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
         cell.label1.text = model.empName
         cell.label2.text = model.compCnt
         cell.label3.text = model.waitCnt
-        cell.label4.text = model.distance! + "km"
+        cell.label4.text = String(model.distance!) + "km"
         
         cell.selectBtn.isSelected = model.isSelected
 

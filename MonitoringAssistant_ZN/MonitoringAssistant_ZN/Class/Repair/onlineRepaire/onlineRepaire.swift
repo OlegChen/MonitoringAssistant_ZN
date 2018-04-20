@@ -100,7 +100,8 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
 //                let index = self.longitudeStr.index((self.longitudeStr.startIndex), offsetBy: 8 )
                 
                 
-                let dic = ["companyCode":userInfo.companyCode ,
+                let dic = ["isIOS": "1",
+                           "companyCode":userInfo.companyCode ,
                            "orgCode":userInfo.orgCode ,
                            "empNo":userInfo.empNo ,
                            "empName":userInfo.empName,
@@ -132,9 +133,14 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
                     
                     for i in 0..<(weakSelf?.container.imageArr.count)! {
                         
-                        let image = weakSelf?.container.imageArr[i]
-                        let data = UIImageJPEGRepresentation(image as! UIImage,0.4);
-                        let imageBase64String = data?.base64EncodedString()
+                        let image = weakSelf?.container.imageArr[i] as! UIImage
+//                        let data = UIImageJPEGRepresentation(image as! UIImage,0.1);
+                        
+                        let data = image.compress(withMaxLength: 3 * 1024 * 1024)
+                        
+                        print( Double((data?.count)!)/1024.0/1024.0)
+                        
+                        let imageBase64String = data!.base64EncodedString()
                         
                         imgArr.add(imageBase64String)
                         
@@ -143,9 +149,9 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
                     
                     
                     let data = try? JSONSerialization.data(withJSONObject: imgArr, options: JSONSerialization.WritingOptions.prettyPrinted)
-                    let strJson = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                    let strJson = NSString(data:data!, encoding: String.Encoding.utf8.rawValue)
                     
-                    para.setValue(strJson, forKey:"base64List" )
+                    para.setValue(imgArr.componentsJoined(by: ","), forKey:"base64ListIOS" )
                 }
  
                 NetworkService.networkPostrequest(parameters: para as! [String : Any], requestApi: commitUrl, modelClass: "BaseModel", response: { (obj) in

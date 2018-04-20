@@ -10,10 +10,10 @@ import UIKit
 
 class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
 
-    let titleArr = ["工单信息", "转派工单" , "轨迹回放","现场报修"]
-    let iconArr = [ "工单信息icon","派转工单icon","黄金对标icon","现场报修"]
+    let titleArr = ["工单信息", "转派工单" , "现场报修","轨迹回放"]
+    let iconArr = [ "工单信息icon","派转工单icon","现场报修","黄金对标icon"]
 
-    let imgArr = ["abcd_work_order_details", "abcd_equipment_monitor" , "abcd_trajectory_play","现场报修"]
+    let imgArr = ["abcd_work_order_details", "abcd_dispatch_order" ,"现场报修", "abcd_trajectory_play"]
 
     
     override func viewDidLoad() {
@@ -75,14 +75,16 @@ class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
             
         }else if index == 2 {
             
-            self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
-            
-            
-        }else{
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "onlineRepaire") as! onlineRepaire
             self.navigationController?.pushViewController(vc, animated: true)
+            
+            
+        }else{
+            
+        
+            self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
         }
         
     }
@@ -99,14 +101,15 @@ class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
 
         }else if indexPath.row == 2 {
             
-            self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
-
-            
-        }else{
-            
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "onlineRepaire") as! onlineRepaire
             self.navigationController?.pushViewController(vc, animated: true)
+    
+        }else{
+            
+            
+            self.navigationController?.pushViewController(TrackPlayBackVC(), animated: true)
+            
             
         }
         

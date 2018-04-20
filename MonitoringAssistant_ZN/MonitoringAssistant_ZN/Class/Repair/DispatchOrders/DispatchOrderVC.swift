@@ -119,7 +119,8 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 180
+        return 175
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

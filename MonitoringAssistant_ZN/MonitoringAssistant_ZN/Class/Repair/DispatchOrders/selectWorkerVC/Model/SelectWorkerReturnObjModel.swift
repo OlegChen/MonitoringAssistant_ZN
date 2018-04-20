@@ -21,7 +21,7 @@ class SelectWorkerReturnObjModel: BaseReturnObjModel {
     var waitCnt : String?
     var latitude : String?
     var longitude : String?
-    var distance : String?
+    var distance : Double?
 
     
 //    "": "10061001",
