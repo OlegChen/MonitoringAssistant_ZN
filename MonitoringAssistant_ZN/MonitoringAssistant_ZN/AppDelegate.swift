@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SystemConfiguration
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
@@ -37,22 +39,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,BMKGeneralDelegate {
         //登录 ？
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        UserCenter.shared.userInfo{ (islogin, userReturnModel) in
-            
-            if (islogin){
-                
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
-                self.window?.rootViewController = initViewController
-                
-            }else{
-                //未登录
-                let vc = LoginVC.getLoginVC()
-                self.window?.rootViewController = vc
-            }
-        }
         
+        
+        let net = NetworkReachabilityManager()
+        if net?.isReachable ?? false {
+            
+            //可用
+            UserCenter.shared.userInfo{ (islogin, userReturnModel) in
+                
+                if (islogin){
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initViewController: NavigationController = storyBoard.instantiateViewController(withIdentifier: "rootNav") as! NavigationController
+                    self.window?.rootViewController = initViewController
+                    
+                }else{
+                    //未登录
+                    let vc = LoginVC.getLoginVC()
+                    self.window?.rootViewController = vc
+                }
+            }
+            
+        }else{
 
+            //未登录
+            let vc = LoginVC.getLoginVC()
+            self.window?.rootViewController = vc
+            
+        }
         
         self.window?.makeKeyAndVisible()
         return true

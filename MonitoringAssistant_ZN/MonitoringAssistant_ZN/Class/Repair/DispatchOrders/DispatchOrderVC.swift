@@ -102,14 +102,14 @@ class DispatchOrderVC: BaseVC,UITableViewDelegate,UITableViewDataSource,Dispatch
         cell.index = indexPath.section
         
         
-        cell.titleL.text = model.workName! + " | " + model.workName!
+        cell.titleL.text = model.workName! + " | " + model.typeName!
         cell.dateL.text = model.createDateStr!
         cell.longTimeL.text =  model.repairsTime! + "分钟"
         cell.nameL.text = model.sendEmpName!
         cell.detailL.text = model.repairsDesc
         cell.addressL.text = model.address
         
-        cell.dispatchBtn.setTitle(model.workSendId == "0" ? "派单" : "转派", for: UIControlState.normal)
+        cell.dispatchBtn.setTitle(model.workSendId == "0" ? "派单" : "改派", for: UIControlState.normal)
         
         cell.delegate = self
         cell.selectionStyle = UITableViewCellSelectionStyle.none

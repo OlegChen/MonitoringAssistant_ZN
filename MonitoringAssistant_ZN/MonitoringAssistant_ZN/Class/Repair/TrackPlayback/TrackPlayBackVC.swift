@@ -22,6 +22,7 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(_mapView!)
         _mapView?.zoomLevel = 13
+        _mapView?.isRotateEnabled  = false
     
         
         self.getData()
@@ -81,7 +82,7 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
         
         let popW = maxW > (ScreenW - 80) ? (ScreenW - 80) : maxW
         
-        let custView = TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width:popW  , height: 120 ))
+        let custView = TrackPlayBackPopView.init(frame: CGRect(x: 0 , y : 0 , width:popW - 5  , height: 120 ))
             custView.delegate = self
             custView.model = custAnnotation.Model
             custView.companyL.text = companyStr

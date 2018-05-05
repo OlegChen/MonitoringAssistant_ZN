@@ -42,5 +42,10 @@
 #import "UIPlaceHolderTextView.h"
 #import "UIImage+Compress.h"
 
+#import "NSString+emoji.h"
+
+#import "Reachability.h"
+
+
 
 

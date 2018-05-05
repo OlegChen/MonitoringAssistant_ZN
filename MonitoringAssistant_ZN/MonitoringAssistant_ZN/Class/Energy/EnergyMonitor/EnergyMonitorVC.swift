@@ -12,6 +12,9 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
 
     var _mapView: BMKMapView?
 
+    var model : moniterDataModel?
+    
+    
     lazy var dataArr : NSMutableArray = {
         
         let array = NSMutableArray()
@@ -26,8 +29,9 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
         
         self.fd_interactivePopDisabled = true
         
-        _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        _mapView = BMKMapView(frame: CGRect(x: 0, y: CGFloat(NavHeight), width: self.view.frame.width, height: self.view.frame.height - CGFloat(NavHeight)))
         self.view.addSubview(_mapView!)
+        _mapView?.isRotateEnabled  = false
         
         self.getData()
         
@@ -63,47 +67,68 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
 
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
     
+        let custAnnotation = annotation as! monitorCustomAnnotation
+
+//        if custAnnotation.model == nil {
+//
+//            let newAnnotationView = BMKPinAnnotationView.init(annotation: annotation, reuseIdentifier: "centerAnnotation")
+//
+//            newAnnotationView?.image = UIImage.init(named: "位置")
+//            newAnnotationView?.animatesDrop = false //设置该标点动画显示
+//            newAnnotationView?.annotation = annotation;
+//
+//
+//            return newAnnotationView;
+//
+//
+//        }else{
+
+        
             let AnnotationViewID = "123123"
             
-//            var newAnnotation = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as?  BMKPinAnnotationView
-//
-//            if newAnnotation == nil {
+    //            var newAnnotation = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as?  BMKPinAnnotationView
+    //
+    //            if newAnnotation == nil {
+            
+            let newAnnotation : monitorCustomPinAnnotation  = monitorCustomPinAnnotation.init(annotation: annotation, reuseIdentifier: AnnotationViewID)
+
+            let popView = Bundle.main.loadNibNamed("EnergyMonitorPopView", owner: nil, options: nil)?[0] as! EnergyMonitorPopView
+            popView.width = 0
+            popView.setData(stationNo:  (custAnnotation.model?.stationNo)!, typeName: (custAnnotation.model?.stationType)! == "032001" ? "锅炉房" : "换热站")
+
+
+            let custPopView =  BMKActionPaopaoView.init(customView: popView)
+
+            newAnnotation.paopaoView = nil
+            newAnnotation.paopaoView = custPopView
+            
+            newAnnotation.model = custAnnotation.model
+
+                // 从天上掉下效果
+            newAnnotation.animatesDrop = false
+                // 设置可拖拽
+            newAnnotation.isDraggable = false
+                //设置大头针图标
+            
+            if (custAnnotation.model?.stationType == "032001") {
+                
+                //锅炉房
+                
+                newAnnotation.image = UIImage.init(named: "蓝标")
+            }else {
+                
+                newAnnotation.image = UIImage.init(named: "紫标")
+                
+            }
+            
+         
+            return newAnnotation;
+            
+            
+            
+            
+//        }
         
-        let newAnnotation : monitorCustomPinAnnotation  = monitorCustomPinAnnotation.init(annotation: annotation, reuseIdentifier: AnnotationViewID)
-
-        let popView = Bundle.main.loadNibNamed("EnergyMonitorPopView", owner: nil, options: nil)?[0] as! EnergyMonitorPopView
-        popView.width = 0
-        let custAnnotation = annotation as! monitorCustomAnnotation
-        popView.setData(stationNo:  (custAnnotation.model?.stationNo)!, typeName: (custAnnotation.model?.stationType)! == "032001" ? "锅炉房" : "换热站")
-
-
-        let custPopView =  BMKActionPaopaoView.init(customView: popView)
-
-        newAnnotation.paopaoView = nil
-        newAnnotation.paopaoView = custPopView
-        
-        newAnnotation.model = custAnnotation.model
-
-            // 从天上掉下效果
-        newAnnotation.animatesDrop = false
-            // 设置可拖拽
-        newAnnotation.isDraggable = false
-            //设置大头针图标
-        
-        if (custAnnotation.model?.stationType == "032001") {
-            
-            //锅炉房
-            
-            newAnnotation.image = UIImage.init(named: "蓝标")
-        }else {
-            
-            newAnnotation.image = UIImage.init(named: "紫标")
-            
-        }
-            
-     
-        return newAnnotation;
-            
     
         }
     
@@ -132,6 +157,8 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
             NetworkService.networkGetrequest(parameters: para as! [String : String], requestApi: moniterDataUrl, modelClass: "moniterDataModel" , response: { (obj) in
                 
                 let model = obj as! moniterDataModel
+                
+                self.model = model
                 
                 self.dataArr.addObjects(from: (model.returnObj?.points)!)
 
@@ -175,6 +202,19 @@ class EnergyMonitorVC: BaseVC , BMKMapViewDelegate {
         self._mapView?.addAnnotations(itemArray as! [Any])
         
         self.mapViewFit(pointArray: pointsArray)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.3, execute:
+            {
+                
+                self._mapView?.centerCoordinate = CLLocationCoordinate2D.init(latitude: Double((self.model?.returnObj?.centerLat)!)!, longitude:  Double((self.model?.returnObj?.centerLon)!)!)
+        })
+        
+    
+
+      
+        
+        
+        
     }
     
     

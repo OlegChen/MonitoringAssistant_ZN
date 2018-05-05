@@ -195,6 +195,10 @@
 		18791CA92008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CA82008BBB100A2E282 /* MonitoringAssistant_ZNTests.swift */; };
 		18791CB42008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791CB32008BBB100A2E282 /* MonitoringAssistant_ZNUITests.swift */; };
 		1898AF1A20883CD100CB0389 /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898AF1920883CD100CB0389 /* UIImage+Compress.m */; };
+		1898AF1D20901F1B00CB0389 /* NSString+emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898AF1C20901F1B00CB0389 /* NSString+emoji.m */; };
+		1898AF212091B78900CB0389 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898AF1F2091B78900CB0389 /* Reachability.m */; };
+		1898AF28209C11EC00CB0389 /* 显示闭眼@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1898AF26209C11EB00CB0389 /* 显示闭眼@2x.png */; };
+		1898AF29209C11EC00CB0389 /* 显示睁眼@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1898AF27209C11EB00CB0389 /* 显示睁眼@2x.png */; };
 		18A57A2020455A4D00DA7D59 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A579AF20455A4D00DA7D59 /* NSString+File.m */; };
 		18A57A2120455A4D00DA7D59 /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B120455A4D00DA7D59 /* CoreArchive.m */; };
 		18A57A2220455A4D00DA7D59 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B520455A4D00DA7D59 /* CALayer+Anim.m */; };
@@ -754,6 +758,12 @@
 		18791CB52008BBB100A2E282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1898AF1820883CD100CB0389 /* UIImage+Compress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compress.h"; sourceTree = "<group>"; };
 		1898AF1920883CD100CB0389 /* UIImage+Compress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
+		1898AF1B20901F1B00CB0389 /* NSString+emoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+emoji.h"; sourceTree = "<group>"; };
+		1898AF1C20901F1B00CB0389 /* NSString+emoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+emoji.m"; sourceTree = "<group>"; };
+		1898AF1F2091B78900CB0389 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1898AF202091B78900CB0389 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1898AF26209C11EB00CB0389 /* 显示闭眼@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "显示闭眼@2x.png"; sourceTree = "<group>"; };
+		1898AF27209C11EB00CB0389 /* 显示睁眼@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "显示睁眼@2x.png"; sourceTree = "<group>"; };
 		18A579AE20455A4D00DA7D59 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
 		18A579AF20455A4D00DA7D59 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		18A579B020455A4D00DA7D59 /* CoreArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreArchive.h; sourceTree = "<group>"; };
@@ -1134,6 +1144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C8D2B9202C3ED700E91527 /* SystemConfiguration.framework in Frameworks */,
 				18B4B8752085CF9E00A2F164 /* AdSupport.framework in Frameworks */,
 				18B4B8732085CD7300A2F164 /* BMKLocationKit.framework in Frameworks */,
 				185AA43C205A133200205256 /* WebP.framework in Frameworks */,
@@ -1142,7 +1153,6 @@
 				18C8D2BF202C3F0A00E91527 /* libsqlite3.0.tbd in Frameworks */,
 				18C8D2BD202C3EF100E91527 /* Security.framework in Frameworks */,
 				18C8D2BB202C3EE600E91527 /* CoreGraphics.framework in Frameworks */,
-				18C8D2B9202C3ED700E91527 /* SystemConfiguration.framework in Frameworks */,
 				18C8D2B7202C3EBA00E91527 /* OpenGLES.framework in Frameworks */,
 				18C8D2B5202C3EAF00E91527 /* QuartzCore.framework in Frameworks */,
 				18C8D2B3202C3EA300E91527 /* CoreLocation.framework in Frameworks */,
@@ -1259,6 +1269,8 @@
 				181F5BBE20497EE6003600DE /* UIColor+expanded.m */,
 				1898AF1820883CD100CB0389 /* UIImage+Compress.h */,
 				1898AF1920883CD100CB0389 /* UIImage+Compress.m */,
+				1898AF1B20901F1B00CB0389 /* NSString+emoji.h */,
+				1898AF1C20901F1B00CB0389 /* NSString+emoji.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1668,6 +1680,15 @@
 				18791CB52008BBB100A2E282 /* Info.plist */,
 			);
 			path = MonitoringAssistant_ZNUITests;
+			sourceTree = "<group>";
+		};
+		1898AF1E2091B78900CB0389 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				1898AF1F2091B78900CB0389 /* Reachability.m */,
+				1898AF202091B78900CB0389 /* Reachability.h */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		18A579AA20455A4D00DA7D59 /* CorePhotoBroswerVC */ = {
@@ -2176,6 +2197,7 @@
 		18D74FC7200DDA2C0011866E /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1898AF1E2091B78900CB0389 /* Reachability */,
 				18B4B8712085CD7300A2F164 /* BaiduLoc_iOSSDK_Libs_Bitcode_v1.1 */,
 				183E2121207C9DB500186D45 /* MKDropdownMenu */,
 				183E20F52073826A00186D45 /* ZNCustomAlertView */,
@@ -2877,6 +2899,8 @@
 		74A8D3CD202DEA9600535BC2 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
+				1898AF27209C11EB00CB0389 /* 显示睁眼@2x.png */,
+				1898AF26209C11EB00CB0389 /* 显示闭眼@2x.png */,
 				183E20EC207378C900186D45 /* 记住密码@2x.png */,
 				183E20ED207378C900186D45 /* 记住密码@3x.png */,
 				183E20EA207378C800186D45 /* 记住密码选择@2x.png */,
@@ -3092,6 +3116,7 @@
 				74DD1BF3205518CF002EC264 /* 终点@3x.png in Resources */,
 				74A8D422202DEA9600535BC2 /* head_portrait.png in Resources */,
 				74A8D408202DEA9600535BC2 /* dount_4.png in Resources */,
+				1898AF28209C11EC00CB0389 /* 显示闭眼@2x.png in Resources */,
 				181F5C28205627FC003600DE /* HUD_error@2x.png in Resources */,
 				181F5C072056169C003600DE /* 右@2x.png in Resources */,
 				183E20E9206E26E900186D45 /* placeHolderImg.png in Resources */,
@@ -3127,6 +3152,7 @@
 				185AA43A205A12FF00205256 /* Info.plist in Resources */,
 				74A8D411202DEA9600535BC2 /* un_touch.png in Resources */,
 				18D74FE32010339E0011866E /* EnergyTableViewCell.xib in Resources */,
+				1898AF29209C11EC00CB0389 /* 显示睁眼@2x.png in Resources */,
 				185AA516205A757B00205256 /* 用能概况icon@3x.png in Resources */,
 				74A8D405202DEA9600535BC2 /* dount_1.png in Resources */,
 				74A8D3F1202DEA9600535BC2 /* abcd_dispatch_order_touch.png in Resources */,
@@ -3348,6 +3374,7 @@
 				74903E4B2036B5CB00003EF2 /* moniterDataReturnObjModel.swift in Sources */,
 				74903E7E204314FE00003EF2 /* OrderDetailVC.swift in Sources */,
 				74903E3A2034051300003EF2 /* FeeReturnObjModel.swift in Sources */,
+				1898AF1D20901F1B00CB0389 /* NSString+emoji.m in Sources */,
 				18C8D2CA202C4BB900E91527 /* TrackPlayBackVC.swift in Sources */,
 				18D74FBA2008D3D30011866E /* PCH.swift in Sources */,
 				18A57A3620455A4D00DA7D59 /* UIButton+SD.m in Sources */,
@@ -3592,6 +3619,7 @@
 				74903E7720403D7800003EF2 /* SelectWorkerModel.swift in Sources */,
 				18D750012011A1C20011866E /* BaseVC.swift in Sources */,
 				18791C942008BBB000A2E282 /* AppDelegate.swift in Sources */,
+				1898AF212091B78900CB0389 /* Reachability.m in Sources */,
 				183E2120207B651E00186D45 /* onlineRepaire.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3698,6 +3726,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "d77b3856-0f25-4201-beaf-4d43bfc95d49";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3748,6 +3777,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "d77b3856-0f25-4201-beaf-4d43bfc95d49";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -3788,8 +3818,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e3aa4bd8-0437-467f-8472-6c56f73f8772";
-				PROVISIONING_PROFILE_SPECIFIER = newCompany_addHoc;
+				PROVISIONING_PROFILE = "d77b3856-0f25-4201-beaf-4d43bfc95d49";
+				PROVISIONING_PROFILE_SPECIFIER = addZNceshi_addHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -3831,8 +3861,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zn.monitoringAssistant;
 				PRODUCT_MODULE_NAME = MonitoringAssistant_ZN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e3aa4bd8-0437-467f-8472-6c56f73f8772";
-				PROVISIONING_PROFILE_SPECIFIER = newCompany_addHoc;
+				PROVISIONING_PROFILE = "d77b3856-0f25-4201-beaf-4d43bfc95d49";
+				PROVISIONING_PROFILE_SPECIFIER = addZNceshi_addHoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitoringAssistant_ZN/Vendors/Fan_shaped_Btn/MonitoringAssistant_ZN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

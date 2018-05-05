@@ -10,8 +10,8 @@ import UIKit
 
 class EnergyRepairVC: BaseTableVC ,EnergyTableViewCellDelegate{
 
-    let titleArr = ["工单信息", "转派工单" , "现场报修","轨迹回放"]
-    let iconArr = [ "工单信息icon","派转工单icon","现场报修","黄金对标icon"]
+    let titleArr = ["工单信息", "转派工单" , "故障报修","轨迹回放"]
+    let iconArr = [ "工单信息icon","派转工单icon","现场报修","轨迹回放icon"]
 
     let imgArr = ["abcd_work_order_details", "abcd_dispatch_order" ,"现场报修", "abcd_trajectory_play"]
 

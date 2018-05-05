@@ -114,8 +114,8 @@ class MKRingProgressGroupView: UIView {
             
             if(value == 0){
                 
-                ring1.startColor = UIColor.clear
-                ring1.endColor = UIColor.clear
+//                ring1.startColor = UIColor.clear
+//                ring1.endColor = UIColor.clear
             }else{
                 
                 ring1.startColor = RGBCOLOR(r: 140, 219, 125)
@@ -132,8 +132,8 @@ class MKRingProgressGroupView: UIView {
             
             if(value == 0){
                 
-                ring2.startColor = UIColor.clear
-                ring2.endColor = UIColor.clear
+//                ring2.startColor = UIColor.clear
+//                ring2.endColor = UIColor.clear
             }else{
                 
                 ring2.startColor = RGBCOLOR(r: 67, 142, 185)
@@ -150,8 +150,8 @@ class MKRingProgressGroupView: UIView {
         
         if(value == 0){
             
-            ring3.startColor = UIColor.clear
-            ring3.endColor = UIColor.clear
+//            ring3.startColor = UIColor.clear
+//            ring3.endColor = UIColor.clear
         }else{
             
             ring3.startColor = RGBCOLOR(r: 233, 155, 86)
@@ -170,8 +170,8 @@ class MKRingProgressGroupView: UIView {
             
             if(value == 0){
                 
-                ring4.startColor = UIColor.clear
-                ring4.endColor = UIColor.clear
+//                ring4.startColor = UIColor.clear
+//                ring4.endColor = UIColor.clear
             }else{
                 
                 ring4.startColor = RGBCOLOR(r: 165, 115, 255)

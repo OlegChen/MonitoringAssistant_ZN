@@ -33,10 +33,10 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
     
     func updateData(model:EnergyCompareStandardVoModel)  {
         
-        self.label1.text = String(model.preUseEnergy!)
-        self.label2.text = String( model.actualUseEnergy!)
-        self.label3.text = String(model.industryStandard!)
-        self.label4.text = String(model.planUseEnergy!)
+        self.label1.text = String(format: "%.2f", model.preUseEnergy!) //String(model.preUseEnergy!)
+        self.label2.text = String(format: "%.2f", model.actualUseEnergy!)
+        self.label3.text = String(format: "%.2f", model.industryStandard!)
+        self.label4.text = String(format: "%.2f", model.planUseEnergy!)
         
         self.setDataCount(array: model.monthUseEnergies! as! NSArray)
         
@@ -77,6 +77,9 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         leftAxis.gridColor = RGBCOLOR(r: 210, 210, 210)
         leftAxis.drawLimitLinesBehindDataEnabled = false
         leftAxis.labelFont = UIFont.systemFont(ofSize: 8)
+        
+        leftAxis.setLabelCount(7, force: true)
+        
         
         chartView.rightAxis.enabled = false
         
@@ -123,6 +126,8 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
         chartView.xAxis.labelFont = UIFont.systemFont(ofSize: 8)
         
         
+        var maxleftNum : Double = 100
+        
         let dataSets = (0..<4).map { j -> LineChartDataSet in
             
           
@@ -135,9 +140,17 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
                 let val = j == 0 ? Double(model.preUseEnergy!) : ( j == 1 ? Double(model.actualUseEnergy!) : (j == 2 ? Double(model.industryStandard!) : Double(model.planUseEnergy!)) ) //Double()
                 let month : String = String(model.monthStr!)
                 
+                
+                if maxleftNum < val {
+                    
+                    maxleftNum = val
+                }
+                
                 return ChartDataEntry(x: Double(i), y: val)
                 
             }
+            
+            chartView.leftAxis.axisMaximum = maxleftNum
             
             
             let set = LineChartDataSet(values: yVals, label: "DataSet \(j)")

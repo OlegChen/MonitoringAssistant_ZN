@@ -19,6 +19,9 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     }()
     
     var tableView : UITableView!
+    
+    var ifHideCellLine = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +59,7 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
         let dateStr = self.timeStampToString(timeStamp: model.createDate!)
         
-        cell?.dateL.text = dateStr.substring(to: dateStr.index(dateStr.startIndex, offsetBy:11))
+        cell?.dateL.text = dateStr.substring(to: dateStr.index(dateStr.startIndex, offsetBy:10))
         cell?.timeL.text = dateStr.substring(from: dateStr.index(dateStr.startIndex, offsetBy: 11))
         cell?.nameL.text = "维修师：" + model.sendEmpName!
         
@@ -64,11 +67,11 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         let str = model.type!
         switch str {
         case "1":
-            statusStr = "派单"
+            statusStr = "派单成功"
         case "2":
-            statusStr = "改派"
+            statusStr = "改派成功"
         case "3":
-            statusStr = "抢单"
+            statusStr = "抢单成功"
         default:
             break
         }
@@ -95,6 +98,8 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         cell?.statusL.text = statusStr
         
         cell?.setLine(isFirst: (indexPath.row == 0 ? true : false ), isLast: (indexPath.row == (self.dataArr.count - 1) ? true : false ))
+        
+        cell?.ifHideLine(ifHide: self.ifHideCellLine)
         
         cell?.selectionStyle = UITableViewCellSelectionStyle.none
         return cell!
@@ -124,6 +129,8 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                 
                 if(model.statusCode == 800){
                     
+                    self.ifHideCellLine = model.returnObj?.count == 1 ? true : false
+                    
                     self.dataArr.addObjects(from: model.returnObj!)
                     
                     self.tableView.reloadData()
@@ -150,7 +157,7 @@ class DispatchRecordVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
 //        let timeSta:TimeInterval = string.doubleValue
         let dfmatter = DateFormatter()
-        dfmatter.dateFormat="yyyy年MM月dd日 HH:mm"
+        dfmatter.dateFormat="yyyy-MM-dd HH:mm"
         
         let date = NSDate(timeIntervalSince1970:  TimeInterval(timestampDoubleInSec))
         

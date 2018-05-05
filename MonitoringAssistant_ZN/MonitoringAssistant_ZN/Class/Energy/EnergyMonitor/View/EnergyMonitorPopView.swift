@@ -50,7 +50,7 @@ class EnergyMonitorPopView: UIView {
                 self.label1.text = "地址：" + (model.returnObj?.address != nil ? (model.returnObj?.address)! : "--")
                 self.label2.text = "联系人：" + (model.returnObj?.contactMan != nil ? (model.returnObj?.contactMan)! : "--")
                 self.label3.text = "电话：" + (model.returnObj?.tel != nil ? (model.returnObj?.tel)! : "--")
-                self.label4.text = "累计用电：" + (model.returnObj?.accumulatedEle != nil ? (model.returnObj?.accumulatedEle)! : "--") + "kwh"
+                self.label4.text = "累计用电：" + (model.returnObj?.accumulatedEle != nil ? (model.returnObj?.accumulatedEle)! : "--") + "kw·h"
                 self.label5.text = "累计用水：" + (model.returnObj?.accumulatedWater != nil ? (model.returnObj?.accumulatedWater)! : "--") + "t"
                 self.label6.text = "累计用气：" + (model.returnObj?.accumulatedGas != nil ? (model.returnObj?.accumulatedGas)! : "--") + "m³"
                 

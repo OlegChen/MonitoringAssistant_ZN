@@ -24,6 +24,9 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
     
     @IBOutlet weak var pwTextField: UITextField!
     
+    @IBOutlet weak var eyeBtn: UIButton!
+    
+    
     
     class func getLoginVC() ->  NavigationController {
         
@@ -49,7 +52,7 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
         
         self.rememberPWBtn.imageView?.contentMode = UIViewContentMode.center
         self.rememberPWBtn.adjustsImageWhenHighlighted = false //使触摸模式下按钮也不会变暗
-        self.rememberPWBtn.isSelected = true
+        self.rememberPWBtn.isSelected = false
         self.rememberPWBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         
         var image = UIImage(named: "login_button_touch")
@@ -79,6 +82,7 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
         UserCenter.shared.loginPw { (pw) in
             if(pw.count > 0){
                 self.pwTextField.text = pw
+                self.rememberPWBtn.isSelected = true
             }
         }
         
@@ -206,6 +210,16 @@ class LoginVC: BaseTableVC ,ChangedPwDelegate ,UITextFieldDelegate{
         sender.isSelected  = !sender.isSelected
         
     }
+    
+    @IBAction func eyeBtnClick(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+
+        self.pwTextField.isSecureTextEntry = !sender.isSelected
+        
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

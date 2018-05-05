@@ -21,8 +21,8 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
     lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 1
-        formatter.negativeSuffix = " %"
-        formatter.positiveSuffix = " %"
+        formatter.negativeSuffix = " "
+        formatter.positiveSuffix = " "
         
         return formatter
     }()

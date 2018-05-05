@@ -211,7 +211,7 @@ class SettingCenterVC: BaseTableVC ,UIActionSheetDelegate,UIImagePickerControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.dismiss(animated: true, completion: nil)
         //获得照片
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
         
         self.headImg.image = image
         

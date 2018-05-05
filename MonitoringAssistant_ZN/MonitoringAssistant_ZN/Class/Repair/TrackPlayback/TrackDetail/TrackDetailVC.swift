@@ -31,7 +31,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     private weak var calendarContentView: UIView!
     
     var timeSelectView : UIView!
-    var selectRow = 0
+    var selectRow0 = 0
+    var selectRow1 = 0
 
     var bottomplayview : bottomPlayView!
 
@@ -52,6 +53,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     
     var cacheTime : String = "00:00"
     
+    var nowHour : String!  //当前时间 小时
     
     
     lazy var HourArray = ["00","01","02","03","04","05","06","07","08","09","10",
@@ -83,7 +85,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(_mapView!)
-        
+        _mapView?.isRotateEnabled  = false
         
         self.setCalendarView()
         
@@ -95,6 +97,17 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         self.getData()
         
+        
+        
+        //获取当前时间
+        let now = Date()
+        // 创建一个日期格式器
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "HH:mm"
+        print("当前日期时间：\(dformatter.string(from: now))")
+        
+        self.nowHour = dformatter.string(from: now)
+        self.cacheTime = dformatter.string(from: now)
         
     }
 
@@ -234,13 +247,14 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         calendar.appearance.headerMinimumDissolvedAlpha = 0
         calendar.calendarHeaderView.height = 55
         calendar.appearance.headerDateFormat = "yyyy年MM月"
-
+        calendar.appearance.selectionColor = RGBCOLOR(r: 71, 143, 182)
+        
         calendar.appearance.todayColor = .clear
         calendar.appearance.titleTodayColor = RGBCOLOR(r: 58, 58, 58)
         calendar.appearance.subtitleTodayColor = RGBCOLOR(r: 150, 150, 150)
         calendar.dataSource = self
         calendar.delegate = self
-        calendar.backgroundColor = UIColor.white
+        calendar.backgroundColor = RGBCOLOR(r: 238, 238, 238)
         view.addSubview(calendar)
         self.calendar = calendar
         calendar.snp.makeConstraints { (make) in
@@ -308,6 +322,19 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
     }
     
+    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+        
+        //更新提醒时间文本框
+        let formatter = DateFormatter()
+        //日期样式
+        formatter.dateFormat = "yyyy-MM-dd"
+        print(formatter.string(from: date))
+        let a = self.dateIslastWithToday(date: formatter.string(from: date))
+        
+        return !a
+        
+    }
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         //更新提醒时间文本框
@@ -318,8 +345,9 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         
         self.DateStr = formatter.string(from: date)
-        self.Date_L?.text = "查询日期 " + formatter.string(from: date)
-        self.selectDate()
+        self.Date_L?.text = formatter.string(from: date)
+        self.Date_L?.textColor = RGBCOLOR(r: 58, 58, 58)
+        self.closeSelectDateView()
         
         self.getData()
         
@@ -353,7 +381,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         let dateL = UILabel()
         dateL.text = "选择查询日期"
         self.Date_L = dateL
-        dateL.textColor = RGBCOLOR(r: 58, 58, 58)
+        dateL.textColor = RGBCOLOR(r: 108 , 108, 108)
         dateL.font = UIFont.systemFont(ofSize: 15)
         dateView.addSubview(dateL)
         dateL.snp.makeConstraints { (make) in
@@ -380,7 +408,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         let startTimeL = UILabel()
         startTimeL.text = "选择开始时间"
         self.StartTime_L = startTimeL
-        startTimeL.textColor = RGBCOLOR(r: 58, 58, 58)
+        startTimeL.textColor = RGBCOLOR(r: 108 , 108, 108)
         startTimeL.font = UIFont.systemFont(ofSize: 15)
         dateView.addSubview(startTimeL)
         startTimeL.snp.makeConstraints { (make) in
@@ -415,7 +443,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         let endTimeL = UILabel()
         endTimeL.text = "选择结束时间"
         self.EndTime_L = endTimeL
-        endTimeL.textColor = RGBCOLOR(r: 58, 58, 58)
+        endTimeL.textColor = RGBCOLOR(r: 108 , 108, 108)
         endTimeL.font = UIFont.systemFont(ofSize: 15)
         dateView.addSubview(endTimeL)
         endTimeL.snp.makeConstraints { (make) in
@@ -542,33 +570,69 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         self.isShowTimeView = false
         self.closeSelectTimeView()
     
-        self.pickerView?.selectRow(0, inComponent: 0, animated: false)
-        self.pickerView?.selectRow(0, inComponent: 1, animated: false)
         
     }
     @objc func timeSureBtnClick() {
         
         if self.pickerView?.tag == selectTimeType.startTimeType.rawValue {
+        
+            let isToday = self.dateIsEqualToToday(date: self.DateStr!)
             
-            self.StartTime_L?.text = "开始时间 " + self.cacheTime
+            if isToday {
+                
+                //时间对比
+                let b = self.compareStartTimeAndEndTime(startTime: self.nowHour, endTime: self.cacheTime)
+                
+                if !b{
+                    
+                    ZNCustomAlertView.handleTip("请选择当前时间之前的时间", isShowCancelBtn: false, completion: { (issure) in
+                        
+                    })
+                    
+                    return
+                }
+                
+            }
+            
+            
+            self.StartTime_L?.text = self.cacheTime
+            self.StartTime_L?.textColor = RGBCOLOR(r: 58, 58, 58)
             self.StartTimeStr = self.cacheTime
             
         }else if self.pickerView?.tag == selectTimeType.endTimeType.rawValue {
             
-            self.EndTime_L?.text = "结束时间 " + self.cacheTime
+            if self.StartTimeStr != nil {
+                
+                let right = self.compareStartTimeAndEndTime(startTime: self.StartTimeStr!, endTime: self.cacheTime)
+                
+                if !right {
+                    
+                    ZNCustomAlertView.handleTip("结束时间不得小于开始时间", isShowCancelBtn: false, completion: { (issure) in
+                        
+                    })
+                    return
+                }
+                
+            }
+            
+            
+            
+            
+            
+            self.EndTime_L?.text = self.cacheTime
+            self.EndTime_L?.textColor = RGBCOLOR(r: 58, 58, 58)
             self.EndTimeStr = self.cacheTime
             
+            self.getData()
+
         }
-        
-        self.pickerView?.selectRow(0, inComponent: 0, animated: false)
-        self.pickerView?.selectRow(0, inComponent: 1, animated: false)
+
         
         
         self.isShowTimeView = false
         self.closeSelectTimeView()
         
         
-        self.getData()
         
     }
     
@@ -582,8 +646,10 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         
         self.DateStr = formatter.string(from: datePicker.date)
-        self.Date_L?.text = "查询日期：" + formatter.string(from: datePicker.date)
+        self.Date_L?.text = formatter.string(from: datePicker.date)
+        self.Date_L?.textColor = RGBCOLOR(r: 58, 58, 58)
         self.selectDate()
+        
         
     }
     
@@ -618,6 +684,9 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                         let count = Int(model.returnObj!.count)
                         if( count > 0){
                             
+                            self._mapView.removeAnnotations(self._mapView.annotations)
+
+                            
                             let array = NSMutableArray()
                             array.add(model.returnObj?.first as Any)
                             array.add(model.returnObj?.last as Any)
@@ -629,6 +698,12 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                             
                             self.bottomplayview.isHidden = true
                             
+                            self._mapView.removeAnnotations(self._mapView.annotations)
+                            
+                            ZNCustomAlertView.handleTip("所选取时间段内并无当前员工的活动记录。", isShowCancelBtn: false, completion: { (issure) in
+                                
+                                
+                            })
                         }
                         
                         
@@ -799,7 +874,6 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
         }else{
             
-          self.closeSelectDateView()
         }
         
     }
@@ -828,6 +902,14 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             self.closeSelectDateView()
         }
         
+        if self.DateStr == nil{
+            
+            ZNCustomAlertView.handleTip("请先选择日期时间", isShowCancelBtn: false, completion: { (issure) in
+                
+            })
+            return
+        }
+        
         
         if !self.isShowTimeView {
             
@@ -840,6 +922,34 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                 make.top.equalTo(self.view).offset(NavHeight + 120)
 
             })
+            
+            if (self.StartTimeStr != nil){
+                
+                let arr = self.StartTimeStr?.components(separatedBy: ":")
+               
+                self.pickerView?.selectRow(Int((arr?.first!)!)! , inComponent: 0, animated: false)
+                self.selectRow0 = Int((arr?.first!)!)!
+                self.pickerView?.reloadComponent(0)
+                
+                self.pickerView?.selectRow(Int((arr?.last!)!)!, inComponent:1, animated: false)
+                self.selectRow1 = Int((arr?.last!)!)!
+                self.pickerView?.reloadComponent(1)
+
+            }else{
+                
+                let arr = self.nowHour.components(separatedBy: ":")
+                
+                self.pickerView?.selectRow(Int(arr.first!)! , inComponent: 0, animated: false)
+                self.selectRow0 = Int(arr.first!)!
+                self.pickerView?.reloadComponent(0)
+                
+                self.pickerView?.selectRow(Int(arr.last!)!, inComponent:1, animated: false)
+                self.selectRow1 = Int(arr.last!)!
+                self.pickerView?.reloadComponent(1)
+                
+
+            }
+            
 
             UIView.animate(withDuration: 0.2, animations: {
                 
@@ -859,12 +969,30 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             self.isShowTimeView = false
             
             self.pickerView?.tag = selectTimeType.startTimeType.rawValue
-            self.closeSelectTimeView()
         }
         
     }
     
     @objc func selectEndTime () {
+        
+        if self.DateStr == nil{
+            
+            ZNCustomAlertView.handleTip("请先选择日期时间", isShowCancelBtn: false, completion: { (issure) in
+                
+            })
+            return
+        }
+        
+        if self.StartTimeStr == nil {
+            
+            ZNCustomAlertView.handleTip("请选择开始时间", isShowCancelBtn: false, completion: { (issure) in
+                
+            })
+            
+            return
+            
+        }
+        
         
         if self.isShowDateView{
             
@@ -883,6 +1011,35 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                 
             })
             
+            
+            if (self.EndTimeStr != nil){
+                
+                let arr = self.EndTimeStr?.components(separatedBy: ":")
+                
+                self.pickerView?.selectRow(Int((arr?.first!)!)! , inComponent: 0, animated: false)
+                self.selectRow0 = Int((arr?.first!)!)!
+                self.pickerView?.reloadComponent(0)
+                
+                self.pickerView?.selectRow(Int((arr?.last!)!)!, inComponent:1, animated: false)
+                self.selectRow1 = Int((arr?.last!)!)!
+                self.pickerView?.reloadComponent(1)
+                
+            }else{
+                
+                let arr = self.StartTimeStr?.components(separatedBy: ":")
+                
+                self.pickerView?.selectRow(Int((arr?.first!)!)! , inComponent: 0, animated: false)
+                self.selectRow0 = Int((arr?.first!)!)!
+                self.pickerView?.reloadComponent(0)
+                
+                self.pickerView?.selectRow(Int((arr?.last!)!)!, inComponent:1, animated: false)
+                self.selectRow1 = Int((arr?.last!)!)!
+                self.pickerView?.reloadComponent(1)
+                
+                
+            }
+            
+            
             UIView.animate(withDuration: 0.2, animations: {
                 
                 self.view.layoutIfNeeded()
@@ -891,14 +1048,11 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         }else{
             
             self.pickerView?.tag = selectTimeType.endTimeType.rawValue
-           self.closeSelectTimeView()
         }
         
     }
     
     func closeSelectTimeView() {
-        
-        self.selectRow = 0
         
         self.isShowTimeView = false
         self.timeSelectView.snp.updateConstraints({ (make) in
@@ -940,19 +1094,38 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         title.textColor = RGBCOLOR(r: 58, 58, 58)
         
         //改变选中行颜色（设置一个全局变量，在选择结束后获取到当前显示行，记录下来，刷新picker）
-        if (row == selectRow) {
-            //改变当前显示行的字体颜色，如果你愿意，也可以改变字体大小，状态
-            title.textColor = RGBCOLOR(r: 83, 147, 185)
+        if(component == 0){
+            if (row == selectRow0) {
+                //改变当前显示行的字体颜色，如果你愿意，也可以改变字体大小，状态
+                title.textColor = RGBCOLOR(r: 83, 147, 185)
+            }
+            
+        }else{
+            
+            if (row == selectRow1) {
+                //改变当前显示行的字体颜色，如果你愿意，也可以改变字体大小，状态
+                title.textColor = RGBCOLOR(r: 83, 147, 185)
+            }
         }
-
+       
+        
+        //  设置横线的颜色，实现显示或者隐藏
+        let line : UIView = pickerView.subviews[1]
+        line.backgroundColor = UIColor.clear
+        
+        let line2 : UIView = pickerView.subviews[2]
+        line2.backgroundColor = UIColor.clear
         
         return title
     }
+    
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        var HourStr : String = "00"
-        var minStr : String = "00"
+        let arr = self.cacheTime.components(separatedBy: ":")
+        
+        var HourStr : String = arr.first!
+        var minStr : String = arr.last!
         
         component == 0 ? (HourStr = self.HourArray[row] as! String) : (minStr = self.minuteArray[row] as! String)
         
@@ -960,10 +1133,9 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         
         //记录下滚动结束时的行数
-        selectRow = row;
+        component == 0 ? (selectRow0 = row) : (selectRow1 = row)
         //刷新picker，看上面的代理
         pickerView.reloadComponent(component)
-        
     }
     
     func setbottonPlayView() {
@@ -1059,6 +1231,87 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
     }
     
+    
+    func compareStartTimeAndEndTime(startTime:String , endTime : String) -> (Bool) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+
+        let date1 = formatter.date(from: startTime)! as NSDate
+        let date2 = formatter.date(from: endTime)! as NSDate
+        
+        
+        let result:ComparisonResult = date1.compare(date2 as Date)
+        
+        if result == ComparisonResult.orderedDescending{
+            print("date1 > date2")
+
+            return false
+        }
+        
+
+        return true
+        
+    }
+    
+    func dateIslastWithToday(date:String ) -> (Bool) {
+
+        let now = Date()
+        // 创建一个日期格式器
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        print("当前日期时间：\(formatter.string(from: now))")
+        
+        let date2 = formatter.date(from: date)! as NSDate
+        
+        
+        let result:ComparisonResult = now.compare(date2 as Date)
+        
+        if result == ComparisonResult.orderedDescending{
+            print("now > date2")
+            
+            return false
+        }
+        
+        
+        return true
+        
+    }
+    
+    func dateIsEqualToToday(date:String) -> (Bool){
+    
+        // 获取本地时区
+        let localZone : NSTimeZone = NSTimeZone.local as NSTimeZone
+        
+        let now : NSDate = NSDate()
+
+        // 计算本地时区与 GMT 时区的时间差
+        let second:Int = localZone.secondsFromGMT
+        // 在 GMT 时间基础上追加时间差值，得到本地时间
+        let date1 = now.addingTimeInterval(TimeInterval(second))
+        
+        // 创建一个日期格式器
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let date2 = formatter.string(from: now as Date)
+        
+        
+     
+        if date ==  date2 {
+            print("它们是同一天")
+            
+            return true
+        }else {
+            print("它们不是同一天")
+            
+            return false
+        }
+        
+
+        return false
+    
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

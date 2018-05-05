@@ -48,7 +48,7 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(companyL)
         companyL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(10);
+            make.left.equalTo(self).offset(7);
             make.right.equalTo(self).offset(-8);
             make.top.equalTo(self).offset(10);
             
@@ -61,7 +61,7 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(nameL)
         nameL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(10);
+            make.left.equalTo(self).offset(7);
             make.right.equalTo(self).offset(-8);
             make.top.equalTo(companyL.snp.bottom).offset(8);
             
@@ -75,7 +75,7 @@ class TrackPlayBackPopView: UIView {
         self.addSubview(TelL)
         TelL.snp.makeConstraints { (make) in
             
-            make.left.equalTo(self).offset(10);
+            make.left.equalTo(self).offset(7);
             make.right.equalTo(self).offset(-4);
             make.top.equalTo(nameL.snp.bottom).offset(8);
             
@@ -101,7 +101,7 @@ class TrackPlayBackPopView: UIView {
         self.backgroundColor = UIColor.clear
         
         let shapLayer : CAShapeLayer = CAShapeLayer()
-                let path : UIBezierPath = UIBezierPath.init(roundedRect: CGRect(x: 0 ,y:0 ,width: frame.width , height:frame.height-15), cornerRadius: 6)
+                let path : UIBezierPath = UIBezierPath.init(roundedRect: CGRect(x: -5 ,y:0 ,width: frame.width , height:frame.height-15), cornerRadius: 6)
                 shapLayer.path = path.cgPath
         self.layer.insertSublayer(shapLayer, at: 0)
         shapLayer.fillColor = UIColor.white.cgColor
@@ -109,9 +109,9 @@ class TrackPlayBackPopView: UIView {
         
         let shapLayer1 : CAShapeLayer = CAShapeLayer()
                 let path1 = UIBezierPath()
-                path1.move(to: CGPoint(x:frame.width/2.0 + 5 , y :frame.height - 30 ))
-                path1.addLine(to: CGPoint(x:frame.width/2.0 , y :frame.height ))
-                path1.addLine(to: CGPoint(x:frame.width/2.0 + 40 , y :frame.height - 30 ))
+                path1.move(to: CGPoint(x:frame.width/2.0 - 25 , y :frame.height - 30 ))
+                path1.addLine(to: CGPoint(x:frame.width/2.0 - 5 , y :frame.height - 5 ))
+                path1.addLine(to: CGPoint(x:frame.width/2.0 + 15 , y :frame.height - 30 ))
                 path1.close()
                 shapLayer1.path = path1.cgPath
         self.layer.insertSublayer(shapLayer1, at: 0)

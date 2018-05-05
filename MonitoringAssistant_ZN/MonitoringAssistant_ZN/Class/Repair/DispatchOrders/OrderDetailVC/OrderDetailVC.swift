@@ -19,6 +19,8 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
     
     var tableView : UITableView!
     
+    var headerHeight = 215.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
-        headerView.frame = CGRect(x:0 , y : 0 , width:ScreenW , height: 217)
+        headerView.frame = CGRect(x:0 , y : 0 , width:Int(ScreenW) , height: Int(self.headerHeight))
        
         let view = (Bundle.main.loadNibNamed("OrderDetailHeaderView", owner: nil, options: nil)![0] as! OrderDetailHeaderView)
         self.headView = view
@@ -169,13 +171,19 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
                     self.headView?.telL.text = model.returnObj?.tel
                     self.headView?.addressL.text = model.returnObj?.address
                     
+                    let addressH = self.textSize(text: (model.returnObj?.address)!, font: UIFont.systemFont(ofSize: 13), maxSize: CGSize(width: ScreenW - 105  ,height: 1000))
+                    
+                    self.headerHeight = Double(200 + addressH.height)
+                    
+                    self.tableView.tableHeaderView?.height = CGFloat(self.headerHeight)
+                    
                     self.dataModel = model
                     
                     self.setupImagefooter(array: model.returnObj?.workDealImgs as! NSArray)
                     
                     self.tableView.reloadData()
                     
-                    self.dispatchBtn.setTitle(model.returnObj?.workSendId == "0" ? "派　　单" : "转　　派", for: UIControlState.normal)
+                    self.dispatchBtn.setTitle(model.returnObj?.workSendId == "0" ? "派　　单" : "改　　派", for: UIControlState.normal)
                     
                     
                 }else{
@@ -191,6 +199,11 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
             
         }
         
+    }
+    
+    
+    func textSize(text : String , font : UIFont , maxSize : CGSize) -> CGSize{
+        return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font : font], context: nil).size
     }
     
     func setupImagefooter(array:NSArray) {
@@ -248,7 +261,7 @@ class OrderDetailVC: BaseVC ,UITableViewDelegate,UITableViewDataSource {
         //底部按钮 位置设置
         let cellheight = Double((self.dataModel?.returnObj?.cellHeight)!)
 
-        let bottomH = Double(ScreenH) - Double(NavHeight) - 217 - cellheight - Double(height)
+        let bottomH = Double(ScreenH) - Double(NavHeight) - Double(headerHeight) - cellheight - Double(height)
         
         self.tableView.snp.updateConstraints({ (make) in
                 make.bottom.equalTo(self.view).offset(-(bottomH < 120 ? 120 : bottomH))

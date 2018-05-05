@@ -86,10 +86,15 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
                     if(model.statusCode == 800){
 
                         self.vertifyBtn.startUpTimer()
+                        
+                        YJProgressHUD.showMessage("验证码发送成功", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
 
-                    }
+                    }else{
+                        
+                        YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                }
                 
-                YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                
 
 
                 }, failture: { (error) in
@@ -105,6 +110,26 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
     @IBAction func sendBtnClick(_ sender: UIButton) {
         
         if (self.phoneNumTextField.text!.characters.count > 0 && self.messageTextField.text!.characters.count > 0 && self.newPwTextField.text!.characters.count > 0) {
+            
+            
+            //手机号正则
+            let regex = "^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$"
+            let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+            let isValid = predicate.evaluate(with: self.phoneNumTextField.text)
+            print(isValid ? "正确的手机号" : "错误的手机号")
+            if isValid {
+                
+                
+            }else{
+                
+                ZNCustomAlertView.handleTip("请填写正确的手机号", isShowCancelBtn: false, completion: { (isure) in
+                    
+                })
+                
+                return
+            }
+            
+            
             
             let para = [
                         "companyCode" : "0000",
@@ -125,9 +150,15 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
                         self.delegate.ChangedPw(phoneNum: self.phoneNumTextField.text!)
                     }
                     self.navigationController?.popViewController(animated: true)
+                    
+                    YJProgressHUD.showMessage("修改成功", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                    
+                }else{
+                    
+                    YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
                 }
                 
-                YJProgressHUD.showMessage(model.msg, in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+                
 
                 
             }, failture: { (error) in
@@ -191,9 +222,10 @@ class ForgotPwVC: BaseTableVC ,UITextFieldDelegate{
         if textField.tag == 1000 {
             
             //新号码
-//            let textLength = text.characters.count + string.characters.count - range.length
-//            return textLength <= 11
-//
+            guard let text = textField.text else{ return true }
+            let textLength = text.characters.count + string.characters.count - range.length
+            return textLength<=11
+
         }else if textField.tag == 2000 {
             
             //密码

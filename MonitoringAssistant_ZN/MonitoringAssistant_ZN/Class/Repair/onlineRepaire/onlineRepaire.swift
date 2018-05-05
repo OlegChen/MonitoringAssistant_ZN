@@ -28,7 +28,7 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
         
         super.viewDidLoad()
         
-        self.title = "现场报修"
+        self.title = "故障报修"
         
         self.sureBtn.layer.shadowColor = UIColor.black.cgColor
         self.sureBtn.layer.shadowOffset = CGSize(width:2 , height:2)
@@ -57,17 +57,39 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
         
         weak var weakSelf = self // ADD THIS LINE AS WELL
         
-        locationManager.requestLocation(withReGeocode: false, withNetworkState: false) { (location, netWorkState, error) in
+        locationManager.requestLocation(withReGeocode: true, withNetworkState: false) { (location, netWorkState, error) in
             
             let loc = location as! BMKLocation
 
-            if (loc.location != nil) {//得到定位信息，添加annotation
-                
-//                self.longitudeStr = (location?.location?.coordinate.longitude)!
-//                self.latitudeStr = (location?.location?.coordinate.latitude)!
+            if (loc.location != nil) {//得到定位信息
                 
                 self.location = loc.location?.coordinate
                 
+            }
+            
+            if (loc.rgcData != nil) {
+                
+                var str : String!
+                
+                str = (loc.rgcData?.city)! + (loc.rgcData?.district)!
+                
+                if let street = loc.rgcData?.street {
+                    
+                    str = str + street
+                }
+                
+                if let streetNum = loc.rgcData?.streetNumber {
+                    
+                    str = str + streetNum
+                }
+                
+                if  let poi : BMKLocationPoi = loc.rgcData?.poiList.first {
+                    
+                    str = str + poi.name
+                }
+                
+                self.container.address.text = str
+
             }
             
         }
@@ -90,8 +112,29 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
         }
         
         
-        if ((container.wokerName.text!.characters.count > 0) && (container.tel.text!.characters.count > 0) && (container.address.text!.characters.count > 0) && (container.contentTextView.text.characters.count > 0) && (container.selectedRepaireTypeModel != nil)){
+        if ((container.wokerName.text!.characters.count > 0) && (container.tel.text!.characters.count == 11) && (container.address.text!.characters.count > 0) && (container.contentTextView.text.characters.count > 0) && (container.selectedRepaireTypeModel != nil)){
             
+            
+
+            //手机号正则
+            let regex = "^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$"
+            let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+            let isValid = predicate.evaluate(with: self.container.tel.text)
+            print(isValid ? "正确的手机号" : "错误的手机号")
+            if isValid {
+                
+                
+            }else{
+                
+                ZNCustomAlertView.handleTip("请填写正确的手机号", isShowCancelBtn: false, completion: { (isure) in
+                    
+                })
+                
+                return
+            }
+           
+
+       
             
             YJProgressHUD.showProgress(nil, in: UIApplication.shared.keyWindow)
 
@@ -100,7 +143,7 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
 //                let index = self.longitudeStr.index((self.longitudeStr.startIndex), offsetBy: 8 )
                 
                 
-                let dic = ["isIOS": "1",
+                let dic = [
                            "companyCode":userInfo.companyCode ,
                            "orgCode":userInfo.orgCode ,
                            "empNo":userInfo.empNo ,
@@ -117,15 +160,6 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
                 let para = NSMutableDictionary.init(dictionary:dic )
 
                 
-//                if let newLon = self.longitudeStr {
-//
-//                    para.setValue(newLon, forKey:  "longitude")
-//                }
-//                if let newLat = self.latitudeStr {
-//
-//                    para.setValue(newLat, forKey:  "latitude")
-//                }
-//
                 
                 if((self.container.imageArr.count) > 0){
                     
@@ -152,6 +186,7 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
                     let strJson = NSString(data:data!, encoding: String.Encoding.utf8.rawValue)
                     
                     para.setValue(imgArr.componentsJoined(by: ","), forKey:"base64ListIOS" )
+                    para.setValue("1", forKey: "isIOS")
                 }
  
                 NetworkService.networkPostrequest(parameters: para as! [String : Any], requestApi: commitUrl, modelClass: "BaseModel", response: { (obj) in
@@ -192,6 +227,9 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
               }else if (!(container.tel.text!.characters.count > 0)){
                 
                 tip = "请填写联系电话"
+              }else if (!(container.tel.text!.characters.count == 11)){
+                
+                tip = "请填写正确的手机号"
               }else if( !(container.address.text!.characters.count > 0) ){
                 
                 tip = "请填写具体位置"
@@ -225,4 +263,10 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
         }
 
     }
+    
+
 }
+
+
+
+

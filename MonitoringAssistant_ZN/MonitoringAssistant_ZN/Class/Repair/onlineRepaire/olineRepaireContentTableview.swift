@@ -55,7 +55,7 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         //        self.tableView.dataSource = self
         self.tableView.backgroundColor = RGBCOLOR(r: 245, 245, 245)
         
-        self.dropDownMenu.backgroundColor = UIColor.white
+        self.dropDownMenu.backgroundColor = UIColor.clear
         self.dropDownMenu.useFullScreenWidth = true
         self.dropDownMenu.delegate = self
         self.dropDownMenu.dataSource = self
@@ -70,6 +70,10 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         self.tel.delegate = self
         self.address.delegate = self
         self.contentTextView.delegate = self
+        
+        self.tel.tag = 1000
+        self.wokerName.tag = 2000
+        self.address.tag = 3000
         
         let view:UIView = UIView()
         view.backgroundColor = UIColor.white
@@ -305,6 +309,41 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.tag == 1000 {
+            //tel
+            guard let text = textField.text else{ return true }
+            let textLength = text.characters.count + string.characters.count - range.length
+            return textLength<=11
+            
+        }else if(textField.tag == 2000){
+            //workname
+            
+            if string == " " {
+                
+                ZNCustomAlertView.handleTip("请输入正确字符", isShowCancelBtn: false, completion: { (issure) in
+                    
+                })
+                return false
+            }
+            
+            let  isEmoji = self.isEmojiStr(text: string, textView: textField)
+            if isEmoji { return false }
+            
+        }else{
+            //address
+            
+            let  isEmoji = self.isEmojiStr(text: string, textView: textField)
+            
+            if isEmoji { return false }
+            
+        }
+        
+    
+        return true
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
@@ -318,6 +357,28 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
             textView.resignFirstResponder()
             
             return false
+            
+        }else{
+            
+            if textView.textInputMode?.primaryLanguage == "emoji" || ((textView.textInputMode?.primaryLanguage) == nil) {
+                 ZNCustomAlertView.handleTip("请输入正确字符", isShowCancelBtn: false, completion: { (issure) in
+                    })
+                return false
+            }
+            
+            if NSString.isNineKeyBoard(text) {
+                
+                return true
+            }else{
+                
+                if ( NSString.hasEmoji(text) || NSString.stringContainsEmoji(text) ){
+                     ZNCustomAlertView.handleTip("请输入正确字符", isShowCancelBtn: false, completion: { (issure) in
+                        })
+                    return false
+                }
+            }
+           
+            
             
         }
         return true
@@ -352,5 +413,31 @@ class olineRepaireContentTableview: UITableViewController ,MKDropdownMenuDataSou
         
         
     }
+    
+    
+    func isEmojiStr(text:String , textView:UITextField) -> Bool {
+        
+        
+        if textView.textInputMode?.primaryLanguage == "emoji" || ((textView.textInputMode?.primaryLanguage) == nil) {
+            ZNCustomAlertView.handleTip("请输入正确字符", isShowCancelBtn: false, completion: { (issure) in
+            })
+            return true
+        }
+        
+        if NSString.isNineKeyBoard(text) {
+            
+            return false
+        }else{
+            
+            if ( NSString.hasEmoji(text) || NSString.stringContainsEmoji(text) ){
+                ZNCustomAlertView.handleTip("请输入正确字符", isShowCancelBtn: false, completion: { (issure) in
+                })
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     
 }

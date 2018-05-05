@@ -196,7 +196,7 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
         }
         btn.layer.cornerRadius = 4
         btn.backgroundColor = RGBCOLOR(r: 71, 143, 183)
-        btn.setTitle( self.workSendId == "0" ?  "派　　单" : "转　　派", for: UIControlState.normal)
+        btn.setTitle( self.workSendId == "0" ?  "派　　单" : "改　　派", for: UIControlState.normal)
         btn.setTitleColor(.white, for: UIControlState.normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.addTarget(self, action: #selector(sureBtnClick(btn:)), for: UIControlEvents.touchUpInside)
@@ -205,6 +205,15 @@ class SelectWorkerVCViewController: BaseVC,UITableViewDelegate,UITableViewDataSo
     }
     
     @objc func sureBtnClick(btn: UIButton) {
+        
+        if self.selectedWorkerModle == nil {
+            
+            ZNCustomAlertView.handleTip("请先选择维修工", isShowCancelBtn: false, completion: { (isure) in
+                
+            })
+            
+            return
+        }
         
         
         weak var weakSelf = self // ADD THIS LINE AS WELL

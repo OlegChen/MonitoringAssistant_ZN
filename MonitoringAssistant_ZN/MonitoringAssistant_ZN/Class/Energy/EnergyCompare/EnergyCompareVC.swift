@@ -92,10 +92,10 @@ class EnergyCompareVC: BaseVC ,ChartViewDelegate ,EnergyCompareContentVCDelegate
 
         SegmentControl.animation.duration = 0
         
-        SegmentControl.append(title: "总耗能")
-        SegmentControl.append(title: "水耗能")
-        SegmentControl.append(title: "电耗能")
-        SegmentControl.append(title: "气耗能")
+        SegmentControl.append(title: "总能耗")
+        SegmentControl.append(title: "水能耗")
+        SegmentControl.append(title: "电能耗")
+        SegmentControl.append(title: "气能耗")
         topView.addSubview(SegmentControl)
         SegmentControl.frame = CGRect(x: 15  , y: 13 , width: ScreenW - 30 , height:27)
         

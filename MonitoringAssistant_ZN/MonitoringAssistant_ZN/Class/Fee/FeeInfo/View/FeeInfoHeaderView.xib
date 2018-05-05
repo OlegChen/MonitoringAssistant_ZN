@@ -56,7 +56,7 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9B-dz-rBf">
                             <rect key="frame" x="20" y="5.5" width="8" height="8"/>
-                            <color key="backgroundColor" red="0.27843137254901962" green="0.5607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.27684444189071655" green="0.56236642599105835" blue="0.71658670902252197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="8" id="WIm-LG-Htu"/>
                                 <constraint firstAttribute="width" constant="8" id="eJS-Xl-emx"/>
@@ -96,10 +96,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orf-yN-JQX" customClass="CombinedChartView" customModule="Charts">
-                    <rect key="frame" x="20" y="101" width="335" height="220"/>
+                    <rect key="frame" x="20" y="101" width="335" height="215"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="220" id="xfh-XL-VF5"/>
+                        <constraint firstAttribute="height" constant="215" id="xfh-XL-VF5"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyE-QX-cvu">
@@ -129,7 +129,7 @@
                 <constraint firstItem="orf-yN-JQX" firstAttribute="top" secondItem="kxl-gD-2LJ" secondAttribute="bottom" constant="5" id="DY3-LB-XdV"/>
                 <constraint firstAttribute="trailing" secondItem="lyE-QX-cvu" secondAttribute="trailing" id="Fmm-oH-EfH"/>
                 <constraint firstItem="Gui-ni-RPU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="G80-dd-HVy"/>
-                <constraint firstItem="lyE-QX-cvu" firstAttribute="top" secondItem="orf-yN-JQX" secondAttribute="bottom" constant="15" id="M5N-j7-SyM"/>
+                <constraint firstItem="lyE-QX-cvu" firstAttribute="top" secondItem="orf-yN-JQX" secondAttribute="bottom" constant="20" id="M5N-j7-SyM"/>
                 <constraint firstItem="kxl-gD-2LJ" firstAttribute="top" secondItem="Q1f-Eq-6c6" secondAttribute="bottom" constant="15" id="MwV-AF-pp5"/>
                 <constraint firstItem="orf-yN-JQX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Un4-UC-Suc"/>
                 <constraint firstItem="kxl-gD-2LJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Urx-y9-kqt"/>

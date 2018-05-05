@@ -17,8 +17,8 @@
 #define kHoriMargin 5.f
 #define kVertMargin 5.f
 
-#define kPortraitWidth  24.f
-#define kPortraitHeight 24.f
+#define kPortraitWidth  26.f
+#define kPortraitHeight 26.f
 
 
 @interface CustomMapAnnotationView ()
@@ -161,13 +161,19 @@
     __weak typeof(self) weakself = self;
     NSURL *url = [NSURL URLWithString:img];
     
-    
-    
-    [self.portraitImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"head_portrait"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    if([img isEqualToString:@""] || img == nil){
         
-        weakself.portraitImageView.image =  [weakself imageCompressForSize:image targetSize:CGSizeMake(kPortraitWidth, kPortraitHeight)];
+        self.portraitImageView.image = [UIImage imageNamed:@"head_portrait"];
         
-    }];
+    }else{
+        
+        [self.portraitImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"head_portrait"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+            weakself.portraitImageView.image =  [weakself imageCompressForSize:image targetSize:CGSizeMake(kPortraitWidth, kPortraitHeight)];
+            
+        }];
+    }
+    
 }
 
 
