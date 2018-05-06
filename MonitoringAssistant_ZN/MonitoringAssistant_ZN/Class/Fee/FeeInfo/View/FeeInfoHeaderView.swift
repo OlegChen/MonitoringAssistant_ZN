@@ -42,6 +42,8 @@ class FeeInfoHeaderView: UIView ,ChartViewDelegate{
         
         chartView.delegate = self
         
+        chartView.noDataTextColor = UIColor.clear
+        
         chartView.chartDescription?.enabled = false
         
         chartView.drawBarShadowEnabled = false

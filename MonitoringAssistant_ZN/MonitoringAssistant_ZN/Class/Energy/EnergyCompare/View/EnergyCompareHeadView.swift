@@ -56,6 +56,8 @@ class EnergyCompareHeadView: UIView ,ChartViewDelegate{
 
         chartView.isUserInteractionEnabled = false
         
+        chartView.noDataTextColor = UIColor.clear
+        
         chartView.delegate = self
         
         chartView.scaleXEnabled = false

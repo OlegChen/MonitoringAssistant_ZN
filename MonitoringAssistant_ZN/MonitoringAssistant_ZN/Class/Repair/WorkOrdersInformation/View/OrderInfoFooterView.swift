@@ -35,7 +35,6 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         
         self.setDataCount(array)
         chartsView.animate(xAxisDuration: 0.5, easingOption: .linear)
-
         
         for  i in 0..<array.count {
             
@@ -95,6 +94,8 @@ class OrderInfoFooterView: UIView , ChartViewDelegate {
         chartsView.legend.enabled = false
         chartsView.setExtraOffsets(left: 0, top: 10, right: 0, bottom: 0)
         
+        chartsView.noDataTextColor = UIColor.clear
+
         
 //        chartsView.drawEntryLabelsEnabled = false
         //        set.drawValuesEnabled = !set.drawValuesEnabled

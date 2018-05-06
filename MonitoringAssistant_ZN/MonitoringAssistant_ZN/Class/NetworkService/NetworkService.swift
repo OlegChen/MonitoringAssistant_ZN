@@ -61,7 +61,11 @@ public struct NetworkService {
             
         }) { (Error) in
             
-            YJProgressHUD.showMessage("网络连接错误！", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+//            YJProgressHUD.showMessage("网络连接错误！", in: UIApplication.shared.keyWindow, afterDelayTime: 2)
+            
+            ZNCustomAlertView.handleTip("网络不可用，请检查网络是否连接！", isShowCancelBtn: false, completion: { (sure) in
+                
+            })
             
             failture(Error)
             

@@ -11,7 +11,7 @@
 #import "Masonry.h"
 //#import "UIView+BlocksKit.h"
 
-@interface CustomerAlertViewManger ()
+@interface CustomerAlertViewManger () <UITextViewDelegate>
 
 //@property (strong, nonatomic) Tweet *curTweet;
 @property (copy, nonatomic) void(^completion)(NSString *curTweet, BOOL sendSucess);
@@ -19,9 +19,11 @@
 
 
 @property (strong, nonatomic) UIView *bgView, *contentView;
-@property (strong, nonatomic) UIImageView *userImgV;
+//@property (strong, nonatomic) UIImageView *userImgV;
 @property (strong, nonatomic) UIButton *closeBtn, *submitBtn, *tipBgView;
-@property (strong, nonatomic) UILabel *titleL, *tipL, *bottomL;
+@property (strong, nonatomic) UILabel *titleL, *tipL/*, *bottomL*/;
+@property (strong, nonatomic) UITextView *bottomTextView;
+
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (assign, nonatomic) BOOL isSubmitting;
 
@@ -40,7 +42,7 @@
 }
 
 
-+ (instancetype)handleTip:(NSString *)content completion:(void(^)(NSString *curTweet, BOOL sendSucess))block{
++ (instancetype)handleVerson:(NSString *)verson Tip:(NSString *)content completion:(void(^)(NSString *curTweet, BOOL sendSucess))block{
 
 
     CustomerAlertViewManger *manager = [self shareManager];
@@ -62,9 +64,9 @@
 //        return nil;
 //    }else{
         manager.completion = block;
-        [manager p_setupWithTipStr:content animate:NO];
-        [manager p_show];
-        manager.titleL.text = content;
+        [manager p_setupWithTipStr:verson animate:NO];
+        [manager p_show:content];
+        manager.titleL.text = verson;
 
         return manager;
 //    }
@@ -81,10 +83,10 @@
         _bgView = [UIView new];
         _contentView = [UIView new];
         _closeBtn = [UIButton new];
-        _userImgV = [UIImageView new];
         _titleL = [UILabel new];
-        _userImgV.image = [UIImage imageNamed:@"logo"];
-        _userImgV.contentMode = UIViewContentModeScaleAspectFill;
+//        _userImgV = [UIImageView new];
+//        _userImgV.image = [UIImage imageNamed:@"logo"];
+//        _userImgV.contentMode = UIViewContentModeScaleAspectFill;
         
         [_closeBtn setTitle:@"稍后再说" forState:UIControlStateNormal];
         [_closeBtn setTitleColor:[UIColor colorWithRed:71/255.0 green:143/255.0 blue:183/255.0 alpha:1.0] forState:UIControlStateNormal];
@@ -103,16 +105,16 @@
         
         
         _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleGray];
-        _bottomL = [UILabel new];
+        _bottomTextView = [UITextView new];
         _tipBgView = [UIButton new];
         [_tipBgView addTarget:self action:@selector(errorTapped) forControlEvents:UIControlEventTouchUpInside];
         _tipL = [UILabel new];
         [_contentView addSubview:_closeBtn];
-        [_contentView addSubview:_userImgV];
+//        [_contentView addSubview:_userImgV];
         [_contentView addSubview:_titleL];
         [_contentView addSubview:_submitBtn];
         [_contentView addSubview:_activityIndicator];
-        [_contentView addSubview:_bottomL];
+        [_contentView addSubview:_bottomTextView];
         [_contentView addSubview:_tipBgView];
         [_contentView addSubview:_tipL];
         [_bgView addSubview:_contentView];
@@ -122,14 +124,15 @@
         _contentView.layer.masksToBounds = YES;
         _contentView.layer.cornerRadius = 6;
        
-        _userImgV.layer.masksToBounds = YES;
-        _userImgV.layer.cornerRadius = userIconWidth/2;
+//        _userImgV.layer.masksToBounds = YES;
+//        _userImgV.layer.cornerRadius = userIconWidth/2;
         _titleL.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
         _titleL.textAlignment = NSTextAlignmentCenter;
         _titleL.font = [UIFont boldSystemFontOfSize:16];
-        _bottomL.font = [UIFont systemFontOfSize:13];
-        _bottomL.numberOfLines = 0;
-        _bottomL.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
+ 
+        _bottomTextView.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
+        _bottomTextView.editable = NO;
+        _bottomTextView.delegate = self;
 //        _bottomL.textAlignment = NSTextAlignmentCenter;
 //        _tipBgView.backgroundColor = [UIColor colorWithHexString:@"0xF2DEDE"];
 //        _tipBgView.layer.masksToBounds = YES;
@@ -142,20 +145,21 @@
         //位置大小
         //align top
 
-        [_userImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_contentView).offset(20);
-            make.centerX.equalTo(_contentView);
-            make.height.width.mas_equalTo(userIconWidth);
-        }];
+//        [_userImgV mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(_contentView).offset(20);
+//            make.centerX.equalTo(_contentView);
+//            make.height.width.mas_equalTo(userIconWidth);
+//        }];
         [_titleL mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(_contentView);
-            make.top.equalTo(_userImgV.mas_bottom).offset(15);
+            make.top.equalTo(self.contentView).offset(15);
         }];
         //align bottom
-        [_bottomL mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_contentView).offset(15);
-            make.right.equalTo(_contentView).offset(-15);
-            make.top.equalTo(_titleL.mas_bottom).offset(10);
+        [_bottomTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_contentView).offset(20);
+            make.right.equalTo(_contentView).offset(-20);
+            make.top.equalTo(_titleL.mas_bottom).offset(15);
+            make.bottom.equalTo(_contentView).offset(-(buttonHeight+15));
         }];
 //        [_tipBgView mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.bottom.equalTo(_bottomL.mas_top).offset(-15);
@@ -182,7 +186,7 @@
 //        }];
         
         UIView *line1 = [[UIView alloc]init];
-        line1.backgroundColor = [UIColor lightGrayColor];
+        line1.backgroundColor = [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1.0];
         [_contentView addSubview:line1];
         [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(_contentView).offset(0);
@@ -191,7 +195,7 @@
         }];
         
         UIView *line2 = [[UIView alloc]init];
-        line2.backgroundColor = [UIColor lightGrayColor];
+        line2.backgroundColor =  [UIColor colorWithRed:228/255.0 green:228/255.0 blue:228/255.0 alpha:1.0];
         [_contentView addSubview:line2];
         [line2 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(line1).offset(0);
@@ -266,13 +270,13 @@
 //    _tipL.hidden = !hasTip;
 //    _submitBtn.hidden = hasTip;
     
-    CGFloat contentHeight = 255 + (50 - 50);
+    CGFloat contentHeight = 320 + (50 - 50);
     
 #pragma  mark -------   动态高的话需要计算  ---------
     
     CGFloat contentY = (UIScreen.mainScreen.bounds.size.height - contentHeight)/2;
     
-    CGRect contentFrame = CGRectMake(40, contentY, UIScreen.mainScreen.bounds.size.width - 80, contentHeight);
+    CGRect contentFrame = CGRectMake(20, contentY, UIScreen.mainScreen.bounds.size.width - 40, contentHeight);
     if (animate) {
         [UIView animateWithDuration:0.3 animations:^{
             _contentView.frame = contentFrame;
@@ -285,14 +289,26 @@
     }
 }
 
-- (void)p_show{
+    - (void)p_show:(NSString *)text{
     //初始状态
     _bgView.backgroundColor = [UIColor clearColor];
     _contentView.alpha = 0;
     _submitBtn.enabled = YES;
     _bgView.frame = [UIScreen mainScreen].bounds;
     
-    _bottomL.text = @"中能云管家新版本来了，内容更丰富，方便实用，马上体验。";
+//    _bottomL.text = @"中能云管家新版本来了，内容更丰富，方便实用，马上体验。";
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineSpacing = 7;// 字体的行间距
+        
+        NSDictionary *attributes = @{
+                                     NSFontAttributeName:[UIFont systemFontOfSize:12],
+                                     NSParagraphStyleAttributeName:paragraphStyle
+                                     };
+        _bottomTextView.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
+        
+        
+        
 //    @weakify(self);
 //    [[CodingNetAPIClient sharedJsonClient] requestJsonDataWithPath:@"api/account/points" withParams:nil withMethodType:Get andBlock:^(id data, NSError *error) {
 //        @strongify(self);
@@ -365,6 +381,9 @@
 //    }
 //}
 
-
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+    {
+        return NO;
+    }
 
 @end

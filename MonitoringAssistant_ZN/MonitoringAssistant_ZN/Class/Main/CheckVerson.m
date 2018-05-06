@@ -16,6 +16,8 @@
 +(void)checkVersionWithVC:(UIViewController*)vc
 {
     NSString *newVersion;
+    NSString *newContent;
+
     NSURL *url = [NSURL URLWithString: @"http://itunes.apple.com/cn/lookup?id=989673964"];//@"http://itunes.apple.com/cn/lookup?id=1360816207"];//这个URL地址是该app在iTunes connect里面的相关配置信息。其中id是该app在app store唯一的ID编号。
     NSString *jsonResponseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"通过appStore获取的数据信息：%@",jsonResponseString);
@@ -37,9 +39,9 @@
     
     for (NSDictionary *dic in array) {
         
-        
         newVersion = [dic valueForKey:@"version"];
         
+        newContent = [dic valueForKey:@"releaseNotes"];
     }
     
 //    releaseNotes = "版本更新信息";  
@@ -51,16 +53,14 @@
     //获取本地软件的版本号
     NSString *localVersion = [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleVersion"];
     
-    NSString *msg = [NSString stringWithFormat:@"你当前的版本是V%@，发现新版本V%@，是否下载新版本？",localVersion,newVersion];
-    
 
     
     //对比发现的新版本和本地的版本
     if ([newVersion compare:localVersion options:NSNumericSearch] ==NSOrderedDescending)
     {
         
+        [CustomerAlertViewManger handleVerson:[NSString stringWithFormat:@"中能云管家V%@",newVersion]  Tip:newContent completion:^(NSString *curTweet, BOOL sendSucess) {
         
-        [CustomerAlertViewManger handleTip:[NSString stringWithFormat:@"V%@",newVersion] completion:^(NSString *curTweet, BOOL sendSucess) {
             
             if (sendSucess) {
                 

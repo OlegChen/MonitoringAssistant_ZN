@@ -100,6 +100,8 @@ class OrderInfoHeaderView: UIView , ChartViewDelegate{
 //        chartsView.animate(xAxisDuration: 0.5, easingOption: .easeOutBack)
         
 //        self.setDataCount(Int(4), range: UInt32(100))
+        
+        chartsView.noDataTextColor = UIColor.clear
 
         
         chartsView.layer.shadowColor = UIColor.darkGray.cgColor;

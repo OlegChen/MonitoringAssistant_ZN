@@ -12,7 +12,7 @@
 
 
 
-+ (instancetype)handleTip:(NSString *)content completion:(void(^)(NSString *curTweet, BOOL sendSucess))block;
++ (instancetype)handleVerson:(NSString *)verson Tip:(NSString *)content completion:(void(^)(NSString *curTweet, BOOL sendSucess))block;
 
 
 + (void)dismiss;
