@@ -120,6 +120,12 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
                         
                         self.AddAnnotations(array: model.returnObj! as NSArray)
                         
+                        if let m : TrackPlayBackReturnObjModel = model.returnObj?.first {
+                            
+                            self._mapView?.centerCoordinate = CLLocationCoordinate2D.init(latitude:Double(m.companyLatitude!)!, longitude:Double(m.longitude!)!)
+                            
+                        }
+                        
                         
                     }
                     
@@ -157,7 +163,7 @@ class TrackPlayBackVC: BaseVC , BMKMapViewDelegate,TrackPlayBackPopViewDelegate{
         
         self._mapView?.addAnnotations(itemArray as! [Any])
         
-        self.mapViewFit(pointArray: pointsArray)
+//        self.mapViewFit(pointArray: pointsArray)
 
         
     }

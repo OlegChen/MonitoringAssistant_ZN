@@ -18,15 +18,15 @@
     NSString *newVersion;
     NSString *newContent;
 
-    NSURL *url = [NSURL URLWithString: @"http://itunes.apple.com/cn/lookup?id=989673964"];//@"http://itunes.apple.com/cn/lookup?id=1360816207"];//这个URL地址是该app在iTunes connect里面的相关配置信息。其中id是该app在app store唯一的ID编号。
+    NSURL *url = [NSURL URLWithString: @"http://itunes.apple.com/cn/lookup?id=1360816207"];//@"http://itunes.apple.com/cn/lookup?id=1360816207"];//这个URL地址是该app在iTunes connect里面的相关配置信息。其中id是该app在app store唯一的ID编号。 王者荣耀：//989673964
     NSString *jsonResponseString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"通过appStore获取的数据信息：%@",jsonResponseString);
     
     
-//    if (jsonResponseString == nil) {
-//
-//        return;
-//    }
+    if (jsonResponseString == nil) {
+
+        return;
+    }
     
     
     NSData *data = [jsonResponseString dataUsingEncoding:NSUTF8StringEncoding];

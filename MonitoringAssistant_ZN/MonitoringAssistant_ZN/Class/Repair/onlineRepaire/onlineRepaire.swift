@@ -132,9 +132,30 @@ class onlineRepaire: BaseVC ,BMKLocationAuthDelegate ,BMKLocationManagerDelegate
                 
                 return
             }
-           
-
+            
+            //报修内容不能全是空格
+            
+            var count : Int = 0
+            
+            for i in container.contentTextView.text.characters {
+                print(i)
+                
+                if (i == " "){
+                    
+                    count = count + 1
+                }
+                
+            }
        
+            if count == container.contentTextView.text.count{
+                
+                ZNCustomAlertView.handleTip("请填写报修内容", isShowCancelBtn: false, completion: { (sisure) in
+                    
+                })
+                
+                return
+            }
+            
             
             YJProgressHUD.showProgress(nil, in: UIApplication.shared.keyWindow)
 

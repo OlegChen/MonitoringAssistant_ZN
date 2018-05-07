@@ -31,8 +31,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     private weak var calendarContentView: UIView!
     
     var timeSelectView : UIView!
-    var selectRow0 = 0
-    var selectRow1 = 0
+
 
     var bottomplayview : bottomPlayView!
 
@@ -58,7 +57,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     
     lazy var HourArray = ["00","01","02","03","04","05","06","07","08","09","10",
                           "11","12","13","14","15","16","17","18","19","20",
-                          "21","22","23","24",]
+                          "21","22","23"]
     
     
     lazy var minuteArray = ["00","01","02","03","04","05","06","07","08","09","10",
@@ -70,6 +69,8 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
                             ]
     
 
+    var selectRow0 = 0
+    var selectRow1 = 0
     
      var _mapView: BMKMapView!
     
@@ -78,6 +79,9 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectRow0 = self.HourArray.count * 100
+        selectRow1 = self.HourArray.count * 100
 
         self.title = "轨迹回放"
         
@@ -349,7 +353,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         self.Date_L?.textColor = RGBCOLOR(r: 58, 58, 58)
         self.closeSelectDateView()
         
-        self.getData()
+//        self.getData()
         
     }
     
@@ -496,6 +500,11 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         
         let timePicker = UIPickerView.init()
         self.pickerView = timePicker
+        //拨到中间位置
+        self.pickerView?.selectRow(self.HourArray.count * 100, inComponent: 0, animated: true)
+        self.pickerView?.selectRow(self.minuteArray.count * 100, inComponent: 0, animated: true)
+
+        
         timeView.addSubview(timePicker)
         timePicker.dataSource = self
         timePicker.delegate = self
@@ -575,13 +584,22 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     @objc func timeSureBtnClick() {
         
         if self.pickerView?.tag == selectTimeType.startTimeType.rawValue {
-        
+            
             let isToday = self.dateIsEqualToToday(date: self.DateStr!)
             
             if isToday {
                 
                 //时间对比
-                let b = self.compareStartTimeAndEndTime(startTime: self.nowHour, endTime: self.cacheTime)
+                //获取当前时间
+                let now = Date()
+                // 创建一个日期格式器
+                let dformatter = DateFormatter()
+                dformatter.dateFormat = "HH:mm"
+                print("当前日期时间：\(dformatter.string(from: now))")
+                
+                let now_Hour = dformatter.string(from: now)
+                
+                let b = self.compareStartTimeAndEndTime(startTime: self.cacheTime , endTime: now_Hour)
                 
                 if !b{
                     
@@ -925,26 +943,28 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
             if (self.StartTimeStr != nil){
                 
+                self.cacheTime = self.StartTimeStr!
+                
                 let arr = self.StartTimeStr?.components(separatedBy: ":")
                
-                self.pickerView?.selectRow(Int((arr?.first!)!)! , inComponent: 0, animated: false)
-                self.selectRow0 = Int((arr?.first!)!)!
+                self.pickerView?.selectRow(Int((arr?.first!)!)!  + self.HourArray.count * 100, inComponent: 0, animated: false)
+                self.selectRow0 = Int((arr?.first!)!)! + self.HourArray.count * 100
                 self.pickerView?.reloadComponent(0)
                 
-                self.pickerView?.selectRow(Int((arr?.last!)!)!, inComponent:1, animated: false)
-                self.selectRow1 = Int((arr?.last!)!)!
+                self.pickerView?.selectRow(Int((arr?.last!)!)! + self.minuteArray.count * 100 , inComponent:1, animated: false)
+                self.selectRow1 = Int((arr?.last!)!)! + self.minuteArray.count * 100
                 self.pickerView?.reloadComponent(1)
 
             }else{
                 
                 let arr = self.nowHour.components(separatedBy: ":")
                 
-                self.pickerView?.selectRow(Int(arr.first!)! , inComponent: 0, animated: false)
-                self.selectRow0 = Int(arr.first!)!
+                self.pickerView?.selectRow(Int(arr.first!)! + self.HourArray.count * 100 , inComponent: 0, animated: false)
+                self.selectRow0 = Int(arr.first!)! + self.HourArray.count * 100
                 self.pickerView?.reloadComponent(0)
                 
-                self.pickerView?.selectRow(Int(arr.last!)!, inComponent:1, animated: false)
-                self.selectRow1 = Int(arr.last!)!
+                self.pickerView?.selectRow(Int(arr.last!)!  + self.minuteArray.count * 100, inComponent:1, animated: false)
+                self.selectRow1 = Int(arr.last!)! + self.minuteArray.count * 100
                 self.pickerView?.reloadComponent(1)
                 
 
@@ -1014,26 +1034,28 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             
             if (self.EndTimeStr != nil){
                 
+                self.cacheTime = self.EndTimeStr!
+                
                 let arr = self.EndTimeStr?.components(separatedBy: ":")
                 
-                self.pickerView?.selectRow(Int((arr?.first!)!)! , inComponent: 0, animated: false)
-                self.selectRow0 = Int((arr?.first!)!)!
+                self.pickerView?.selectRow(Int((arr?.first!)!)! + self.HourArray.count * 100 , inComponent: 0, animated: false)
+                self.selectRow0 = Int((arr?.first!)!)! + self.HourArray.count * 100
                 self.pickerView?.reloadComponent(0)
                 
-                self.pickerView?.selectRow(Int((arr?.last!)!)!, inComponent:1, animated: false)
-                self.selectRow1 = Int((arr?.last!)!)!
+                self.pickerView?.selectRow(Int((arr?.last!)!)! + self.minuteArray.count * 100, inComponent:1, animated: false)
+                self.selectRow1 = Int((arr?.last!)!)!  + self.minuteArray.count * 100
                 self.pickerView?.reloadComponent(1)
                 
             }else{
                 
                 let arr = self.StartTimeStr?.components(separatedBy: ":")
                 
-                self.pickerView?.selectRow(Int((arr?.first!)!)! , inComponent: 0, animated: false)
-                self.selectRow0 = Int((arr?.first!)!)!
+                self.pickerView?.selectRow(Int((arr?.first!)!)! + self.HourArray.count * 100, inComponent: 0, animated: false)
+                self.selectRow0 = Int((arr?.first!)!)! + self.HourArray.count * 100
                 self.pickerView?.reloadComponent(0)
                 
-                self.pickerView?.selectRow(Int((arr?.last!)!)!, inComponent:1, animated: false)
-                self.selectRow1 = Int((arr?.last!)!)!
+                self.pickerView?.selectRow(Int((arr?.last!)!)!  + self.minuteArray.count * 100, inComponent:1, animated: false)
+                self.selectRow1 = Int((arr?.last!)!)!  + self.minuteArray.count * 100
                 self.pickerView?.reloadComponent(1)
                 
                 
@@ -1075,7 +1097,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return component == 0 ? self.HourArray.count : self.minuteArray.count
+        return component == 0 ? self.HourArray.count * 200 : self.minuteArray.count * 200
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -1089,7 +1111,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         let title = UILabel()
         title.frame = CGRect(x:0, y : 0 ,width: 60 , height: 40)
         title.textAlignment = NSTextAlignment.center
-        title.text = component == 0 ? self.HourArray[row] as! String : self.minuteArray[row] as! String
+        title.text = component == 0 ? self.HourArray[row % self.HourArray.count] as! String : self.minuteArray[row % self.minuteArray.count] as! String
         title.font = UIFont.systemFont(ofSize: 15)
         title.textColor = RGBCOLOR(r: 58, 58, 58)
         
@@ -1123,13 +1145,37 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let arr = self.cacheTime.components(separatedBy: ":")
-        
+
         var HourStr : String = arr.first!
         var minStr : String = arr.last!
         
-        component == 0 ? (HourStr = self.HourArray[row] as! String) : (minStr = self.minuteArray[row] as! String)
+        if pickerView.tag == selectTimeType.startTimeType.rawValue {
+            
+            if self.StartTimeStr != nil{
+                
+                let arr = self.StartTimeStr?.components(separatedBy: ":")
+                
+                HourStr = arr!.first!
+                minStr = arr!.last!
+            }
+            
+            
+        }else if pickerView.tag == selectTimeType.endTimeType.rawValue{
+            
+            if self.EndTimeStr != nil{
+                
+                let arr = self.EndTimeStr?.components(separatedBy: ":")
+                
+                 HourStr   = arr!.first!
+                 minStr   = arr!.last!
+            }
+            
+        }
+        
+        component == 0 ? (HourStr = self.HourArray[row % self.HourArray.count] as! String) : (minStr = self.minuteArray[row % self.minuteArray.count] as! String)
         
         self.cacheTime = HourStr + ":" + minStr
+        
         
         
         //记录下滚动结束时的行数
@@ -1175,7 +1221,7 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
 //            _mapView.addAnnotation(item)
             
             //开始播放
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(starPlayTrackAni), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(starPlayTrackAni), userInfo: nil, repeats: true)
             
             
         }else{
@@ -1217,9 +1263,15 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             self.bottomplayview.progressView.progress = Float(Float(self.timerCount) / Float(((self.Data?.returnObj?.count)! - 1)))
         }
         
-  
+        let time: TimeInterval = 0.2
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+            //code
+            print("0.1 秒后输出")
         
-        self.timerCount += 1
+            self.timerCount += 1
+        }
+    
+        
         
     }
     

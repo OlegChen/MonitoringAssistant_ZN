@@ -107,7 +107,7 @@ class FeeInfoVC: BaseVC,UITableViewDelegate,UITableViewDataSource {
         
         let cell : FeeInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: FeeInfoTableViewCell_id) as! FeeInfoTableViewCell
         
-        let model = self.dataArr[indexPath.row] as! ReturnObjChargeRateVosModel
+        let model = self.dataArr[self.dataArr.count - 1 - indexPath.row] as! ReturnObjChargeRateVosModel
         cell.dateL.text = model.dateStr
         cell.feeL.text = (model.sumRealFee != nil ? String(model.sumRealFee!) : "0") + "万元"
         cell.percentL.text = (model.proportion != nil ? String(model.proportion!) : "0") + "%"
