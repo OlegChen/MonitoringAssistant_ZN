@@ -706,8 +706,9 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
 
                             
                             let array = NSMutableArray()
-                            array.add(model.returnObj?.first as Any)
                             array.add(model.returnObj?.last as Any)
+                            array.add(model.returnObj?.first as Any)
+
                             
                             self.AddAnnotations(array: array as NSArray)
                             self.bottomplayview.isHidden = false
@@ -854,14 +855,14 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
             let item = CustPointAnnotation()
             
             item.coordinate = CLLocationCoordinate2D.init(latitude: Double(m.latitude!)! , longitude: Double(m.longitude!)!)
-            item.isStartAnno = (i == 0 ? starOrEnd.star.rawValue : starOrEnd.end.rawValue)
+            item.isStartAnno = (i == 0 ? starOrEnd.end.rawValue : starOrEnd.star.rawValue)
             item.Model = m
             
             itemArray.add(item)
             
         }
         
-        self.startAnnotation = itemArray.firstObject as! CustPointAnnotation
+        self.startAnnotation = itemArray.lastObject as! CustPointAnnotation
         
         self._mapView?.addAnnotations(itemArray as! [Any])
         
@@ -1149,28 +1150,6 @@ class TrackDetailVC: BaseVC , BMKMapViewDelegate, FSCalendarDataSource, FSCalend
         var HourStr : String = arr.first!
         var minStr : String = arr.last!
         
-        if pickerView.tag == selectTimeType.startTimeType.rawValue {
-            
-            if self.StartTimeStr != nil{
-                
-                let arr = self.StartTimeStr?.components(separatedBy: ":")
-                
-                HourStr = arr!.first!
-                minStr = arr!.last!
-            }
-            
-            
-        }else if pickerView.tag == selectTimeType.endTimeType.rawValue{
-            
-            if self.EndTimeStr != nil{
-                
-                let arr = self.EndTimeStr?.components(separatedBy: ":")
-                
-                 HourStr   = arr!.first!
-                 minStr   = arr!.last!
-            }
-            
-        }
         
         component == 0 ? (HourStr = self.HourArray[row % self.HourArray.count] as! String) : (minStr = self.minuteArray[row % self.minuteArray.count] as! String)
         
